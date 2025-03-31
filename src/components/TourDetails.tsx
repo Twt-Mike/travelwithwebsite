@@ -2,18 +2,6 @@
 import { Check, Users, CalendarDays, MapPin, Utensils, Home, Bus } from 'lucide-react';
 
 const TourDetails = () => {
-  const inclusions = [
-    "11 nights accommodation in carefully selected hotels with ensuite bathrooms (except possibly Hakone)",
-    "Daily breakfast, 4 special group dinners, and 1 lunch",
-    "All transportation within Japan (bullet train, buses, metro)",
-    "Skip-the-line entry to all attractions in the itinerary",
-    "Professional Tour Leader & Japan Expert throughout the journey",
-    "Special workshop experiences (tea ceremony, cooking class, kendo)",
-    "Welcome dinner and farewell celebration",
-    "Metro tap cards and Hakone travel pass",
-    "Exclusive group experiences and cultural immersion"
-  ];
-  
   const exclusions = [
     "International flights to/from Japan",
     "Airport transfers on arrival/departure days",
@@ -106,8 +94,8 @@ const TourDetails = () => {
             <h3 className="text-xl font-serif font-medium text-japan-indigo mb-6">What's Included</h3>
             
             <div className="mb-6">
-              <h4 className="font-medium text-japan-indigo mb-2">Accommodation</h4>
-              <ul className="space-y-2">
+              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Accommodation</h4>
+              <ul className="space-y-2 mt-4">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
                   <span className="text-gray-700">11 Nights in comfortable hotels with Twin/Double rooms</span>
@@ -124,8 +112,8 @@ const TourDetails = () => {
             </div>
             
             <div className="mb-6">
-              <h4 className="font-medium text-japan-indigo mb-2">Included Activities</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Included Activities</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-4">
                 <div>
                   <h5 className="font-medium text-gray-700 mb-1">Tokyo:</h5>
                   <ul className="space-y-1 mb-3">
@@ -221,8 +209,8 @@ const TourDetails = () => {
             </div>
             
             <div className="mb-6">
-              <h4 className="font-medium text-japan-indigo mb-2">Transportation</h4>
-              <ul className="space-y-2">
+              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Transportation</h4>
+              <ul className="space-y-2 mt-4">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
                   <span className="text-gray-700">All transport included after arriving at Day 1 Start Hotel</span>
@@ -243,8 +231,8 @@ const TourDetails = () => {
             </div>
             
             <div>
-              <h4 className="font-medium text-japan-indigo mb-2">Meals</h4>
-              <ul className="space-y-2">
+              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Meals</h4>
+              <ul className="space-y-2 mt-4">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
                   <span className="text-gray-700">11 Breakfasts</span>
@@ -273,16 +261,16 @@ const TourDetails = () => {
             </ul>
             
             <div className="mt-8 pt-8 border-t border-gray-100">
-              <h4 className="font-medium text-japan-indigo mb-4">Pricing & Payment</h4>
+              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Pricing & Payment</h4>
               <div className="bg-japan-indigo/5 p-4 rounded-lg mb-4">
-                <div className="text-2xl font-medium text-japan-indigo">$3,495 <span className="text-base font-normal text-gray-500">per person</span></div>
+                <div className="text-2xl font-medium text-japan-indigo">€2,750 <span className="text-base font-normal text-gray-500">per person</span></div>
+                <p className="text-sm text-japan-pink font-medium mt-1">€2,700 via Bank Transfer (We pass the credit card fee onto you!)</p>
                 <p className="text-sm text-gray-600 mt-1">Based on double occupancy</p>
               </div>
-              <p className="text-sm text-gray-700 mb-2">Flexible payment options:</p>
+              <p className="text-sm text-gray-700 mb-2">Payment options:</p>
               <ul className="text-sm text-gray-700 space-y-1">
-                <li>• $500 deposit to secure your spot</li>
-                <li>• 50% payment due by May 1, 2025</li>
-                <li>• Final payment due by July 15, 2025</li>
+                <li>• 20% deposit to secure your spot (non-refundable)</li>
+                <li>• Full payment due 10 weeks prior to the tour start date (22 September 2025)</li>
               </ul>
             </div>
           </div>

@@ -40,7 +40,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Flexible payment plan (only €550 deposit)</span>
+                  <span className="text-gray-700">Flexible payment plan (only 20% deposit)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
@@ -65,7 +65,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               
               <div className="mb-6 text-sm text-white/90">
                 <p className="mb-1"><span className="font-medium">Deposit today:</span> €550</p>
-                <p><span className="font-medium">Spots remaining:</span> 7 of 16</p>
+                <p><span className="font-medium">Group size:</span> Max 16 travelers</p>
               </div>
               
               <Button 
@@ -87,10 +87,16 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               Prefer to chat before booking? Contact us directly or schedule a call with the TravelWith team to 
               discuss any questions about this tour.
             </p>
-            <Button variant="outline" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white">
-              <span>Contact TravelWith</span>
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <a 
+              href="/contact" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white">
+                <span>Contact TravelWith</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

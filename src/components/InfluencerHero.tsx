@@ -9,7 +9,7 @@ const InfluencerHero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=2070&auto=format&fit=crop")',
+          backgroundImage: 'url("/public/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png")',
         }}
       >
         <div className="absolute inset-0 bg-japan-indigo/60 mix-blend-multiply" />
@@ -40,7 +40,7 @@ const InfluencerHero = () => {
             </Button>
           </div>
           <div className="text-white/80 text-sm mt-6">
-            <p>Only 16 spots available • 9 spots already booked</p>
+            <p>Only 16 spots available • Limited spaces remain</p>
           </div>
         </div>
       </div>

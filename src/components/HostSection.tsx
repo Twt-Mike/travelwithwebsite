@@ -1,5 +1,5 @@
 
-import { Instagram, Youtube, ExternalLink } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HostSection = () => {
@@ -24,25 +24,23 @@ const HostSection = () => {
                 hidden gems known only to locals. Her energetic and friendly approach ensures every traveler feels included and has an unforgettable experience.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
-                  <Instagram className="h-4 w-4" />
-                  <span>@Laura</span>
-                </Button>
-                <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
-                  <Youtube className="h-4 w-4" />
-                  <span>YouTube Channel</span>
-                </Button>
-                <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
-                  <ExternalLink className="h-4 w-4" />
-                  <span>Blog</span>
-                </Button>
+                <a 
+                  href="https://www.instagram.com/Our.TravelTreats" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
+                    <Instagram className="h-4 w-4" />
+                    <span>@Our.TravelTreats</span>
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
           <div className="order-1 md:order-2">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2069&auto=format&fit=crop" 
+                src="/public/lovable-uploads/fa85cd0b-3ce0-40e6-8ea7-083feb93b71d.png" 
                 alt="Laura - Your Host" 
                 className="rounded-lg shadow-lg z-10 relative"
               />
