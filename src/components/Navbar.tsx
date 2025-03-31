@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import {
@@ -13,6 +13,7 @@ import {
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +30,8 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
+  const isInfluencerPage = location.pathname === '/ourtraveltreats-japan';
+
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -40,7 +43,11 @@ const Navbar = () => {
       <div className="japan-container flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-serif font-bold text-japan-indigo">
-            Japan Travel <span className="text-japan-pink">Treats</span>
+            {isInfluencerPage ? (
+              <>TravelWith <span className="text-japan-pink">OurTravelTreats</span></>
+            ) : (
+              <>Japan Travel <span className="text-japan-pink">Treats</span></>
+            )}
           </span>
         </Link>
 
@@ -75,19 +82,23 @@ const Navbar = () => {
           <Link to="/" className="text-japan-slate hover:text-japan-indigo font-medium">
             Tours
           </Link>
+          <Link to="/ourtraveltreats-japan" className={`font-medium ${location.pathname === '/ourtraveltreats-japan' ? 'text-japan-pink' : 'text-japan-slate hover:text-japan-indigo'}`}>
+            OurTravelTreats
+          </Link>
           <Link to="/" className="text-japan-slate hover:text-japan-indigo font-medium">
             About
           </Link>
           <Link to="/" className="text-japan-slate hover:text-japan-indigo font-medium">
             Blog
           </Link>
-          <Link to="/" className="text-japan-slate hover:text-japan-indigo font-medium">
-            Contact
-          </Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button className="btn-primary">Book Now</Button>
+          {isInfluencerPage ? (
+            <Button className="bg-japan-pink hover:bg-japan-pink/90 text-white">Book This Tour</Button>
+          ) : (
+            <Button className="btn-primary">Book Now</Button>
+          )}
         </div>
 
         {/* Mobile Navigation Trigger */}
@@ -129,6 +140,13 @@ const Navbar = () => {
               Tours
             </Link>
             <Link
+              to="/ourtraveltreats-japan"
+              className={`font-medium py-2 border-b border-gray-100 ${location.pathname === '/ourtraveltreats-japan' ? 'text-japan-pink' : 'text-japan-slate hover:text-japan-indigo'}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              OurTravelTreats Tour
+            </Link>
+            <Link
               to="/"
               className="text-japan-slate hover:text-japan-indigo font-medium py-2 border-b border-gray-100"
               onClick={() => setMobileMenuOpen(false)}
@@ -142,14 +160,11 @@ const Navbar = () => {
             >
               Blog
             </Link>
-            <Link
-              to="/"
-              className="text-japan-slate hover:text-japan-indigo font-medium py-2 border-b border-gray-100"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <Button className="btn-primary mt-2">Book Now</Button>
+            {isInfluencerPage ? (
+              <Button className="bg-japan-pink hover:bg-japan-pink/90 text-white mt-2">Book This Tour</Button>
+            ) : (
+              <Button className="btn-primary mt-2">Book Now</Button>
+            )}
           </div>
         </div>
       )}
