@@ -26,7 +26,7 @@ const InfluencerTour = () => {
           <div className="japan-container">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo mb-4">
-                Book Your Japan Tour with OurTravelTreats
+                Book Your Japan Tour with Laura
               </h2>
               <p className="text-gray-700 max-w-2xl mx-auto">
                 Complete the form below to secure your spot on this exclusive Japan tour.

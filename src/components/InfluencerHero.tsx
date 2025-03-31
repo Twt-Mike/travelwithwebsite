@@ -18,17 +18,17 @@ const InfluencerHero = () => {
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-3xl text-white space-y-6 animate-fade-in">
           <div className="inline-block bg-japan-pink/90 px-4 py-2 rounded-lg text-white font-medium mb-2">
-            Exclusive Tour with OurTravelTreats
+            Exclusive Tour with Laura
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
-            Journey Through Japan with <span className="text-japan-pink">OurTravelTreats</span>
+            Journey Through Japan with <span className="text-japan-pink">Laura</span>
           </h1>
           <div className="flex items-center gap-2 text-white/90 bg-black/30 inline-block px-4 py-2 rounded-lg">
             <CalendarDays className="h-5 w-5" />
-            <span className="font-medium">April 5-15, 2025 • 10 Days</span>
+            <span className="font-medium">September 22 - October 3, 2025 • 11 Days</span>
           </div>
           <p className="text-lg md:text-xl opacity-90 max-w-2xl">
-            Join OurTravelTreats on this once-in-a-lifetime adventure through Japan's most iconic destinations. 
+            Join Laura on this once-in-a-lifetime adventure through Japan's most iconic destinations. 
             Experience authentic culture, cuisine, and breathtaking landscapes alongside like-minded travelers.
           </p>
           <div className="flex flex-wrap gap-4 pt-6">
@@ -40,7 +40,7 @@ const InfluencerHero = () => {
             </Button>
           </div>
           <div className="text-white/80 text-sm mt-6">
-            <p>Only 15 spots available • 8 spots already booked</p>
+            <p>Only 16 spots available • 8 spots already booked</p>
           </div>
         </div>
       </div>
