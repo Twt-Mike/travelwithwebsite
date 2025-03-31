@@ -22,7 +22,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
             </h2>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Book your spot now on this exclusive Japan tour with OurTravelTreats. 
-              Only 15 spots available—secure yours before they're gone!
+              Only 16 spots available—secure yours before they're gone!
             </p>
           </div>
 
@@ -32,15 +32,15 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Secure one of just 15 available spots</span>
+                  <span className="text-gray-700">Secure one of just 16 available spots</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Lock in current pricing ($3,495 per person)</span>
+                  <span className="text-gray-700">Lock in current pricing (€2,750 per person)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Flexible payment plan (only $500 deposit)</span>
+                  <span className="text-gray-700">Flexible payment plan (only €550 deposit)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
@@ -48,23 +48,24 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Access to exclusive pre-trip meetups and content</span>
+                  <span className="text-gray-700">€50 discount when paying by bank transfer</span>
                 </li>
               </ul>
             </div>
             
             <div className="bg-japan-indigo p-8 rounded-xl shadow-md text-white">
               <h3 className="text-xl font-medium mb-2">Japan Tour with OurTravelTreats</h3>
-              <div className="text-white/80 text-sm mb-6">April 5-15, 2025 • 11 days</div>
+              <div className="text-white/80 text-sm mb-6">22 Sept - 3 Oct, 2025 • 11 days</div>
               
               <div className="mb-6">
-                <div className="text-3xl font-medium">$3,495</div>
+                <div className="text-3xl font-medium">€2,750</div>
                 <div className="text-white/80 text-sm">per person (double occupancy)</div>
+                <div className="text-white/90 text-sm mt-1">Bank transfer: €2,700</div>
               </div>
               
               <div className="mb-6 text-sm text-white/90">
-                <p className="mb-1"><span className="font-medium">Deposit today:</span> $500</p>
-                <p><span className="font-medium">Spots remaining:</span> 7 of 15</p>
+                <p className="mb-1"><span className="font-medium">Deposit today:</span> €550</p>
+                <p><span className="font-medium">Spots remaining:</span> 7 of 16</p>
               </div>
               
               <Button 
@@ -91,6 +92,27 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-16 bg-gray-50 py-8 rounded-lg max-w-3xl mx-auto">
+        <div className="text-center mb-6">
+          <h3 className="text-xl font-medium text-japan-indigo mb-2">Who is TravelWith?</h3>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            TravelWith is a boutique travel company specializing in immersive, authentic experiences 
+            in partnership with content creators and experts who share our passion for meaningful travel.
+          </p>
+        </div>
+        <div className="text-center">
+          <a 
+            href="/about" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-japan-indigo font-medium hover:text-japan-pink transition-colors"
+          >
+            Learn more about us
+            <ArrowRight className="ml-1 h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>

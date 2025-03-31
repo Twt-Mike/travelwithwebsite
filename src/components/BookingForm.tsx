@@ -28,9 +28,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CreditCard, Building2, Info, CheckCircle, Calendar } from 'lucide-react';
 
 const currencies = [
-  { code: 'GBP', symbol: '£', rate: 1, name: 'British Pound' },
-  { code: 'USD', symbol: '$', rate: 1.31, name: 'US Dollar' },
-  { code: 'EUR', symbol: '€', rate: 1.18, name: 'Euro' }
+  { code: 'EUR', symbol: '€', rate: 1, name: 'Euro' },
+  { code: 'GBP', symbol: '£', rate: 0.85, name: 'British Pound' },
+  { code: 'USD', symbol: '$', rate: 1.08, name: 'US Dollar' }
 ];
 
 const formSchema = z.object({
@@ -84,8 +84,10 @@ const BookingForm = () => {
     },
   });
   
-  const calculatePrice = (basePrice: number, currency: typeof currencies[0], isDeposit: boolean) => {
-    const convertedPrice = basePrice * currency.rate;
+  const calculatePrice = (basePrice: number, currency: typeof currencies[0], isDeposit: boolean, isBank: boolean) => {
+    // Apply bank transfer discount if applicable
+    const priceWithDiscount = isBank ? basePrice - 50 : basePrice;
+    const convertedPrice = priceWithDiscount * currency.rate;
     return isDeposit ? convertedPrice * 0.2 : convertedPrice; // 20% deposit
   };
   
@@ -105,8 +107,9 @@ const BookingForm = () => {
     }, 1500);
   };
 
-  const basePrice = 2200;
+  const basePrice = 2750;
   const depositAmount = basePrice * 0.2;
+  const isBank = form.watch("paymentMethod") === "bank";
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 mt-8">
@@ -135,18 +138,18 @@ const BookingForm = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4">
           <div>
             <div className="text-3xl font-bold mb-1">
-              {formatPrice(calculatePrice(basePrice, selectedCurrency, false), selectedCurrency)}
+              {formatPrice(calculatePrice(basePrice, selectedCurrency, false, isBank), selectedCurrency)}
               <span className="text-sm text-gray-500 ml-2">per person</span>
             </div>
             <div className="text-sm text-gray-600">
-              Deposit: {formatPrice(calculatePrice(depositAmount, selectedCurrency, false), selectedCurrency)}
+              Deposit: {formatPrice(calculatePrice(depositAmount, selectedCurrency, false, isBank), selectedCurrency)}
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex items-center gap-2 text-sm bg-japan-pink/10 text-japan-pink px-3 py-1 rounded-full">
               <Calendar className="h-4 w-4" />
-              <span>April 5-15, 2025</span>
+              <span>22 Sept - 3 Oct, 2025</span>
             </div>
             <div className="flex items-center gap-2 text-sm bg-japan-green/10 text-japan-green px-3 py-1 rounded-full">
               <CheckCircle className="h-4 w-4" />
@@ -156,7 +159,7 @@ const BookingForm = () => {
         </div>
         
         <div className="mb-4 text-sm text-gray-600">
-          Your 11 Day Japan Tour starting from Tokyo & finishing in Osaka! With OurTravelTreats
+          Your 11 Day Japan Tour starting from Tokyo & finishing in Hiroshima! With OurTravelTreats
         </div>
         
         <div className="bg-gray-50 p-4 rounded-lg text-sm">
@@ -164,16 +167,22 @@ const BookingForm = () => {
           <ul className="space-y-1">
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-              <span>Deposit: {formatPrice(calculatePrice(depositAmount, selectedCurrency, false), selectedCurrency)} due today (Non-refundable)</span>
+              <span>Deposit: {formatPrice(calculatePrice(depositAmount, selectedCurrency, false, isBank), selectedCurrency)} due today (Non-refundable)</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-              <span>Final Payment: {formatPrice(calculatePrice(basePrice - depositAmount, selectedCurrency, false), selectedCurrency)} due by 1 August 2025</span>
+              <span>Final Payment: {formatPrice(calculatePrice(basePrice - depositAmount, selectedCurrency, false, isBank), selectedCurrency)} due by 1 August 2025</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
               <span>You will receive an invoice via email for the final payment</span>
             </li>
+            {isBank && (
+              <li className="flex items-start gap-2 mt-3 bg-japan-indigo/10 p-2 rounded-md">
+                <Info className="h-4 w-4 text-japan-indigo mt-0.5 flex-shrink-0" />
+                <span><strong>Bank Transfer Discount:</strong> Save €50 when paying by bank transfer</span>
+              </li>
+            )}
           </ul>
           
           <Sheet>
@@ -266,6 +275,9 @@ const BookingForm = () => {
                     <div className="text-sm text-gray-500">Via Stripe (3% processing fee)</div>
                   </div>
                 </div>
+                <div className="mt-2 text-right font-medium">
+                  {formatPrice(calculatePrice(basePrice, selectedCurrency, false, false), selectedCurrency)}
+                </div>
               </div>
               
               <div 
@@ -290,8 +302,11 @@ const BookingForm = () => {
                   </div>
                   <div>
                     <div className="font-medium">Bank Transfer</div>
-                    <div className="text-sm text-gray-500">No processing fees</div>
+                    <div className="text-sm text-gray-500">€50 discount applied</div>
                   </div>
+                </div>
+                <div className="mt-2 text-right font-medium">
+                  {formatPrice(calculatePrice(basePrice, selectedCurrency, false, true), selectedCurrency)}
                 </div>
               </div>
             </div>
@@ -317,7 +332,7 @@ const BookingForm = () => {
                   <div className="text-sm bg-japan-pink text-white px-2 py-0.5 rounded">Recommended</div>
                 </div>
                 <div className="text-lg font-bold mt-2">
-                  {formatPrice(calculatePrice(depositAmount, selectedCurrency, false), selectedCurrency)}
+                  {formatPrice(calculatePrice(depositAmount, selectedCurrency, false, isBank), selectedCurrency)}
                 </div>
                 <div className="text-sm text-gray-500">Due today (20% of total)</div>
               </div>
@@ -334,7 +349,7 @@ const BookingForm = () => {
                   <div className="font-medium">Pay Full Amount</div>
                 </div>
                 <div className="text-lg font-bold mt-2">
-                  {formatPrice(calculatePrice(basePrice, selectedCurrency, false), selectedCurrency)}
+                  {formatPrice(calculatePrice(basePrice, selectedCurrency, false, isBank), selectedCurrency)}
                 </div>
                 <div className="text-sm text-gray-500">Full payment due today</div>
               </div>
@@ -596,8 +611,8 @@ const BookingForm = () => {
             disabled={isSubmitting}
           >
             {isSubmitting ? "Processing..." : form.watch("paymentOption") === "deposit" 
-              ? `Pay Deposit (${formatPrice(calculatePrice(depositAmount, selectedCurrency, false), selectedCurrency)})` 
-              : `Pay Full Amount (${formatPrice(calculatePrice(basePrice, selectedCurrency, false), selectedCurrency)})`
+              ? `Pay Deposit (${formatPrice(calculatePrice(depositAmount, selectedCurrency, false, isBank), selectedCurrency)})` 
+              : `Pay Full Amount (${formatPrice(calculatePrice(basePrice, selectedCurrency, false, isBank), selectedCurrency)})`
             }
           </Button>
           

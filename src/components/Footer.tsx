@@ -1,12 +1,12 @@
 
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-japan-indigo text-white">
       <div className="japan-container pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-serif mb-4">
               Japan Travel <span className="text-japan-pink">Treats</span>
@@ -17,88 +17,26 @@ const Footer = () => {
               expert local guides.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-white hover:text-japan-pink transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-japan-pink transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-japan-pink transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-japan-pink transition-colors">
-                <Twitter size={20} />
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-medium mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Tours
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Destinations
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-medium mb-4">Top Destinations</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Tokyo
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Kyoto
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Osaka
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Hakone
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Mount Fuji
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">
-                  Hiroshima
-                </Link>
-              </li>
-            </ul>
+            <h4 className="text-lg font-medium mb-4">About TravelWith</h4>
+            <p className="text-gray-300 mb-4">
+              TravelWith is a boutique travel company specializing in immersive, authentic experiences 
+              in partnership with content creators and experts who share our passion for meaningful travel.
+            </p>
+            <a 
+              href="/about" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-japan-pink transition-colors flex items-center"
+            >
+              Learn more about us
+            </a>
           </div>
 
           <div>
@@ -130,9 +68,6 @@ const Footer = () => {
             </Link>
             <Link to="/" className="hover:text-japan-pink">
               Terms of Service
-            </Link>
-            <Link to="/" className="hover:text-japan-pink">
-              Cookie Policy
             </Link>
           </div>
         </div>

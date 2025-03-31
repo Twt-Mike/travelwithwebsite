@@ -40,7 +40,7 @@ const InfluencerHero = () => {
             </Button>
           </div>
           <div className="text-white/80 text-sm mt-6">
-            <p>Only 16 spots available • 8 spots already booked</p>
+            <p>Only 16 spots available • 9 spots already booked</p>
           </div>
         </div>
       </div>

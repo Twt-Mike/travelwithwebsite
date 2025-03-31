@@ -31,6 +31,9 @@ const InfluencerTour = () => {
               <p className="text-gray-700 max-w-2xl mx-auto">
                 Complete the form below to secure your spot on this exclusive Japan tour.
               </p>
+              <p className="text-japan-indigo font-medium mt-2">
+                €2,750 per person • Save €50 when paying by bank transfer
+              </p>
             </div>
             <BookingForm />
             <div className="mt-8 text-center">
