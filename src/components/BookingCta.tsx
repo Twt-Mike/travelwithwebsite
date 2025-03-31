@@ -2,7 +2,11 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
-const BookingCta = () => {
+interface BookingCtaProps {
+  onBookNow?: () => void;
+}
+
+const BookingCta = ({ onBookNow }: BookingCtaProps) => {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="absolute right-0 top-0 w-1/3 h-full bg-japan-indigo/5 -skew-x-12 transform origin-top-right"></div>
@@ -63,7 +67,11 @@ const BookingCta = () => {
                 <p><span className="font-medium">Spots remaining:</span> 7 of 15</p>
               </div>
               
-              <Button size="lg" className="w-full bg-japan-pink hover:bg-japan-pink/90 text-white">
+              <Button 
+                size="lg" 
+                className="w-full bg-japan-pink hover:bg-japan-pink/90 text-white"
+                onClick={onBookNow}
+              >
                 Secure Your Spot Now
               </Button>
               
