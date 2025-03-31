@@ -18,11 +18,13 @@ const InfluencerTour = () => {
       <InfluencerHero />
       <HostSection />
       <TourDetails />
-      <TourItinerary />
+      <div id="itinerary">
+        <TourItinerary />
+      </div>
       <TourFAQ />
       
       {showBookingForm ? (
-        <section className="py-16 bg-gray-50">
+        <section id="booking" className="py-16 bg-gray-50">
           <div className="japan-container">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo mb-4">
@@ -48,7 +50,9 @@ const InfluencerTour = () => {
           </div>
         </section>
       ) : (
-        <BookingCta onBookNow={() => setShowBookingForm(true)} />
+        <div id="booking">
+          <BookingCta onBookNow={() => setShowBookingForm(true)} />
+        </div>
       )}
     </Layout>
   );

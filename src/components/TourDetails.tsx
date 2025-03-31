@@ -94,7 +94,7 @@ const TourDetails = () => {
             <h3 className="text-xl font-serif font-medium text-japan-indigo mb-6">What's Included</h3>
             
             <div className="mb-6">
-              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Accommodation</h4>
+              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Accommodation</h4>
               <ul className="space-y-2 mt-4">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
@@ -112,7 +112,7 @@ const TourDetails = () => {
             </div>
             
             <div className="mb-6">
-              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Included Activities</h4>
+              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Included Activities</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-4">
                 <div>
                   <h5 className="font-medium text-gray-700 mb-1">Tokyo:</h5>
@@ -209,7 +209,7 @@ const TourDetails = () => {
             </div>
             
             <div className="mb-6">
-              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Transportation</h4>
+              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Transportation</h4>
               <ul className="space-y-2 mt-4">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
@@ -231,7 +231,7 @@ const TourDetails = () => {
             </div>
             
             <div>
-              <h4 className="font-medium text-japan-indigo mb-2 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Meals</h4>
+              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Meals</h4>
               <ul className="space-y-2 mt-4">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
@@ -261,7 +261,7 @@ const TourDetails = () => {
             </ul>
             
             <div className="mt-8 pt-8 border-t border-gray-100">
-              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Pricing & Payment</h4>
+              <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Pricing & Payment</h4>
               <div className="bg-japan-indigo/5 p-4 rounded-lg mb-4">
                 <div className="text-2xl font-medium text-japan-indigo">€2,750 <span className="text-base font-normal text-gray-500">per person</span></div>
                 <p className="text-sm text-japan-pink font-medium mt-1">€2,700 via Bank Transfer (You save as there are no credit card fees!)</p>

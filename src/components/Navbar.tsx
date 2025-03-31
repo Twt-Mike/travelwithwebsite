@@ -45,7 +45,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation - Removed About button */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4">
           {isInfluencerPage && (
             <Button 
@@ -66,7 +66,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation Menu - Removed About link */}
+      {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">

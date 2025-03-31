@@ -5,43 +5,43 @@ import { useState } from 'react';
 const faqs = [
   {
     id: 1,
-    question: "What is the cancellation policy?",
-    answer: "We understand plans can change. Cancellations made more than 90 days before departure will receive a full refund minus a $250 administrative fee. Cancellations 60-89 days before departure will receive a 50% refund. Cancellations less than 60 days before departure are non-refundable. We strongly recommend travel insurance to protect your investment."
+    question: "Where should I book my flights in & out of?",
+    answer: "The tour starts in Tokyo and finishes in Hiroshima. We recommend flying into Tokyo (either Haneda or Narita Airport — both are perfectly fine) and flying out of Hiroshima Airport. If you can't find a suitable flight from Hiroshima, you're also welcome to take the bullet train back to Tokyo. However, the journey takes around 4.5 hours, so please make sure to book an evening departure flight from Tokyo to allow enough travel time. We can advise you closer to the time on how to navigate from the airport to the hotel and help with any transport questions! While we cannot be responsible for booking your flights, Laura is happy to assist you with the flight booking if needed!"
   },
   {
     id: 2,
-    question: "How much free time will we have?",
-    answer: "We've designed this tour to have a balance of guided activities and free time. Most days have a few hours of free time in the afternoon or evening, and we have a completely free day in Osaka. This allows you to explore based on your interests, rest when needed, or join optional activities."
+    question: "Is there free time on the tour?",
+    answer: "The itinerary is designed to be immersive and packed with unique experiences to give you the best value for your money. While most days do include some free time to explore the town, we recommend that if you want to do larger, time-consuming activities like Tokyo Disneyland, Universal Studios, or Go Karting in Tokyo, you plan to arrive a day earlier or stay an extra day at the end. If you're considering adding an extra day, feel free to reach out for advice — we're happy to help you plan!"
   },
   {
     id: 3,
     question: "Do I need a visa for Japan?",
-    answer: "Most Western countries (including the US, Canada, UK, EU, and Australia) receive visa-free entry to Japan for up to 90 days. However, visa requirements can change, so we recommend checking with your local Japanese embassy or consulate before your trip."
+    answer: "Most Western countries (including the US, Canada, UK, EU, and Australia) receive visa-free entry to Japan for up to 90 days. However, visa requirements can change, so we recommend checking with your local Japanese embassy or consulate before your trip. Please note that guests are responsible for their own visa, and TravelWith or OurTravelTreats are not responsible for visa issues."
   },
   {
     id: 4,
-    question: "What is the accommodation like?",
-    answer: "We stay in carefully selected 3-4 star hotels in convenient locations. In Tokyo, Kyoto, and Osaka, we use modern, comfortable hotels with Western-style rooms. In Hakone, we stay at a traditional Japanese ryokan with tatami mat floors, futon bedding, and onsen (hot spring baths). All accommodations offer private bathrooms and free WiFi."
+    question: "Can you help with pre-accommodation & things to do after the tour?",
+    answer: "While we cannot make the booking for you, your host & guide Laura is always available to give advice to any questions! She is happy to offer suggestions for you!"
   },
   {
     id: 5,
-    question: "How much spending money should I bring?",
-    answer: "Japan is relatively expensive, but many expenses are covered in your tour package. We recommend budgeting $50-70 USD per day for meals not included, snacks, shopping, and optional activities. Japan is still largely a cash-based society, so we recommend bringing some Japanese yen (we'll help you find ATMs)."
+    question: "What is the fitness level required for the tour?",
+    answer: "Japan is a LOT of walking. So make sure you bring comfortable shoes and are ready to do 20,000+ steps a day. It's the best way to see this beautiful country. – we also take the best public transportation in the world so make sure whatever luggage you have you're comfortable carrying. Sometimes stairs might be our only option at a train station."
   },
   {
     id: 6,
-    question: "Will I be able to stay connected during the trip?",
-    answer: "All our hotels offer free WiFi, but we also recommend renting a pocket WiFi device or getting a Japanese SIM card upon arrival, which we can help arrange. This will keep you connected throughout the journey, even when exploring."
+    question: "Suitcase or backpack?",
+    answer: "Either one is fine 🙂 However we recommend to pack as light as possible! If you have a suitcase you must be able to pick it up and carry it up one flight of stairs. As we move throughout the metro stations there are some elevators, but not all will be accessible near our specific train. The Shinkansen also has luggage size restrictions. While they have never enforced this on any of our tours, the luggage size restriction does exist, and we cannot be liable if they charge extra for this."
   },
   {
     id: 7,
-    question: "Is this tour suitable for solo travelers?",
-    answer: "Absolutely! About half of our guests are typically solo travelers. It's a great way to explore Japan while making new friends. We offer single room options (for an additional fee) or we can pair you with another solo traveler of the same gender to share a room and avoid the single supplement."
+    question: "How much spending cash should I bring for the trip?",
+    answer: "As we have an awesome itinerary packed with amazing accommodation, transport, and activities, €500 is fine to bring for the rest of your meals, drinks, coffee, and some small souvenirs. That said, Japan has incredible shopping and unique gifts everywhere — so you're absolutely welcome to bring more spending money if you'd like to explore a bit more!"
   },
   {
     id: 8,
-    question: "What happens during the tour if I have dietary restrictions?",
-    answer: "We can accommodate most dietary restrictions including vegetarian, vegan, gluten-free, and allergies. Please inform us of your needs when booking so we can make appropriate arrangements for group meals. Our hosts will also help you navigate menu options during free time."
+    question: "I have tattoos, is this okay to show in Japan?",
+    answer: "We love this question! Visitors often hear they must hide their tattoos, but in reality, tattoos on tourists are totally fine and rarely bother locals — unless they are specifically offensive or inappropriate. That said, many traditional onsens (hot springs) and gyms in Japan still have rules against visible tattoos, and we kindly ask everyone to respect these policies. There are also plenty of tattoo-friendly onsens and sento (public baths) around Japan — feel free to ask your guide, and we'll happily help you find one!"
   }
 ];
 
@@ -107,7 +107,7 @@ const TourFAQ = () => {
 
         <div className="text-center mt-10">
           <p className="text-gray-700">
-            Have more questions? <a href="#" className="text-japan-indigo font-medium hover:underline">Contact us</a> or DM OurTravelTreats on Instagram
+            Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-japan-indigo font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-japan-indigo font-medium hover:underline">@OurTravelTreats</a> on Instagram
           </p>
         </div>
       </div>

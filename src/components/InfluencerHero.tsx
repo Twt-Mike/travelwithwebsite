@@ -17,11 +17,8 @@ const InfluencerHero = () => {
 
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-3xl text-white space-y-6 animate-fade-in">
-          <div className="inline-block bg-japan-pink/90 px-4 py-2 rounded-lg text-white font-medium mb-2">
-            Exclusive Tour with Laura
-          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
-            Journey Through Japan with <span className="text-japan-pink">Laura</span>
+            Journey Through Japan with <span className="text-japan-pink">Laura</span> from @Our.TravelTreats
           </h1>
           <div className="flex items-center gap-2 text-white/90 bg-black/30 inline-block px-4 py-2 rounded-lg">
             <CalendarDays className="h-5 w-5" />
@@ -32,7 +29,8 @@ const InfluencerHero = () => {
             Experience authentic culture, cuisine, and breathtaking landscapes alongside like-minded travelers.
           </p>
           <div className="flex flex-wrap gap-4 pt-6">
-            <Button size="lg" className="bg-japan-pink hover:bg-japan-pink/90 text-white px-8 py-6 text-lg">
+            <Button size="lg" className="bg-japan-pink hover:bg-japan-pink/90 text-white px-8 py-6 text-lg"
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>
               Book Your Spot Now
             </Button>
             <Button 
@@ -45,7 +43,7 @@ const InfluencerHero = () => {
             </Button>
           </div>
           <div className="text-white/80 text-sm mt-6">
-            <p>Only 16 spots available</p>
+            <p>Only 16 maximum spots!</p>
           </div>
         </div>
       </div>
