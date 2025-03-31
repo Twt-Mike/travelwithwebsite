@@ -1,0 +1,53 @@
+
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const HeroSection = () => {
+  return (
+    <section className="relative hero-image">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1980&auto=format&fit=crop")',
+        }}
+      >
+        <div className="absolute inset-0 bg-japan-indigo/50 mix-blend-multiply" />
+      </div>
+
+      <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
+        <div className="max-w-2xl text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
+            Discover the Magic of <span className="text-japan-pink">Japan</span>
+          </h1>
+          <p className="text-lg md:text-xl opacity-90">
+            Immerse yourself in Japan's rich culture, breathtaking landscapes, and culinary delights 
+            with our expertly curated travel experiences
+          </p>
+          <div className="flex flex-wrap gap-4 pt-4">
+            <Button size="lg" className="btn-primary px-8 py-6 text-lg">
+              Explore Tours
+            </Button>
+            <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              <span>Learn More</span>
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Curved bottom */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-auto">
+          <path 
+            fill="#F9F7F3" 
+            fillOpacity="1" 
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
