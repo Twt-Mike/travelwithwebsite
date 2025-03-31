@@ -45,21 +45,15 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <a 
-            href="/about" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-japan-slate hover:text-japan-indigo font-medium"
-          >
-            About
-          </a>
-        </nav>
-
+        {/* Desktop Navigation - Removed About button */}
         <div className="hidden md:flex items-center gap-4">
           {isInfluencerPage && (
-            <Button className="bg-japan-pink hover:bg-japan-pink/90 text-white">Book This Tour</Button>
+            <Button 
+              className="bg-japan-pink hover:bg-japan-pink/90 text-white"
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Book This Tour
+            </Button>
           )}
         </div>
 
@@ -72,21 +66,18 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Removed About link */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">
-            <a
-              href="/about"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-japan-slate hover:text-japan-indigo font-medium py-2 border-b border-gray-100"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </a>
             {isInfluencerPage && (
-              <Button className="bg-japan-pink hover:bg-japan-pink/90 text-white mt-2" onClick={() => setMobileMenuOpen(false)}>
+              <Button 
+                className="bg-japan-pink hover:bg-japan-pink/90 text-white mt-2" 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Book This Tour
               </Button>
             )}

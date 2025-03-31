@@ -8,7 +8,7 @@ const TourDetails = () => {
     "Travel insurance (required)",
     "Meals not specified in the itinerary",
     "Personal expenses and souvenirs",
-    "Activities during free time"
+    "Optional activities during free time"
   ];
 
   return (
@@ -264,8 +264,8 @@ const TourDetails = () => {
               <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-4 py-1 rounded-lg text-lg">Pricing & Payment</h4>
               <div className="bg-japan-indigo/5 p-4 rounded-lg mb-4">
                 <div className="text-2xl font-medium text-japan-indigo">€2,750 <span className="text-base font-normal text-gray-500">per person</span></div>
-                <p className="text-sm text-japan-pink font-medium mt-1">€2,700 via Bank Transfer (We pass the credit card fee onto you!)</p>
-                <p className="text-sm text-gray-600 mt-1">Based on double occupancy</p>
+                <p className="text-sm text-japan-pink font-medium mt-1">€2,700 via Bank Transfer (You save as there are no credit card fees!)</p>
+                <p className="text-sm text-gray-600 mt-1">Based on twin-share accommodation (solo travelers paired with same gender)</p>
               </div>
               <p className="text-sm text-gray-700 mb-2">Payment options:</p>
               <ul className="text-sm text-gray-700 space-y-1">

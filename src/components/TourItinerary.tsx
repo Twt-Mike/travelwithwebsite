@@ -11,7 +11,7 @@ import {
 const itineraryData = [
   {
     day: 1,
-    date: "April 5",
+    date: "September 22",
     title: "Tokyo Arrival Day",
     description: "Welcome to Tokyo — let the adventure begin! 🇯🇵✨ Your guide is available all day to assist with arrivals. Hotel check-in is at 3 PM in the scenic Asakusa district — arrive early to explore or relax at your own pace. In the evening, we'll meet in the lobby, enjoy a welcome dinner at one of our favourite local restaurants, and then experience Asakusa's charm with a guided night tour, including the iconic Senso-ji Temple — Tokyo's oldest and most famous!",
     activities: ["Senso-ji Temple Night Walk"],
@@ -20,7 +20,7 @@ const itineraryData = [
   },
   {
     day: 2,
-    date: "April 6",
+    date: "September 23",
     title: "Tokyo",
     description: "Kick off the day with your Japan orientation — learning essential Japanese for your journey, including customs, cultural dos & don'ts, and useful language tips. Next, we'll explore the tranquil Meiji Shrine, a sacred site tucked away in the lush greenery of Yoyogi Park, dedicated to the emperor who modernized Japan. A short stroll brings us to the iconic Shibuya Crossing — one of the busiest intersections on the planet! Strike a pose with the loyal Hachiko statue, then take in breathtaking rooftop views of the organized chaos below. After some free time, we dive into Akihabara's neon-lit nightlife — think arcades, themed cafés, quirky shops, and bars with darts & beer pong. End the night on a high note with karaoke alongside locals! 🎤🔥",
     activities: ["Tokyo Sightseeing — Harajuku, Meiji Shrine, Shibuya Crossing, Akihabara Arcades"],
@@ -29,7 +29,7 @@ const itineraryData = [
   },
   {
     day: 3,
-    date: "April 7",
+    date: "September 24",
     title: "Tokyo",
     description: "Start the day with fresh and flavorful bites during a hands-on sushi-making class, using some of the world's best seafood. Next, we step into a mesmerizing digital world at TeamLabs Planets Tokyo, where immersive art installations blur the lines between reality and imagination. As evening falls, we'll soak in panoramic city views from the 46th floor of the Tokyo Metropolitan Building, then wander the nostalgic alleyways of Omoide Yokocho (Piss Alley) for a taste of old-school Tokyo dining. But the adventure isn't over yet! We'll explore Shinjuku's vibrant streets, spot Godzilla looming above the skyline, and dive into Tokyo's legendary nightlife — wrapping up in Golden Gai, a neon-lit maze of 200+ tiny, character-filled bars. ✨",
     activities: ["Sushi Making Class", "TeamLabs Planets", "Sightseeing — Shinjuku"],
@@ -38,7 +38,7 @@ const itineraryData = [
   },
   {
     day: 4,
-    date: "April 8",
+    date: "September 25",
     title: "Hakone & Mt. Fuji",
     description: "We'll leave the hustle of Tokyo behind as we ride the scenic RomanceCar to the picturesque mountain town of Hakone. After checking into our charming accommodation, take a moment to soak in the serene surroundings. Next, we'll soar over volcanic landscapes on the Hakone Ropeway, passing through Owakudani's steaming vents on our way to a breathtaking Mt. Fuji viewpoint (weather permitting). In the evening, we'll enjoy a delicious group dinner, and for those looking to fully embrace Japan's traditions, an optional onsen experience awaits — perfect for unwinding after a day of adventure. ♨️🏔️",
     activities: ["Fuji Viewing (weather permitting)", "Optional Onsen"],
@@ -47,7 +47,7 @@ const itineraryData = [
   },
   {
     day: 5,
-    date: "April 9",
+    date: "September 26",
     title: "Kyoto",
     description: "We'll speed through the countryside on the legendary Shinkansen as we journey from Hakone to Kyoto, the cultural heart of Japan. In just a few hours, we'll arrive in this historic city, where we'll settle in for a three-night stay surrounded by centuries of tradition. After checking in, we'll step back in time with a walking tour of Kyoto's enchanting Gion District — a maze of lantern-lit streets, wooden machiya houses, and hidden tea houses. Keep your eyes peeled for a rare and unforgettable sighting of a Geisha (Maiko or Geiko-san) as they gracefully move between engagements. The evening is yours to enjoy — soak in the city's timeless atmosphere, savor Kyoto's world-famous cuisine, or simply unwind and take in the magic of Japan's ancient capital. ✨🏯",
     activities: ["Gion (Geisha) Town Visit"],
@@ -56,7 +56,7 @@ const itineraryData = [
   },
   {
     day: 6,
-    date: "April 10",
+    date: "September 27",
     title: "Kyoto",
     description: "Rise and shine — today is an epic day in Kyoto! We're kicking things off with a sunrise visit to Fushimi Inari Shrine, home to the 10,000 Torii gates. With no crowds, we'll have this iconic spot almost to ourselves as we explore, snap incredible photos, and learn the legends behind the shrine. Next, we'll walk through one of Kyoto's largest cemeteries before arriving at Kiyomizu-dera, a breathtaking World Heritage Site. Then you'll get to choose your own Japanese Kimono to rent for the day, and we'll head to an authentic Japanese tea house for a traditional tea ceremony, learning the beautiful customs behind this ancient art. Afterward, the afternoon is yours — grab a matcha ice cream, explore Kyoto's charming streets, or take a well-earned nap.",
     activities: ["10,000 Torii Gates", "Kiyomizu-dera", "Tea Ceremony + Kimono"],
@@ -65,7 +65,7 @@ const itineraryData = [
   },
   {
     day: 7,
-    date: "April 11",
+    date: "September 28",
     title: "Kyoto",
     description: "The day begins with a visit to the Golden Pavilion (Kinkaku-ji), where its shimmering gold exterior reflects beautifully over the tranquil pond. Next, we'll stroll through a serene Zen garden, soaking in the peaceful atmosphere before returning for a well-earned lunch. In the afternoon, we'll step into the world of the samurai with an immersive Kendo class, learning the fundamentals of this traditional Japanese martial art. The evening is yours to explore Kyoto — wander the charming streets, discover hidden bars, or enjoy dinner along the Kamogawa River as the city lights reflect off the water. ✨🏯🍶",
     activities: ["Golden Pavilion", "Zen Garden", "Kendo Class"],
@@ -74,7 +74,7 @@ const itineraryData = [
   },
   {
     day: 8,
-    date: "April 12",
+    date: "September 29",
     title: "Osaka",
     description: "The day begins in Arashiyama, where we'll wander through the towering emerald-green Bamboo Forest — a scene straight out of a dream. Next, we'll hike up Monkey Mountain, where playful Japanese macaques roam freely, and soak in stunning panoramic views of Kyoto. To top it off, we'll drift along the scenic Ao River in a traditional boat, taking in the tranquil beauty of the surroundings. After our morning adventure, we'll return to Kyoto, grab our luggage, and hop on the train to Osaka, Japan's kitchen and entertainment capital. By evening, we'll dive into the bright lights of Dotonbori, Osaka's most iconic district, where neon signs reflect off the canal. A street food tour awaits, where we'll indulge in local favorites like takoyaki, okonomiyaki, and kushikatsu — the perfect way to experience Osaka's famous foodie culture. 🍜🍢🎡",
     activities: ["Bamboo Forest", "Monkey Mountain", "Dotonbori Street Food Tour"],
@@ -83,7 +83,7 @@ const itineraryData = [
   },
   {
     day: 9,
-    date: "April 13",
+    date: "September 30",
     title: "Osaka",
     description: "We'll start the day with a trip to Nara, where we'll meet the city's friendly, bowing deer — a unique and unforgettable experience! Then, we'll visit Todaiji Temple, home to the awe-inspiring Great Buddha, one of the largest bronze statues in the world. On our way back, we'll stop at Osaka Castle, a striking landmark surrounded by lush gardens and rich samurai history. Take in the views and explore the impressive grounds before heading back into the city. As the evening sets in, we'll gather for a delicious yakitori group dinner, indulging in perfectly grilled skewers and lively conversation — the perfect way to wrap up another incredible day in Japan! 🍢🏯✨",
     activities: ["Nara Park", "Todaiji Temple", "Osaka Castle"],
@@ -92,7 +92,7 @@ const itineraryData = [
   },
   {
     day: 10,
-    date: "April 14",
+    date: "October 1",
     title: "Hiroshima",
     description: "Enjoy a slow morning in Osaka — the perfect time to shop for souvenirs, explore local markets, or simply relax before our next adventure. In the afternoon, we'll board the Shinkansen to Hiroshima, gliding across Japan's landscape at high speed. After checking into our hotel, we'll visit the Hiroshima Peace Memorial Museum — a powerful and moving tribute that offers deep insight into the city's history and resilience. The evening is yours to unwind — stroll along the quiet riverside, try Hiroshima's famous okonomiyaki, or reflect on the day's experiences in this historic city. 🚄🌸",
     activities: ["Hiroshima Peace Memorial Museum"],
@@ -101,7 +101,7 @@ const itineraryData = [
   },
   {
     day: 11,
-    date: "April 15",
+    date: "October 2",
     title: "Hiroshima",
     description: "Our last full day in Japan takes us to the breathtaking island of Miyajima, home to one of Japan's most iconic sights — the floating torii gate of Itsukushima Shrine. With plenty of time to explore, you can visit sacred temples, stroll through the Hall of 1000 Mats, or hike up Mt. Misen for incredible panoramic views. Take in the island's rich history, enjoy the scenic walking trails, and savor local specialties like Hiroshima-style oysters and momiji manju. As the sun sets, we'll return to Hiroshima for one final evening together, reminiscing about the incredible journey we've shared. ⛩️🏯🌅",
     activities: ["Miyajima Island"],
@@ -110,7 +110,7 @@ const itineraryData = [
   },
   {
     day: 12,
-    date: "April 16",
+    date: "October 3",
     title: "Hiroshima Departure Day",
     description: "Our unforgettable journey comes to an end as we say our goodbyes in Hiroshima. Some travelers will catch their flights home, while others continue their adventure, exploring more of Japan at their own pace. Whether you're heading to the airport or setting off on a new chapter, we part ways with amazing memories, new friendships, and incredible stories to tell. Until next time — mata ne! ✈️🇯🇵✨",
     activities: ["N/A"],

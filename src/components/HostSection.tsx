@@ -40,7 +40,7 @@ const HostSection = () => {
           <div className="order-1 md:order-2">
             <div className="relative">
               <img 
-                src="/public/lovable-uploads/fa85cd0b-3ce0-40e6-8ea7-083feb93b71d.png" 
+                src="/public/lovable-uploads/cc5bce8a-a9fb-4555-8c4a-54457388a15a.png" 
                 alt="Laura - Your Host" 
                 className="rounded-lg shadow-lg z-10 relative"
               />

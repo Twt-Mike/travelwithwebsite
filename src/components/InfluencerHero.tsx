@@ -9,7 +9,7 @@ const InfluencerHero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("/public/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png")',
+          backgroundImage: 'url("/public/lovable-uploads/d624ef20-8b0f-4408-af5c-947bc0d049e9.png")',
         }}
       >
         <div className="absolute inset-0 bg-japan-indigo/60 mix-blend-multiply" />
@@ -35,12 +35,17 @@ const InfluencerHero = () => {
             <Button size="lg" className="bg-japan-pink hover:bg-japan-pink/90 text-white px-8 py-6 text-lg">
               Book Your Spot Now
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              onClick={() => document.getElementById('itinerary')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               View Detailed Itinerary
             </Button>
           </div>
           <div className="text-white/80 text-sm mt-6">
-            <p>Only 16 spots available • Limited spaces remain</p>
+            <p>Only 16 spots available</p>
           </div>
         </div>
       </div>
