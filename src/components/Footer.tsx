@@ -9,13 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-2xl font-serif mb-4">
-              TravelWith <span className="text-japan-pink">OurTravelTreats</span>
+              TravelWith
             </h3>
-            <p className="text-gray-300 mb-4">
-              Curating unforgettable travel experiences throughout Japan. Discover 
-              authentic culinary adventures, cultural immersion, and hidden gems with our 
-              expert local guides.
-            </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-white hover:text-japan-pink transition-colors" aria-label="Instagram">
                 <Instagram size={20} />

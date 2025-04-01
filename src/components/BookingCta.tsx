@@ -1,6 +1,6 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 interface BookingCtaProps {
   onBookNow?: () => void;
@@ -85,25 +85,53 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
         </div>
       </div>
 
-      <div className="mt-16 bg-gray-50 py-8 rounded-lg max-w-3xl mx-auto">
-        <div className="text-center mb-6">
-          <h3 className="text-xl font-medium text-japan-indigo mb-2">Who is TravelWith?</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            TravelWith is a boutique travel company specializing in immersive, authentic experiences 
-            in partnership with content creators and experts who share our passion for meaningful travel.
-          </p>
-        </div>
-        <div className="text-center">
-          <a 
-            href="/about" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-japan-indigo font-medium hover:text-japan-pink transition-colors"
-          >
-            Learn more about us
-            <ArrowRight className="ml-1 h-4 w-4" />
-          </a>
-        </div>
+      <div className="mt-16 max-w-3xl mx-auto">
+        <Accordion type="single" collapsible className="w-full bg-gray-50 rounded-lg p-6">
+          <AccordionItem value="about-travelwith" className="border-b-0">
+            <AccordionTrigger className="text-xl font-medium text-japan-indigo hover:no-underline">
+              Who is TravelWith?
+            </AccordionTrigger>
+            <AccordionContent className="text-gray-700">
+              <div className="space-y-4">
+                <p>
+                  This tour is a collaboration between Laura, (@Our.TravelTreats) and TravelWith—designed from the ground up to create the best possible experience for you. Laura is your passionate host who has travelled Japan and worked with us to create the best tour of this beautiful country that is suitable just for Laura's audience, you!
+                </p>
+                
+                <p>
+                  Travel With handles the operations, logistics, and bookings, ensuring everything runs seamlessly behind the scenes—so you can focus on enjoying the journey.
+                </p>
+                
+                <div className="my-6">
+                  <img 
+                    src="/public/lovable-uploads/265631dc-3141-4965-85d7-451c6cb1df5f.png" 
+                    alt="Travelers walking through Fushimi Inari Shrine torii gates in Japan" 
+                    className="w-full h-auto rounded-lg max-w-lg mx-auto my-4"
+                  />
+                </div>
+                
+                <p>
+                  While Laura & your expert guide provided on the trip shape the vision of the journey, Travel With is built on over 10 years of travel industry expertise, with experience guiding 1,000+ guests across 60+ tours and has implemented this expertise in the tour. Every detail of this trip has been carefully crafted using that knowledge to ensure a unique and seamless adventure.
+                </p>
+                
+                <p>
+                  Unlike other tour operators who adapt existing itineraries or make minor adjustments for hosts, Travel With specializes in building completely custom tours alongside each host. That means no off-the-shelf experiences, no compromises—just a trip tailored to what makes this community special.
+                </p>
+                
+                <div className="mt-4">
+                  <a 
+                    href="/about" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-japan-indigo font-medium hover:text-japan-pink transition-colors"
+                  >
+                    Read more about TravelWith by clicking here
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </section>
   );
