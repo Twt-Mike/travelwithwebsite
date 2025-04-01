@@ -7,6 +7,7 @@ import TourItinerary from '@/components/TourItinerary';
 import TourFAQ from '@/components/TourFAQ';
 import BookingCta from '@/components/BookingCta';
 import BookingForm from '@/components/BookingForm';
+import PhotoGallery from '@/components/PhotoGallery';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -21,6 +22,7 @@ const InfluencerTour = () => {
       <div id="itinerary">
         <TourItinerary />
       </div>
+      <PhotoGallery />
       <TourFAQ />
       
       {showBookingForm ? (

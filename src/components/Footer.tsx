@@ -19,17 +19,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-medium mb-4">About TravelWith</h4>
-            <a 
-              href="/about" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-japan-pink transition-colors flex items-center"
-            >
-              Learn more about us
-            </a>
-            
-            <h4 className="text-lg font-medium mb-4 mt-8">Contact</h4>
+            <h4 className="text-lg font-medium mb-4">Contact</h4>
             <div className="flex items-center gap-2">
               <Mail size={20} className="flex-shrink-0" />
               <span className="text-gray-300">info@travelwith.tours</span>

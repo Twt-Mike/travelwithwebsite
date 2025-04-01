@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -103,7 +104,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 
                 <div className="my-6">
                   <img 
-                    src="/public/lovable-uploads/265631dc-3141-4965-85d7-451c6cb1df5f.png" 
+                    src="/public/lovable-uploads/631cae86-0380-474a-8d28-e5c3279b1f75.png" 
                     alt="Travelers walking through Fushimi Inari Shrine torii gates in Japan" 
                     className="w-full h-auto rounded-lg max-w-lg mx-auto my-4"
                   />
