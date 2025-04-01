@@ -43,7 +43,7 @@ const InfluencerHero = () => {
             </Button>
           </div>
           <div className="text-white/80 text-sm mt-6">
-            <p>Only 16 maximum spots!</p>
+            <p>Only 16 total spots!</p>
           </div>
         </div>
       </div>

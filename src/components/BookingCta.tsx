@@ -59,8 +59,9 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               
               <div className="mb-6">
                 <div className="text-3xl font-medium">€2,750</div>
-                <div className="text-white/80 text-sm">per person (double occupancy)</div>
+                <div className="text-white/80 text-sm">per person (twin share)</div>
                 <div className="text-white/90 text-sm mt-1">Bank transfer: €2,700</div>
+                <div className="text-white/90 text-sm mt-1">You save as there are no credit card fees!</div>
               </div>
               
               <div className="mb-6 text-sm text-white/90">
@@ -80,23 +81,6 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 <p>Instant confirmation • Secure checkout</p>
               </div>
             </div>
-          </div>
-          
-          <div className="text-center">
-            <p className="text-gray-700 mb-6">
-              Prefer to chat before booking? Contact us directly or schedule a call with the TravelWith team to 
-              discuss any questions about this tour.
-            </p>
-            <a 
-              href="/contact" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white">
-                <span>Contact TravelWith</span>
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </a>
           </div>
         </div>
       </div>
