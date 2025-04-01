@@ -1,6 +1,7 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -18,20 +19,24 @@ const HeroSection = () => {
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-2xl text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
-            Discover the Magic of <span className="text-japan-pink">Japan</span>
+            Travel With Your Community
           </h1>
           <p className="text-lg md:text-xl opacity-90">
-            Immerse yourself in Japan's rich culture, breathtaking landscapes, and culinary delights 
-            with our expertly curated travel experiences
+            Join creator-led tours designed specifically for passionate communities. 
+            Authentic experiences, like-minded travelers, unforgettable memories.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button size="lg" className="btn-primary px-8 py-6 text-lg">
-              Explore Tours
-            </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
-              <span>Learn More</span>
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/ourtraveltreats-japan">
+              <Button size="lg" className="btn-primary px-8 py-6 text-lg">
+                Explore Our Japan Tour
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+                <span>Learn More</span>
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -40,13 +40,22 @@ const Navbar = () => {
             {isInfluencerPage ? (
               <>TravelWith <span className="text-japan-pink">OurTravelTreats</span></>
             ) : (
-              <>Japan Travel <span className="text-japan-pink">Treats</span></>
+              <>TravelWith</>
             )}
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4">
+          <Link to="/" className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/' ? 'font-medium' : ''}`}>
+            Home
+          </Link>
+          <Link to="/about" className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/about' ? 'font-medium' : ''}`}>
+            About
+          </Link>
+          <Link to="/ourtraveltreats-japan" className={`text-japan-indigo hover:text-japan-pink transition-colors ${isInfluencerPage ? 'font-medium' : ''}`}>
+            Japan Tour
+          </Link>
           {isInfluencerPage && (
             <Button 
               className="bg-japan-pink hover:bg-japan-pink/90 text-white"
@@ -70,6 +79,27 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">
+            <Link 
+              to="/" 
+              className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/' ? 'font-medium' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/about' ? 'font-medium' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              to="/ourtraveltreats-japan" 
+              className={`text-japan-indigo hover:text-japan-pink transition-colors ${isInfluencerPage ? 'font-medium' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Japan Tour
+            </Link>
             {isInfluencerPage && (
               <Button 
                 className="bg-japan-pink hover:bg-japan-pink/90 text-white mt-2" 

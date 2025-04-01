@@ -11,7 +11,12 @@ const Footer = () => {
             <h3 className="text-2xl font-serif mb-4">
               TravelWith
             </h3>
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
+              <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">Home</Link>
+              <Link to="/about" className="text-gray-300 hover:text-japan-pink transition-colors">About</Link>
+              <Link to="/ourtraveltreats-japan" className="text-gray-300 hover:text-japan-pink transition-colors">Japan Tour</Link>
+            </div>
+            <div className="flex gap-4 mt-4">
               <a href="https://instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-white hover:text-japan-pink transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
