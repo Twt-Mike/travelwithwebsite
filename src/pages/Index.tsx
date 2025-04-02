@@ -1,27 +1,25 @@
 
 import Layout from '@/components/Layout';
 import HeroSection from '@/components/HeroSection';
-import FeaturedTours from '@/components/FeaturedTours';
-import Testimonials from '@/components/Testimonials';
 import ExperienceSection from '@/components/ExperienceSection';
 import DestinationsSection from '@/components/DestinationsSection';
 import CtaSection from '@/components/CtaSection';
-import NewsletterSection from '@/components/NewsletterSection';
 import WhyTravelWith from '@/components/WhyTravelWith';
 import PhotoGallery from '@/components/PhotoGallery';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
   return (
     <Layout>
       <HeroSection />
-      <WhyTravelWith />
       <ExperienceSection />
-      <FeaturedTours />
+      <WhyTravelWith />
       <DestinationsSection />
       <PhotoGallery />
-      <Testimonials />
+      <TestimonialsSection />
       <CtaSection />
-      <NewsletterSection />
+      <ContactSection />
     </Layout>
   );
 };

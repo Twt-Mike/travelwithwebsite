@@ -100,11 +100,12 @@ const PhotoGallery = () => {
           <div className="flex items-center justify-center gap-2 mb-4">
             <Images size={24} className="text-japan-indigo" />
             <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo">
-              Tour Memories
+              Create Memories Like These
             </h2>
           </div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            See the highlights from our previous Japan trips. Join us to create your own unforgettable memories!
+            Explore moments from previous influencer-hosted trips. Your journey will be uniquely yours, but equally memorable.
+            <br /><span className="text-sm italic">(Note: Photos provided by guests who granted permission or owned by us.)</span>
           </p>
         </div>
         

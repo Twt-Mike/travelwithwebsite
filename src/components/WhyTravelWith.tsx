@@ -6,35 +6,32 @@ const WhyTravelWith = () => {
     <section className="py-20 bg-white">
       <div className="japan-container">
         <div className="text-center mb-12">
-          <h2 className="section-title">Why Travel With Us?</h2>
+          <h2 className="section-title">Why Partner with Travel With?</h2>
           <p className="section-subtitle mx-auto">
-            We create authentic travel experiences that connect creators and their communities
+            We specialize in tailor-made group trips built around you and your audience's unique interests
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <div className="bg-japan-cream p-6 rounded-lg">
-              <h3 className="text-xl font-serif font-medium text-japan-indigo mb-3">Custom-Built Just For You</h3>
+              <h3 className="text-xl font-serif font-medium text-japan-indigo mb-3">Fully Custom-Built</h3>
               <p className="text-gray-700">
-                We work directly with creators to build custom tours specifically designed for their communities. 
-                No off-the-shelf itineraries—just authentic experiences crafted around what makes each community special.
+                We collaborate directly with hosts and influencers to design original itineraries, no generic tours.
               </p>
             </div>
 
             <div className="bg-japan-cream p-6 rounded-lg">
-              <h3 className="text-xl font-serif font-medium text-japan-indigo mb-3">Travel With Your Community</h3>
+              <h3 className="text-xl font-serif font-medium text-japan-indigo mb-3">Exclusive & Limited</h3>
               <p className="text-gray-700">
-                Connect with like-minded travelers who share your interests and passions. Our tours bring together 
-                communities for unforgettable shared experiences guided by creators you know and trust.
+                Trips designed exclusively for your community, not available anywhere else.
               </p>
             </div>
 
             <div className="bg-japan-cream p-6 rounded-lg">
-              <h3 className="text-xl font-serif font-medium text-japan-indigo mb-3">Expert Operations</h3>
+              <h3 className="text-xl font-serif font-medium text-japan-indigo mb-3">Personalized Experiences</h3>
               <p className="text-gray-700">
-                With over a decade of experience in the travel industry and 1,000+ happy travelers, 
-                we handle all the complex logistics so you can focus on enjoying the journey.
+                Immerse your community in meaningful cultural connections that truly resonate.
               </p>
             </div>
           </div>
@@ -45,31 +42,31 @@ const WhyTravelWith = () => {
               <li className="flex items-start gap-3">
                 <Check className="text-japan-green h-6 w-6 flex-shrink-0 mt-1" />
                 <span className="text-gray-700">
-                  <strong className="text-japan-indigo">Personal Host:</strong> Travel with creators who bring their unique perspective and passion
+                  <strong className="text-japan-indigo">Designed With You:</strong> Every itinerary is crafted hand-in-hand with influencers and hosts
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="text-japan-green h-6 w-6 flex-shrink-0 mt-1" />
                 <span className="text-gray-700">
-                  <strong className="text-japan-indigo">Authentic Experiences:</strong> Access places and experiences that go beyond typical tourist attractions
+                  <strong className="text-japan-indigo">Exclusive Access:</strong> Enjoy authentic experiences far beyond typical tourism
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="text-japan-green h-6 w-6 flex-shrink-0 mt-1" />
                 <span className="text-gray-700">
-                  <strong className="text-japan-indigo">Small Groups:</strong> Travel in intimate groups of 10-16 people for a more personal experience
+                  <strong className="text-japan-indigo">Small & Personalized:</strong> Tailored for intimate groups, creating deeper connections
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="text-japan-green h-6 w-6 flex-shrink-0 mt-1" />
                 <span className="text-gray-700">
-                  <strong className="text-japan-indigo">Curated Connections:</strong> Meet locals, artisans, and experts who share their stories and craft
+                  <strong className="text-japan-indigo">Expertly Managed:</strong> We handle all logistics—allowing hosts to focus on their audience
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="text-japan-green h-6 w-6 flex-shrink-0 mt-1" />
                 <span className="text-gray-700">
-                  <strong className="text-japan-indigo">Stress-Free Planning:</strong> We handle all the details so you can focus on the experience
+                  <strong className="text-japan-indigo">Audience Engagement:</strong> Strengthen your community bonds through shared travel experiences
                 </span>
               </li>
             </ul>

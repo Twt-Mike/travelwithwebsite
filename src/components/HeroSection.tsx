@@ -19,16 +19,15 @@ const HeroSection = () => {
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-2xl text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
-            Travel With Your Community
+            Travel With Your Audience
           </h1>
           <p className="text-lg md:text-xl opacity-90">
-            Join creator-led tours designed specifically for passionate communities. 
-            Authentic experiences, like-minded travelers, unforgettable memories.
+            Create unforgettable, custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Link to="/ourtraveltreats-japan">
+            <Link to="/contact">
               <Button size="lg" className="btn-primary px-8 py-6 text-lg">
-                Explore Our Japan Tour
+                Plan Your Trip
               </Button>
             </Link>
             <Link to="/about">
