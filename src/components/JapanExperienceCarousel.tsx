@@ -1,6 +1,8 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Slider } from '@/components/ui/slider';
+import { useState } from 'react';
 
 const tourImages = [
   {
@@ -46,59 +48,106 @@ const tourImages = [
 ];
 
 const JapanExperienceCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleSliderChange = (value: number[]) => {
+    setCurrentSlide(value[0]);
+  };
+
   return (
-    <div className="py-10">
-      <h3 className="text-center text-xl mb-6 text-gray-700 font-medium">Experience Japan with your community</h3>
+    <div className="py-6">
+      <h3 className="text-center text-xl mb-4 text-gray-700 font-medium">Experience Japan with your community</h3>
       
       <div className="hidden md:block">
-        <Carousel className="w-full max-w-6xl mx-auto">
-          <CarouselContent>
-            {tourImages.map((image, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <AspectRatio ratio={4/3} className="bg-gray-100 overflow-hidden rounded-lg">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                    />
-                  </AspectRatio>
-                  <p className="text-sm text-center mt-2 text-gray-600">{image.caption}</p>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex items-center justify-end gap-2 mt-4">
-            <CarouselPrevious className="relative inset-auto translate-y-0 static" />
-            <CarouselNext className="relative inset-auto translate-y-0 static" />
+        <div className="w-full max-w-4xl mx-auto">
+          <Carousel 
+            opts={{ 
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full"
+            value={{ selectedIndex: currentSlide }}
+            onValueChange={value => setCurrentSlide(value.selectedIndex || 0)}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {tourImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/4">
+                  <div className="overflow-hidden rounded-md">
+                    <AspectRatio ratio={1/1} className="bg-gray-100 overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                      />
+                    </AspectRatio>
+                    <p className="text-xs text-center mt-1 text-gray-600">{image.caption}</p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex items-center justify-end gap-2 mt-2">
+              <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
+              <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
+            </div>
+          </Carousel>
+          
+          <div className="w-full mt-4 px-4">
+            <Slider
+              value={[currentSlide]}
+              max={tourImages.length - 1}
+              step={1}
+              onValueChange={handleSliderChange}
+              className="w-full"
+            />
           </div>
-        </Carousel>
+        </div>
       </div>
       
-      {/* Mobile carousel - shows one image at a time */}
+      {/* Mobile carousel - compact version */}
       <div className="md:hidden">
-        <Carousel className="w-full max-w-xs mx-auto">
-          <CarouselContent>
-            {tourImages.map((image, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <AspectRatio ratio={4/3} className="bg-gray-100 overflow-hidden rounded-lg">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
-                  <p className="text-sm text-center mt-2 text-gray-600">{image.caption}</p>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <CarouselPrevious className="relative inset-auto translate-y-0 static" />
-            <CarouselNext className="relative inset-auto translate-y-0 static" />
+        <div className="w-full max-w-xs mx-auto">
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full"
+            value={{ selectedIndex: currentSlide }}
+            onValueChange={value => setCurrentSlide(value.selectedIndex || 0)}
+          >
+            <CarouselContent>
+              {tourImages.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="overflow-hidden rounded-md">
+                    <AspectRatio ratio={1/1} className="bg-gray-100 overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                    <p className="text-xs text-center mt-1 text-gray-600">{image.caption}</p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          
+          <div className="w-full mt-4 px-2">
+            <Slider
+              value={[currentSlide]}
+              max={tourImages.length - 1}
+              step={1}
+              onValueChange={handleSliderChange}
+              className="w-full"
+            />
           </div>
-        </Carousel>
+          
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
+            <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
+          </div>
+        </div>
       </div>
     </div>
   );
