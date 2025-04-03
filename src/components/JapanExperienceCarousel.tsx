@@ -70,13 +70,13 @@ const JapanExperienceCarousel = () => {
                 key={index} 
                 className={cn(
                   "cursor-pointer transition-all duration-300",
-                  isMobile ? "basis-3/4" : "basis-1/4", // Slightly larger images
-                  currentSlide === index ? "scale-125 z-10" : "opacity-70 hover:opacity-90"
+                  isMobile ? "basis-full md:basis-2/3" : "basis-1/2 md:basis-1/3", // Make images much bigger
+                  currentSlide === index ? "scale-110 z-10" : "opacity-80 hover:opacity-100"
                 )}
                 onClick={() => openImageDialog(index)}
               >
-                <div className="overflow-hidden rounded-md">
-                  <AspectRatio ratio={4/3} className="bg-gray-100 overflow-hidden">
+                <div className="overflow-hidden rounded-lg shadow-md">
+                  <AspectRatio ratio={16/9} className="bg-gray-100 overflow-hidden">
                     <img
                       src={image.src}
                       alt={image.alt}
