@@ -6,12 +6,18 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, InstagramIcon } from 'lucide-react';
 
+// Debug logging
+console.log("Loading CtaSection component");
+
 const CtaSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [socialHandle, setSocialHandle] = useState('');
   const [message, setMessage] = useState('');
   const { toast } = useToast();
+
+  // Log when the component renders
+  console.log("CtaSection rendered with background image URL: '/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png'");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

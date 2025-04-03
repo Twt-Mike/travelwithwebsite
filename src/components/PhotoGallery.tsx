@@ -1,8 +1,12 @@
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Image, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+// Debug logging
+console.log("Loading PhotoGallery component");
 
 const tourPhotos = [
   {
@@ -62,9 +66,19 @@ const tourPhotos = [
   }
 ];
 
+// Debug function to check if images are loading
+const debugImageLoad = (src: string, success: boolean) => {
+  console.log(`Image ${src} ${success ? 'loaded successfully' : 'failed to load'}`);
+};
+
 const PhotoGallery = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Log image paths on component mount
+  useEffect(() => {
+    console.log("Photo gallery images:", tourPhotos.map(photo => photo.src));
+  }, []);
   
   const handleThumbnailClick = (index: number) => {
     setActiveIndex(index);
@@ -119,6 +133,8 @@ const PhotoGallery = () => {
                   src={photo.src} 
                   alt={photo.alt} 
                   className="object-cover w-full h-full"
+                  onLoad={() => debugImageLoad(photo.src, true)}
+                  onError={() => debugImageLoad(photo.src, false)}
                 />
               </AspectRatio>
             </div>
@@ -149,6 +165,8 @@ const PhotoGallery = () => {
               src={tourPhotos[activeIndex].src} 
               alt={tourPhotos[activeIndex].alt} 
               className="object-contain w-full h-auto max-h-[80vh] mx-auto"
+              onLoad={() => debugImageLoad(tourPhotos[activeIndex].src, true)}
+              onError={() => debugImageLoad(tourPhotos[activeIndex].src, false)}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center">
               {tourPhotos[activeIndex].caption}
@@ -192,6 +210,8 @@ const PhotoGallery = () => {
                       src={photo.src} 
                       alt={photo.alt} 
                       className="object-cover w-full h-full"
+                      onLoad={() => debugImageLoad(photo.src, true)}
+                      onError={() => debugImageLoad(photo.src, false)}
                     />
                   </AspectRatio>
                   <p className="text-center text-sm mt-2 text-gray-700">

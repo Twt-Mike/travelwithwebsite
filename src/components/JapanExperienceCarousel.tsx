@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -5,6 +6,9 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+
+// Debug logging to help identify image loading issues
+console.log("Loading JapanExperienceCarousel component");
 
 const tourImages = [
   {
@@ -49,12 +53,22 @@ const tourImages = [
   }
 ];
 
+// Debug function to check if images are loading
+const debugImageLoad = (src: string, success: boolean) => {
+  console.log(`Image ${src} ${success ? 'loaded successfully' : 'failed to load'}`);
+};
+
 const JapanExperienceCarousel = () => {
   const [api, setApi] = useState<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
+  
+  // Log the images being used
+  useEffect(() => {
+    console.log("Tour images in carousel:", tourImages.map(img => img.src));
+  }, []);
   
   const startAutoplay = useCallback(() => {
     if (autoplayRef.current) clearInterval(autoplayRef.current);
@@ -150,6 +164,8 @@ const JapanExperienceCarousel = () => {
                       src={image.src}
                       alt={image.alt}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                      onLoad={() => debugImageLoad(image.src, true)}
+                      onError={() => debugImageLoad(image.src, false)}
                     />
                   </AspectRatio>
                   {currentSlide === index && (
@@ -178,6 +194,8 @@ const JapanExperienceCarousel = () => {
                 src={tourImages[selectedImage].src} 
                 alt={tourImages[selectedImage].alt} 
                 className="w-full h-auto rounded-md object-contain"
+                onLoad={() => debugImageLoad(tourImages[selectedImage].src, true)}
+                onError={() => debugImageLoad(tourImages[selectedImage].src, false)}
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center rounded-b-md">
                 {tourImages[selectedImage].caption}
