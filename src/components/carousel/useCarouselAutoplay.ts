@@ -12,7 +12,7 @@ export function useCarouselAutoplay(api: any) {
       if (api) {
         api.scrollNext();
       }
-    }, 5000); // Increased from 3500 to 5000ms for better viewing of larger images
+    }, 6000); // Increased from 5000 to 6000ms for better viewing of taller images
   }, [api]);
   
   useEffect(() => {
