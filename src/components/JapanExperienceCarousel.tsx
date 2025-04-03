@@ -1,8 +1,9 @@
 
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Slider } from '@/components/ui/slider';
-import { useState, useEffect } from 'react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
 
 const tourImages = [
   {
@@ -48,113 +49,128 @@ const tourImages = [
 ];
 
 const JapanExperienceCarousel = () => {
+  const [api, setApi] = useState<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   
-  const handleSliderChange = (value: number[]) => {
-    setCurrentSlide(value[0]);
+  // Auto-scroll functionality
+  const startAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    
+    autoplayRef.current = setInterval(() => {
+      if (api) {
+        api.scrollNext();
+      }
+    }, 3000); // Change image every 3 seconds
+  }, [api]);
+  
+  // Set up autoplay when component mounts or api changes
+  useEffect(() => {
+    if (!api) return;
+    
+    startAutoplay();
+    
+    // Track the current slide
+    const onSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    };
+    
+    api.on('select', onSelect);
+    
+    // Cleanup
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+      api.off('select', onSelect);
+    };
+  }, [api, startAutoplay]);
+  
+  // Pause autoplay when user interacts with carousel
+  const handleMouseEnter = () => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+  };
+  
+  // Resume autoplay when user leaves carousel
+  const handleMouseLeave = () => {
+    startAutoplay();
+  };
+  
+  // Open image dialog when clicked
+  const openImageDialog = (index: number) => {
+    setSelectedImage(index);
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+  };
+  
+  // Close dialog and resume autoplay
+  const closeImageDialog = () => {
+    setSelectedImage(null);
+    startAutoplay();
   };
 
   return (
-    <div className="py-6">
-      <h3 className="text-center text-xl mb-4 text-gray-700 font-medium">Experience Japan with your community</h3>
+    <div className="py-4">
+      <h3 className="text-center text-xl mb-3 text-gray-700 font-medium">Experience Japan with your community</h3>
       
-      {/* Desktop carousel */}
-      <div className="hidden md:block">
-        <div className="w-full max-w-4xl mx-auto">
-          <Carousel 
-            opts={{ 
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-            setApi={(api) => {
-              if (api) {
-                api.scrollTo(currentSlide);
-              }
-            }}
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {tourImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/4">
-                  <div className="overflow-hidden rounded-md">
-                    <AspectRatio ratio={1/1} className="bg-gray-100 overflow-hidden">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                      />
-                    </AspectRatio>
-                    <p className="text-xs text-center mt-1 text-gray-600">{image.caption}</p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex items-center justify-end gap-2 mt-2">
-              <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
-              <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
-            </div>
-          </Carousel>
-          
-          <div className="w-full mt-4 px-4">
-            <Slider
-              value={[currentSlide]}
-              max={tourImages.length - 1}
-              step={1}
-              onValueChange={handleSliderChange}
-              className="w-full"
-            />
+      <div className="w-full max-w-3xl mx-auto" 
+           onMouseEnter={handleMouseEnter} 
+           onMouseLeave={handleMouseLeave}>
+        <Carousel 
+          opts={{ 
+            align: "center",
+            loop: true,
+          }}
+          setApi={setApi}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {tourImages.map((image, index) => (
+              <CarouselItem 
+                key={index} 
+                className={cn(
+                  "pl-2 md:pl-4 cursor-pointer transition-all duration-300 md:basis-1/3 lg:basis-1/4",
+                  currentSlide === index ? "md:scale-110" : "md:opacity-70"
+                )}
+                onClick={() => openImageDialog(index)}
+              >
+                <div className="overflow-hidden rounded-md">
+                  <AspectRatio ratio={1/1} className="bg-gray-100 overflow-hidden">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                    />
+                  </AspectRatio>
+                  <p className="text-xs text-center mt-1 text-gray-600">{currentSlide === index ? image.caption : ""}</p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
+            <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
           </div>
-        </div>
+        </Carousel>
       </div>
       
-      {/* Mobile carousel - compact version */}
-      <div className="md:hidden">
-        <div className="w-full max-w-xs mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-            setApi={(api) => {
-              if (api) {
-                api.scrollTo(currentSlide);
-              }
-            }}
-          >
-            <CarouselContent>
-              {tourImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="overflow-hidden rounded-md">
-                    <AspectRatio ratio={1/1} className="bg-gray-100 overflow-hidden">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="object-cover w-full h-full"
-                      />
-                    </AspectRatio>
-                    <p className="text-xs text-center mt-1 text-gray-600">{image.caption}</p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex items-center justify-center gap-2 mt-2">
-              <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
-              <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
+      {/* Image Dialog for expanded view */}
+      <Dialog open={selectedImage !== null} onOpenChange={(open) => {
+        if (!open) closeImageDialog();
+      }}>
+        <DialogContent className="sm:max-w-2xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
+          {selectedImage !== null && (
+            <div className="relative">
+              <img 
+                src={tourImages[selectedImage].src} 
+                alt={tourImages[selectedImage].alt} 
+                className="w-full h-auto rounded-md object-contain"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center rounded-b-md">
+                {tourImages[selectedImage].caption}
+              </div>
             </div>
-          </Carousel>
-          
-          <div className="w-full mt-4 px-2">
-            <Slider
-              value={[currentSlide]}
-              max={tourImages.length - 1}
-              step={1}
-              onValueChange={handleSliderChange}
-              className="w-full"
-            />
-          </div>
-        </div>
-      </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
