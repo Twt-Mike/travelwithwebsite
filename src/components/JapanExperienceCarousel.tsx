@@ -15,7 +15,7 @@ const JapanExperienceCarousel = () => {
   const [loadErrors, setLoadErrors] = useState<Record<number, boolean>>({});
   const isMobile = useIsMobile();
   
-  const { imageSources } = useCarouselImages();
+  const { imageSources, isLoading } = useCarouselImages();
   const { currentSlide, handleMouseEnter, handleMouseLeave, startAutoplay } = useCarouselAutoplay(api);
   
   const openImageDialog = (index: number) => {
@@ -48,6 +48,17 @@ const JapanExperienceCarousel = () => {
   const handleImageError = (index: number) => {
     setLoadErrors(prev => ({...prev, [index]: true}));
   };
+
+  if (isLoading) {
+    return (
+      <div className="py-8 text-center">
+        <h3 className="text-center text-2xl mb-6 text-gray-700 font-medium">Loading images...</h3>
+        <div className="w-full flex justify-center">
+          <div className="animate-pulse bg-gray-200 h-64 w-64 rounded-lg"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-8">

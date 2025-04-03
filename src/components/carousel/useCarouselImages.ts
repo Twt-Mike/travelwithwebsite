@@ -2,14 +2,53 @@
 import { useState, useEffect } from 'react';
 import { defaultTourImages, ImageReplacement } from './carouselData';
 import { logImageStatus } from '@/utils/imageDebug';
+import { getCarouselImages, getPublicImageUrl, getAltTextForImage } from '@/utils/supabaseStorage';
 
 export function useCarouselImages() {
   const [imageSources, setImageSources] = useState(defaultTourImages);
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
+  const [isLoadingSupabaseImages, setIsLoadingSupabaseImages] = useState(true);
+  
+  // Fetch images from Supabase
+  useEffect(() => {
+    const fetchSupabaseImages = async () => {
+      try {
+        setIsLoadingSupabaseImages(true);
+        const files = await getCarouselImages();
+        
+        if (files && files.length > 0) {
+          const supabaseImages = files.map(file => ({
+            src: getPublicImageUrl(file.name),
+            alt: getAltTextForImage(file.name)
+          }));
+          
+          setImageSources(prevImages => {
+            // Merge with default images if we don't have enough from Supabase
+            if (supabaseImages.length < 8) {
+              return [...supabaseImages, ...prevImages.slice(supabaseImages.length)];
+            }
+            return supabaseImages;
+          });
+          
+          console.log('Successfully loaded Supabase images:', supabaseImages.length);
+        } else {
+          console.log('No images found in Supabase or error occurred, using default images');
+        }
+      } catch (error) {
+        console.error('Error fetching Supabase images:', error);
+      } finally {
+        setIsLoadingSupabaseImages(false);
+      }
+    };
+    
+    fetchSupabaseImages();
+  }, []);
   
   // Pre-check all images to make sure they load
   useEffect(() => {
-    defaultTourImages.forEach((image, index) => {
+    if (isLoadingSupabaseImages) return;
+    
+    imageSources.forEach((image, index) => {
       const img = new Image();
       img.onload = () => {
         logImageStatus(image.src, true);
@@ -21,7 +60,7 @@ export function useCarouselImages() {
       };
       img.src = image.src;
     });
-  }, []);
+  }, [imageSources, isLoadingSupabaseImages]);
 
   // Function to replace a single image
   const replaceImage = (index: number, newSrc: string) => {
@@ -83,6 +122,7 @@ export function useCarouselImages() {
     imageSources,
     imagesLoaded,
     replaceImage,
-    replaceMultipleImages
+    replaceMultipleImages,
+    isLoading: isLoadingSupabaseImages
   };
 }

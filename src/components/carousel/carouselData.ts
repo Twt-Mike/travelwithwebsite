@@ -1,11 +1,11 @@
 
-// Updated image sources with proper paths
+// Type definitions
 export type ImageReplacement = {
   index: number;
   newSrc: string;
 };
 
-// Using a mix of uploaded and reliable stock images
+// These images will be used as fallbacks if Supabase images aren't available
 export const defaultTourImages = [
   {
     src: '/lovable-uploads/96e71a37-e469-4c4c-903b-831baac03259.png',
