@@ -6,49 +6,48 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { logImageStatus, getFallbackImage } from '@/utils/imageDebug';
 
 // Debug logging to help identify image loading issues
 console.log("Loading JapanExperienceCarousel component");
 
 const tourImages = [
   {
-    src: '/lovable-uploads/50a813be-bf94-4c5d-bae3-e06056c3ef84.png',
+    src: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186',
     alt: 'Group of friends at an Irish pub in Japan',
     caption: 'Enjoying local nightlife with friends'
   },
   {
-    src: '/lovable-uploads/b7c8e478-d29b-45ac-90ae-fdb4ffda39e6.png',
+    src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e',
     alt: 'Red torii gates at Fushimi Inari shrine',
     caption: 'Exploring the famous torii gates at Fushimi Inari'
   },
   {
-    src: '/lovable-uploads/9ce8fa14-5c49-403e-9193-da5328bfa12a.png',
+    src: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3',
     alt: 'Group in kimonos in Kyoto',
     caption: 'Experiencing traditional kimono wearing in historic Kyoto'
   },
   {
-    src: '/lovable-uploads/8bc66f8b-37f2-42ae-bf40-387256a40acc.png',
+    src: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d',
     alt: 'Men in traditional Japanese robes',
     caption: 'Immersing in Japanese culture with traditional yukata'
   },
   {
-    src: '/lovable-uploads/b98facf5-77cc-400f-9f97-d2c6c607bea3.png',
+    src: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65',
     alt: 'Cherry blossoms and deer in Nara',
     caption: 'Nara Park: where cherry blossoms and friendly deer create magic'
   },
   {
-    src: '/lovable-uploads/c0b32cc9-3717-464f-8906-36e4c7d7e74d.png',
+    src: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9',
     alt: 'Japanese tea ceremony',
     caption: 'Participating in an authentic Japanese tea ceremony'
   },
   {
-    src: '/lovable-uploads/915b5a51-ac59-4768-8338-e46e60d70eaf.png',
+    src: 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc',
     alt: 'Group in colorful kimonos',
     caption: 'Creating memories with friends in beautiful kimono'
   },
   {
-    src: '/lovable-uploads/ed939812-a386-4d06-b195-5824fc4f6dbe.png',
+    src: 'https://images.unsplash.com/photo-1590559899731-a382839e5549',
     alt: 'Group at Arashiyama Bamboo Forest',
     caption: 'Exploring the magical Arashiyama Bamboo Forest'
   }
@@ -60,31 +59,10 @@ const JapanExperienceCarousel = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
-  const [imageSources, setImageSources] = useState(tourImages);
+  const [imageSources] = useState(tourImages);
   
-  // Pre-check all images and apply fallbacks for those that fail to load
+  // Simple check that we have the images loaded
   useEffect(() => {
-    // Check each image and use fallback if needed
-    const checkImages = async () => {
-      const updatedSources = [...tourImages];
-      
-      for (let i = 0; i < updatedSources.length; i++) {
-        const img = new Image();
-        img.onload = () => logImageStatus(updatedSources[i].src, true);
-        img.onerror = () => {
-          logImageStatus(updatedSources[i].src, false);
-          // Replace with fallback image
-          updatedSources[i] = {
-            ...updatedSources[i],
-            src: getFallbackImage(i),
-          };
-          setImageSources([...updatedSources]);
-        };
-        img.src = updatedSources[i].src;
-      }
-    };
-    
-    checkImages();
     console.log("Tour images in carousel:", tourImages.map(img => img.src));
   }, []);
   

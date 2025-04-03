@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Image, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Image as ImageIcon, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { logImageStatus, getFallbackImage } from '@/utils/imageDebug';
 
@@ -11,57 +11,57 @@ console.log("Loading PhotoGallery component");
 
 const tourPhotos = [
   {
-    src: '/lovable-uploads/631cae86-0380-474a-8d28-e5c3279b1f75.png',
+    src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e',
     alt: 'Group of travelers in kimonos posing in front of traditional Japanese building',
     caption: 'Our group enjoying a kimono experience in Kyoto'
   },
   {
-    src: '/lovable-uploads/fd61c39b-8af5-4bf8-b89f-41124ae11f4c.png',
+    src: 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc',
     alt: 'Group photo at Dotonbori in Osaka with neon signs in background',
     caption: 'Taking in the vibrant energy of Dotonbori in Osaka'
   },
   {
-    src: '/lovable-uploads/9abf267f-565f-4115-aa8a-4e13d94ae178.png',
+    src: 'https://images.unsplash.com/photo-1590559899731-a382839e5549',
     alt: 'Group photo at Arashiyama Bamboo Forest in Kyoto',
     caption: 'Exploring the magical Arashiyama Bamboo Forest'
   },
   {
-    src: '/lovable-uploads/23b752e1-79a5-4bdd-a621-524ec294f9c0.png',
+    src: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65',
     alt: 'Red pagoda temple with autumn trees',
     caption: 'Discovering Japan\'s stunning temple architecture'
   },
   {
-    src: '/lovable-uploads/a59319ad-1dd2-47b5-83c7-cde5d9d7c1fd.png',
+    src: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3',
     alt: 'Woman looking at city view from window at night',
     caption: 'Taking in Tokyo\'s dazzling nightscape'
   },
   {
-    src: '/lovable-uploads/c3a655bd-5fa5-45e7-8d10-0560af6aa958.png',
+    src: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d',
     alt: 'Woman in traditional kimono',
     caption: 'Experience wearing a traditional Japanese kimono'
   },
   {
-    src: '/lovable-uploads/4d093c78-b110-4e0c-aa42-bcff7a34daeb.png',
+    src: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186',
     alt: 'Woman sitting with view of Kinkaku-ji Golden Pavilion',
     caption: 'Admiring the iconic Kinkaku-ji Golden Pavilion in Kyoto'
   },
   {
-    src: '/lovable-uploads/287f4b7e-a1e9-4ed3-afc2-d06510cd0eca.png',
+    src: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989',
     alt: 'Temple building with traditional Japanese architecture',
     caption: 'Discovering hidden temples away from the crowds'
   },
   {
-    src: '/lovable-uploads/a68155f1-e4ca-43b2-b4a0-0fe2985b695e.png',
+    src: 'https://images.unsplash.com/photo-1504109586057-7a2ae83d1338',
     alt: 'Japanese sushi plates and dishes',
     caption: 'Indulging in authentic Japanese cuisine'
   },
   {
-    src: '/lovable-uploads/69be1cf2-7a2c-4284-947e-0e2f5f55c5ee.png',
+    src: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36',
     alt: 'Elderly Japanese woman preparing traditional street food',
     caption: 'Meeting locals and experiencing authentic street food'
   },
   {
-    src: '/lovable-uploads/c530b749-edd3-4e48-9e0d-5ad658c1d11b.png',
+    src: 'https://images.unsplash.com/photo-1528164344705-47542687000d',
     alt: 'Woman in interactive light museum exhibit',
     caption: 'Visiting the TeamLab digital art museum in Tokyo'
   }
@@ -72,30 +72,9 @@ const PhotoGallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [photos, setPhotos] = useState(tourPhotos);
 
-  // Apply fallback images for any that fail to load
+  // No need to check images, we're now using reliable Unsplash URLs
   useEffect(() => {
-    // Check each image and use fallback if needed
-    const checkImages = async () => {
-      const updatedPhotos = [...tourPhotos];
-      
-      for (let i = 0; i < updatedPhotos.length; i++) {
-        const img = new Image();
-        img.onload = () => logImageStatus(updatedPhotos[i].src, true);
-        img.onerror = () => {
-          logImageStatus(updatedPhotos[i].src, false);
-          // Replace with fallback image
-          updatedPhotos[i] = {
-            ...updatedPhotos[i],
-            src: getFallbackImage(i),
-          };
-          setPhotos([...updatedPhotos]);
-        };
-        img.src = updatedPhotos[i].src;
-      }
-    };
-    
-    checkImages();
-    console.log("Photo gallery images:", tourPhotos.map(photo => photo.src));
+    console.log("PhotoGallery component mounted with reliable Unsplash images");
   }, []);
   
   const handleThumbnailClick = (index: number) => {
@@ -158,6 +137,7 @@ const PhotoGallery = () => {
         </div>
       </div>
 
+      {/* Full screen image view */}
       {isFullScreen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
           <button 
@@ -213,6 +193,7 @@ const PhotoGallery = () => {
         </div>
       )}
 
+      {/* Mobile carousel view */}
       <div className="mt-8 md:hidden">
         <Carousel className="w-full max-w-xs mx-auto">
           <CarouselContent>
