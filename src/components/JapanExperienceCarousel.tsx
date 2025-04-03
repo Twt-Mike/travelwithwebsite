@@ -2,7 +2,7 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Slider } from '@/components/ui/slider';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const tourImages = [
   {
@@ -138,6 +138,10 @@ const JapanExperienceCarousel = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
+              <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
+            </div>
           </Carousel>
           
           <div className="w-full mt-4 px-2">
@@ -148,11 +152,6 @@ const JapanExperienceCarousel = () => {
               onValueChange={handleSliderChange}
               className="w-full"
             />
-          </div>
-          
-          <div className="flex items-center justify-center gap-2 mt-2">
-            <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
-            <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
           </div>
         </div>
       </div>
