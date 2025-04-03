@@ -6,6 +6,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { logImageStatus, getFallbackImage } from '@/utils/imageDebug';
 
 // Debug logging to help identify image loading issues
 console.log("Loading JapanExperienceCarousel component");
@@ -53,20 +54,37 @@ const tourImages = [
   }
 ];
 
-// Debug function to check if images are loading
-const debugImageLoad = (src: string, success: boolean) => {
-  console.log(`Image ${src} ${success ? 'loaded successfully' : 'failed to load'}`);
-};
-
 const JapanExperienceCarousel = () => {
   const [api, setApi] = useState<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
+  const [imageSources, setImageSources] = useState(tourImages);
   
-  // Log the images being used
+  // Pre-check all images and apply fallbacks for those that fail to load
   useEffect(() => {
+    // Check each image and use fallback if needed
+    const checkImages = async () => {
+      const updatedSources = [...tourImages];
+      
+      for (let i = 0; i < updatedSources.length; i++) {
+        const img = new Image();
+        img.onload = () => logImageStatus(updatedSources[i].src, true);
+        img.onerror = () => {
+          logImageStatus(updatedSources[i].src, false);
+          // Replace with fallback image
+          updatedSources[i] = {
+            ...updatedSources[i],
+            src: getFallbackImage(i),
+          };
+          setImageSources([...updatedSources]);
+        };
+        img.src = updatedSources[i].src;
+      }
+    };
+    
+    checkImages();
     console.log("Tour images in carousel:", tourImages.map(img => img.src));
   }, []);
   
@@ -120,11 +138,11 @@ const JapanExperienceCarousel = () => {
     
     if (direction === 'next') {
       setSelectedImage((prev) => 
-        prev === tourImages.length - 1 ? 0 : (prev as number) + 1
+        prev === imageSources.length - 1 ? 0 : (prev as number) + 1
       );
     } else {
       setSelectedImage((prev) => 
-        prev === 0 ? tourImages.length - 1 : (prev as number) - 1
+        prev === 0 ? imageSources.length - 1 : (prev as number) - 1
       );
     }
   };
@@ -148,7 +166,7 @@ const JapanExperienceCarousel = () => {
           className="w-full"
         >
           <CarouselContent className="flex items-center">
-            {tourImages.map((image, index) => (
+            {imageSources.map((image, index) => (
               <CarouselItem 
                 key={index} 
                 className={cn(
@@ -164,8 +182,6 @@ const JapanExperienceCarousel = () => {
                       src={image.src}
                       alt={image.alt}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                      onLoad={() => debugImageLoad(image.src, true)}
-                      onError={() => debugImageLoad(image.src, false)}
                     />
                   </AspectRatio>
                   {currentSlide === index && (
@@ -191,14 +207,12 @@ const JapanExperienceCarousel = () => {
           {selectedImage !== null && (
             <div className="relative">
               <img 
-                src={tourImages[selectedImage].src} 
-                alt={tourImages[selectedImage].alt} 
+                src={imageSources[selectedImage].src} 
+                alt={imageSources[selectedImage].alt} 
                 className="w-full h-auto rounded-md object-contain"
-                onLoad={() => debugImageLoad(tourImages[selectedImage].src, true)}
-                onError={() => debugImageLoad(tourImages[selectedImage].src, false)}
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center rounded-b-md">
-                {tourImages[selectedImage].caption}
+                {imageSources[selectedImage].caption}
               </div>
               
               <button 

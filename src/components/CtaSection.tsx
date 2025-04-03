@@ -1,10 +1,11 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, InstagramIcon } from 'lucide-react';
+import { getFallbackImage } from '@/utils/imageDebug';
 
 // Debug logging
 console.log("Loading CtaSection component");
@@ -14,10 +15,24 @@ const CtaSection = () => {
   const [email, setEmail] = useState('');
   const [socialHandle, setSocialHandle] = useState('');
   const [message, setMessage] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState('/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png');
   const { toast } = useToast();
 
-  // Log when the component renders
-  console.log("CtaSection rendered with background image URL: '/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png'");
+  // Check if the background image loads properly
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      console.log('CTA background image loaded successfully');
+    };
+    img.onerror = () => {
+      console.error('Failed to load CTA background image, using fallback');
+      setBackgroundImage(getFallbackImage(0));
+    };
+    img.src = backgroundImage;
+    
+    // Log when the component renders
+    console.log("CtaSection rendered with background image URL:", backgroundImage);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +54,7 @@ const CtaSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png")',
+          backgroundImage: `url("${backgroundImage}")`,
         }}
       >
         <div className="absolute inset-0 bg-japan-indigo/70 mix-blend-multiply" />

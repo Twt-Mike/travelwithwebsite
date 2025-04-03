@@ -4,6 +4,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Image, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { logImageStatus, getFallbackImage } from '@/utils/imageDebug';
 
 // Debug logging
 console.log("Loading PhotoGallery component");
@@ -66,17 +67,34 @@ const tourPhotos = [
   }
 ];
 
-// Debug function to check if images are loading
-const debugImageLoad = (src: string, success: boolean) => {
-  console.log(`Image ${src} ${success ? 'loaded successfully' : 'failed to load'}`);
-};
-
 const PhotoGallery = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [photos, setPhotos] = useState(tourPhotos);
 
-  // Log image paths on component mount
+  // Apply fallback images for any that fail to load
   useEffect(() => {
+    // Check each image and use fallback if needed
+    const checkImages = async () => {
+      const updatedPhotos = [...tourPhotos];
+      
+      for (let i = 0; i < updatedPhotos.length; i++) {
+        const img = new Image();
+        img.onload = () => logImageStatus(updatedPhotos[i].src, true);
+        img.onerror = () => {
+          logImageStatus(updatedPhotos[i].src, false);
+          // Replace with fallback image
+          updatedPhotos[i] = {
+            ...updatedPhotos[i],
+            src: getFallbackImage(i),
+          };
+          setPhotos([...updatedPhotos]);
+        };
+        img.src = updatedPhotos[i].src;
+      }
+    };
+    
+    checkImages();
     console.log("Photo gallery images:", tourPhotos.map(photo => photo.src));
   }, []);
   
@@ -86,11 +104,11 @@ const PhotoGallery = () => {
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === tourPhotos.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
   };
 
   const handlePrevious = () => {
-    setActiveIndex((prev) => (prev === 0 ? tourPhotos.length - 1 : prev - 1));
+    setActiveIndex((prev) => (prev === 0 ? photos.length - 1 : prev - 1));
   };
 
   const handleClose = () => {
@@ -122,7 +140,7 @@ const PhotoGallery = () => {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {tourPhotos.map((photo, index) => (
+          {photos.map((photo, index) => (
             <div 
               key={index} 
               className="overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
@@ -133,8 +151,6 @@ const PhotoGallery = () => {
                   src={photo.src} 
                   alt={photo.alt} 
                   className="object-cover w-full h-full"
-                  onLoad={() => debugImageLoad(photo.src, true)}
-                  onError={() => debugImageLoad(photo.src, false)}
                 />
               </AspectRatio>
             </div>
@@ -162,14 +178,12 @@ const PhotoGallery = () => {
 
           <div className="max-w-4xl w-full max-h-[80vh] relative">
             <img 
-              src={tourPhotos[activeIndex].src} 
-              alt={tourPhotos[activeIndex].alt} 
+              src={photos[activeIndex].src} 
+              alt={photos[activeIndex].alt} 
               className="object-contain w-full h-auto max-h-[80vh] mx-auto"
-              onLoad={() => debugImageLoad(tourPhotos[activeIndex].src, true)}
-              onError={() => debugImageLoad(tourPhotos[activeIndex].src, false)}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center">
-              {tourPhotos[activeIndex].caption}
+              {photos[activeIndex].caption}
             </div>
           </div>
 
@@ -183,7 +197,7 @@ const PhotoGallery = () => {
 
           <div className="absolute bottom-6 left-0 right-0 flex justify-center">
             <div className="flex gap-2">
-              {tourPhotos.map((_, index) => (
+              {photos.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
@@ -202,7 +216,7 @@ const PhotoGallery = () => {
       <div className="mt-8 md:hidden">
         <Carousel className="w-full max-w-xs mx-auto">
           <CarouselContent>
-            {tourPhotos.map((photo, index) => (
+            {photos.map((photo, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
                   <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
@@ -210,8 +224,6 @@ const PhotoGallery = () => {
                       src={photo.src} 
                       alt={photo.alt} 
                       className="object-cover w-full h-full"
-                      onLoad={() => debugImageLoad(photo.src, true)}
-                      onError={() => debugImageLoad(photo.src, false)}
                     />
                   </AspectRatio>
                   <p className="text-center text-sm mt-2 text-gray-700">
