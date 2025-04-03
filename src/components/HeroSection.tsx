@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage: 'url("/public/lovable-uploads/30d44237-df22-4b4f-8b57-c27bb57799c3.png")',
+          backgroundImage: 'url("/lovable-uploads/30d44237-df22-4b4f-8b57-c27bb57799c3.png")',
           backgroundPosition: 'center 15%', // Crop bottom 15%
         }}
       >

@@ -33,7 +33,7 @@ const CtaSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1920&auto=format&fit=crop")',
+          backgroundImage: 'url("/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png")',
         }}
       >
         <div className="absolute inset-0 bg-japan-indigo/70 mix-blend-multiply" />

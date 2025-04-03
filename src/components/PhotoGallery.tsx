@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -7,57 +6,57 @@ import { cn } from '@/lib/utils';
 
 const tourPhotos = [
   {
-    src: '/public/lovable-uploads/631cae86-0380-474a-8d28-e5c3279b1f75.png',
+    src: '/lovable-uploads/631cae86-0380-474a-8d28-e5c3279b1f75.png',
     alt: 'Group of travelers in kimonos posing in front of traditional Japanese building',
     caption: 'Our group enjoying a kimono experience in Kyoto'
   },
   {
-    src: '/public/lovable-uploads/fd61c39b-8af5-4bf8-b89f-41124ae11f4c.png',
+    src: '/lovable-uploads/fd61c39b-8af5-4bf8-b89f-41124ae11f4c.png',
     alt: 'Group photo at Dotonbori in Osaka with neon signs in background',
     caption: 'Taking in the vibrant energy of Dotonbori in Osaka'
   },
   {
-    src: '/public/lovable-uploads/9abf267f-565f-4115-aa8a-4e13d94ae178.png',
+    src: '/lovable-uploads/9abf267f-565f-4115-aa8a-4e13d94ae178.png',
     alt: 'Group photo at Arashiyama Bamboo Forest in Kyoto',
     caption: 'Exploring the magical Arashiyama Bamboo Forest'
   },
   {
-    src: '/public/lovable-uploads/23b752e1-79a5-4bdd-a621-524ec294f9c0.png',
+    src: '/lovable-uploads/23b752e1-79a5-4bdd-a621-524ec294f9c0.png',
     alt: 'Red pagoda temple with autumn trees',
     caption: 'Discovering Japan\'s stunning temple architecture'
   },
   {
-    src: '/public/lovable-uploads/a59319ad-1dd2-47b5-83c7-cde5d9d7c1fd.png',
+    src: '/lovable-uploads/a59319ad-1dd2-47b5-83c7-cde5d9d7c1fd.png',
     alt: 'Woman looking at city view from window at night',
     caption: 'Taking in Tokyo\'s dazzling nightscape'
   },
   {
-    src: '/public/lovable-uploads/c3a655bd-5fa5-45e7-8d10-0560af6aa958.png',
+    src: '/lovable-uploads/c3a655bd-5fa5-45e7-8d10-0560af6aa958.png',
     alt: 'Woman in traditional kimono',
     caption: 'Experience wearing a traditional Japanese kimono'
   },
   {
-    src: '/public/lovable-uploads/4d093c78-b110-4e0c-aa42-bcff7a34daeb.png',
+    src: '/lovable-uploads/4d093c78-b110-4e0c-aa42-bcff7a34daeb.png',
     alt: 'Woman sitting with view of Kinkaku-ji Golden Pavilion',
     caption: 'Admiring the iconic Kinkaku-ji Golden Pavilion in Kyoto'
   },
   {
-    src: '/public/lovable-uploads/287f4b7e-a1e9-4ed3-afc2-d06510cd0eca.png',
+    src: '/lovable-uploads/287f4b7e-a1e9-4ed3-afc2-d06510cd0eca.png',
     alt: 'Temple building with traditional Japanese architecture',
     caption: 'Discovering hidden temples away from the crowds'
   },
   {
-    src: '/public/lovable-uploads/a68155f1-e4ca-43b2-b4a0-0fe2985b695e.png',
+    src: '/lovable-uploads/a68155f1-e4ca-43b2-b4a0-0fe2985b695e.png',
     alt: 'Japanese sushi plates and dishes',
     caption: 'Indulging in authentic Japanese cuisine'
   },
   {
-    src: '/public/lovable-uploads/69be1cf2-7a2c-4284-947e-0e2f5f55c5ee.png',
+    src: '/lovable-uploads/69be1cf2-7a2c-4284-947e-0e2f5f55c5ee.png',
     alt: 'Elderly Japanese woman preparing traditional street food',
     caption: 'Meeting locals and experiencing authentic street food'
   },
   {
-    src: '/public/lovable-uploads/c530b749-edd3-4e48-9e0d-5ad658c1d11b.png',
+    src: '/lovable-uploads/c530b749-edd3-4e48-9e0d-5ad658c1d11b.png',
     alt: 'Woman in interactive light museum exhibit',
     caption: 'Visiting the TeamLab digital art museum in Tokyo'
   }
@@ -84,7 +83,6 @@ const PhotoGallery = () => {
     setIsFullScreen(false);
   };
 
-  // Keyboard controls for fullscreen mode
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (isFullScreen) {
       if (event.key === 'ArrowRight') handleNext();
@@ -109,7 +107,6 @@ const PhotoGallery = () => {
           </p>
         </div>
         
-        {/* Thumbnail Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {tourPhotos.map((photo, index) => (
             <div 
@@ -129,7 +126,6 @@ const PhotoGallery = () => {
         </div>
       </div>
 
-      {/* Fullscreen Gallery */}
       {isFullScreen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
           <button 
@@ -185,7 +181,6 @@ const PhotoGallery = () => {
         </div>
       )}
 
-      {/* Mobile Carousel - Visible on smaller screens */}
       <div className="mt-8 md:hidden">
         <Carousel className="w-full max-w-xs mx-auto">
           <CarouselContent>
