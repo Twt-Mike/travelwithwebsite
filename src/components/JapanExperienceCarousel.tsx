@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -53,6 +52,12 @@ const tourImages = [
     caption: 'Exploring the magical Arashiyama Bamboo Forest'
   }
 ];
+
+// This type helps us manage image replacements
+type ImageReplacement = {
+  index: number;
+  newSrc: string;
+}
 
 const JapanExperienceCarousel = () => {
   const [api, setApi] = useState<any>(null);
@@ -141,8 +146,10 @@ const JapanExperienceCarousel = () => {
     }
   };
 
-  // Instructions for replacing images one by one
+  // Function to replace a single image
   const replaceImage = (index: number, newSrc: string) => {
+    console.log(`Replacing image at index ${index} with ${newSrc}`);
+    
     setImageSources(current => {
       const updated = [...current];
       updated[index] = { ...updated[index], src: newSrc };
@@ -162,12 +169,58 @@ const JapanExperienceCarousel = () => {
     img.src = newSrc;
   };
 
+  // New function to replace multiple images at once
+  const replaceMultipleImages = (replacements: ImageReplacement[]) => {
+    console.log(`Replacing ${replacements.length} images`);
+    
+    setImageSources(current => {
+      const updated = [...current];
+      replacements.forEach(({ index, newSrc }) => {
+        if (index >= 0 && index < updated.length) {
+          updated[index] = { ...updated[index], src: newSrc };
+          
+          // Check if the new image loads
+          const img = new Image();
+          img.onload = () => {
+            console.log(`✅ Replacement image loaded: ${newSrc}`);
+            setImagesLoaded(prev => ({...prev, [index]: true}));
+          };
+          img.onerror = () => {
+            console.error(`❌ Replacement image failed to load: ${newSrc}`);
+            setImagesLoaded(prev => ({...prev, [index]: false}));
+          };
+          img.src = newSrc;
+        }
+      });
+      return updated;
+    });
+  };
+
+  // Usage example in the console for easier reference
+  useEffect(() => {
+    console.log("To replace images from the console, use:");
+    console.log("const carousel = document.querySelector('.carousel-component');");
+    console.log("const replaceImg = carousel.__replaceImage;");
+    console.log("replaceImg(0, 'your-image-url-here'); // Replace first image");
+    console.log("");
+    console.log("Or for multiple images:");
+    console.log("const replaceMultiple = carousel.__replaceMultipleImages;");
+    console.log("replaceMultiple([{index: 0, newSrc: 'url1'}, {index: 1, newSrc: 'url2'}]);");
+    
+    // Expose the replacement functions for console use
+    const carouselElement = document.querySelector('.carousel-component');
+    if (carouselElement) {
+      (carouselElement as any).__replaceImage = replaceImage;
+      (carouselElement as any).__replaceMultipleImages = replaceMultipleImages;
+    }
+  }, []);
+
   return (
     <div className="py-8">
       <h3 className="text-center text-2xl mb-6 text-gray-700 font-medium">Experience Japan with your community</h3>
       
       <div 
-        className="relative w-full max-w-6xl mx-auto px-2 md:px-6" 
+        className="relative w-full max-w-6xl mx-auto px-2 md:px-6 carousel-component" 
         onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave}
       >
