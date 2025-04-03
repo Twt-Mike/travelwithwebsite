@@ -4,6 +4,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const tourImages = [
   {
@@ -53,6 +55,7 @@ const JapanExperienceCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const isMobile = useIsMobile();
   
   // Auto-scroll functionality
   const startAutoplay = useCallback(() => {
@@ -62,7 +65,7 @@ const JapanExperienceCarousel = () => {
       if (api) {
         api.scrollNext();
       }
-    }, 3000); // Change image every 3 seconds
+    }, 3500); // Slightly slower auto-scroll
   }, [api]);
   
   // Set up autoplay when component mounts or api changes
@@ -106,57 +109,80 @@ const JapanExperienceCarousel = () => {
     setSelectedImage(null);
     startAutoplay();
   };
+  
+  // Handle navigation in fullscreen mode
+  const navigateFullscreen = (direction: 'next' | 'prev') => {
+    if (selectedImage === null) return;
+    
+    if (direction === 'next') {
+      setSelectedImage((prev) => 
+        prev === tourImages.length - 1 ? 0 : (prev as number) + 1
+      );
+    } else {
+      setSelectedImage((prev) => 
+        prev === 0 ? tourImages.length - 1 : (prev as number) - 1
+      );
+    }
+  };
 
   return (
-    <div className="py-4">
-      <h3 className="text-center text-xl mb-3 text-gray-700 font-medium">Experience Japan with your community</h3>
+    <div className="py-6">
+      <h3 className="text-center text-xl mb-4 text-gray-700 font-medium">Experience Japan with your community</h3>
       
-      <div className="w-full max-w-3xl mx-auto" 
-           onMouseEnter={handleMouseEnter} 
-           onMouseLeave={handleMouseLeave}>
+      <div 
+        className="relative w-full max-w-4xl mx-auto px-2 md:px-10" 
+        onMouseEnter={handleMouseEnter} 
+        onMouseLeave={handleMouseLeave}
+      >
         <Carousel 
           opts={{ 
             align: "center",
             loop: true,
+            containScroll: false,
           }}
           setApi={setApi}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="flex items-center">
             {tourImages.map((image, index) => (
               <CarouselItem 
                 key={index} 
                 className={cn(
-                  "pl-2 md:pl-4 cursor-pointer transition-all duration-300 md:basis-1/3 lg:basis-1/4",
-                  currentSlide === index ? "md:scale-110" : "md:opacity-70"
+                  "cursor-pointer transition-all duration-300",
+                  isMobile ? "basis-3/4" : "basis-1/5",
+                  currentSlide === index ? "scale-110 z-10" : "opacity-70 hover:opacity-90"
                 )}
                 onClick={() => openImageDialog(index)}
               >
                 <div className="overflow-hidden rounded-md">
-                  <AspectRatio ratio={1/1} className="bg-gray-100 overflow-hidden">
+                  <AspectRatio ratio={4/3} className="bg-gray-100 overflow-hidden">
                     <img
                       src={image.src}
                       alt={image.alt}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                     />
                   </AspectRatio>
-                  <p className="text-xs text-center mt-1 text-gray-600">{currentSlide === index ? image.caption : ""}</p>
+                  {currentSlide === index && (
+                    <p className="text-xs text-center mt-2 text-gray-600 transition-opacity duration-300">
+                      {image.caption}
+                    </p>
+                  )}
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center justify-center gap-2 mt-2">
-            <CarouselPrevious className="relative inset-auto translate-y-0 static h-7 w-7" />
-            <CarouselNext className="relative inset-auto translate-y-0 static h-7 w-7" />
+          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none">
+            <CarouselPrevious className="pointer-events-auto h-8 w-8 rounded-full opacity-70 hover:opacity-100" />
+            <CarouselNext className="pointer-events-auto h-8 w-8 rounded-full opacity-70 hover:opacity-100" />
           </div>
         </Carousel>
       </div>
       
-      {/* Image Dialog for expanded view */}
+      {/* Image Dialog/Lightbox */}
       <Dialog open={selectedImage !== null} onOpenChange={(open) => {
         if (!open) closeImageDialog();
       }}>
-        <DialogContent className="sm:max-w-2xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
+        <DialogContent className="sm:max-w-4xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
           {selectedImage !== null && (
             <div className="relative">
               <img 
@@ -167,6 +193,31 @@ const JapanExperienceCarousel = () => {
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center rounded-b-md">
                 {tourImages[selectedImage].caption}
               </div>
+              
+              {/* Lightbox Navigation Controls */}
+              <button 
+                onClick={() => navigateFullscreen('prev')}
+                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-70 transition-all"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+              
+              <button 
+                onClick={() => navigateFullscreen('next')}
+                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-70 transition-all"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+              
+              <button 
+                onClick={closeImageDialog}
+                className="absolute top-2 right-2 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-70 transition-all"
+                aria-label="Close lightbox"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
           )}
         </DialogContent>
