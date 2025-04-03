@@ -1,6 +1,7 @@
 
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { getFallbackImage } from '@/utils/imageDebug';
 
 type CarouselFullScreenDialogProps = {
   selectedImage: number | null;
@@ -29,7 +30,7 @@ const CarouselFullScreenDialog = ({
             className="w-full h-auto rounded-md object-contain"
             onError={(e) => {
               // Fallback for lightbox view
-              (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-149${3976040374 + selectedImage}-85c8e12f0c0e?q=80&w=1200`;
+              (e.target as HTMLImageElement).src = getFallbackImage(selectedImage);
             }}
           />
           

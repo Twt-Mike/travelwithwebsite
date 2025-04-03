@@ -7,13 +7,12 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useCarouselImages } from './carousel/useCarouselImages';
 import { useCarouselAutoplay } from './carousel/useCarouselAutoplay';
 import CarouselFullScreenDialog from './carousel/CarouselFullScreenDialog';
-
-// Debug logging to help identify image loading issues
-console.log("Loading JapanExperienceCarousel component");
+import { getFallbackImage } from '@/utils/imageDebug';
 
 const JapanExperienceCarousel = () => {
   const [api, setApi] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [loadErrors, setLoadErrors] = useState<Record<number, boolean>>({});
   const isMobile = useIsMobile();
   
   const { imageSources } = useCarouselImages();
@@ -44,6 +43,10 @@ const JapanExperienceCarousel = () => {
         prev === 0 ? imageSources.length - 1 : (prev as number) - 1
       );
     }
+  };
+  
+  const handleImageError = (index: number) => {
+    setLoadErrors(prev => ({...prev, [index]: true}));
   };
 
   return (
@@ -78,14 +81,10 @@ const JapanExperienceCarousel = () => {
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <AspectRatio ratio={2/3} className="bg-gray-100 overflow-hidden">
                     <img
-                      src={image.src}
+                      src={loadErrors[index] ? getFallbackImage(index) : image.src}
                       alt={image.alt}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        console.error(`Image failed to load: ${image.src}`);
-                        // Fallback to a guaranteed working Unsplash image
-                        (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-149${3976040374 + index}-85c8e12f0c0e?q=80&w=800`;
-                      }}
+                      onError={() => handleImageError(index)}
                     />
                   </AspectRatio>
                 </div>
@@ -101,7 +100,10 @@ const JapanExperienceCarousel = () => {
       
       <CarouselFullScreenDialog
         selectedImage={selectedImage}
-        imageSources={imageSources}
+        imageSources={imageSources.map((img, idx) => ({
+          ...img,
+          src: loadErrors[idx] ? getFallbackImage(idx) : img.src
+        }))}
         closeImageDialog={closeImageDialog}
         navigateFullscreen={navigateFullscreen}
       />

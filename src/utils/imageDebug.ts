@@ -1,4 +1,3 @@
-
 // This utility helps debug image loading issues and provides fallback functionality
 
 /**
