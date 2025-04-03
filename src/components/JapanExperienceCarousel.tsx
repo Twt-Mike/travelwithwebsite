@@ -7,44 +7,45 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
+// Updated image paths to remove the "/public" prefix which causes image loading issues
 const tourImages = [
   {
-    src: '/public/lovable-uploads/50a813be-bf94-4c5d-bae3-e06056c3ef84.png',
+    src: '/lovable-uploads/50a813be-bf94-4c5d-bae3-e06056c3ef84.png',
     alt: 'Group of friends at an Irish pub in Japan',
     caption: 'Enjoying local nightlife with friends'
   },
   {
-    src: '/public/lovable-uploads/b7c8e478-d29b-45ac-90ae-fdb4ffda39e6.png',
+    src: '/lovable-uploads/b7c8e478-d29b-45ac-90ae-fdb4ffda39e6.png',
     alt: 'Red torii gates at Fushimi Inari shrine',
     caption: 'Exploring the famous torii gates at Fushimi Inari'
   },
   {
-    src: '/public/lovable-uploads/9ce8fa14-5c49-403e-9193-da5328bfa12a.png',
+    src: '/lovable-uploads/9ce8fa14-5c49-403e-9193-da5328bfa12a.png',
     alt: 'Group in kimonos in Kyoto',
     caption: 'Experiencing traditional kimono wearing in historic Kyoto'
   },
   {
-    src: '/public/lovable-uploads/8bc66f8b-37f2-42ae-bf40-387256a40acc.png',
+    src: '/lovable-uploads/8bc66f8b-37f2-42ae-bf40-387256a40acc.png',
     alt: 'Men in traditional Japanese robes',
     caption: 'Immersing in Japanese culture with traditional yukata'
   },
   {
-    src: '/public/lovable-uploads/b98facf5-77cc-400f-9f97-d2c6c607bea3.png',
+    src: '/lovable-uploads/b98facf5-77cc-400f-9f97-d2c6c607bea3.png',
     alt: 'Cherry blossoms and deer in Nara',
     caption: 'Nara Park: where cherry blossoms and friendly deer create magic'
   },
   {
-    src: '/public/lovable-uploads/c0b32cc9-3717-464f-8906-36e4c7d7e74d.png',
+    src: '/lovable-uploads/c0b32cc9-3717-464f-8906-36e4c7d7e74d.png',
     alt: 'Japanese tea ceremony',
     caption: 'Participating in an authentic Japanese tea ceremony'
   },
   {
-    src: '/public/lovable-uploads/915b5a51-ac59-4768-8338-e46e60d70eaf.png',
+    src: '/lovable-uploads/915b5a51-ac59-4768-8338-e46e60d70eaf.png',
     alt: 'Group in colorful kimonos',
     caption: 'Creating memories with friends in beautiful kimono'
   },
   {
-    src: '/public/lovable-uploads/ed939812-a386-4d06-b195-5824fc4f6dbe.png',
+    src: '/lovable-uploads/ed939812-a386-4d06-b195-5824fc4f6dbe.png',
     alt: 'Group at Arashiyama Bamboo Forest',
     caption: 'Exploring the magical Arashiyama Bamboo Forest'
   }
@@ -130,7 +131,7 @@ const JapanExperienceCarousel = () => {
       <h3 className="text-center text-xl mb-4 text-gray-700 font-medium">Experience Japan with your community</h3>
       
       <div 
-        className="relative w-full max-w-4xl mx-auto px-2 md:px-10" 
+        className="relative w-full max-w-5xl mx-auto px-2 md:px-10" 
         onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave}
       >
@@ -149,8 +150,8 @@ const JapanExperienceCarousel = () => {
                 key={index} 
                 className={cn(
                   "cursor-pointer transition-all duration-300",
-                  isMobile ? "basis-3/4" : "basis-1/5",
-                  currentSlide === index ? "scale-110 z-10" : "opacity-70 hover:opacity-90"
+                  isMobile ? "basis-3/4" : "basis-1/4", // Changed from basis-1/5 to basis-1/4 for larger display
+                  currentSlide === index ? "scale-125 z-10" : "opacity-70 hover:opacity-90" // Increased scale from 110% to 125%
                 )}
                 onClick={() => openImageDialog(index)}
               >
@@ -172,8 +173,8 @@ const JapanExperienceCarousel = () => {
             ))}
           </CarouselContent>
           <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none">
-            <CarouselPrevious className="pointer-events-auto h-8 w-8 rounded-full opacity-70 hover:opacity-100" />
-            <CarouselNext className="pointer-events-auto h-8 w-8 rounded-full opacity-70 hover:opacity-100" />
+            <CarouselPrevious className="pointer-events-auto h-10 w-10 rounded-full opacity-70 hover:opacity-100" />
+            <CarouselNext className="pointer-events-auto h-10 w-10 rounded-full opacity-70 hover:opacity-100" />
           </div>
         </Carousel>
       </div>
@@ -182,7 +183,7 @@ const JapanExperienceCarousel = () => {
       <Dialog open={selectedImage !== null} onOpenChange={(open) => {
         if (!open) closeImageDialog();
       }}>
-        <DialogContent className="sm:max-w-4xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
+        <DialogContent className="sm:max-w-5xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
           {selectedImage !== null && (
             <div className="relative">
               <img 
