@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -7,7 +6,6 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
-// Updated image paths to remove the "/public" prefix which causes image loading issues
 const tourImages = [
   {
     src: '/lovable-uploads/50a813be-bf94-4c5d-bae3-e06056c3ef84.png',
@@ -58,7 +56,6 @@ const JapanExperienceCarousel = () => {
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
   
-  // Auto-scroll functionality
   const startAutoplay = useCallback(() => {
     if (autoplayRef.current) clearInterval(autoplayRef.current);
     
@@ -66,52 +63,44 @@ const JapanExperienceCarousel = () => {
       if (api) {
         api.scrollNext();
       }
-    }, 3500); // Slightly slower auto-scroll
+    }, 3500);
   }, [api]);
   
-  // Set up autoplay when component mounts or api changes
   useEffect(() => {
     if (!api) return;
     
     startAutoplay();
     
-    // Track the current slide
     const onSelect = () => {
       setCurrentSlide(api.selectedScrollSnap());
     };
     
     api.on('select', onSelect);
     
-    // Cleanup
     return () => {
       if (autoplayRef.current) clearInterval(autoplayRef.current);
       api.off('select', onSelect);
     };
   }, [api, startAutoplay]);
   
-  // Pause autoplay when user interacts with carousel
   const handleMouseEnter = () => {
     if (autoplayRef.current) clearInterval(autoplayRef.current);
   };
   
-  // Resume autoplay when user leaves carousel
   const handleMouseLeave = () => {
     startAutoplay();
   };
   
-  // Open image dialog when clicked
   const openImageDialog = (index: number) => {
     setSelectedImage(index);
     if (autoplayRef.current) clearInterval(autoplayRef.current);
   };
   
-  // Close dialog and resume autoplay
   const closeImageDialog = () => {
     setSelectedImage(null);
     startAutoplay();
   };
   
-  // Handle navigation in fullscreen mode
   const navigateFullscreen = (direction: 'next' | 'prev') => {
     if (selectedImage === null) return;
     
@@ -150,8 +139,8 @@ const JapanExperienceCarousel = () => {
                 key={index} 
                 className={cn(
                   "cursor-pointer transition-all duration-300",
-                  isMobile ? "basis-3/4" : "basis-1/4", // Changed from basis-1/5 to basis-1/4 for larger display
-                  currentSlide === index ? "scale-125 z-10" : "opacity-70 hover:opacity-90" // Increased scale from 110% to 125%
+                  isMobile ? "basis-3/4" : "basis-1/4",
+                  currentSlide === index ? "scale-125 z-10" : "opacity-70 hover:opacity-90"
                 )}
                 onClick={() => openImageDialog(index)}
               >
@@ -179,7 +168,6 @@ const JapanExperienceCarousel = () => {
         </Carousel>
       </div>
       
-      {/* Image Dialog/Lightbox */}
       <Dialog open={selectedImage !== null} onOpenChange={(open) => {
         if (!open) closeImageDialog();
       }}>
@@ -195,7 +183,6 @@ const JapanExperienceCarousel = () => {
                 {tourImages[selectedImage].caption}
               </div>
               
-              {/* Lightbox Navigation Controls */}
               <button 
                 onClick={() => navigateFullscreen('prev')}
                 className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-70 transition-all"

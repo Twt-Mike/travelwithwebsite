@@ -9,7 +9,7 @@ const InfluencerHero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("/public/lovable-uploads/d624ef20-8b0f-4408-af5c-947bc0d049e9.png")',
+          backgroundImage: 'url("/lovable-uploads/d624ef20-8b0f-4408-af5c-947bc0d049e9.png")',
         }}
       >
         <div className="absolute inset-0 bg-japan-indigo/60 mix-blend-multiply" />
