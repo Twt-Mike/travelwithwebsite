@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail } from 'lucide-react';
+import { Mail, InstagramIcon } from 'lucide-react';
 
 const ContactSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [socialHandle, setSocialHandle] = useState('');
   const [message, setMessage] = useState('');
   const { toast } = useToast();
 
@@ -23,6 +24,7 @@ const ContactSection = () => {
     
     setName('');
     setEmail('');
+    setSocialHandle('');
     setMessage('');
   };
 
@@ -61,8 +63,22 @@ const ContactSection = () => {
               />
             </div>
             <div>
+              <div className="flex items-center border border-input rounded-md bg-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                <div className="px-3 text-muted-foreground">
+                  <InstagramIcon className="h-4 w-4" />
+                </div>
+                <Input
+                  type="text"
+                  placeholder="Social handle (Instagram / TikTok)"
+                  value={socialHandle}
+                  onChange={(e) => setSocialHandle(e.target.value)}
+                  className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+              </div>
+            </div>
+            <div>
               <Textarea
-                placeholder="Tell us about your audience and what you're looking for"
+                placeholder="Your tour request (destinations, interests, group size, preferred dates)"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required

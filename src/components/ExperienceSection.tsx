@@ -1,5 +1,4 @@
 
-import { Utensils, Camera, MapPin, LandPlot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ const ExperienceSection = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">Your Custom-Built Japan Trip Awaits</h2>
           <p className="section-subtitle mx-auto">
-            Partner with Travel With to design an exclusive trip for your audience or community. Together we craft a fully personalized experience, showcasing Japan your way.
+            Partner with TravelWith to design an exclusive trip for your audience or community. Together we craft a fully personalized experience, showcasing Japan your way.
           </p>
           <div className="mt-8">
             <Link to="/about">

@@ -8,9 +8,10 @@ const HeroSection = () => {
     <section className="relative hero-image">
       {/* Background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center z-0"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage: 'url("/public/lovable-uploads/d2eb9e50-b99f-4a8e-98fc-70839f0e480f.png")',
+          backgroundImage: 'url("/public/lovable-uploads/30d44237-df22-4b4f-8b57-c27bb57799c3.png")',
+          backgroundPosition: 'center 15%', // Crop bottom 15%
         }}
       >
         <div className="absolute inset-0 bg-japan-indigo/50 mix-blend-multiply" />
@@ -18,9 +19,14 @@ const HeroSection = () => {
 
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-2xl text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
+          <div className="mb-2">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-tight tracking-wide">
+              TravelWith
+            </h1>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-tight">
             Travel With Your Audience
-          </h1>
+          </h2>
           <p className="text-lg md:text-xl opacity-90">
             Create unforgettable, custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>

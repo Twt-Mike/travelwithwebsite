@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
             <Quote className="absolute text-japan-indigo/20 h-16 w-16 -top-6 -left-6" />
             <blockquote className="relative z-10">
               <p className="text-lg md:text-xl italic text-gray-700 mb-6">
-                "Travel With designed the perfect experience for my audience. Everything was seamless, deeply engaging, and truly personalized. Highly recommend partnering with them!"
+                "TravelWith designed the perfect experience for my audience. Everything was seamless, deeply engaging, and truly personalized. Highly recommend partnering with them!"
               </p>
               <footer className="font-medium text-japan-indigo">
                 – Influencer/Host Name, Location
