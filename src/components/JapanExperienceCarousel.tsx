@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 // Debug logging to help identify image loading issues
 console.log("Loading JapanExperienceCarousel component");
 
+// Using reliable Unsplash URLs for the carousel images
 const tourImages = [
   {
     src: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186',
@@ -59,11 +60,26 @@ const JapanExperienceCarousel = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
-  const [imageSources] = useState(tourImages);
+  const [imageSources, setImageSources] = useState(tourImages);
+  const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
   
   // Simple check that we have the images loaded
   useEffect(() => {
     console.log("Tour images in carousel:", tourImages.map(img => img.src));
+    
+    // Pre-check all images to make sure they load
+    tourImages.forEach((image, index) => {
+      const img = new Image();
+      img.onload = () => {
+        console.log(`✅ Image loaded: ${image.src}`);
+        setImagesLoaded(prev => ({...prev, [index]: true}));
+      };
+      img.onerror = () => {
+        console.error(`❌ Image failed to load: ${image.src}`);
+        setImagesLoaded(prev => ({...prev, [index]: false}));
+      };
+      img.src = image.src;
+    });
   }, []);
   
   const startAutoplay = useCallback(() => {
@@ -125,6 +141,27 @@ const JapanExperienceCarousel = () => {
     }
   };
 
+  // Instructions for replacing images one by one
+  const replaceImage = (index: number, newSrc: string) => {
+    setImageSources(current => {
+      const updated = [...current];
+      updated[index] = { ...updated[index], src: newSrc };
+      return updated;
+    });
+    
+    // Also check if the new image loads
+    const img = new Image();
+    img.onload = () => {
+      console.log(`✅ Replacement image loaded: ${newSrc}`);
+      setImagesLoaded(prev => ({...prev, [index]: true}));
+    };
+    img.onerror = () => {
+      console.error(`❌ Replacement image failed to load: ${newSrc}`);
+      setImagesLoaded(prev => ({...prev, [index]: false}));
+    };
+    img.src = newSrc;
+  };
+
   return (
     <div className="py-8">
       <h3 className="text-center text-2xl mb-6 text-gray-700 font-medium">Experience Japan with your community</h3>
@@ -160,6 +197,11 @@ const JapanExperienceCarousel = () => {
                       src={image.src}
                       alt={image.alt}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.error(`Image failed to load: ${image.src}`);
+                        // Fallback to a guaranteed working Unsplash image
+                        (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-149${3976040374 + index}-85c8e12f0c0e?q=80&w=800`;
+                      }}
                     />
                   </AspectRatio>
                   {currentSlide === index && (
@@ -188,6 +230,10 @@ const JapanExperienceCarousel = () => {
                 src={imageSources[selectedImage].src} 
                 alt={imageSources[selectedImage].alt} 
                 className="w-full h-auto rounded-md object-contain"
+                onError={(e) => {
+                  // Fallback for lightbox view
+                  (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-149${3976040374 + selectedImage}-85c8e12f0c0e?q=80&w=1200`;
+                }}
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center rounded-b-md">
                 {imageSources[selectedImage].caption}
