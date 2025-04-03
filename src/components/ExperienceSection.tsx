@@ -22,7 +22,7 @@ const ExperienceSection = () => {
         </div>
         
         {/* Larger carousel component */}
-        <div className="mx-auto max-w-[95%]">
+        <div className="mx-auto max-w-[98%]">
           <JapanExperienceCarousel />
         </div>
       </div>
