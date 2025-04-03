@@ -8,6 +8,7 @@ export function useCarouselImages() {
   const [imageSources, setImageSources] = useState(defaultTourImages);
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
   const [isLoadingSupabaseImages, setIsLoadingSupabaseImages] = useState(true);
+  const [hasSupabaseImages, setHasSupabaseImages] = useState(false);
   
   // Fetch images from Supabase
   useEffect(() => {
@@ -31,11 +32,14 @@ export function useCarouselImages() {
           });
           
           console.log('Successfully loaded Supabase images:', supabaseImages.length);
+          setHasSupabaseImages(true);
         } else {
           console.log('No images found in Supabase or error occurred, using default images');
+          setHasSupabaseImages(false);
         }
       } catch (error) {
         console.error('Error fetching Supabase images:', error);
+        setHasSupabaseImages(false);
       } finally {
         setIsLoadingSupabaseImages(false);
       }
@@ -123,6 +127,7 @@ export function useCarouselImages() {
     imagesLoaded,
     replaceImage,
     replaceMultipleImages,
-    isLoading: isLoadingSupabaseImages
+    isLoading: isLoadingSupabaseImages,
+    hasSupabaseImages
   };
 }

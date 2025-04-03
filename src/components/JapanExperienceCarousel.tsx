@@ -8,6 +8,8 @@ import { useCarouselImages } from './carousel/useCarouselImages';
 import { useCarouselAutoplay } from './carousel/useCarouselAutoplay';
 import CarouselFullScreenDialog from './carousel/CarouselFullScreenDialog';
 import { getFallbackImage } from '@/utils/imageDebug';
+import { AlertCircle, Info } from 'lucide-react';
+import { Button } from './ui/button';
 
 const JapanExperienceCarousel = () => {
   const [api, setApi] = useState<any>(null);
@@ -15,7 +17,7 @@ const JapanExperienceCarousel = () => {
   const [loadErrors, setLoadErrors] = useState<Record<number, boolean>>({});
   const isMobile = useIsMobile();
   
-  const { imageSources, isLoading } = useCarouselImages();
+  const { imageSources, isLoading, hasSupabaseImages } = useCarouselImages();
   const { currentSlide, handleMouseEnter, handleMouseLeave, startAutoplay } = useCarouselAutoplay(api);
   
   const openImageDialog = (index: number) => {
@@ -63,6 +65,23 @@ const JapanExperienceCarousel = () => {
   return (
     <div className="py-8">
       <h3 className="text-center text-2xl mb-6 text-gray-700 font-medium">Experience Japan with your community</h3>
+      
+      {!hasSupabaseImages && (
+        <div className="flex items-center justify-center mb-4 p-4 bg-amber-50 border border-amber-200 rounded-md">
+          <Info className="h-5 w-5 text-amber-500 mr-2" />
+          <p className="text-sm text-amber-700">
+            Using default images. Upload your images to the Supabase 'carousel-images' bucket to display your custom images.
+          </p>
+          <Button 
+            variant="link" 
+            size="sm" 
+            onClick={() => window.open('https://supabase.com/dashboard/project/tixgiajjzrgbajugxnlk/storage/buckets/carousel-images', '_blank')}
+            className="ml-2 text-blue-600"
+          >
+            Go to bucket
+          </Button>
+        </div>
+      )}
       
       <div 
         className="relative w-full max-w-6xl mx-auto px-2 md:px-6 carousel-component" 

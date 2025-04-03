@@ -6,6 +6,7 @@ const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1490806843957-31f4c9a9
 
 export async function getCarouselImages() {
   try {
+    console.log('Fetching images from Supabase bucket:', BUCKET_NAME);
     const { data, error } = await supabase
       .storage
       .from(BUCKET_NAME)
@@ -18,6 +19,13 @@ export async function getCarouselImages() {
       return null;
     }
     
+    if (!data || data.length === 0) {
+      console.warn('No images found in Supabase bucket. Please upload images to the carousel-images bucket.');
+      return null;
+    }
+    
+    console.log('Found images in Supabase bucket:', data);
+    
     // Filter for image files only
     const imageFiles = data.filter(file => 
       !file.id.includes('/') && 
@@ -25,6 +33,7 @@ export async function getCarouselImages() {
       file.name.match(/\.(jpeg|jpg|png|gif|webp)$/i))
     );
     
+    console.log('Filtered image files:', imageFiles);
     return imageFiles;
   } catch (error) {
     console.error('Error in getCarouselImages:', error);
@@ -39,6 +48,7 @@ export function getPublicImageUrl(fileName: string) {
       .from(BUCKET_NAME)
       .getPublicUrl(fileName);
     
+    console.log(`Generated public URL for ${fileName}:`, data.publicUrl);
     return data.publicUrl;
   } catch (error) {
     console.error('Error getting public URL:', error);
