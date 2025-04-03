@@ -49,7 +49,7 @@ const tourImages = [
 
 const JapanExperienceCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  
   const handleSliderChange = (value: number[]) => {
     setCurrentSlide(value[0]);
   };
@@ -58,16 +58,20 @@ const JapanExperienceCarousel = () => {
     <div className="py-6">
       <h3 className="text-center text-xl mb-4 text-gray-700 font-medium">Experience Japan with your community</h3>
       
+      {/* Desktop carousel */}
       <div className="hidden md:block">
         <div className="w-full max-w-4xl mx-auto">
           <Carousel 
             opts={{ 
-              align: 'start',
+              align: "start",
               loop: true,
             }}
             className="w-full"
-            value={{ selectedIndex: currentSlide }}
-            onValueChange={value => setCurrentSlide(value.selectedIndex || 0)}
+            setApi={(api) => {
+              if (api) {
+                api.scrollTo(currentSlide);
+              }
+            }}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {tourImages.map((image, index) => (
@@ -108,12 +112,15 @@ const JapanExperienceCarousel = () => {
         <div className="w-full max-w-xs mx-auto">
           <Carousel
             opts={{
-              align: 'start',
+              align: "start",
               loop: true,
             }}
             className="w-full"
-            value={{ selectedIndex: currentSlide }}
-            onValueChange={value => setCurrentSlide(value.selectedIndex || 0)}
+            setApi={(api) => {
+              if (api) {
+                api.scrollTo(currentSlide);
+              }
+            }}
           >
             <CarouselContent>
               {tourImages.map((image, index) => (
