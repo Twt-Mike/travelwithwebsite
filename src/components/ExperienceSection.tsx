@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import JapanExperienceCarousel from './JapanExperienceCarousel';
 
 const ExperienceSection = () => {
   return (
@@ -19,6 +20,9 @@ const ExperienceSection = () => {
             </Link>
           </div>
         </div>
+        
+        {/* Add the carousel component */}
+        <JapanExperienceCarousel />
       </div>
     </section>
   );

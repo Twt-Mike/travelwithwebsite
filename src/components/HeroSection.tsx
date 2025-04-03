@@ -25,10 +25,10 @@ const HeroSection = () => {
             </h1>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-tight">
-            Travel With Your Audience
+            Create unforgettable journeys
           </h2>
           <p className="text-lg md:text-xl opacity-90">
-            Create unforgettable, custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
+            Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <Link to="/contact">
