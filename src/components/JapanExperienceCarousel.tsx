@@ -148,11 +148,11 @@ const JapanExperienceCarousel = () => {
   };
 
   return (
-    <div className="py-6">
-      <h3 className="text-center text-xl mb-4 text-gray-700 font-medium">Experience Japan with your community</h3>
+    <div className="py-8">
+      <h3 className="text-center text-2xl mb-6 text-gray-700 font-medium">Experience Japan with your community</h3>
       
       <div 
-        className="relative w-full max-w-5xl mx-auto px-2 md:px-10" 
+        className="relative w-full max-w-6xl mx-auto px-2 md:px-6" 
         onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave}
       >
@@ -171,7 +171,7 @@ const JapanExperienceCarousel = () => {
                 key={index} 
                 className={cn(
                   "cursor-pointer transition-all duration-300",
-                  isMobile ? "basis-3/4" : "basis-1/4",
+                  isMobile ? "basis-4/5" : "basis-1/3",
                   currentSlide === index ? "scale-125 z-10" : "opacity-70 hover:opacity-90"
                 )}
                 onClick={() => openImageDialog(index)}
@@ -185,7 +185,7 @@ const JapanExperienceCarousel = () => {
                     />
                   </AspectRatio>
                   {currentSlide === index && (
-                    <p className="text-xs text-center mt-2 text-gray-600 transition-opacity duration-300">
+                    <p className="text-sm text-center mt-3 text-gray-600 transition-opacity duration-300">
                       {image.caption}
                     </p>
                   )}
@@ -194,8 +194,8 @@ const JapanExperienceCarousel = () => {
             ))}
           </CarouselContent>
           <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none">
-            <CarouselPrevious className="pointer-events-auto h-10 w-10 rounded-full opacity-70 hover:opacity-100" />
-            <CarouselNext className="pointer-events-auto h-10 w-10 rounded-full opacity-70 hover:opacity-100" />
+            <CarouselPrevious className="pointer-events-auto h-12 w-12 rounded-full opacity-70 hover:opacity-100" />
+            <CarouselNext className="pointer-events-auto h-12 w-12 rounded-full opacity-70 hover:opacity-100" />
           </div>
         </Carousel>
       </div>
