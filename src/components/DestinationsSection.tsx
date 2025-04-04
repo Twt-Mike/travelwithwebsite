@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
@@ -42,13 +43,15 @@ const destinations = [
   {
     id: 5,
     name: "Koyasan",
-    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1920&auto=format&fit=crop",
+    image: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/townphotos/koyasan1.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1920&auto=format&fit=crop",
     description: "Spiritual experiences and serene mountain temples"
   },
   {
     id: 6,
     name: "Hiroshima",
-    image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=1920&auto=format&fit=crop",
+    image: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/townphotos/hiroshimaitsukushima.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=1920&auto=format&fit=crop",
     description: "Historical landmarks and beautiful coastal scenery"
   }
 ];
