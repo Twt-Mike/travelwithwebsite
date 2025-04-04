@@ -11,6 +11,8 @@ const BUCKETS = {
 // Check if a bucket exists, show appropriate notifications
 export async function checkBucketExists(bucketName: string): Promise<boolean> {
   try {
+    console.log(`Checking if bucket ${bucketName} exists...`);
+    
     const { data: buckets, error } = await supabase
       .storage
       .listBuckets();
@@ -26,6 +28,7 @@ export async function checkBucketExists(bucketName: string): Promise<boolean> {
       return false;
     }
     
+    console.log(`Bucket ${bucketName} exists.`);
     return true;
   } catch (error) {
     console.error(`Error checking bucket ${bucketName}:`, error);
@@ -36,10 +39,20 @@ export async function checkBucketExists(bucketName: string): Promise<boolean> {
 // Get public URL for an image in a bucket
 export function getImageUrl(bucketName: string, fileName: string): string {
   try {
+    if (!bucketName || !fileName) {
+      console.error('Invalid bucket name or file name provided to getImageUrl');
+      return '';
+    }
+    
     const { data } = supabase
       .storage
       .from(bucketName)
       .getPublicUrl(fileName);
+    
+    if (!data || !data.publicUrl) {
+      console.error(`Failed to get public URL for ${fileName} in ${bucketName}`);
+      return '';
+    }
     
     return data.publicUrl;
   } catch (error) {
@@ -66,7 +79,13 @@ export function getAltTextForImage(fileName: string): string {
 // Fetch images from the carousel bucket
 export async function getCarouselImages() {
   try {
-    // We'll assume the bucket exists since we've verified it's public and accessible
+    // Check if bucket exists
+    const bucketExists = await checkBucketExists(BUCKETS.CAROUSEL);
+    if (!bucketExists) {
+      console.error(`Carousel images bucket '${BUCKETS.CAROUSEL}' doesn't exist or isn't accessible`);
+      return [];
+    }
+    
     const { data: files, error } = await supabase
       .storage
       .from(BUCKETS.CAROUSEL)
@@ -97,6 +116,14 @@ export async function getHomepagePhotos() {
   try {
     console.log('Attempting to fetch photos from homepagephotos bucket');
     
+    // Check if bucket exists first
+    const bucketExists = await checkBucketExists(BUCKETS.HOMEPAGEPHOTOS);
+    if (!bucketExists) {
+      console.error(`Homepage photos bucket '${BUCKETS.HOMEPAGEPHOTOS}' doesn't exist or isn't accessible`);
+      toast.error('Failed to access homepage photos');
+      return [];
+    }
+    
     const { data: files, error } = await supabase
       .storage
       .from(BUCKETS.HOMEPAGEPHOTOS)
@@ -120,7 +147,11 @@ export async function getHomepagePhotos() {
     // Filter for image files only
     const imageFiles = files.filter(file => {
       const extension = file.name.split('.').pop()?.toLowerCase();
-      return ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension || '');
+      const isImage = ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension || '');
+      if (!isImage) {
+        console.log(`Skipping non-image file: ${file.name}`);
+      }
+      return isImage;
     });
     
     if (imageFiles.length === 0) {
@@ -135,6 +166,10 @@ export async function getHomepagePhotos() {
       
       console.log(`Processing image: ${file.name} → ${publicUrl}`);
       
+      if (!publicUrl) {
+        console.error(`Failed to generate public URL for ${file.name}`);
+      }
+      
       return {
         src: publicUrl,
         alt: altText,
@@ -142,17 +177,16 @@ export async function getHomepagePhotos() {
       };
     });
     
-    // Verify the first few URLs to make sure they're valid
-    const sampleUrls = photos.slice(0, 3).map(photo => photo.src);
-    const urlResults = await verifyImageUrls(sampleUrls);
+    // Filter out any photos with missing URLs
+    const validPhotos = photos.filter(photo => photo.src);
     
-    // If all sample URLs failed, there might be an issue with the bucket configuration
-    if (sampleUrls.length > 0 && Object.values(urlResults).every(result => result === false)) {
-      console.error('All sample image URLs failed to load. Check bucket permissions and CORS settings.');
-      toast.error('Failed to load photos - please check bucket permissions');
+    if (validPhotos.length === 0) {
+      console.error('No valid photos found (all URLs failed to generate)');
+      return [];
     }
     
-    return photos;
+    console.log(`Successfully processed ${validPhotos.length} photos from homepagephotos bucket`);
+    return validPhotos;
   } catch (error) {
     console.error('Error in getHomepagePhotos:', error);
     toast.error('Error loading photos');
@@ -163,6 +197,13 @@ export async function getHomepagePhotos() {
 // Lists all files in a bucket
 export async function listBucketFiles(bucketName: string) {
   try {
+    // Check if bucket exists first
+    const bucketExists = await checkBucketExists(bucketName);
+    if (!bucketExists) {
+      console.error(`Cannot list files: Bucket '${bucketName}' doesn't exist or isn't accessible`);
+      return [];
+    }
+    
     const { data: files, error } = await supabase
       .storage
       .from(bucketName)
@@ -187,10 +228,21 @@ export async function verifyImageUrls(imageUrls: string[]): Promise<Record<strin
   const results: Record<string, boolean> = {};
   
   for (const url of imageUrls) {
+    if (!url) {
+      console.error('Attempted to verify empty URL');
+      results['empty'] = false;
+      continue;
+    }
+    
     try {
+      console.log(`Verifying image URL: ${url}`);
       const response = await fetch(url, { method: 'HEAD' });
       results[url] = response.ok;
-      console.log(`Image URL check: ${url} - ${response.ok ? 'OK' : 'FAILED'}`);
+      console.log(`Image URL check: ${url} - ${response.ok ? 'OK' : 'FAILED'} (status: ${response.status})`);
+      
+      if (!response.ok) {
+        console.error(`Image failed verification with status: ${response.status}`);
+      }
     } catch (error) {
       results[url] = false;
       console.error(`Error checking image URL ${url}:`, error);
@@ -203,6 +255,7 @@ export async function verifyImageUrls(imageUrls: string[]): Promise<Record<strin
 // Test connectivity to Supabase storage
 export async function testSupabaseStorageConnection(): Promise<boolean> {
   try {
+    console.log('Testing connection to Supabase storage...');
     const { data: buckets, error } = await supabase
       .storage
       .listBuckets();
@@ -213,17 +266,22 @@ export async function testSupabaseStorageConnection(): Promise<boolean> {
       return false;
     }
     
-    toast.success('Successfully connected to Supabase storage');
-    console.log('Available storage buckets:', buckets);
+    console.log('Successfully connected to Supabase storage');
+    console.log('Available storage buckets:', buckets?.map(b => b.name));
     
     // Check for our required buckets
     const requiredBuckets = [BUCKETS.HOMEPAGEPHOTOS, BUCKETS.CAROUSEL];
+    const availableBuckets = buckets?.map(b => b.name) || [];
+    
     const missingBuckets = requiredBuckets.filter(
-      bucket => !buckets?.some(b => b.name === bucket)
+      bucket => !availableBuckets.includes(bucket)
     );
     
     if (missingBuckets.length > 0) {
       console.warn('Missing required buckets:', missingBuckets);
+      toast.warning(`Some required storage buckets are missing: ${missingBuckets.join(', ')}`);
+    } else {
+      toast.success('Successfully connected to Supabase storage');
     }
     
     return true;
@@ -275,9 +333,21 @@ export async function testBucket(bucketName: string): Promise<boolean> {
       const fileName = files[0].name;
       const publicUrl = getImageUrl(bucketName, fileName);
       
+      if (!publicUrl) {
+        console.error(`Failed to generate public URL for ${fileName}`);
+        return false;
+      }
+      
+      console.log(`Testing public URL for ${fileName}: ${publicUrl}`);
       const urlTest = await verifyImageUrls([publicUrl]);
+      
       if (!urlTest[publicUrl]) {
         console.error(`Public URL for ${fileName} is not accessible`);
+        
+        // Test with direct URL to diagnose CORS/permissions issues
+        const { data } = supabase.storage.from(bucketName).getPublicUrl(fileName);
+        console.log(`Raw public URL data:`, data);
+        
         return false;
       }
       
