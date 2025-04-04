@@ -28,12 +28,12 @@ const Index = () => {
     
     const connected = await testSupabaseStorageConnection();
     if (connected) {
-      const homepageBucketOk = await testBucket(BUCKETS.HOMEPAGEPHOTOS);
-      if (homepageBucketOk) {
-        toast.success('Homepage photos bucket is accessible');
+      const ipBucketOk = await testBucket(BUCKETS.IP);
+      if (ipBucketOk) {
+        toast.success('IP bucket is accessible');
         reloadPhotoGallery();
       } else {
-        toast.error('Homepage photos bucket test failed');
+        toast.error('IP bucket test failed');
       }
     }
   };
@@ -64,7 +64,7 @@ const Index = () => {
               className="bg-white bg-opacity-75 backdrop-blur-sm shadow-md flex items-center gap-1"
               onClick={testSupabaseConnection}
             >
-              Test Supabase
+              Test IP Bucket
             </Button>
           </div>
         )}
