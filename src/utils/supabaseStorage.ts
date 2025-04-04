@@ -22,6 +22,9 @@ export async function checkBucketExists(bucketName: string): Promise<boolean> {
       return false;
     }
     
+    // Debug: Log all available buckets to help diagnose issues
+    console.log(`Available buckets:`, buckets?.map(b => b.name).join(', '));
+    
     const bucket = buckets?.find(b => b.name === bucketName);
     if (!bucket) {
       console.error(`The '${bucketName}' bucket doesn't exist in Supabase storage`);
@@ -114,40 +117,68 @@ export async function getCarouselImages() {
 // Get homepage photos from the homepagephotos bucket
 export async function getHomepagePhotos() {
   try {
-    console.log('Attempting to fetch photos from homepagephotos bucket');
+    console.log('getHomepagePhotos: Starting to fetch photos');
     
-    // Check if bucket exists first
-    const bucketExists = await checkBucketExists(BUCKETS.HOMEPAGEPHOTOS);
-    if (!bucketExists) {
-      console.error(`Homepage photos bucket '${BUCKETS.HOMEPAGEPHOTOS}' doesn't exist or isn't accessible`);
-      toast.error('Failed to access homepage photos');
-      return [];
+    // First check if we can even list buckets (connectivity test)
+    const { data: buckets, error: bucketsError } = await supabase
+      .storage
+      .listBuckets();
+      
+    if (bucketsError) {
+      console.error('Error listing buckets:', bucketsError);
+      return {
+        photos: [],
+        error: `Failed to connect to Supabase storage: ${bucketsError.message}`
+      };
     }
     
-    const { data: files, error } = await supabase
+    console.log('Available buckets:', buckets?.map(b => b.name).join(', '));
+    
+    // Verify the bucket exists
+    const bucketName = BUCKETS.HOMEPAGEPHOTOS;
+    const bucket = buckets?.find(b => b.name === bucketName);
+    
+    if (!bucket) {
+      console.error(`Bucket '${bucketName}' not found in available buckets`);
+      return {
+        photos: [],
+        error: `Bucket '${bucketName}' doesn't exist. Available buckets: ${buckets?.map(b => b.name).join(', ')}`
+      };
+    }
+    
+    console.log(`Found bucket ${bucketName}, now listing files...`);
+    
+    // List files in the bucket
+    const { data: files, error: listError } = await supabase
       .storage
-      .from(BUCKETS.HOMEPAGEPHOTOS)
+      .from(bucketName)
       .list('', {
         sortBy: { column: 'name', order: 'asc' }
       });
     
-    if (error) {
-      console.error('Error listing homepage photos:', error);
-      toast.error('Failed to load homepage photos');
-      return [];
+    if (listError) {
+      console.error(`Error listing files in '${bucketName}':`, listError);
+      return {
+        photos: [],
+        error: `Failed to list files in bucket: ${listError.message}`
+      };
     }
     
     if (!files || files.length === 0) {
-      console.log('No files found in homepagephotos bucket');
-      return [];
+      console.warn(`No files found in '${bucketName}' bucket`);
+      return {
+        photos: [],
+        error: `No files found in '${bucketName}' bucket`
+      };
     }
     
-    console.log('Found files in homepagephotos bucket:', files.map(f => f.name).join(', '));
+    console.log(`Found ${files.length} files in '${bucketName}':`, files.map(f => f.name).join(', '));
     
     // Filter for image files only
+    const supportedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
     const imageFiles = files.filter(file => {
       const extension = file.name.split('.').pop()?.toLowerCase();
-      const isImage = ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension || '');
+      const isImage = supportedExtensions.includes(extension || '');
       if (!isImage) {
         console.log(`Skipping non-image file: ${file.name}`);
       }
@@ -155,13 +186,18 @@ export async function getHomepagePhotos() {
     });
     
     if (imageFiles.length === 0) {
-      console.log('No image files found in homepagephotos bucket');
-      return [];
+      console.warn(`No image files found in '${bucketName}' bucket`);
+      return {
+        photos: [],
+        error: `No image files found in '${bucketName}' bucket. Supported formats: ${supportedExtensions.join(', ')}`
+      };
     }
+    
+    console.log(`Found ${imageFiles.length} image files out of ${files.length} total files`);
     
     // Convert files to photo objects with URLs and alt text
     const photos = imageFiles.map(file => {
-      const publicUrl = getImageUrl(BUCKETS.HOMEPAGEPHOTOS, file.name);
+      const publicUrl = getImageUrl(bucketName, file.name);
       const altText = getAltTextForImage(file.name);
       
       console.log(`Processing image: ${file.name} → ${publicUrl}`);
@@ -182,15 +218,23 @@ export async function getHomepagePhotos() {
     
     if (validPhotos.length === 0) {
       console.error('No valid photos found (all URLs failed to generate)');
-      return [];
+      return {
+        photos: [],
+        error: 'Failed to generate valid URLs for the images'
+      };
     }
     
-    console.log(`Successfully processed ${validPhotos.length} photos from homepagephotos bucket`);
-    return validPhotos;
+    console.log(`Successfully processed ${validPhotos.length} photos from '${bucketName}' bucket`);
+    return {
+      photos: validPhotos,
+      error: null
+    };
   } catch (error) {
-    console.error('Error in getHomepagePhotos:', error);
-    toast.error('Error loading photos');
-    return [];
+    console.error('Unexpected error in getHomepagePhotos:', error);
+    return {
+      photos: [],
+      error: `Unexpected error: ${error instanceof Error ? error.message : String(error)}`
+    };
   }
 }
 

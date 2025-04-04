@@ -2,12 +2,12 @@
 import { useState, useEffect } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Images, ChevronLeft, ChevronRight, X, RefreshCw } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { toast } from 'sonner';
-import { supabase } from '@/integrations/supabase/client';
-import { BUCKETS } from '@/utils/supabaseStorage';
+import { getHomepagePhotos } from '@/utils/supabaseStorage';
+import { Button } from '@/components/ui/button';
 
 // Types for our photo objects
 type Photo = {
@@ -66,106 +66,35 @@ const PhotoGallery = () => {
   const [photos, setPhotos] = useState<Photo[]>(fallbackPhotos);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
 
   // Fetch photos from Supabase on component mount
   useEffect(() => {
     const fetchPhotos = async () => {
+      console.log('PhotoGallery: Starting to fetch photos...');
       setIsLoading(true);
       setError(null);
       
       try {
-        console.log('Fetching photos from homepagephotos bucket...');
+        const result = await getHomepagePhotos();
         
-        // Check if bucket exists
-        const { data: buckets, error: bucketsError } = await supabase
-          .storage
-          .listBuckets();
-        
-        if (bucketsError) {
-          console.error('Error listing buckets:', bucketsError);
-          setError('Failed to access storage buckets');
-          setIsLoading(false);
+        if (result.error) {
+          console.error('PhotoGallery: Error fetching photos:', result.error);
+          setError(result.error);
+          toast.error(`Gallery error: ${result.error}`);
           return;
         }
         
-        const bucket = buckets?.find(b => b.name === BUCKETS.HOMEPAGEPHOTOS);
-        
-        if (!bucket) {
-          console.error(`Bucket '${BUCKETS.HOMEPAGEPHOTOS}' does not exist`);
-          setError(`The '${BUCKETS.HOMEPAGEPHOTOS}' bucket doesn't exist`);
-          setIsLoading(false);
-          return;
+        if (result.photos && result.photos.length > 0) {
+          console.log(`PhotoGallery: Successfully fetched ${result.photos.length} photos`);
+          setPhotos(result.photos);
+          toast.success(`Loaded ${result.photos.length} photos successfully`);
+        } else {
+          console.warn('PhotoGallery: No photos returned from Supabase');
+          setError('No photos found in the gallery');
         }
-        
-        console.log(`Found ${BUCKETS.HOMEPAGEPHOTOS} bucket, listing files...`);
-        
-        // List files in the bucket
-        const { data: files, error: listError } = await supabase
-          .storage
-          .from(BUCKETS.HOMEPAGEPHOTOS)
-          .list('', {
-            sortBy: { column: 'name', order: 'asc' }
-          });
-        
-        if (listError) {
-          console.error('Error listing files:', listError);
-          setError('Error accessing files in the bucket');
-          setIsLoading(false);
-          return;
-        }
-        
-        if (!files || files.length === 0) {
-          console.warn('No files found in bucket');
-          setError('No images found in the gallery');
-          setIsLoading(false);
-          return;
-        }
-        
-        console.log(`Found ${files.length} files in ${BUCKETS.HOMEPAGEPHOTOS} bucket:`, 
-          files.map(f => f.name).join(', '));
-        
-        // Filter for image files
-        const imageFiles = files.filter(file => {
-          const extension = file.name.split('.').pop()?.toLowerCase();
-          return ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(extension || '');
-        });
-        
-        if (imageFiles.length === 0) {
-          console.warn('No image files found in bucket');
-          setError('No valid images found in the gallery');
-          setIsLoading(false);
-          return;
-        }
-        
-        // Convert files to photo objects with URLs and alt text
-        const supabasePhotos = imageFiles.map(file => {
-          // Get public URL for the file
-          const { data } = supabase
-            .storage
-            .from(BUCKETS.HOMEPAGEPHOTOS)
-            .getPublicUrl(file.name);
-          
-          const publicUrl = data.publicUrl;
-          
-          // Generate alt text from file name
-          const nameWithoutExtension = file.name.split('.').slice(0, -1).join('.');
-          const altText = nameWithoutExtension
-            .replace(/[-_]/g, ' ')
-            .replace(/\b\w/g, c => c.toUpperCase());
-          
-          console.log(`Processing image: ${file.name} → ${publicUrl}`);
-          
-          return {
-            src: publicUrl,
-            alt: altText,
-            caption: altText
-          };
-        });
-        
-        console.log('Successfully prepared gallery photos:', supabasePhotos.length);
-        setPhotos(supabasePhotos);
       } catch (e) {
-        console.error('Unexpected error in photo gallery:', e);
+        console.error('PhotoGallery: Unexpected error:', e);
         setError('Unexpected error loading photos');
       } finally {
         setIsLoading(false);
@@ -173,8 +102,13 @@ const PhotoGallery = () => {
     };
     
     fetchPhotos();
-  }, []);
+  }, [retryCount]);
   
+  const refreshGallery = () => {
+    console.log('PhotoGallery: Manually refreshing gallery');
+    setRetryCount(prev => prev + 1);
+  };
+
   const handleThumbnailClick = (index: number) => {
     setActiveIndex(index);
     setIsFullScreen(true);
@@ -229,8 +163,18 @@ const PhotoGallery = () => {
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 text-center">
             <p className="text-amber-800 mb-2 font-medium">Gallery Error</p>
             <p className="text-amber-700">{error}</p>
+            <div className="flex justify-center mt-4">
+              <Button 
+                variant="outline" 
+                className="flex items-center gap-2 text-amber-700 border-amber-300 hover:bg-amber-100"
+                onClick={refreshGallery}
+              >
+                <RefreshCw size={16} />
+                Retry Loading Photos
+              </Button>
+            </div>
             <p className="text-amber-600 text-sm mt-4">
-              Using fallback images. Please check that your homepagephotos bucket exists and contains valid images.
+              Using fallback images. Debug info has been logged to the console.
             </p>
           </div>
         ) : (
@@ -249,7 +193,6 @@ const PhotoGallery = () => {
                     loading="lazy"
                     onError={(e) => {
                       console.error(`Error loading image at index ${index}:`, photo.src);
-                      // Don't replace with fallback here to prevent infinite loops
                       // Just show a broken image indicator
                       e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YxZjFmMSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==';
                     }}
