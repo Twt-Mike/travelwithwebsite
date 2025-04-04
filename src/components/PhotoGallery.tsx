@@ -5,42 +5,6 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 // Gallery photos with direct URLs
 const galleryPhotos = [
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//1.jpeg",
-    alt: "Japan Photo 1"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/kyoto-temple.jpg",
-    alt: "Kyoto Temple"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/cherry-blossoms.jpg",
-    alt: "Cherry Blossoms"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/tokyo-street.jpg",
-    alt: "Tokyo Street"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/fuji-mountain.jpg",
-    alt: "Mount Fuji"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/japanese-garden.jpg",
-    alt: "Japanese Garden"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/osaka-night.jpg",
-    alt: "Osaka Night"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/nara-deer.jpg",
-    alt: "Nara Deer"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/shinjuku.jpg",
-    alt: "Shinjuku"
-  },
-  {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//5.jpg",
     alt: "Japan Photo 5"
   },
