@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
 
 const destinations = [
   {
@@ -25,19 +26,19 @@ const destinations = [
   {
     id: 4,
     name: "Takayama",
-    image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1920&auto=format&fit=crop",
+    image: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/townphotos/TakayamaQuietStreet.jpg",
     description: "Authentic rural Japan and historical charm"
   },
   {
     id: 5,
     name: "Koyasan",
-    image: "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?q=80&w=1836&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1920&auto=format&fit=crop",
     description: "Spiritual experiences and serene mountain temples"
   },
   {
     id: 6,
     name: "Hiroshima",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1980&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=1920&auto=format&fit=crop",
     description: "Historical landmarks and beautiful coastal scenery"
   }
 ];
