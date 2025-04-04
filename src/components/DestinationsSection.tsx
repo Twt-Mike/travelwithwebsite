@@ -5,6 +5,7 @@ import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { logImageStatus } from '@/utils/imageDebug';
+import { toast } from "sonner";
 
 const destinations = [
   {
@@ -48,8 +49,9 @@ const destinations = [
 
 const DestinationsSection = () => {
   const [imageStatus, setImageStatus] = useState<Record<number, boolean>>({});
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
-  // Function to check if townphotos bucket exists and create it if not
+  // Check if townphotos bucket exists
   useEffect(() => {
     const checkTownphotosBucket = async () => {
       const { data: buckets, error } = await supabase
@@ -61,6 +63,7 @@ const DestinationsSection = () => {
       const townphotosBucket = buckets?.find(bucket => bucket.name === 'townphotos');
       if (!townphotosBucket) {
         console.error("The 'townphotos' bucket doesn't exist in Supabase storage");
+        toast.error("Storage bucket missing. Please create 'townphotos' bucket in Supabase");
       } else {
         console.log("Found townphotos bucket:", townphotosBucket);
 
@@ -72,14 +75,20 @@ const DestinationsSection = () => {
         
         if (listError) {
           console.error("Error listing files in townphotos bucket:", listError);
+          toast.error("Error accessing files in storage bucket");
         } else {
           console.log("Files in townphotos bucket:", files);
+          if (files && files.length > 0) {
+            toast.success("Successfully connected to Supabase storage");
+          } else {
+            toast.warning("Storage bucket exists but no files found");
+          }
         }
       }
     };
 
     checkTownphotosBucket();
-  }, []);
+  }, [refreshTrigger]);
 
   // Pre-check image loading
   useEffect(() => {
@@ -95,7 +104,7 @@ const DestinationsSection = () => {
       };
       img.src = destination.image;
     });
-  }, []);
+  }, [refreshTrigger]);
 
   // For demonstration purposes, get public URL dynamically
   useEffect(() => {
@@ -113,7 +122,13 @@ const DestinationsSection = () => {
     };
 
     getPublicUrl();
-  }, []);
+  }, [refreshTrigger]);
+
+  // Function to manually refresh images
+  const handleRefreshImages = () => {
+    setRefreshTrigger(prev => prev + 1);
+    toast.info("Refreshing images...");
+  };
 
   return (
     <section className="py-20 bg-japan-cream">
@@ -123,6 +138,12 @@ const DestinationsSection = () => {
           <p className="section-subtitle mx-auto">
             Every Travel With journey is entirely custom-built around your vision. Here are some incredible places we can include in your bespoke itinerary.
           </p>
+          <button 
+            onClick={handleRefreshImages} 
+            className="mt-2 text-sm text-japan-indigo underline hover:text-japan-pink"
+          >
+            Refresh Images
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
