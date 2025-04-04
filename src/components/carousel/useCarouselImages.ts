@@ -14,7 +14,8 @@ export function useCarouselImages() {
     const fetchSupabaseImages = async () => {
       try {
         setIsLoadingSupabaseImages(true);
-        const result = await getImagesFromBucket(BUCKETS.CAROUSEL);
+        console.log(`Fetching images from bucket: ${BUCKETS.IP}`); // Log which bucket we're using
+        const result = await getImagesFromBucket(BUCKETS.IP); // Use the IP bucket directly
         
         if (result.photos && result.photos.length > 0) {
           const supabaseImages = result.photos;
