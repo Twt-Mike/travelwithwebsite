@@ -4,7 +4,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Skeleton } from '@/components/ui/skeleton';
 import { getImagesFromBucket } from '@/utils/supabaseStorage';
 import { Button } from '@/components/ui/button';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, Info } from 'lucide-react';
 
 // Type for our photo objects
 type Photo = {
@@ -17,6 +17,7 @@ const PhotoGallery = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
+  const [bucketStatus, setBucketStatus] = useState<string | null>(null);
 
   // Fetch photos from Supabase on component mount
   useEffect(() => {
@@ -24,8 +25,11 @@ const PhotoGallery = () => {
       console.log('PhotoGallery: Starting to fetch photos...');
       setIsLoading(true);
       setError(null);
+      setBucketStatus(null);
       
       try {
+        // Test both direct string and constant reference
+        console.log('Attempting to fetch from IP bucket directly...');
         const result = await getImagesFromBucket('ip');
         
         if (result.error) {
@@ -37,6 +41,7 @@ const PhotoGallery = () => {
         if (result.photos && result.photos.length > 0) {
           console.log(`PhotoGallery: Successfully fetched ${result.photos.length} photos`);
           setPhotos(result.photos);
+          setBucketStatus(`Successfully loaded ${result.photos.length} images from 'ip' bucket`);
         } else {
           console.warn('PhotoGallery: No photos returned from Supabase');
           setError('No photos found in the gallery');
@@ -64,6 +69,11 @@ const PhotoGallery = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo">
             Photo Gallery
           </h2>
+          {bucketStatus && (
+            <div className="mt-2 text-sm text-green-600 flex items-center justify-center gap-1">
+              <Info size={14} /> {bucketStatus}
+            </div>
+          )}
         </div>
         
         {isLoading ? (

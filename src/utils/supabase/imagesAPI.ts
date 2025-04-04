@@ -35,6 +35,9 @@ export async function getImagesFromBucket(bucketName: string): Promise<BucketIma
       };
     }
     
+    // Log the raw file list for debugging
+    console.log(`Raw file list from '${bucketName}' bucket:`, files);
+    
     if (!files || files.length === 0) {
       console.warn(`No files found in '${bucketName}' bucket`);
       return {
@@ -46,11 +49,13 @@ export async function getImagesFromBucket(bucketName: string): Promise<BucketIma
     console.log(`Found ${files.length} files in '${bucketName}':`, files.map(f => f.name).join(', '));
     
     // Filter for image files only
-    const supportedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'JPG', 'JPEG'];
+    const supportedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'JPG', 'JPEG', 'PNG'];
     const imageFiles = files.filter(file => {
       const extension = file.name.split('.').pop()?.toLowerCase();
       return supportedExtensions.includes(extension || '');
     });
+    
+    console.log(`After filtering by extension: ${imageFiles.length} image files found`);
     
     if (imageFiles.length === 0) {
       console.warn(`No image files found in '${bucketName}' bucket`);
@@ -59,8 +64,6 @@ export async function getImagesFromBucket(bucketName: string): Promise<BucketIma
         error: `No image files found in '${bucketName}' bucket`
       };
     }
-    
-    console.log(`Found ${imageFiles.length} image files out of ${files.length} total files`);
     
     // Convert files to photo objects with URLs
     const photos = imageFiles.map(file => {

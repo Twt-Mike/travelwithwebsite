@@ -9,9 +9,9 @@ import WhyTravelWith from '@/components/WhyTravelWith';
 import PhotoGallery from '@/components/PhotoGallery';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { Button } from '@/components/ui/button';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, List } from 'lucide-react';
 import { toast } from 'sonner';
-import { testSupabaseStorageConnection, testBucket, BUCKETS } from '@/utils/supabaseStorage';
+import { testSupabaseStorageConnection, testBucket, BUCKETS, listBucketFiles } from '@/utils/supabaseStorage';
 
 const Index = () => {
   const [photoGalleryKey, setPhotoGalleryKey] = useState(0);
@@ -28,13 +28,26 @@ const Index = () => {
     
     const connected = await testSupabaseStorageConnection();
     if (connected) {
-      const ipBucketOk = await testBucket(BUCKETS.IP);
+      const ipBucketOk = await testBucket('ip'); // Test directly with string
       if (ipBucketOk) {
         toast.success('IP bucket is accessible');
         reloadPhotoGallery();
       } else {
         toast.error('IP bucket test failed');
       }
+    }
+  };
+  
+  // Function to list files in the IP bucket
+  const listIPBucketFiles = async () => {
+    toast.info('Listing files in IP bucket...');
+    const files = await listBucketFiles('ip');
+    
+    if (files && files.length > 0) {
+      toast.success(`Found ${files.length} files in IP bucket`);
+      console.log('Files in IP bucket:', files);
+    } else {
+      toast.error('No files found in IP bucket or failed to list files');
     }
   };
   
@@ -65,6 +78,15 @@ const Index = () => {
               onClick={testSupabaseConnection}
             >
               Test IP Bucket
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="bg-white bg-opacity-75 backdrop-blur-sm shadow-md flex items-center gap-1"
+              onClick={listIPBucketFiles}
+            >
+              <List size={14} />
+              List Files
             </Button>
           </div>
         )}

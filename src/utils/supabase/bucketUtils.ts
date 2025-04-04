@@ -89,16 +89,31 @@ export async function testBucket(bucketName: string): Promise<boolean> {
     const { data: files, error: listError } = await supabase
       .storage
       .from(bucketName)
-      .list('');
+      .list('', {
+        limit: 100,
+        offset: 0,
+        sortBy: { column: 'name', order: 'asc' }
+      });
       
     if (listError) {
       console.error(`Error listing files in ${bucketName}:`, listError);
       return false;
     }
     
-    console.log(`Successfully accessed ${bucketName} bucket. Found ${files?.length || 0} files.`);
-    toast.success(`Successfully accessed ${bucketName} bucket`);
+    console.log(`Successfully accessed ${bucketName} bucket. Raw files data:`, files);
+    console.log(`Found ${files?.length || 0} items in bucket.`);
     
+    // Check individual files if any exist
+    if (files && files.length > 0) {
+      const firstFile = files[0];
+      console.log(`First file in bucket: ${firstFile.name}, size: ${firstFile.metadata?.size || 'unknown'}`);
+      
+      // Try to get the URL of the first file
+      const { data: urlData } = supabase.storage.from(bucketName).getPublicUrl(firstFile.name);
+      console.log(`Public URL for first file: ${urlData?.publicUrl || 'Failed to get URL'}`);
+    }
+    
+    toast.success(`Successfully accessed ${bucketName} bucket`);
     return true;
   } catch (error) {
     console.error(`Error testing bucket ${bucketName}:`, error);
