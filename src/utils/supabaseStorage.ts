@@ -48,6 +48,48 @@ export function getImageUrl(bucketName: string, fileName: string): string {
   }
 }
 
+// For backwards compatibility with useCarouselImages.ts
+export function getPublicImageUrl(fileName: string): string {
+  return getImageUrl(BUCKETS.CAROUSEL, fileName);
+}
+
+// Get alt text from file name by removing extension and replacing dashes/underscores with spaces
+export function getAltTextForImage(fileName: string): string {
+  // Remove file extension
+  const nameWithoutExtension = fileName.split('.').slice(0, -1).join('.');
+  // Replace dashes and underscores with spaces, then capitalize words
+  return nameWithoutExtension
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Fetch images from the carousel bucket
+export async function getCarouselImages() {
+  try {
+    // Check if bucket exists first
+    const bucketExists = await checkBucketExists(BUCKETS.CAROUSEL);
+    if (!bucketExists) {
+      console.error(`The ${BUCKETS.CAROUSEL} bucket doesn't exist`);
+      return [];
+    }
+    
+    const { data: files, error } = await supabase
+      .storage
+      .from(BUCKETS.CAROUSEL)
+      .list();
+    
+    if (error) {
+      console.error('Error listing carousel images:', error);
+      return [];
+    }
+    
+    return files || [];
+  } catch (error) {
+    console.error('Error getting carousel images:', error);
+    return [];
+  }
+}
+
 // Lists all files in a bucket
 export async function listBucketFiles(bucketName: string) {
   try {
