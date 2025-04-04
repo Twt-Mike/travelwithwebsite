@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -10,36 +9,24 @@ import CarouselFullScreenDialog from './carousel/CarouselFullScreenDialog';
 // Static carousel images with direct URLs
 const carouselImages = [
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/group-osaka.jpg",
-    alt: "Group at Dotonbori in Osaka with Glico Man sign"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//AnonSakuraPortraitSolo.jpg",
+    alt: "Person enjoying sakura cherry blossoms"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/group-kimonos.jpg",
-    alt: "Group in traditional kimonos at a Japanese garden"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupJumpKimonoLanscape.jpg",
+    alt: "Group jumping in kimonos"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/arcade-japan.jpg",
-    alt: "Group enjoying a game arcade in Japan"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupPortraitBambooPikachu.jpg",
+    alt: "Group portrait at bamboo forest with Pikachu"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/traditional-building.jpg",
-    alt: "Tour group at traditional Japanese building entrance"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupSakeTakayamaStreet1.jpg",
+    alt: "Group enjoying sake on Takayama street"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/tea-ceremony.jpg",
-    alt: "Tea ceremony experience in a traditional tatami room"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/fushimi-inari.jpg",
-    alt: "Walking through Fushimi Inari shrine torii gates"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/sakura-nara.jpg",
-    alt: "Cherry blossoms and deer in Nara"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/torii-gates.jpg",
-    alt: "Red torii gates at Fushimi Inari shrine"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//PortraitGuestDanceAkiba.jpg",
+    alt: "Guest dancing in Akihabara"
   }
 ];
 
@@ -101,7 +88,7 @@ const JapanExperienceCarousel = () => {
                 key={index} 
                 className={cn(
                   "cursor-pointer transition-all duration-300",
-                  isMobile ? "basis-3/4" : "basis-1/4", // Exactly 4 images on desktop
+                  isMobile ? "basis-3/4" : "basis-1/3", // Show 3 images on desktop, adjusted from 1/4 to 1/3
                   currentSlide === index ? "scale-105 z-10" : "opacity-85 hover:opacity-100"
                 )}
                 onClick={() => openImageDialog(index)}
