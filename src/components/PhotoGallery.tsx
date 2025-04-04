@@ -4,8 +4,9 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Image as ImageIcon, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { logImageStatus, getFallbackImage } from '@/utils/imageDebug';
-import { getHomepagePhotos } from '@/utils/supabaseStorage';
+import { Skeleton } from '@/components/ui/skeleton';
+import { getHomepagePhotos, testBucket, BUCKETS } from '@/utils/supabaseStorage';
+import { toast } from 'sonner';
 
 // Fallback photos in case Supabase photos aren't available
 const fallbackPhotos = [
@@ -56,22 +57,46 @@ const PhotoGallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [photos, setPhotos] = useState(fallbackPhotos);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   // Fetch photos from Supabase on component mount
   useEffect(() => {
     const fetchPhotos = async () => {
       setIsLoading(true);
+      setHasError(false);
+      
       try {
+        // Test if homepagephotos bucket is accessible
+        const isBucketAccessible = await testBucket(BUCKETS.HOMEPAGEPHOTOS);
+        
+        if (!isBucketAccessible) {
+          console.warn('homepagephotos bucket is not accessible, using fallback photos');
+          setHasError(true);
+          return;
+        }
+        
         const supabasePhotos = await getHomepagePhotos();
         
         if (supabasePhotos && supabasePhotos.length > 0) {
           console.log('Successfully loaded photos from homepagephotos bucket:', supabasePhotos.length);
-          setPhotos(supabasePhotos);
+          
+          // Validate photos have required properties
+          const validPhotos = supabasePhotos.filter(photo => 
+            photo && typeof photo.src === 'string' && photo.src.trim() !== ''
+          );
+          
+          if (validPhotos.length > 0) {
+            setPhotos(validPhotos);
+          } else {
+            console.warn('No valid photos found in homepagephotos bucket, using fallback photos');
+            setHasError(true);
+          }
         } else {
           console.log('No photos found in homepagephotos bucket, using fallback photos');
         }
       } catch (error) {
         console.error('Error fetching photos from Supabase:', error);
+        setHasError(true);
       } finally {
         setIsLoading(false);
       }
@@ -124,7 +149,9 @@ const PhotoGallery = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {[...Array(8)].map((_, index) => (
               <div key={index} className="rounded-lg bg-gray-200 animate-pulse">
-                <AspectRatio ratio={1} />
+                <AspectRatio ratio={1}>
+                  <Skeleton className="w-full h-full" />
+                </AspectRatio>
               </div>
             ))}
           </div>
@@ -141,10 +168,24 @@ const PhotoGallery = () => {
                     src={photo.src} 
                     alt={photo.alt} 
                     className="object-cover w-full h-full"
+                    onError={(e) => {
+                      console.error(`Error loading image at index ${index}`);
+                      // Don't replace with fallback here to prevent infinite loops
+                      // Just show a broken image indicator
+                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YxZjFmMSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==';
+                    }}
                   />
                 </AspectRatio>
               </div>
             ))}
+          </div>
+        )}
+        
+        {hasError && !isLoading && (
+          <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-md">
+            <p className="text-amber-700 text-sm text-center">
+              Some images couldn't be loaded. Please check that your images are uploaded to the homepagephotos bucket and are publicly accessible.
+            </p>
           </div>
         )}
       </div>
@@ -173,6 +214,10 @@ const PhotoGallery = () => {
               src={photos[activeIndex].src} 
               alt={photos[activeIndex].alt} 
               className="object-contain w-full h-auto max-h-[80vh] mx-auto"
+              onError={(e) => {
+                console.error('Error loading fullscreen image');
+                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzIyMjIyMiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNlZWVlZWUiPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==';
+              }}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center">
               {photos[activeIndex].caption}
@@ -217,6 +262,10 @@ const PhotoGallery = () => {
                       src={photo.src} 
                       alt={photo.alt} 
                       className="object-cover w-full h-full"
+                      onError={(e) => {
+                        console.error(`Error loading carousel image at index ${index}`);
+                        e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YxZjFmMSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==';
+                      }}
                     />
                   </AspectRatio>
                   <p className="text-center text-sm mt-2 text-gray-700">
