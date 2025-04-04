@@ -39,6 +39,46 @@ const galleryPhotos = [
   {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/shinjuku.jpg",
     alt: "Shinjuku"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//5.jpg",
+    alt: "Japan Photo 5"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//6.jpg",
+    alt: "Japan Photo 6"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//7.jpg",
+    alt: "Japan Photo 7"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//9.jpg",
+    alt: "Japan Photo 9"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//10.jpeg",
+    alt: "Japan Photo 10"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//11.jpg",
+    alt: "Japan Photo 11"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//12.jpg",
+    alt: "Japan Photo 12"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//13.jpg",
+    alt: "Japan Photo 13"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//14.jpg",
+    alt: "Japan Photo 14"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//16.jpg",
+    alt: "Japan Photo 16"
   }
 ];
 
