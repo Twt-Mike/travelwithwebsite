@@ -17,10 +17,22 @@ export function useCarouselImages() {
         const files = await getCarouselImages();
         
         if (files && files.length > 0) {
-          const supabaseImages = files.map(file => ({
-            src: getPublicImageUrl(file.name),
-            alt: getAltTextForImage(file.name)
-          }));
+          const supabaseImages = files.map(file => {
+            const url = getPublicImageUrl(file.name);
+            console.log(`Generated URL for ${file.name}: ${url}`);
+            return {
+              src: url,
+              alt: getAltTextForImage(file.name)
+            };
+          });
+          
+          // Immediately test each image URL
+          supabaseImages.forEach(img => {
+            const testImg = new Image();
+            testImg.onload = () => console.log(`Image loaded successfully: ${img.src}`);
+            testImg.onerror = () => console.error(`Failed to load image: ${img.src}`);
+            testImg.src = img.src;
+          });
           
           setImageSources(prevImages => {
             // Merge with default images if we don't have enough from Supabase
@@ -32,7 +44,7 @@ export function useCarouselImages() {
           
           console.log('Successfully loaded Supabase images:', supabaseImages.length);
         } else {
-          console.log('Using default images');
+          console.log('No images found in bucket, using default images');
         }
       } catch (error) {
         console.error('Error fetching Supabase images:', error);

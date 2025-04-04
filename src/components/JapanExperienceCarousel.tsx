@@ -46,6 +46,7 @@ const JapanExperienceCarousel = () => {
   };
   
   const handleImageError = (index: number) => {
+    console.error(`Failed to load image at index ${index}, using fallback`);
     setLoadErrors(prev => ({...prev, [index]: true}));
   };
 

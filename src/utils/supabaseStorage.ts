@@ -16,7 +16,6 @@ export async function checkBucketExists(bucketName: string): Promise<boolean> {
     
     if (error) {
       console.error(`Error checking buckets:`, error);
-      toast.error(`Failed to check storage buckets: ${error.message}`);
       return false;
     }
     
@@ -66,21 +65,23 @@ export function getAltTextForImage(fileName: string): string {
 // Fetch images from the carousel bucket
 export async function getCarouselImages() {
   try {
-    // Check if bucket exists first
-    const bucketExists = await checkBucketExists(BUCKETS.CAROUSEL);
-    if (!bucketExists) {
-      console.error(`The ${BUCKETS.CAROUSEL} bucket doesn't exist`);
-      return [];
-    }
-    
+    // We'll assume the bucket exists since we've verified it's public and accessible
     const { data: files, error } = await supabase
       .storage
       .from(BUCKETS.CAROUSEL)
-      .list();
+      .list('', {
+        sortBy: { column: 'name', order: 'asc' }
+      });
     
     if (error) {
       console.error('Error listing carousel images:', error);
       return [];
+    }
+    
+    if (files && files.length > 0) {
+      console.log('Found files in carousel-images bucket:', files.map(f => f.name).join(', '));
+    } else {
+      console.log('No files found in carousel-images bucket');
     }
     
     return files || [];
