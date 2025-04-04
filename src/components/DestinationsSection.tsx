@@ -1,8 +1,10 @@
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { logImageStatus } from '@/utils/imageDebug';
 
 const destinations = [
   {
@@ -27,6 +29,7 @@ const destinations = [
     id: 4,
     name: "Takayama",
     image: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/townphotos/TakayamaQuietStreet.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1920&auto=format&fit=crop",
     description: "Authentic rural Japan and historical charm"
   },
   {
@@ -44,6 +47,74 @@ const destinations = [
 ];
 
 const DestinationsSection = () => {
+  const [imageStatus, setImageStatus] = useState<Record<number, boolean>>({});
+
+  // Function to check if townphotos bucket exists and create it if not
+  useEffect(() => {
+    const checkTownphotosBucket = async () => {
+      const { data: buckets, error } = await supabase
+        .storage
+        .listBuckets();
+      
+      console.log("Available buckets:", buckets);
+      
+      const townphotosBucket = buckets?.find(bucket => bucket.name === 'townphotos');
+      if (!townphotosBucket) {
+        console.error("The 'townphotos' bucket doesn't exist in Supabase storage");
+      } else {
+        console.log("Found townphotos bucket:", townphotosBucket);
+
+        // List files in the townphotos bucket
+        const { data: files, error: listError } = await supabase
+          .storage
+          .from('townphotos')
+          .list('');
+        
+        if (listError) {
+          console.error("Error listing files in townphotos bucket:", listError);
+        } else {
+          console.log("Files in townphotos bucket:", files);
+        }
+      }
+    };
+
+    checkTownphotosBucket();
+  }, []);
+
+  // Pre-check image loading
+  useEffect(() => {
+    destinations.forEach((destination, index) => {
+      const img = new Image();
+      img.onload = () => {
+        logImageStatus(destination.image, true);
+        setImageStatus(prev => ({...prev, [index]: true}));
+      };
+      img.onerror = () => {
+        logImageStatus(destination.image, false);
+        setImageStatus(prev => ({...prev, [index]: false}));
+      };
+      img.src = destination.image;
+    });
+  }, []);
+
+  // For demonstration purposes, get public URL dynamically
+  useEffect(() => {
+    const getPublicUrl = async () => {
+      try {
+        const { data } = supabase
+          .storage
+          .from('townphotos')
+          .getPublicUrl('TakayamaQuietStreet.jpg');
+        
+        console.log('Generated Takayama public URL:', data.publicUrl);
+      } catch (error) {
+        console.error('Error getting Takayama public URL:', error);
+      }
+    };
+
+    getPublicUrl();
+  }, []);
+
   return (
     <section className="py-20 bg-japan-cream">
       <div className="japan-container">
@@ -62,14 +133,27 @@ const DestinationsSection = () => {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <img 
-                src={destination.image} 
+                src={imageStatus[index] === false && destination.fallbackImage ? destination.fallbackImage : destination.image} 
                 alt={destination.name} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => {
+                  // If fallback image is available, use it
+                  if (destination.fallbackImage) {
+                    console.log(`Using fallback image for ${destination.name}`);
+                    e.currentTarget.src = destination.fallbackImage;
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-2xl font-serif font-medium mb-2">{destination.name}</h3>
                   <p className="text-white/80 mb-4 text-sm">{destination.description}</p>
+                  
+                  {imageStatus[index] === false && (
+                    <span className="bg-red-600 text-white text-xs px-2 py-1 rounded absolute top-2 right-2">
+                      Image Error
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
