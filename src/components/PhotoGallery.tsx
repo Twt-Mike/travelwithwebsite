@@ -5,6 +5,10 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 // Gallery photos with direct URLs
 const galleryPhotos = [
   {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//1.jpeg",
+    alt: "Japan Photo 1"
+  },
+  {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/kyoto-temple.jpg",
     alt: "Kyoto Temple"
   },
