@@ -4,18 +4,50 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useCarouselImages } from './carousel/useCarouselImages';
 import { useCarouselAutoplay } from './carousel/useCarouselAutoplay';
 import CarouselFullScreenDialog from './carousel/CarouselFullScreenDialog';
-import { getFallbackImage } from '@/utils/imageDebug';
+
+// Static carousel images with direct URLs
+const carouselImages = [
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/group-osaka.jpg",
+    alt: "Group at Dotonbori in Osaka with Glico Man sign"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/group-kimonos.jpg",
+    alt: "Group in traditional kimonos at a Japanese garden"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/arcade-japan.jpg",
+    alt: "Group enjoying a game arcade in Japan"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/traditional-building.jpg",
+    alt: "Tour group at traditional Japanese building entrance"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/tea-ceremony.jpg",
+    alt: "Tea ceremony experience in a traditional tatami room"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/fushimi-inari.jpg",
+    alt: "Walking through Fushimi Inari shrine torii gates"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/sakura-nara.jpg",
+    alt: "Cherry blossoms and deer in Nara"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip/torii-gates.jpg",
+    alt: "Red torii gates at Fushimi Inari shrine"
+  }
+];
 
 const JapanExperienceCarousel = () => {
   const [api, setApi] = useState<any>(null);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [loadErrors, setLoadErrors] = useState<Record<number, boolean>>({});
   const isMobile = useIsMobile();
   
-  const { imageSources, isLoading } = useCarouselImages();
   const { currentSlide, handleMouseEnter, handleMouseLeave, startAutoplay } = useCarouselAutoplay(api);
   
   const openImageDialog = (index: number) => {
@@ -36,30 +68,14 @@ const JapanExperienceCarousel = () => {
     
     if (direction === 'next') {
       setSelectedImage((prev) => 
-        prev === imageSources.length - 1 ? 0 : (prev as number) + 1
+        prev === carouselImages.length - 1 ? 0 : (prev as number) + 1
       );
     } else {
       setSelectedImage((prev) => 
-        prev === 0 ? imageSources.length - 1 : (prev as number) - 1
+        prev === 0 ? carouselImages.length - 1 : (prev as number) - 1
       );
     }
   };
-  
-  const handleImageError = (index: number) => {
-    console.error(`Failed to load image at index ${index}, using fallback`);
-    setLoadErrors(prev => ({...prev, [index]: true}));
-  };
-
-  if (isLoading) {
-    return (
-      <div className="py-8 text-center">
-        <h3 className="text-center text-2xl mb-6 text-gray-700 font-medium">Loading images...</h3>
-        <div className="w-full flex justify-center">
-          <div className="animate-pulse bg-gray-200 h-64 w-64 rounded-lg"></div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="py-8">
@@ -80,7 +96,7 @@ const JapanExperienceCarousel = () => {
           className="w-full"
         >
           <CarouselContent className="flex items-center">
-            {imageSources.map((image, index) => (
+            {carouselImages.map((image, index) => (
               <CarouselItem 
                 key={index} 
                 className={cn(
@@ -93,10 +109,13 @@ const JapanExperienceCarousel = () => {
                 <div className="overflow-hidden rounded-lg shadow-lg">
                   <AspectRatio ratio={2/3} className="bg-gray-100 overflow-hidden">
                     <img
-                      src={loadErrors[index] ? getFallbackImage(index) : image.src}
+                      src={image.src}
                       alt={image.alt}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                      onError={() => handleImageError(index)}
+                      onError={(e) => {
+                        console.error(`Error loading image at index ${index}:`, image.src);
+                        e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YxZjFmMSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==';
+                      }}
                     />
                   </AspectRatio>
                 </div>
@@ -112,10 +131,7 @@ const JapanExperienceCarousel = () => {
       
       <CarouselFullScreenDialog
         selectedImage={selectedImage}
-        imageSources={imageSources.map((img, idx) => ({
-          ...img,
-          src: loadErrors[idx] ? getFallbackImage(idx) : img.src
-        }))}
+        imageSources={carouselImages}
         closeImageDialog={closeImageDialog}
         navigateFullscreen={navigateFullscreen}
       />
