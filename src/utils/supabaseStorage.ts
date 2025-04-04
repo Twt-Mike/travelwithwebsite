@@ -1,82 +1,114 @@
 
 import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
-const BUCKET_NAME = 'carousel-images';
-const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=800&auto=format';
+const BUCKETS = {
+  TOWNPHOTOS: 'townphotos',
+  CAROUSEL: 'carousel-images'
+};
 
-export async function getCarouselImages() {
+// Check if a bucket exists, show appropriate notifications
+export async function checkBucketExists(bucketName: string): Promise<boolean> {
   try {
-    console.log('Fetching images from Supabase bucket:', BUCKET_NAME);
-    const { data, error } = await supabase
+    const { data: buckets, error } = await supabase
       .storage
-      .from(BUCKET_NAME)
-      .list('', {
-        sortBy: { column: 'name', order: 'asc' }
-      });
+      .listBuckets();
     
     if (error) {
-      console.error('Error fetching images from Supabase:', error);
-      return null;
+      console.error(`Error checking buckets:`, error);
+      toast.error(`Failed to check storage buckets: ${error.message}`);
+      return false;
     }
     
-    if (!data || data.length === 0) {
-      console.warn('No images found in Supabase bucket. Please upload images to the carousel-images bucket.');
-      return null;
+    const bucket = buckets?.find(b => b.name === bucketName);
+    if (!bucket) {
+      console.error(`The '${bucketName}' bucket doesn't exist in Supabase storage`);
+      return false;
     }
     
-    console.log('Found images in Supabase bucket:', data);
-    
-    // Filter for image files only
-    const imageFiles = data.filter(file => 
-      !file.id.includes('/') && 
-      (file.metadata?.mimetype?.startsWith('image/') || 
-      file.name.match(/\.(jpeg|jpg|png|gif|webp)$/i))
-    );
-    
-    console.log('Filtered image files:', imageFiles);
-    return imageFiles;
+    return true;
   } catch (error) {
-    console.error('Error in getCarouselImages:', error);
-    return null;
+    console.error(`Error checking bucket ${bucketName}:`, error);
+    return false;
   }
 }
 
-export function getPublicImageUrl(fileName: string) {
+// Get public URL for an image in a bucket
+export function getImageUrl(bucketName: string, fileName: string): string {
   try {
     const { data } = supabase
       .storage
-      .from(BUCKET_NAME)
+      .from(bucketName)
       .getPublicUrl(fileName);
     
-    console.log(`Generated public URL for ${fileName}:`, data.publicUrl);
     return data.publicUrl;
   } catch (error) {
-    console.error('Error getting public URL:', error);
-    return FALLBACK_IMAGE;
+    console.error(`Error getting public URL for ${fileName}:`, error);
+    return '';
   }
 }
 
-export const defaultAltTexts = {
-  'dotonbori.jpg': 'Group at Dotonbori in Osaka with Glico Man sign',
-  'kimonos.jpg': 'Group in traditional kimonos at a Japanese garden',
-  'arcade.jpg': 'Group enjoying a game arcade in Japan',
-  'temple.jpg': 'Tour group at traditional Japanese building entrance',
-  'tea.jpg': 'Tea ceremony experience in a traditional tatami room',
-  'fushimi.jpg': 'Walking through Fushimi Inari shrine torii gates',
-  'nara.jpg': 'Cherry blossoms and deer in Nara',
-  'torii.jpg': 'Red torii gates at Fushimi Inari shrine'
-};
+// Lists all files in a bucket
+export async function listBucketFiles(bucketName: string) {
+  try {
+    const { data: files, error } = await supabase
+      .storage
+      .from(bucketName)
+      .list('');
+    
+    if (error) {
+      console.error(`Error listing files in ${bucketName} bucket:`, error);
+      toast.error(`Error accessing files in ${bucketName} bucket`);
+      return [];
+    }
+    
+    console.log(`Files in ${bucketName} bucket:`, files);
+    return files || [];
+  } catch (error) {
+    console.error(`Error listing files in ${bucketName} bucket:`, error);
+    return [];
+  }
+}
 
-export function getAltTextForImage(fileName: string) {
-  const baseName = fileName.split('/').pop()?.toLowerCase() || '';
+// Verify image URLs work by preloading them
+export async function verifyImageUrls(imageUrls: string[]): Promise<Record<string, boolean>> {
+  const results: Record<string, boolean> = {};
   
-  // Check if we have a predefined alt text for this file
-  for (const [key, altText] of Object.entries(defaultAltTexts)) {
-    if (baseName.includes(key.split('.')[0].toLowerCase())) {
-      return altText;
+  for (const url of imageUrls) {
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      results[url] = response.ok;
+      console.log(`Image URL check: ${url} - ${response.ok ? 'OK' : 'FAILED'}`);
+    } catch (error) {
+      results[url] = false;
+      console.error(`Error checking image URL ${url}:`, error);
     }
   }
   
-  // If no match, generate a generic alt text
-  return `Japan travel experience photo - ${baseName}`;
+  return results;
 }
+
+// Test connectivity to Supabase storage
+export async function testSupabaseStorageConnection(): Promise<boolean> {
+  try {
+    const { data: buckets, error } = await supabase
+      .storage
+      .listBuckets();
+    
+    if (error) {
+      console.error('Failed to connect to Supabase storage:', error);
+      toast.error('Failed to connect to Supabase storage');
+      return false;
+    }
+    
+    toast.success('Successfully connected to Supabase storage');
+    console.log('Available storage buckets:', buckets);
+    return true;
+  } catch (error) {
+    console.error('Error connecting to Supabase storage:', error);
+    toast.error('Error connecting to Supabase storage');
+    return false;
+  }
+}
+
+export { BUCKETS };
