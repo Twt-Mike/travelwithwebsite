@@ -4,7 +4,8 @@ import { toast } from 'sonner';
 
 const BUCKETS = {
   TOWNPHOTOS: 'townphotos',
-  CAROUSEL: 'carousel-images'
+  CAROUSEL: 'carousel-images',
+  HOMEPAGEPHOTOS: 'homepagephotos'
 };
 
 // Check if a bucket exists, show appropriate notifications
@@ -87,6 +88,40 @@ export async function getCarouselImages() {
     return files || [];
   } catch (error) {
     console.error('Error getting carousel images:', error);
+    return [];
+  }
+}
+
+// Get homepage photos from the homepagephotos bucket
+export async function getHomepagePhotos() {
+  try {
+    const { data: files, error } = await supabase
+      .storage
+      .from(BUCKETS.HOMEPAGEPHOTOS)
+      .list('', {
+        sortBy: { column: 'name', order: 'asc' }
+      });
+    
+    if (error) {
+      console.error('Error listing homepage photos:', error);
+      return [];
+    }
+    
+    if (files && files.length > 0) {
+      console.log('Found files in homepagephotos bucket:', files.map(f => f.name).join(', '));
+      
+      // Convert files to photo objects with URLs and alt text
+      return files.map(file => ({
+        src: getImageUrl(BUCKETS.HOMEPAGEPHOTOS, file.name),
+        alt: getAltTextForImage(file.name),
+        caption: getAltTextForImage(file.name)
+      }));
+    } else {
+      console.log('No files found in homepagephotos bucket');
+      return [];
+    }
+  } catch (error) {
+    console.error('Error getting homepage photos:', error);
     return [];
   }
 }

@@ -5,11 +5,10 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Image as ImageIcon, Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { logImageStatus, getFallbackImage } from '@/utils/imageDebug';
+import { getHomepagePhotos } from '@/utils/supabaseStorage';
 
-// Debug logging
-console.log("Loading PhotoGallery component");
-
-const tourPhotos = [
+// Fallback photos in case Supabase photos aren't available
+const fallbackPhotos = [
   {
     src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e',
     alt: 'Group of travelers in kimonos posing in front of traditional Japanese building',
@@ -49,32 +48,36 @@ const tourPhotos = [
     src: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989',
     alt: 'Temple building with traditional Japanese architecture',
     caption: 'Discovering hidden temples away from the crowds'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1504109586057-7a2ae83d1338',
-    alt: 'Japanese sushi plates and dishes',
-    caption: 'Indulging in authentic Japanese cuisine'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36',
-    alt: 'Elderly Japanese woman preparing traditional street food',
-    caption: 'Meeting locals and experiencing authentic street food'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1528164344705-47542687000d',
-    alt: 'Woman in interactive light museum exhibit',
-    caption: 'Visiting the TeamLab digital art museum in Tokyo'
   }
 ];
 
 const PhotoGallery = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [photos, setPhotos] = useState(tourPhotos);
+  const [photos, setPhotos] = useState(fallbackPhotos);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // No need to check images, we're now using reliable Unsplash URLs
+  // Fetch photos from Supabase on component mount
   useEffect(() => {
-    console.log("PhotoGallery component mounted with reliable Unsplash images");
+    const fetchPhotos = async () => {
+      setIsLoading(true);
+      try {
+        const supabasePhotos = await getHomepagePhotos();
+        
+        if (supabasePhotos && supabasePhotos.length > 0) {
+          console.log('Successfully loaded photos from homepagephotos bucket:', supabasePhotos.length);
+          setPhotos(supabasePhotos);
+        } else {
+          console.log('No photos found in homepagephotos bucket, using fallback photos');
+        }
+      } catch (error) {
+        console.error('Error fetching photos from Supabase:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    fetchPhotos();
   }, []);
   
   const handleThumbnailClick = (index: number) => {
@@ -113,28 +116,37 @@ const PhotoGallery = () => {
             </h2>
           </div>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            Explore moments from previous influencer-hosted trips. Your journey will be uniquely yours, but equally memorable.
-            <br /><span className="text-sm italic">(Note: Photos provided by guests who granted permission or owned by us.)</span>
+            Explore moments from previous Japan tour experiences. Your journey will be uniquely yours, but equally memorable.
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {photos.map((photo, index) => (
-            <div 
-              key={index} 
-              className="overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
-              onClick={() => handleThumbnailClick(index)}
-            >
-              <AspectRatio ratio={1} className="bg-gray-100">
-                <img 
-                  src={photo.src} 
-                  alt={photo.alt} 
-                  className="object-cover w-full h-full"
-                />
-              </AspectRatio>
-            </div>
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {[...Array(8)].map((_, index) => (
+              <div key={index} className="rounded-lg bg-gray-200 animate-pulse">
+                <AspectRatio ratio={1} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {photos.map((photo, index) => (
+              <div 
+                key={index} 
+                className="overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => handleThumbnailClick(index)}
+              >
+                <AspectRatio ratio={1} className="bg-gray-100">
+                  <img 
+                    src={photo.src} 
+                    alt={photo.alt} 
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Full screen image view */}
