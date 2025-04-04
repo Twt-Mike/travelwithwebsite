@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { defaultTourImages, ImageReplacement } from './carouselData';
 import { logImageStatus } from '@/utils/imageDebug';
-import { getCarouselImages, getPublicImageUrl, getAltTextForImage } from '@/utils/supabaseStorage';
+import { getImagesFromBucket, BUCKETS, getAltTextForImage } from '@/utils/supabaseStorage';
 
 export function useCarouselImages() {
   const [imageSources, setImageSources] = useState(defaultTourImages);
@@ -14,17 +14,10 @@ export function useCarouselImages() {
     const fetchSupabaseImages = async () => {
       try {
         setIsLoadingSupabaseImages(true);
-        const files = await getCarouselImages();
+        const result = await getImagesFromBucket(BUCKETS.CAROUSEL);
         
-        if (files && files.length > 0) {
-          const supabaseImages = files.map(file => {
-            const url = getPublicImageUrl(file.name);
-            console.log(`Generated URL for ${file.name}: ${url}`);
-            return {
-              src: url,
-              alt: getAltTextForImage(file.name)
-            };
-          });
+        if (result.photos && result.photos.length > 0) {
+          const supabaseImages = result.photos;
           
           // Immediately test each image URL
           supabaseImages.forEach(img => {
