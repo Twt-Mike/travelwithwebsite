@@ -7,7 +7,15 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
+  
+  // Use a try-catch to handle the possibility of being outside a router context
+  let currentPath = '/';
+  try {
+    const location = useLocation();
+    currentPath = location.pathname;
+  } catch (error) {
+    console.log('Router context not available, defaulting path to /', error);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,11 +41,11 @@ const Navbar = () => {
       }`}
     >
       <div className="japan-container flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span className="text-2xl font-serif font-bold text-japan-indigo">
             TravelWith
           </span>
-        </Link>
+        </a>
 
         {/* Hamburger Menu Trigger (for both mobile and desktop) */}
         <button
@@ -52,20 +60,20 @@ const Navbar = () => {
       {menuOpen && (
         <div className="bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">
-            <Link 
-              to="/" 
-              className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/' ? 'font-medium' : ''}`}
+            <a 
+              href="/" 
+              className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link 
-              to="/about" 
-              className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/about' ? 'font-medium' : ''}`}
+            </a>
+            <a 
+              href="/about" 
+              className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/about' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               About Us
-            </Link>
+            </a>
           </div>
         </div>
       )}
