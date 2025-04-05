@@ -54,7 +54,7 @@ const PhotoGallery = () => {
       <div className="japan-container">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo">
-            Photo Gallery
+            Tour Memories
           </h2>
         </div>
         
