@@ -57,20 +57,16 @@ const TourDetails = () => {
             </Card>
           </div>
           
-          <div>
-            <Card className="bg-white shadow-sm border-0 h-full overflow-hidden">
-              <div className="h-full">
-                <img 
-                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//Tokyo.png" 
-                  alt="Japan Tour Itinerary Map" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    console.error("Error loading map image");
-                    e.currentTarget.src = "/placeholder.svg";
-                  }}
-                />
-              </div>
-            </Card>
+          <div className="bg-japan-cream">
+            <img 
+              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//Tokyo.png" 
+              alt="Japan Tour Itinerary Map" 
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                console.error("Error loading map image");
+                e.currentTarget.src = "/placeholder.svg";
+              }}
+            />
           </div>
         </div>
 
