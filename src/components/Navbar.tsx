@@ -2,19 +2,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -30,7 +22,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header
@@ -47,48 +39,30 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-4">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link to="/" className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/' ? 'font-medium' : ''}`}>
-                  Home
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link to="/about" className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/about' ? 'font-medium' : ''}`}>
-                  About Us
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        {/* Mobile Navigation Trigger */}
+        {/* Hamburger Menu Trigger (for both mobile and desktop) */}
         <button
-          className="md:hidden text-japan-indigo focus:outline-none"
-          onClick={toggleMobileMenu}
+          className="text-japan-indigo focus:outline-none"
+          onClick={toggleMenu}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
+      {/* Navigation Menu (for both mobile and desktop) */}
+      {menuOpen && (
+        <div className="bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">
             <Link 
               to="/" 
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/' ? 'font-medium' : ''}`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/about" 
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${location.pathname === '/about' ? 'font-medium' : ''}`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setMenuOpen(false)}
             >
               About Us
             </Link>
