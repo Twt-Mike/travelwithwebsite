@@ -5,44 +5,48 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 // Gallery photos with direct URLs
 const galleryPhotos = [
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//5.jpg",
-    alt: "Japan Photo 5"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//2.jpg",
+    alt: "Japan Tour Memory 2"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//6.jpg",
-    alt: "Japan Photo 6"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//3.jpg",
+    alt: "Japan Tour Memory 3"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//7.jpg",
-    alt: "Japan Photo 7"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//4.jpg",
+    alt: "Japan Tour Memory 4"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//9.jpg",
-    alt: "Japan Photo 9"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//5.jpg",
+    alt: "Japan Tour Memory 5"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//10.jpeg",
-    alt: "Japan Photo 10"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//6.jpg",
+    alt: "Japan Tour Memory 6"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//11.jpg",
-    alt: "Japan Photo 11"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//7.jpg",
+    alt: "Japan Tour Memory 7"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//12.jpg",
-    alt: "Japan Photo 12"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//8.jpg",
+    alt: "Japan Tour Memory 8"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//13.jpg",
-    alt: "Japan Photo 13"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//9.jpg",
+    alt: "Japan Tour Memory 9"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//14.jpg",
-    alt: "Japan Photo 14"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//10.jpg",
+    alt: "Japan Tour Memory 10"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//16.jpg",
-    alt: "Japan Photo 16"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//11.jpg",
+    alt: "Japan Tour Memory 11"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//12.jpg",
+    alt: "Japan Tour Memory 12"
   }
 ];
 

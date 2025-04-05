@@ -8,6 +8,8 @@ import TourFAQ from '@/components/TourFAQ';
 import BookingCta from '@/components/BookingCta';
 import BookingForm from '@/components/BookingForm';
 import PhotoGallery from '@/components/PhotoGallery';
+import HeroNavLinks from '@/components/HeroNavLinks';
+import StickyBookButton from '@/components/StickyBookButton';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -17,13 +19,18 @@ const InfluencerTour = () => {
   return (
     <Layout>
       <InfluencerHero />
-      <HostSection />
-      <TourDetails />
+      <HeroNavLinks />
+      <div id="overview">
+        <HostSection />
+        <TourDetails />
+      </div>
       <div id="itinerary">
         <TourItinerary />
       </div>
       <PhotoGallery />
-      <TourFAQ />
+      <div id="faq">
+        <TourFAQ />
+      </div>
       
       {showBookingForm ? (
         <section id="booking" className="py-16 bg-gray-50">
@@ -56,6 +63,8 @@ const InfluencerTour = () => {
           <BookingCta onBookNow={() => setShowBookingForm(true)} />
         </div>
       )}
+      
+      <StickyBookButton />
     </Layout>
   );
 };
