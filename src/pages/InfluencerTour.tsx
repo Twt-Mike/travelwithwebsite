@@ -20,9 +20,11 @@ const InfluencerTour = () => {
     <Layout>
       <InfluencerHero />
       <HeroNavLinks />
-      <div id="overview">
+      <div>
         <HostSection />
-        <TourDetails />
+        <div id="tour-details">
+          <TourDetails />
+        </div>
       </div>
       <div id="itinerary">
         <TourItinerary />

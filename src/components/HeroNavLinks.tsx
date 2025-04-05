@@ -7,7 +7,7 @@ const HeroNavLinks = () => {
       <div className="japan-container flex justify-center">
         <div className="flex space-x-8 md:space-x-16">
           <ScrollLink
-            to="overview"
+            to="tour-details"
             spy={true}
             smooth={true}
             offset={-100}
