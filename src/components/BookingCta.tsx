@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 interface BookingCtaProps {
@@ -72,14 +72,15 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               
               <Button 
                 size="lg" 
-                className="w-full bg-japan-pink hover:bg-japan-pink/90 text-white"
+                className="w-full bg-japan-pink hover:bg-japan-pink/90 text-white flex items-center justify-center gap-2"
                 onClick={onBookNow}
               >
                 Secure Your Spot Now
+                <ExternalLink className="h-4 w-4" />
               </Button>
               
               <div className="mt-4 text-center text-white/70 text-sm">
-                <p>Instant confirmation • Secure checkout</p>
+                <p>Secure checkout via WooCommerce</p>
               </div>
             </div>
           </div>
