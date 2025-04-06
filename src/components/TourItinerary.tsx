@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { CalendarDays, ChevronDown, ChevronUp, Map, Utensils, Bed, Cherry } from 'lucide-react';
+import { CalendarDays, ChevronDown, ChevronUp, Map, Utensils, Bed } from 'lucide-react';
 import { 
   Accordion,
   AccordionContent,
@@ -197,34 +197,23 @@ const TourItinerary = () => {
           <p className="text-gray-700 max-w-2xl mx-auto">
             A carefully curated itinerary blending must-see highlights with unique experiences
           </p>
-          <div className="flex justify-center items-center mt-6">
-            <div className="h-0.5 w-16 bg-japan-pink"></div>
-            <Cherry className="mx-3 text-japan-pink h-6 w-6" />
-            <div className="h-0.5 w-16 bg-japan-pink"></div>
-          </div>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-japan-indigo/10 relative">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-japan-pink/5 rounded-bl-full -z-0"></div>
-          <div className="bg-japan-indigo p-6 text-white relative z-10">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-japan-indigo p-6 text-white">
             <h3 className="text-xl font-medium">Complete Itinerary</h3>
             <p className="text-white/80 text-sm">Click each day to expand details</p>
-            <div className="absolute top-0 right-0 border-t-[40px] border-r-[40px] border-t-transparent border-r-japan-cream/20"></div>
           </div>
           
-          <div className="p-6 relative">
-            <div className="absolute bottom-8 left-12 w-40 h-40 bg-japan-indigo/5 rounded-full -z-0"></div>
-            <Accordion type="single" collapsible className="w-full relative z-10">
+          <div className="p-6">
+            <Accordion type="single" collapsible className="w-full">
               {itineraryData.map((day) => (
-                <AccordionItem key={day.day} value={`day-${day.day}`} className="border-japan-indigo/10">
-                  <AccordionTrigger className="py-4 flex items-center gap-6 hover:no-underline hover:bg-japan-cream/20 px-4 rounded-lg transition-all">
+                <AccordionItem key={day.day} value={`day-${day.day}`}>
+                  <AccordionTrigger className="py-4 flex items-center gap-6">
                     <div className="flex items-center gap-6 text-left">
-                      <div className="flex flex-col items-center justify-center bg-japan-indigo text-white rounded-lg w-14 h-14 flex-shrink-0 relative">
+                      <div className="flex flex-col items-center justify-center bg-japan-indigo text-white rounded-lg w-14 h-14 flex-shrink-0">
                         <span className="text-xs font-medium">DAY</span>
                         <span className="text-xl font-medium">{day.day}</span>
-                        {day.day === 1 && (
-                          <div className="absolute -top-2 -right-2 w-4 h-4 bg-japan-pink rounded-full"></div>
-                        )}
                       </div>
                       <div>
                         <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
@@ -240,7 +229,7 @@ const TourItinerary = () => {
                       <p className="text-gray-700 mb-6">{day.description}</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <div className="bg-japan-indigo/5 p-4 rounded-lg border-l-2 border-japan-pink">
+                        <div className="bg-japan-indigo/5 p-4 rounded-lg">
                           <div className="flex items-center gap-2 mb-2 text-japan-indigo font-medium">
                             <Map className="h-4 w-4" />
                             <h4>Activities</h4>
@@ -255,7 +244,7 @@ const TourItinerary = () => {
                           </ul>
                         </div>
                         
-                        <div className="bg-japan-indigo/5 p-4 rounded-lg border-l-2 border-japan-pink">
+                        <div className="bg-japan-indigo/5 p-4 rounded-lg">
                           <div className="flex items-center gap-2 mb-2 text-japan-indigo font-medium">
                             <Utensils className="h-4 w-4" />
                             <h4>Meals</h4>
@@ -270,7 +259,7 @@ const TourItinerary = () => {
                           </ul>
                         </div>
                         
-                        <div className="bg-japan-indigo/5 p-4 rounded-lg border-l-2 border-japan-pink">
+                        <div className="bg-japan-indigo/5 p-4 rounded-lg">
                           <div className="flex items-center gap-2 mb-2 text-japan-indigo font-medium">
                             <Bed className="h-4 w-4" />
                             <h4>Accommodation</h4>
@@ -286,8 +275,7 @@ const TourItinerary = () => {
           </div>
         </div>
 
-        <div className="text-center mt-10 text-sm text-gray-500 flex items-center justify-center">
-          <Cherry className="h-4 w-4 text-japan-pink mr-2" />
+        <div className="text-center mt-10 text-sm text-gray-500">
           <p>Note: Itinerary subject to minor changes based on local conditions and special opportunities</p>
         </div>
       </div>
