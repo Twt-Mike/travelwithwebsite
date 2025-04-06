@@ -9,7 +9,6 @@ import BookingCta from '@/components/BookingCta';
 import PhotoGallery from '@/components/PhotoGallery';
 import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
-import CompactPhotoCarousel from '@/components/CompactPhotoCarousel';
 
 // Define the WooCommerce product URL - make sure to use your actual URL
 const BOOKING_URL = "https://travelwith.tours/product/japan-tour-with-ourtraveltreats";
@@ -25,7 +24,6 @@ const InfluencerTour = () => {
       <HeroNavLinks />
       <div>
         <HostSection />
-        <CompactPhotoCarousel />
         <div id="tour-details">
           <TourDetails />
         </div>
