@@ -18,7 +18,7 @@ const InfluencerHero = () => {
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-3xl text-white space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
-            Journey Through Japan with <span className="text-japan-pink">Laura</span> from @Our.TravelTreats
+            Travelwith<br /><span className="text-japan-pink">@OurTravelTreats</span>
           </h1>
           <div className="flex items-center gap-2 text-white/90 bg-black/30 inline-block px-4 py-2 rounded-lg">
             <CalendarDays className="h-5 w-5" />
