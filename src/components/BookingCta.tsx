@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -34,10 +33,6 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Secure one of just 16 available spots</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Lock in current pricing (€2,750 per person)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
