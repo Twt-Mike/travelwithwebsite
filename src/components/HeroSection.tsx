@@ -2,6 +2,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const HeroSection = () => {
   return (
@@ -31,11 +32,11 @@ const HeroSection = () => {
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Link to="/contact">
+            <HashLink to="/#contact-form" smooth>
               <Button size="lg" className="btn-primary px-8 py-6 text-lg">
                 Plan Your Trip
               </Button>
-            </Link>
+            </HashLink>
             <Link to="/about">
               <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
                 <span>Learn More</span>

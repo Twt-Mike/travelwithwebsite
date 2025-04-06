@@ -29,7 +29,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-16 bg-japan-cream">
+    <section id="contact-form" className="py-16 bg-japan-cream">
       <div className="japan-container">
         <div className="bg-white rounded-xl shadow-md p-8 md:p-12 max-w-4xl mx-auto">
           <div className="text-center mb-8">

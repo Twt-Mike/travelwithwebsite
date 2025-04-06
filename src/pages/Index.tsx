@@ -8,6 +8,7 @@ import CtaSection from '@/components/CtaSection';
 import WhyTravelWith from '@/components/WhyTravelWith';
 import IndexPhotoGallery from '@/components/IndexPhotoGallery';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <DestinationsSection />
       <IndexPhotoGallery />
       <TestimonialsSection />
+      <ContactSection />
       <CtaSection />
     </Layout>
   );
