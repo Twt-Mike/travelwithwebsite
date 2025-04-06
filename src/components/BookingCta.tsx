@@ -27,10 +27,10 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-12">
+            <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col">
               <h3 className="text-xl font-medium text-japan-indigo mb-6">Why Book Now</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 flex-grow">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">Secure one of just 16 available spots</span>
@@ -50,20 +50,20 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               </ul>
             </div>
             
-            <div className="bg-japan-indigo p-8 rounded-xl shadow-md text-white">
+            <div className="bg-japan-indigo p-8 rounded-xl shadow-md text-white flex flex-col">
               <h3 className="text-xl font-medium mb-2">Japan with OurTravelTreats</h3>
-              <div className="text-white/80 text-sm mb-6">22 Sept - 3 Oct, 2025 • 12 days</div>
+              <div className="text-white/80 text-sm mb-2">22 Sept - 3 Oct, 2025 • 12 days</div>
+              <div className="text-white/90 text-sm mb-6"><span className="font-medium">Group size:</span> Max 16 travelers</div>
               
-              <div className="mb-6">
-                <div className="text-3xl font-medium">£2,335 GBP <span className="text-lg text-white/80">(~€2,750)</span></div>
+              <div className="mb-6 flex-grow">
+                <div className="text-3xl font-medium">£2,335 <span className="text-3xl text-white">GBP</span> <span className="text-3xl text-white/80">(~€2,750)</span></div>
                 <div className="text-white/80 text-sm">per person (twin share)</div>
                 <div className="text-white/90 text-sm mt-3">Bank transfer price: £2,295 GBP <span className="text-white/80">(~€2,700 – Save €50!)</span></div>
                 <div className="text-white/90 text-sm mt-1">You save as there are no credit card fees!</div>
               </div>
               
-              <div className="mb-6 text-sm text-white/90">
-                <p className="mb-1"><span className="font-medium">Deposit today:</span> £470 GBP (~€550)</p>
-                <p><span className="font-medium">Group size:</span> Max 16 travelers</p>
+              <div className="mb-6">
+                <p className="text-lg font-medium text-white/95 border-t border-white/20 pt-4"><span className="font-bold">Deposit today:</span> £470 GBP (~€550)</p>
               </div>
               
               <Button 
