@@ -1,5 +1,5 @@
 
-import { Check, Sakura, Mountain, MapPin } from 'lucide-react';
+import { Check, Cherry, Mountain, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const TourDetails = () => {
@@ -22,7 +22,7 @@ const TourDetails = () => {
           </p>
           <div className="flex justify-center items-center mt-4">
             <div className="h-0.5 w-20 bg-japan-pink"></div>
-            <Sakura className="mx-3 text-japan-pink h-6 w-6" />
+            <Cherry className="mx-3 text-japan-pink h-6 w-6" />
             <div className="h-0.5 w-20 bg-japan-pink"></div>
           </div>
         </div>

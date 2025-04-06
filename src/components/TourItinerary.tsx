@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { CalendarDays, ChevronDown, ChevronUp, Map, Utensils, Bed, Sakura } from 'lucide-react';
+import { CalendarDays, ChevronDown, ChevronUp, Map, Utensils, Bed, Cherry } from 'lucide-react';
 import { 
   Accordion,
   AccordionContent,
@@ -199,7 +199,7 @@ const TourItinerary = () => {
           </p>
           <div className="flex justify-center items-center mt-6">
             <div className="h-0.5 w-16 bg-japan-pink"></div>
-            <Sakura className="mx-3 text-japan-pink h-6 w-6" />
+            <Cherry className="mx-3 text-japan-pink h-6 w-6" />
             <div className="h-0.5 w-16 bg-japan-pink"></div>
           </div>
         </div>
@@ -287,7 +287,7 @@ const TourItinerary = () => {
         </div>
 
         <div className="text-center mt-10 text-sm text-gray-500 flex items-center justify-center">
-          <Sakura className="h-4 w-4 text-japan-pink mr-2" />
+          <Cherry className="h-4 w-4 text-japan-pink mr-2" />
           <p>Note: Itinerary subject to minor changes based on local conditions and special opportunities</p>
         </div>
       </div>
