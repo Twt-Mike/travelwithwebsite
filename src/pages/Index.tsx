@@ -6,7 +6,7 @@ import ExperienceSection from '@/components/ExperienceSection';
 import DestinationsSection from '@/components/DestinationsSection';
 import CtaSection from '@/components/CtaSection';
 import WhyTravelWith from '@/components/WhyTravelWith';
-import PhotoGallery from '@/components/PhotoGallery';
+import IndexPhotoGallery from '@/components/IndexPhotoGallery';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 const Index = () => {
@@ -16,7 +16,7 @@ const Index = () => {
       <ExperienceSection />
       <WhyTravelWith />
       <DestinationsSection />
-      <PhotoGallery />
+      <IndexPhotoGallery />
       <TestimonialsSection />
       <CtaSection />
     </Layout>
