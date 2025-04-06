@@ -2,6 +2,7 @@
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AboutPhotoGallery from '@/components/AboutPhotoGallery';
 
 const About = () => {
   return (
@@ -155,29 +156,11 @@ const About = () => {
             </p>
           </div>
 
-          {/* Photo Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <img 
-              src="/public/lovable-uploads/e6ee5cc2-79df-4146-aa4c-7d6fe020b556.png" 
-              alt="Travel group at iconic Osaka location" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
-            <img 
-              src="/public/lovable-uploads/52102cf7-5b6e-4650-ac71-1b62806ec702.png" 
-              alt="Group of travelers on train in Sri Lanka" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
-            <img 
-              src="/public/lovable-uploads/d213e559-da7f-4014-91de-8649f6e85a12.png" 
-              alt="Travel group at Sigiriya Rock in Sri Lanka" 
-              className="w-full md:col-span-2 h-64 object-cover rounded-lg"
-            />
-            <img 
-              src="/public/lovable-uploads/c6909194-5f12-4ee2-a69e-182e9874d1b8.png" 
-              alt="Travel group at Sensoji Temple in Tokyo" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
-          </div>
+          {/* Replace the static photo grid with the interactive gallery component */}
+          <h3 className="text-2xl font-serif font-medium text-japan-indigo mb-6 text-center">
+            Tour Memories
+          </h3>
+          <AboutPhotoGallery />
         </div>
       </section>
     </Layout>
