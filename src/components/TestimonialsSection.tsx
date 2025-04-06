@@ -6,9 +6,9 @@ const TestimonialsSection = () => {
     <section className="py-20 bg-white">
       <div className="japan-container">
         <div className="text-center mb-12">
-          <h2 className="section-title">What Hosts & Influencers Say</h2>
+          <h2 className="section-title">What Guests Say About The Tours</h2>
           <p className="section-subtitle mx-auto">
-            Learn from the experience of content creators who have partnered with us
+            Learn from the experiences of travelers who have joined our tours
           </p>
         </div>
 
@@ -22,7 +22,9 @@ const TestimonialsSection = () => {
               <footer className="font-medium text-japan-indigo">
                 – Influencer/Host Name, Location
               </footer>
-              <p className="text-sm text-gray-500 mt-2 italic">(Real reviews will be added later.)</p>
+              <p className="text-sm text-gray-500 mt-2 italic">
+                Real reviews taken from TourRadar under tour guide Mike
+              </p>
             </blockquote>
           </div>
         </div>
