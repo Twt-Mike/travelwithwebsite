@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -44,24 +45,24 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">€50 discount when paying by bank transfer</span>
+                  <span className="text-gray-700">£40 discount when paying by bank transfer</span>
                 </li>
               </ul>
             </div>
             
             <div className="bg-japan-indigo p-8 rounded-xl shadow-md text-white">
-              <h3 className="text-xl font-medium mb-2">Japan Tour with OurTravelTreats</h3>
-              <div className="text-white/80 text-sm mb-6">22 Sept - 3 Oct, 2025 • 11 days</div>
+              <h3 className="text-xl font-medium mb-2">Japan with OurTravelTreats</h3>
+              <div className="text-white/80 text-sm mb-6">22 Sept - 3 Oct, 2025 • 12 days</div>
               
               <div className="mb-6">
-                <div className="text-3xl font-medium">€2,750</div>
+                <div className="text-3xl font-medium">£2,335 GBP <span className="text-lg text-white/80">(~€2,750)</span></div>
                 <div className="text-white/80 text-sm">per person (twin share)</div>
-                <div className="text-white/90 text-sm mt-1">Bank transfer: €2,700</div>
+                <div className="text-white/90 text-sm mt-3">Bank transfer price: £2,295 GBP <span className="text-white/80">(~€2,700 – Save €50!)</span></div>
                 <div className="text-white/90 text-sm mt-1">You save as there are no credit card fees!</div>
               </div>
               
               <div className="mb-6 text-sm text-white/90">
-                <p className="mb-1"><span className="font-medium">Deposit today:</span> €550</p>
+                <p className="mb-1"><span className="font-medium">Deposit today:</span> £470 GBP (~€550)</p>
                 <p><span className="font-medium">Group size:</span> Max 16 travelers</p>
               </div>
               
@@ -78,6 +79,12 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 <p>Secure checkout via WooCommerce</p>
               </div>
             </div>
+          </div>
+          
+          <div className="text-center text-gray-500 text-sm max-w-2xl mx-auto">
+            <p>Card payments are processed in GBP via Stripe.</p>
+            <p>Bank transfers are accepted in EUR, GBP, or USD via our Wise business account.</p>
+            <p>EUR amounts are estimates based on recent exchange rates and may vary slightly.</p>
           </div>
         </div>
       </div>
