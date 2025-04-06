@@ -17,6 +17,9 @@ const Navbar = () => {
     console.log('Router context not available, defaulting path to /', error);
   }
 
+  // Check if we're on the influencer tour page
+  const isInfluencerTourPage = currentPath === '/ourtraveltreats-japan';
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -41,11 +44,16 @@ const Navbar = () => {
       }`}
     >
       <div className="japan-container flex justify-between items-center">
-        <a href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-serif font-bold text-japan-indigo">
-            TravelWith
-          </span>
-        </a>
+        {!isInfluencerTourPage && (
+          <a href="/" className="flex items-center gap-2">
+            <span className="text-2xl font-serif font-bold text-japan-indigo">
+              TravelWith
+            </span>
+          </a>
+        )}
+        {isInfluencerTourPage && (
+          <div className="h-10"></div> /* This div maintains spacing when the logo is hidden */
+        )}
 
         {/* Hamburger Menu Trigger (for both mobile and desktop) */}
         <button
@@ -62,6 +70,8 @@ const Navbar = () => {
           <div className="japan-container flex flex-col gap-4">
             <a 
               href="/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
@@ -69,6 +79,8 @@ const Navbar = () => {
             </a>
             <a 
               href="/about" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/about' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
