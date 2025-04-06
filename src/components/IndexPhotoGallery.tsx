@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDialog';
 
 // Gallery photos with direct URLs for the Index page
 const indexGalleryPhotos = [
@@ -48,6 +49,26 @@ const indexGalleryPhotos = [
 
 const IndexPhotoGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => {
+    setSelectedImage(index);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  const navigateLightbox = (direction: 'next' | 'prev') => {
+    if (selectedImage === null) return;
+    
+    const totalImages = indexGalleryPhotos.length;
+    if (direction === 'next') {
+      setSelectedImage((selectedImage + 1) % totalImages);
+    } else {
+      setSelectedImage((selectedImage - 1 + totalImages) % totalImages);
+    }
+  };
 
   return (
     <section className="py-16 bg-japan-cream">
@@ -62,9 +83,10 @@ const IndexPhotoGallery = () => {
           {indexGalleryPhotos.map((photo, index) => (
             <div 
               key={index} 
-              className="overflow-hidden rounded-lg transition-all duration-300"
+              className="overflow-hidden rounded-lg transition-all duration-300 cursor-pointer"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => openLightbox(index)}
             >
               <AspectRatio ratio={1} className="bg-gray-100">
                 <img 
@@ -84,6 +106,13 @@ const IndexPhotoGallery = () => {
           ))}
         </div>
       </div>
+
+      <CarouselFullScreenDialog
+        selectedImage={selectedImage}
+        imageSources={indexGalleryPhotos}
+        closeImageDialog={closeLightbox}
+        navigateFullscreen={navigateLightbox}
+      />
     </section>
   );
 };
