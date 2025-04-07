@@ -63,17 +63,17 @@ const ContactSection = () => {
   return (
     <section id="contact-form" className="py-16 bg-japan-cream">
       <div className="japan-container">
-        <div className="bg-white rounded-xl shadow-md p-8 md:p-12 max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-serif font-medium text-japan-indigo mb-3">
-              Let's Plan Your Custom Trip
-            </h2>
+        <div className="bg-white rounded-xl shadow-md p-8 md:p-12 max-w-4xl mx-auto relative">
+          <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-0 md:translate-x-1/4 w-16 h-16 bg-japan-pink/30 rounded-full blur-xl"></div>
+          <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-0 md:-translate-x-1/4 w-16 h-16 bg-japan-green/30 rounded-full blur-xl"></div>
+          
+          <div className="text-center mb-8 relative z-10">
             <p className="text-gray-600 max-w-2xl mx-auto">
               Are you a travel host or influencer looking to organize an unforgettable trip in Japan (or beyond)? Contact us directly at <a href="mailto:info@travelwith.tours" className="text-japan-indigo hover:underline">info@travelwith.tours</a> or via our quick contact form.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto relative z-10">
             <div>
               <Input
                 type="text"

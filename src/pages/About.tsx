@@ -1,3 +1,4 @@
+
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -253,10 +254,31 @@ const About = () => {
         </div>
       </section>
       
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-3">
-          Ready to set up your custom Japan tour for your audience?
-        </h2>
+      <div className="pt-12 pb-6 bg-gradient-to-r from-japan-cream to-white">
+        <div className="japan-container">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="w-full md:w-2/3">
+              <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo mb-3 animate-fade-in relative">
+                <span className="relative inline-block">
+                  Ready to set up your custom Japan tour for your audience?
+                  <span className="absolute -bottom-2 left-0 right-0 h-1 bg-japan-pink rounded-full"></span>
+                </span>
+              </h2>
+              <p className="text-gray-700 text-lg max-w-2xl">
+                Let's collaborate to create an unforgettable experience that perfectly matches your community's interests and expectations.
+              </p>
+            </div>
+            <div className="w-full md:w-1/3 max-w-xs">
+              <div className="rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//MikePikachuFushimi.jpg" 
+                  alt="Mike with Pikachu at Fushimi Inari" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
       <ContactSection />
