@@ -4,6 +4,7 @@ import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AboutPhotoGallery from '@/components/AboutPhotoGallery';
 import { Card, CardContent } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const About = () => {
   return (
@@ -16,7 +17,11 @@ const About = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-japan-indigo/40 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center">About TravelWith</h1>
+          <div className="text-center px-4 py-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-xl transform hover:scale-105 transition-transform duration-500">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center drop-shadow-lg">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-japan-cream to-white">About TravelWith</span>
+            </h1>
+          </div>
         </div>
       </div>
 
@@ -59,18 +64,28 @@ const About = () => {
                 Hi, I'm Mike—founder of TravelWith.
               </h2>
               <p className="text-gray-700 mb-4">
-                Originally from Canada, I booked a four-month return flight to Sydney, Australia at age 23, just to play music with a friend. I'd never traveled before, never stayed in a hostel, and had no idea what "life on the road" really meant.
+                Originally from Canada, I booked a four-month return flight to Sydney, Australia at age 23, just to play music with a friend. We were a guitarist/drummer duo, playing in Sydney bars and even busking on the streets in front of Sydney Central. I'd never traveled before, never stayed in a hostel, and had no idea what "life on the road" really meant.
               </p>
               <p className="text-gray-700 mb-4">
-                But by the end of Day One, I knew I wasn't taking that return flight. I was in this for the long run.
+                But the first day I arrived at the hostel in Sydney, I knew I wasn't taking that return flight home. Getting to meet & travel with people from all over the world, I knew I was in this for the long run.
               </p>
               <p className="text-gray-700 mb-4">
                 That trip kicked off a journey that's now spanned over a decade, countless countries, and a career built entirely around creating unforgettable travel experiences.
               </p>
+              
+              {/* Busking photo with caption */}
+              <div className="mt-6 mb-4 overflow-hidden rounded-lg">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//SydneyCentralBusking.jpg" 
+                  alt="Busking at Sydney Central Station" 
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+                <p className="text-sm text-gray-500 italic mt-2 text-center">Busking at Sydney Central Station, 2015.</p>
+              </div>
             </div>
             <div className="flex justify-center">
               <img 
-                src="/public/lovable-uploads/9ade6827-a0f7-4aa0-9213-232418dafc51.png" 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//AboutProfilePic.png" 
                 alt="Mike from TravelWith" 
                 className="rounded-lg shadow-lg max-h-80 object-cover"
               />
@@ -80,7 +95,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
             <div className="order-2 md:order-1 flex justify-center">
               <img 
-                src="/public/lovable-uploads/a56892ca-72fc-4028-8263-f45fa6b7acd1.png" 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//20191231_175418_HDR%20(1).jpg" 
                 alt="Mike guiding a tour in Japan" 
                 className="rounded-lg shadow-lg max-h-80 object-cover"
               />
@@ -182,54 +197,79 @@ const About = () => {
             </p>
           </div>
 
-          <div className="mb-16">
-            <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6">
-              TravelWith – My Vision
-            </h2>
-            <p className="text-gray-700 mb-4">
-              Although TravelWith is built and run by me, it's far from a one-man operation.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Thanks to years of guiding and collaborating with suppliers across Asia—especially in Japan—I've built a trusted network of local partners: drivers, hotels, guesthouses, and activity providers who help make every trip more authentic and effortless.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Whether it's a dinner at a family-run izakaya in Kyoto or a scenic train journey through the mountains, these partnerships are part of what sets TravelWith apart from larger, one-size-fits-all tour companies.
-            </p>
-            <p className="text-gray-700 mb-6">
-              TravelWith combines:
-            </p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start gap-3">
-                <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
-                <span>The care and flexibility of a boutique operator</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
-                <span>The experience of a guide who's actually lived the journey</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
-                <span>And the creativity of someone who's spent years designing tours for creators and communities</span>
-              </li>
-            </ul>
+          <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6">
+                TravelWith – My Vision
+              </h2>
+              <p className="text-gray-700 mb-4">
+                Although TravelWith is built and run by me, it's far from a one-man operation.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Thanks to years of guiding and collaborating with suppliers across Asia—especially in Japan—I've built a trusted network of local partners: drivers, hotels, guesthouses, and activity providers who help make every trip more authentic and effortless.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Whether it's a dinner at a family-run izakaya in Kyoto or a scenic train journey through the mountains, these partnerships are part of what sets TravelWith apart from larger, one-size-fits-all tour companies.
+              </p>
+              <p className="text-gray-700 mb-6">
+                TravelWith combines:
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
+                  <span>The care and flexibility of a boutique operator</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
+                  <span>The experience of a guide who's actually lived the journey</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
+                  <span>And the creativity of someone who's spent years designing tours for creators and communities</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//OsakaMikeGroupRunningman.jpeg" 
+                alt="Mike with a tour group in Osaka" 
+                className="rounded-lg shadow-lg max-h-80 object-cover"
+              />
+            </div>
           </div>
 
-          <div className="mb-16">
-            <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6">
-              What You Can Expect
-            </h2>
-            <p className="text-gray-700 mb-4">
-              At the heart of every TravelWith trip is community, connection, and customization.
-            </p>
-            <p className="text-gray-700 mb-4">
-              I don't offer pre-packaged tours or fixed dates—each itinerary is built from scratch around the host's audience, vision, and vibe. These aren't ordinary tours. They're one-time-only experiences designed to be remembered for a lifetime.
-            </p>
-            <p className="text-gray-700 mb-4">
-              So while my broader experience covers much of Asia, my focus now is helping hosts create unforgettable custom journeys through Japan—a place that continues to inspire me with every trip.
-            </p>
-            <p className="text-gray-700 mb-8">
-              Whether you're a creator looking to host your first group adventure, or someone with a vision for a truly unique travel experience—you're in the right place.
-            </p>
+          <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="order-2 md:order-1">
+              <img 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//Sri%20Lanka%20group%20photo.JPG" 
+                alt="Tour group in Sri Lanka" 
+                className="rounded-lg shadow-lg max-h-80 object-cover"
+              />
+            </div>
+            <div className="order-1 md:order-2">
+              <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6">
+                What You Can Expect
+              </h2>
+              <p className="text-gray-700 mb-4">
+                At the heart of every TravelWith trip is community, connection, and customization.
+              </p>
+              <p className="text-gray-700 mb-4">
+                I don't offer pre-packaged tours or fixed dates—each itinerary is built from scratch around the host's audience, vision, and vibe. These aren't ordinary tours. They're one-time-only experiences designed to be remembered for a lifetime.
+              </p>
+              <p className="text-gray-700 mb-4">
+                So while my broader experience covers much of Asia, my focus now is helping hosts create unforgettable custom journeys through Japan—a place that continues to inspire me with every trip.
+              </p>
+              <div className="mt-6 mb-4 overflow-hidden rounded-lg">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//Sri%20Lanka%20Train%20Selfi.jpg" 
+                  alt="Train selfie in Sri Lanka" 
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+              </div>
+              <p className="text-gray-700 mb-8">
+                Whether you're a creator looking to host your first group adventure, or someone with a vision for a truly unique travel experience—you're in the right place.
+              </p>
+            </div>
           </div>
 
           {/* Tour Memories */}
