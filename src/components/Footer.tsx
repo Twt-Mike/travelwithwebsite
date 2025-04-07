@@ -1,8 +1,11 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Instagram, Mail } from 'lucide-react';
 
 const Footer = () => {
+  const location = useLocation();
+  const isInfluencerTourPage = location.pathname === '/ourtraveltreatsjpn';
+
   return (
     <footer className="bg-japan-indigo text-white">
       <div className="japan-container pt-16 pb-8">
@@ -15,11 +18,13 @@ const Footer = () => {
               <Link to="/" className="text-gray-300 hover:text-japan-pink transition-colors">Home</Link>
               <Link to="/about" className="text-gray-300 hover:text-japan-pink transition-colors">About</Link>
             </div>
-            <div className="flex gap-4 mt-4">
-              <a href="https://instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-white hover:text-japan-pink transition-colors" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-            </div>
+            {isInfluencerTourPage && (
+              <div className="flex gap-4 mt-4">
+                <a href="https://instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-white hover:text-japan-pink transition-colors" aria-label="Instagram">
+                  <Instagram size={20} />
+                </a>
+              </div>
+            )}
           </div>
 
           <div>
