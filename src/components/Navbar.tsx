@@ -77,13 +77,7 @@ const Navbar = () => {
             >
               About Us
             </Link>
-            <Link 
-              to="/ourtraveltreatsjpn" 
-              className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/ourtraveltreatsjpn' ? 'font-medium' : ''}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              OurTravelTreats Japan Tour
-            </Link>
+            {/* Removed OurTravelTreats Japan Tour link */}
           </div>
         </div>
       )}
