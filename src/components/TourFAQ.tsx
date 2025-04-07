@@ -131,8 +131,8 @@ const TourFAQ = () => {
                   
                   <div className="my-6">
                     <img 
-                      src="/public/lovable-uploads/631cae86-0380-474a-8d28-e5c3279b1f75.png" 
-                      alt="Travelers walking through Fushimi Inari Shrine torii gates in Japan" 
+                      src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupJumpKimonoLanscape.jpg" 
+                      alt="Group of travelers in kimono jumping together in Japan" 
                       className="w-full h-auto rounded-lg max-w-lg mx-auto my-4"
                     />
                   </div>
