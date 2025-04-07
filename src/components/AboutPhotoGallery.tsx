@@ -3,8 +3,21 @@ import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDialog';
 
-// Empty gallery since photos have been removed
-const aboutGalleryPhotos = [];
+// Gallery photos for the About page
+const aboutGalleryPhotos = [
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//OsakaMikeGroupRunningman.jpeg", 
+    alt: "Group in Osaka having fun with poses"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//20191231_175418_HDR%20(1).jpg", 
+    alt: "Group photo at iconic location"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//Sri%20Lanka%20Train%20Selfi.jpg", 
+    alt: "Group selfie on a train in Sri Lanka"
+  }
+];
 
 const AboutPhotoGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -29,10 +42,9 @@ const AboutPhotoGallery = () => {
     }
   };
 
-  // Since we've removed all photos, this will render nothing
   return (
-    <div className="mt-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="mt-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {aboutGalleryPhotos.map((photo, index) => (
           <div 
             key={index} 

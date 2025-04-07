@@ -1,7 +1,9 @@
+
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import AboutPhotoGallery from '@/components/AboutPhotoGallery';
 
 const About = () => {
   return (
@@ -56,6 +58,16 @@ const About = () => {
               <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6">
                 Hi, I'm Mike—founder of TravelWith.
               </h2>
+              
+              {/* Profile picture moved above the text */}
+              <div className="mb-6">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//AboutProfilePic.png" 
+                  alt="Mike from TravelWith" 
+                  className="rounded-lg shadow-lg w-full max-h-80 object-cover"
+                />
+              </div>
+              
               <p className="text-gray-700 mb-4">
                 Originally from Canada, I booked a four-month return flight to Sydney, Australia at age 23, just to play music with a friend. We were a guitarist/drummer duo, playing in Sydney bars and even busking on the streets in front of Sydney Central. I'd never traveled before, never stayed in a hostel, and had no idea what "life on the road" really meant.
               </p>
@@ -66,12 +78,17 @@ const About = () => {
                 That trip kicked off a journey that's now spanned over a decade, countless countries, and a career built entirely around creating unforgettable travel experiences.
               </p>
             </div>
-            <div className="flex justify-center">
-              <img 
-                src="/public/lovable-uploads/9ade6827-a0f7-4aa0-9213-232418dafc51.png" 
-                alt="Mike from TravelWith" 
-                className="rounded-lg shadow-lg max-h-80 object-cover"
-              />
+            <div className="flex flex-col justify-center">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//SydneyCentralBusking.jpg" 
+                  alt="Busking at Sydney Central Station" 
+                  className="w-full object-cover"
+                />
+                <p className="text-sm text-gray-600 bg-white p-2 text-center italic">
+                  Busking at Sydney Central Station, 2015
+                </p>
+              </div>
             </div>
           </div>
           
@@ -176,6 +193,12 @@ const About = () => {
               giving guests their trip of a lifetime, handling every detail, and making sure each experience is seamless, personal, and unforgettable.
             </p>
           </div>
+
+          {/* Photo Gallery added here */}
+          <h3 className="text-2xl font-serif font-medium text-japan-indigo mb-4 text-center">
+            Tour Moments
+          </h3>
+          <AboutPhotoGallery />
 
           <div className="mb-16">
             <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6">
