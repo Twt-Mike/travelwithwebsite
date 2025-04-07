@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 
-// The URL for your WooCommerce product page
-const BOOKING_URL = "https://travelwith.tours/product/japan-12-day-tour-with-our-travel-treats/";
+interface StickyBookButtonProps {
+  onBookNow: () => void;
+}
 
-const StickyBookButton = () => {
+const StickyBookButton = ({ onBookNow }: StickyBookButtonProps) => {
   const [visible, setVisible] = useState(false);
   
   useEffect(() => {
@@ -25,7 +26,7 @@ const StickyBookButton = () => {
       visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
     }`}>
       <Button 
-        onClick={() => window.open(BOOKING_URL, '_blank')}
+        onClick={onBookNow}
         size="lg" 
         className="bg-japan-pink hover:bg-japan-pink/90 text-white shadow-lg rounded-full px-6 h-14"
       >
