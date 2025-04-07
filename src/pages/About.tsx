@@ -46,7 +46,6 @@ const About = () => {
             </div>
           </div>
         </div>
-        {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-japan-pink/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-japan-green/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
       </div>
