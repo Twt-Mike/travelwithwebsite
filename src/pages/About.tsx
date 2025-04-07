@@ -17,7 +17,13 @@ const About = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-japan-indigo/40 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center">About TravelWith</h1>
+          <div className="text-center transform -translate-y-6 relative z-10">
+            <div className="bg-japan-indigo/60 backdrop-blur-sm px-8 py-6 rounded-lg inline-block">
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-white text-center drop-shadow-md">
+                About TravelWith
+              </h1>
+            </div>
+          </div>
         </div>
       </div>
 
