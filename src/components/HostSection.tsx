@@ -25,16 +25,16 @@ const HostSection = () => {
                     I'm Laura, the creator and travel blogger behind @our.traveltreats On my Instagram and travel blog, I share travel guides for weekend getaways, hikes, and adventure trips that you can enjoy even with a busy schedule.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    With my new group travel account, @our.travelgroups, I want to encourage you to explore the world—even if you don't have a travel partner or the time to plan everything yourself. Life's too short to miss out on all the amazing trips waiting for you.
+                    With my new group travel account, <a href="https://www.instagram.com/our.travelgroups" target="_blank" rel="noopener noreferrer" className="text-japan-indigo hover:underline">@our.travelgroups</a>, I want to encourage you to explore the world—even if you don't have a travel partner or the time to plan everything yourself. Life's too short to miss out on all the amazing trips waiting for you.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    ourtraveltreats.de/en
+                    <a href="https://ourtraveltreats.de/en" target="_blank" rel="noopener noreferrer" className="text-japan-indigo hover:underline">ourtraveltreats.de/en</a>
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     Ich bin Laura, Creator und Reisebloggerin hinter @our.traveltreats. Auf meinem Instagram-Account und Reiseblog zeige ich Dir Reiseguides für Wochenendtrips, Wanderungen und Abenteuerreisen, die du auch mit weniger Zeit realisieren kannst.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Mit meinem neuen Gruppenreise-Account @our.travelgroups möchte ich Dich dazu ermutigen, zu reisen, selbst wenn Du keinen Reisepartner oder keine Zeit für intensive Reiseplanung hast – denn das Leben ist viel zu kurz, um all die schönen Reisen zu verpassen, die auf Dich warten
+                    Mit meinem neuen Gruppenreise-Account <a href="https://www.instagram.com/our.travelgroups" target="_blank" rel="noopener noreferrer" className="text-japan-indigo hover:underline">@our.travelgroups</a> möchte ich Dich dazu ermutigen, zu reisen, selbst wenn Du keinen Reisepartner oder keine Zeit für intensive Reiseplanung hast – denn das Leben ist viel zu kurz, um all die schönen Reisen zu verpassen, die auf Dich warten
                   </p>
                   <div className="flex flex-wrap gap-4 pt-4">
                     <a 
@@ -45,6 +45,16 @@ const HostSection = () => {
                       <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
                         <Instagram className="h-4 w-4" />
                         <span>@Our.TravelTreats</span>
+                      </Button>
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/our.Travelgroups" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
+                        <Instagram className="h-4 w-4" />
+                        <span>@Our.Travelgroups</span>
                       </Button>
                     </a>
                   </div>
@@ -91,16 +101,16 @@ const HostSection = () => {
                   I'm Laura, the creator and travel blogger behind @our.traveltreats On my Instagram and travel blog, I share travel guides for weekend getaways, hikes, and adventure trips that you can enjoy even with a busy schedule.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  With my new group travel account, @our.travelgroups, I want to encourage you to explore the world—even if you don't have a travel partner or the time to plan everything yourself. Life's too short to miss out on all the amazing trips waiting for you.
+                  With my new group travel account, <a href="https://www.instagram.com/our.travelgroups" target="_blank" rel="noopener noreferrer" className="text-japan-indigo hover:underline">@our.travelgroups</a>, I want to encourage you to explore the world—even if you don't have a travel partner or the time to plan everything yourself. Life's too short to miss out on all the amazing trips waiting for you.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  ourtraveltreats.de/en
+                  <a href="https://ourtraveltreats.de/en" target="_blank" rel="noopener noreferrer" className="text-japan-indigo hover:underline">ourtraveltreats.de/en</a>
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   Ich bin Laura, Creator und Reisebloggerin hinter @our.traveltreats. Auf meinem Instagram-Account und Reiseblog zeige ich Dir Reiseguides für Wochenendtrips, Wanderungen und Abenteuerreisen, die du auch mit weniger Zeit realisieren kannst.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Mit meinem neuen Gruppenreise-Account @our.travelgroups möchte ich Dich dazu ermutigen, zu reisen, selbst wenn Du keinen Reisepartner oder keine Zeit für intensive Reiseplanung hast – denn das Leben ist viel zu kurz, um all die schönen Reisen zu verpassen, die auf Dich warten
+                  Mit meinem neuen Gruppenreise-Account <a href="https://www.instagram.com/our.travelgroups" target="_blank" rel="noopener noreferrer" className="text-japan-indigo hover:underline">@our.travelgroups</a> möchte ich Dich dazu ermutigen, zu reisen, selbst wenn Du keinen Reisepartner oder keine Zeit für intensive Reiseplanung hast – denn das Leben ist viel zu kurz, um all die schönen Reisen zu verpassen, die auf Dich warten
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <a 
@@ -111,6 +121,16 @@ const HostSection = () => {
                     <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
                       <Instagram className="h-4 w-4" />
                       <span>@Our.TravelTreats</span>
+                    </Button>
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/our.Travelgroups" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" size="sm" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white flex items-center gap-2">
+                      <Instagram className="h-4 w-4" />
+                      <span>@Our.Travelgroups</span>
                     </Button>
                   </a>
                 </div>
