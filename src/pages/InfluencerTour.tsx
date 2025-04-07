@@ -52,6 +52,8 @@ const InfluencerTour = () => {
       <div id="faq">
         <TourFAQ />
       </div>
+      
+      <StickyBookButton onBookNow={handleBookNow} />
     </Layout>
   );
 };
