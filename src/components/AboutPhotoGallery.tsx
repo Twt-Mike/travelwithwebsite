@@ -10,16 +10,8 @@ const aboutGalleryPhotos = [
     alt: "Travel group at iconic Osaka location"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//OsakaMikeGroupRunningman.jpeg", 
-    alt: "Mike with a tour group in Osaka playing games"
-  },
-  {
     src: "/public/lovable-uploads/52102cf7-5b6e-4650-ac71-1b62806ec702.png", 
     alt: "Group of travelers on train in Sri Lanka"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//Sri%20Lanka%20group%20photo.JPG", 
-    alt: "Tour group photo in Sri Lanka"
   },
   {
     src: "/public/lovable-uploads/d213e559-da7f-4014-91de-8649f6e85a12.png", 
