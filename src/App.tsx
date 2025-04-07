@@ -22,6 +22,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
+              {/* Home route with explicit name */}
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/ourtraveltreatsjpn" element={<InfluencerTour />} />
