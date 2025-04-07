@@ -1,4 +1,3 @@
-
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,12 +16,10 @@ const About = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-japan-indigo/40 flex items-center justify-center">
-          <div className="text-center transform -translate-y-6 relative z-10">
-            <div className="bg-japan-indigo/60 backdrop-blur-sm px-8 py-6 rounded-lg inline-block">
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-white text-center drop-shadow-md">
-                About TravelWith
-              </h1>
-            </div>
+          <div className="text-center transform -translate-y-[20%] relative z-10">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+              About TravelWith
+            </h1>
           </div>
         </div>
       </div>
