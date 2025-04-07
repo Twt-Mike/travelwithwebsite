@@ -11,8 +11,8 @@ const About = () => {
       {/* Hero Banner */}
       <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
         <img 
-          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//TourGuideMike.jpeg" 
-          alt="TravelWith banner showing Mike as a tour guide" 
+          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//BannerTW.png" 
+          alt="TravelWith banner" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-japan-indigo/40 flex items-center justify-center">
