@@ -23,7 +23,7 @@ const InfluencerHero = () => {
           </h1>
           <div className="flex items-center gap-2 text-white/90 bg-black/30 inline-block px-4 py-2 rounded-lg">
             <CalendarDays className="h-5 w-5" />
-            <span className="font-medium">September 22 - October 3, 2025 • 11 Days</span>
+            <span className="font-medium">September 22 - October 3, 2025 • 12 Days</span>
           </div>
           <p className="text-lg md:text-xl opacity-90 max-w-2xl">
             Join Laura on this once-in-a-lifetime adventure through Japan's most iconic destinations. 
