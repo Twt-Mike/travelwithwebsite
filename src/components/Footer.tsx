@@ -42,9 +42,11 @@ const Footer = () => {
             <Link to="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-japan-pink">
               Privacy Policy
             </Link>
-            <Link to="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-japan-pink">
-              Terms & Conditions
-            </Link>
+            {isInfluencerTourPage && (
+              <a href="https://travelwith.tours/terms-conditions/" target="_blank" rel="noopener noreferrer" className="hover:text-japan-pink">
+                Terms & Conditions
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -77,6 +77,16 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               
               <div className="mt-4 text-center text-white/70 text-sm">
                 <p>Secure checkout via WooCommerce</p>
+                <p className="mt-2">
+                  <a 
+                    href="https://travelwith.tours/terms-conditions/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:underline hover:text-white/90"
+                  >
+                    Click here to read our Terms & Conditions
+                  </a>
+                </p>
               </div>
             </div>
           </div>
