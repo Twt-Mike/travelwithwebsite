@@ -1,3 +1,4 @@
+
 import { Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -72,159 +73,172 @@ const TourDetails = () => {
         <div className="bg-white p-8 rounded-xl shadow-sm mt-16">
           <h3 className="text-xl font-serif font-medium text-japan-indigo mb-6">What's Included</h3>
           
-          <div className="mb-6">
-            <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Accommodation</h4>
-            <ul className="space-y-2 mt-4">
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">11 Nights in comfortable hotels with Twin/Double rooms</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">All hotels with ensuite bathrooms (possible exception in Hakone)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">Daily breakfast included at all accommodations</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div className="mb-6">
-            <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Included Activities</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-4">
-              <div>
-                <h5 className="font-medium text-gray-700 mb-1">Tokyo:</h5>
-                <ul className="space-y-1 mb-3">
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Sushi Making Class With Chef</span>
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <div className="mb-6">
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Accommodation</h4>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">11 Nights in comfortable hotels with Twin/Double rooms</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">TeamLabs Planets Tokyo</span>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">All hotels with ensuite bathrooms (possible exception in Hakone)</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Asakusa Temples, Akihabara Arcades</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Shinjuku, Shibuya Crossing</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Meiji Shrine, Harajuku & Tokyo Viewpoint</span>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">Daily breakfast included at all accommodations</span>
                   </li>
                 </ul>
-                
-                <h5 className="font-medium text-gray-700 mb-1">Hakone:</h5>
-                <ul className="space-y-1 mb-3">
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Mt. Fuji Viewpoint</span>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Included Activities</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-4">
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-1">Tokyo:</h5>
+                    <ul className="space-y-1 mb-3">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Sushi Making Class With Chef</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">TeamLabs Planets Tokyo</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Asakusa Temples, Akihabara Arcades</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Shinjuku, Shibuya Crossing</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Meiji Shrine, Harajuku & Tokyo Viewpoint</span>
+                      </li>
+                    </ul>
+                    
+                    <h5 className="font-medium text-gray-700 mb-1">Hakone:</h5>
+                    <ul className="space-y-1 mb-3">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Mt. Fuji Viewpoint</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Optional: Traditional Onsen</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-1">Kyoto:</h5>
+                    <ul className="space-y-1 mb-3">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Gion (Geisha) Old Town</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">10,000 Torii Gates</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Kiyomizu Dera</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Tea Ceremony + Kimono</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Golden Pavilion, Zen Garden</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Kendo Class, Bamboo Forest</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Monkey Mountain</span>
+                      </li>
+                    </ul>
+                    
+                    <h5 className="font-medium text-gray-700 mb-1">Osaka & Hiroshima:</h5>
+                    <ul className="space-y-1">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Dotonbori Street Food Tour</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Nara Deer Park, Osaka Castle</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Hiroshima Peace Memorial Museum</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">Miyajima Island</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Transportation</h4>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">All transport included after arriving at Day 1 Start Hotel</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Optional: Traditional Onsen</span>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">Bullet Train Tickets</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">Metro Tap Cards</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">Hakone Travel Pass</span>
                   </li>
                 </ul>
               </div>
               
               <div>
-                <h5 className="font-medium text-gray-700 mb-1">Kyoto:</h5>
-                <ul className="space-y-1 mb-3">
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Gion (Geisha) Old Town</span>
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Meals</h4>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">11 Breakfasts</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">10,000 Torii Gates</span>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">4 Dinners</span>
                   </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Kiyomizu Dera</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Tea Ceremony + Kimono</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Golden Pavilion, Zen Garden</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Kendo Class, Bamboo Forest</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Monkey Mountain</span>
-                  </li>
-                </ul>
-                
-                <h5 className="font-medium text-gray-700 mb-1">Osaka & Hiroshima:</h5>
-                <ul className="space-y-1">
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Dotonbori Street Food Tour</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Nara Deer Park, Osaka Castle</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Hiroshima Peace Memorial Museum</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-japan-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Miyajima Island</span>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
+                    <span className="text-gray-700">1 Lunch</span>
                   </li>
                 </ul>
               </div>
             </div>
-          </div>
-          
-          <div className="mb-6">
-            <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Transportation</h4>
-            <ul className="space-y-2 mt-4">
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">All transport included after arriving at Day 1 Start Hotel</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">Bullet Train Tickets</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">Metro Tap Cards</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">Hakone Travel Pass</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Meals</h4>
-            <ul className="space-y-2 mt-4">
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">11 Breakfasts</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">4 Dinners</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="h-5 w-5 text-japan-green mt-1 flex-shrink-0" />
-                <span className="text-gray-700">1 Lunch</span>
-              </li>
-            </ul>
+            
+            <div className="flex-shrink-0 w-full md:w-1/3 flex items-center">
+              <img 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//7.jpg" 
+                alt="Japan travel experience" 
+                className="w-full h-auto rounded-lg shadow-md object-cover"
+                style={{ maxHeight: "500px" }}
+              />
+            </div>
           </div>
         </div>
 
