@@ -45,11 +45,11 @@ const Navbar = () => {
     >
       <div className="japan-container flex justify-between items-center">
         {!isInfluencerTourPage && (
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-2xl font-serif font-bold text-japan-indigo">
               TravelWith
             </span>
-          </a>
+          </Link>
         )}
         {isInfluencerTourPage && (
           <div className="h-10"></div> /* This div maintains spacing when the logo is hidden */
@@ -68,24 +68,20 @@ const Navbar = () => {
       {menuOpen && (
         <div className="bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">
-            <a 
-              href="/" 
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              to="/" 
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               Home
-            </a>
-            <a 
-              href="/about" 
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link 
+              to="/about" 
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/about' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
             >
               About Us
-            </a>
+            </Link>
           </div>
         </div>
       )}
