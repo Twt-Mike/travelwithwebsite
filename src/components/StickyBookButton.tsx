@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 
 // The URL for your WooCommerce product page
-const BOOKING_URL = "https://travelwith.tours/product/japan-tour-with-ourtraveltreats";
+const BOOKING_URL = "https://travelwith.tours/product/japan-12-day-tour-with-our-travel-treats/";
 
 const StickyBookButton = () => {
   const [visible, setVisible] = useState(false);
