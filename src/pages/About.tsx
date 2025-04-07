@@ -183,6 +183,11 @@ const About = () => {
                         </Button>
                       </a>
                     </div>
+                    
+                    {/* Added fine print */}
+                    <p className="text-xs text-gray-500 mt-4 text-center italic">
+                      *TourRadar's Guide of the Year awards are announced the following year. Due to the COVID-19 pandemic, the 2019 results were not officially published. However, it was confirmed directly by TourRadar that I ranked #2 overall based on guest reviews and performance. Organizations may contact TourRadar to verify this.
+                    </p>
                   </div>
                 </div>
               </CardContent>
