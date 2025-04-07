@@ -11,13 +11,44 @@ const About = () => {
       {/* Hero Banner */}
       <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
         <img 
-          src="/public/lovable-uploads/d2eb9e50-b99f-4a8e-98fc-70839f0e480f.png" 
-          alt="TravelWith banner showing travelers in Japan" 
+          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//TourGuideMike.jpeg" 
+          alt="TravelWith banner showing Mike as a tour guide" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-japan-indigo/40 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-white text-center">About TravelWith</h1>
         </div>
+      </div>
+
+      {/* Design element between hero and content */}
+      <div className="relative py-8 bg-gradient-to-r from-japan-cream to-white overflow-hidden">
+        <div className="japan-container relative z-10">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-serif text-japan-indigo animate-fade-in">
+              Crafting Authentic Japan Experiences
+            </h2>
+            <p className="text-japan-slate/80 mt-2 max-w-2xl mx-auto">
+              With over 10 years of experience, countless tours, and hundreds of happy travelers
+            </p>
+          </div>
+          <div className="flex justify-center mt-6 gap-4">
+            <div className="flex flex-col items-center p-3 rounded-lg bg-white/50 backdrop-blur-sm shadow-sm border border-japan-indigo/10 w-24">
+              <span className="text-2xl font-bold text-japan-indigo">60+</span>
+              <span className="text-xs text-gray-600">Tours Led</span>
+            </div>
+            <div className="flex flex-col items-center p-3 rounded-lg bg-white/50 backdrop-blur-sm shadow-sm border border-japan-indigo/10 w-24">
+              <span className="text-2xl font-bold text-japan-indigo">700+</span>
+              <span className="text-xs text-gray-600">Days Guiding</span>
+            </div>
+            <div className="flex flex-col items-center p-3 rounded-lg bg-white/50 backdrop-blur-sm shadow-sm border border-japan-indigo/10 w-24">
+              <span className="text-2xl font-bold text-japan-indigo">674</span>
+              <span className="text-xs text-gray-600">5★ Reviews</span>
+            </div>
+          </div>
+        </div>
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-japan-pink/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-japan-green/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
       </div>
 
       <section className="py-16 bg-white">
@@ -80,70 +111,72 @@ const About = () => {
                   <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
                   <span>2 years as a Host Trip Organizer, building fully custom influencer-led trips</span>
                 </li>
+                <li className="flex items-start gap-3">
+                  <Check className="text-japan-green h-5 w-5 flex-shrink-0 mt-1" />
+                  <span>10 influencer host trips in Japan—designed and/or led by me</span>
+                </li>
               </ul>
             </div>
           </div>
 
-          {/* Combined Tour Experience and Tour Guide Profile */}
+          {/* Combined Professional Experience Card */}
           <div className="bg-japan-cream p-8 rounded-lg mb-16">
             <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6 text-center">
               Professional Experience
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              <Card className="bg-white/80 border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-medium text-japan-indigo mb-4">Tour Experience</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="bg-japan-cream/50 p-4 rounded-lg text-center">
-                      <div className="text-3xl font-bold text-japan-indigo mb-1">30+</div>
-                      <div className="text-gray-700 text-sm">Tours in Japan</div>
-                    </div>
-                    <div className="bg-japan-cream/50 p-4 rounded-lg text-center">
-                      <div className="text-3xl font-bold text-japan-indigo mb-1">17</div>
-                      <div className="text-gray-700 text-sm">Tours in Sri Lanka</div>
-                    </div>
-                    <div className="bg-japan-cream/50 p-4 rounded-lg text-center">
-                      <div className="text-3xl font-bold text-japan-indigo mb-1">16</div>
-                      <div className="text-gray-700 text-sm">Tours in Philippines</div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 text-sm mt-4">
-                    Included in these tours are 10 Host Trips in Japan lead and/or designed, 
-                    specifically with Travel Influencer/Host partners!
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/80 border-0 shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-medium text-japan-indigo mb-4">Tour Guide Profile</h3>
-                  <div className="flex justify-center mb-2">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <svg key={star} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                      ))}
+            <Card className="bg-white/90 border-0 shadow-md overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  {/* Tour Experience Side */}
+                  <div className="p-6 border-r border-japan-cream/50">
+                    <h3 className="text-xl font-medium text-japan-indigo mb-4">Tour Experience</h3>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="bg-japan-cream/50 p-3 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-japan-indigo mb-1">30+</div>
+                        <div className="text-gray-700 text-xs">Tours in Japan</div>
+                      </div>
+                      <div className="bg-japan-cream/50 p-3 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-japan-indigo mb-1">17</div>
+                        <div className="text-gray-700 text-xs">Tours in Sri Lanka</div>
+                      </div>
+                      <div className="bg-japan-cream/50 p-3 rounded-lg text-center">
+                        <div className="text-2xl font-bold text-japan-indigo mb-1">16</div>
+                        <div className="text-gray-700 text-xs">Tours in Philippines</div>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-center text-gray-700 mb-4">
-                    674 five-star reviews on TourRadar<br/>
-                    <span className="text-sm">(Ranked #2 Tour Guide of the Year in 2019*)</span>
-                  </p>
-                  <div className="flex justify-center">
-                    <a href="https://www.tourradar.com/tour-guide-mike" target="_blank" rel="noopener noreferrer">
-                      <Button className="bg-japan-indigo hover:bg-japan-indigo/90" size="sm">
-                        TourRadar Profile 
-                        <ExternalLink className="ml-2 h-3 w-3" />
-                      </Button>
-                    </a>
+                  
+                  {/* Tour Guide Profile Side */}
+                  <div className="p-6 bg-gradient-to-r from-white to-japan-cream/20">
+                    <h3 className="text-xl font-medium text-japan-indigo mb-4">Tour Guide Profile</h3>
+                    <div className="flex justify-center mb-2">
+                      <div className="flex">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <svg key={star} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-center text-gray-700 mb-4">
+                      674 five-star reviews on TourRadar<br/>
+                      <span className="text-sm">(Ranked #2 Tour Guide of the Year in 2019*)</span>
+                    </p>
+                    <div className="flex justify-center">
+                      <a href="https://www.tourradar.com/tour-guide-mike" target="_blank" rel="noopener noreferrer">
+                        <Button className="bg-japan-indigo hover:bg-japan-indigo/90" size="sm">
+                          TourRadar Profile 
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </Button>
+                      </a>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
             
-            <p className="text-center text-gray-700 mb-2">
+            <p className="text-center text-gray-700 mt-6">
               With each trip averaging 10+ days, I've spent nearly two full years—around 700 days—actually on the tours themselves, 
               giving guests their trip of a lifetime, handling every detail, and making sure each experience is seamless, personal, and unforgettable.
             </p>
