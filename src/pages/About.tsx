@@ -78,7 +78,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex flex-col justify-center">
-              <div className="rounded-lg overflow-hidden shadow-lg max-w-[60%] mx-auto">
+              <div className="rounded-lg overflow-hidden shadow-lg max-w-[72%] mx-auto">
                 <img 
                   src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//SydneyCentralBusking.jpg" 
                   alt="Busking at Sydney Central Station" 
@@ -216,7 +216,7 @@ const About = () => {
             <p className="text-gray-700 mb-4">
               Whether it's a dinner at a family-run izakaya in Kyoto or a scenic train journey through the mountains, these partnerships are part of what sets TravelWith apart from larger, one-size-fits-all tour companies.
             </p>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-8">
               TravelWith combines:
             </p>
             <ul className="space-y-3 mb-8">
