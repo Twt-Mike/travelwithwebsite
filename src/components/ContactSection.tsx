@@ -19,8 +19,8 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Use a simple form submission service like Formspree
-      const response = await fetch('https://formspree.io/f/info@travelwith.tours', {
+      // Using the provided Formspree endpoint
+      const response = await fetch('https://formspree.io/f/xkgjpbqn', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

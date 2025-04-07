@@ -16,6 +16,7 @@ const CtaSection = () => {
   const [socialHandle, setSocialHandle] = useState('');
   const [message, setMessage] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   // Check if the background image loads properly
@@ -34,19 +35,50 @@ const CtaSection = () => {
     console.log("CtaSection rendered with background image URL:", backgroundImage);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Here you would typically send this to your contact form handler
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    setName('');
-    setEmail('');
-    setSocialHandle('');
-    setMessage('');
+    try {
+      // Using the provided Formspree endpoint
+      const response = await fetch('https://formspree.io/f/xkgjpbqn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          socialHandle,
+          message,
+          _subject: `TravelWith CTA Form: ${name}`
+        })
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        
+        // Reset form fields
+        setName('');
+        setEmail('');
+        setSocialHandle('');
+        setMessage('');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast({
+        title: "Message Not Sent",
+        description: "There was an error sending your message. Please try again or email us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -117,9 +149,20 @@ const CtaSection = () => {
                     className="w-full h-24"
                   />
                 </div>
-                <Button type="submit" size="lg" className="bg-japan-indigo hover:bg-japan-indigo/90 text-white w-full flex items-center justify-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  Contact Us to Start Planning
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="bg-japan-indigo hover:bg-japan-indigo/90 text-white w-full flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <span className="animate-pulse">Sending...</span>
+                  ) : (
+                    <>
+                      <Mail className="h-4 w-4" />
+                      Contact Us to Start Planning
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
