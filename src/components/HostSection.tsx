@@ -22,12 +22,19 @@ const HostSection = () => {
                     Meet Laura
                   </h2>
                   <p className="text-gray-700 leading-relaxed">
-                    Laura is a passionate travel enthusiast who has visited over 45 countries. 
-                    Her love for Japanese culture, food, and experiences led her to create this special tour for her community.
+                    I'm Laura, the creator and travel blogger behind @our.traveltreats On my Instagram and travel blog, I share travel guides for weekend getaways, hikes, and adventure trips that you can enjoy even with a busy schedule.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Having visited Japan multiple times, she's partnered with a Professional Tour Leader & Japan Expert to curate the perfect itinerary that balances must-see attractions with 
-                    hidden gems known only to locals. Her energetic and friendly approach ensures every traveler feels included and has an unforgettable experience.
+                    With my new group travel account, @our.travelgroups, I want to encourage you to explore the world—even if you don't have a travel partner or the time to plan everything yourself. Life's too short to miss out on all the amazing trips waiting for you.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    ourtraveltreats.de/en
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Ich bin Laura, Creator und Reisebloggerin hinter @our.traveltreats. Auf meinem Instagram-Account und Reiseblog zeige ich Dir Reiseguides für Wochenendtrips, Wanderungen und Abenteuerreisen, die du auch mit weniger Zeit realisieren kannst.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Mit meinem neuen Gruppenreise-Account @our.travelgroups möchte ich Dich dazu ermutigen, zu reisen, selbst wenn Du keinen Reisepartner oder keine Zeit für intensive Reiseplanung hast – denn das Leben ist viel zu kurz, um all die schönen Reisen zu verpassen, die auf Dich warten
                   </p>
                   <div className="flex flex-wrap gap-4 pt-4">
                     <a 
@@ -81,12 +88,19 @@ const HostSection = () => {
                 
                 {/* Description after image */}
                 <p className="text-gray-700 leading-relaxed">
-                  Laura is a passionate travel enthusiast who has visited over 45 countries. 
-                  Her love for Japanese culture, food, and experiences led her to create this special tour for her community.
+                  I'm Laura, the creator and travel blogger behind @our.traveltreats On my Instagram and travel blog, I share travel guides for weekend getaways, hikes, and adventure trips that you can enjoy even with a busy schedule.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Having visited Japan multiple times, she's partnered with a Professional Tour Leader & Japan Expert to curate the perfect itinerary that balances must-see attractions with 
-                  hidden gems known only to locals. Her energetic and friendly approach ensures every traveler feels included and has an unforgettable experience.
+                  With my new group travel account, @our.travelgroups, I want to encourage you to explore the world—even if you don't have a travel partner or the time to plan everything yourself. Life's too short to miss out on all the amazing trips waiting for you.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  ourtraveltreats.de/en
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Ich bin Laura, Creator und Reisebloggerin hinter @our.traveltreats. Auf meinem Instagram-Account und Reiseblog zeige ich Dir Reiseguides für Wochenendtrips, Wanderungen und Abenteuerreisen, die du auch mit weniger Zeit realisieren kannst.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Mit meinem neuen Gruppenreise-Account @our.travelgroups möchte ich Dich dazu ermutigen, zu reisen, selbst wenn Du keinen Reisepartner oder keine Zeit für intensive Reiseplanung hast – denn das Leben ist viel zu kurz, um all die schönen Reisen zu verpassen, die auf Dich warten
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <a 
