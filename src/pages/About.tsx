@@ -1,4 +1,3 @@
-
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -79,7 +78,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex flex-col justify-center">
-              <div className="rounded-lg overflow-hidden shadow-lg">
+              <div className="rounded-lg overflow-hidden shadow-lg max-w-[60%] mx-auto">
                 <img 
                   src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//SydneyCentralBusking.jpg" 
                   alt="Busking at Sydney Central Station" 
@@ -184,7 +183,6 @@ const About = () => {
                       </a>
                     </div>
                     
-                    {/* Added fine print */}
                     <p className="text-xs text-gray-500 mt-4 text-center italic">
                       *TourRadar's Guide of the Year awards are announced the following year. Due to the COVID-19 pandemic, the 2019 results were not officially published. However, it was confirmed directly by TourRadar that I ranked #2 overall based on guest reviews and performance. Organizations may contact TourRadar to verify this.
                     </p>
