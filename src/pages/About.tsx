@@ -3,6 +3,7 @@ import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AboutPhotoGallery from '@/components/AboutPhotoGallery';
+import ContactSection from '@/components/ContactSection';
 
 const About = () => {
   return (
@@ -58,7 +59,6 @@ const About = () => {
                 Hi, I'm Mike—founder of TravelWith.
               </h2>
               
-              {/* Profile picture moved above the text */}
               <div className="mb-6">
                 <img 
                   src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//AboutProfilePic.png" 
@@ -197,7 +197,6 @@ const About = () => {
             </p>
           </div>
 
-          {/* Photo Gallery added here */}
           <h3 className="text-2xl font-serif font-medium text-japan-indigo mb-4 text-center">
             Tour Moments
           </h3>
@@ -254,6 +253,14 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-3">
+          Ready to set up your custom Japan tour for your audience?
+        </h2>
+      </div>
+      
+      <ContactSection />
     </Layout>
   );
 };
