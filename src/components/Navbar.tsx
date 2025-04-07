@@ -8,17 +8,12 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   
-  // Use a try-catch to handle the possibility of being outside a router context
-  let currentPath = '/';
-  try {
-    const location = useLocation();
-    currentPath = location.pathname;
-  } catch (error) {
-    console.log('Router context not available, defaulting path to /', error);
-  }
+  // Use the location to determine current path
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   // Check if we're on the influencer tour page
-  const isInfluencerTourPage = currentPath === '/ourtraveltreats-japan';
+  const isInfluencerTourPage = currentPath === '/ourtraveltreatsjpn';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,6 +76,13 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
             >
               About Us
+            </Link>
+            <Link 
+              to="/ourtraveltreatsjpn" 
+              className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/ourtraveltreatsjpn' ? 'font-medium' : ''}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              OurTravelTreats Japan Tour
             </Link>
           </div>
         </div>

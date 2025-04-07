@@ -11,7 +11,7 @@ import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
 
-// Define the WooCommerce product URL - make sure to use your actual URL
+// Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-tour-with-ourtraveltreats";
 
 // Images for the compact carousel
@@ -25,6 +25,7 @@ const japanImages = [
 
 const InfluencerTour = () => {
   const handleBookNow = () => {
+    // Open the booking URL in a new tab
     window.open(BOOKING_URL, '_blank');
   };
 
