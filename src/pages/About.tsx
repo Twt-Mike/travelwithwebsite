@@ -1,8 +1,6 @@
-
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import AboutPhotoGallery from '@/components/AboutPhotoGallery';
 import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
@@ -59,10 +57,10 @@ const About = () => {
                 Hi, I'm Mike—founder of TravelWith.
               </h2>
               <p className="text-gray-700 mb-4">
-                Originally from Canada, I booked a four-month return flight to Sydney, Australia at age 23, just to play music with a friend. I'd never traveled before, never stayed in a hostel, and had no idea what "life on the road" really meant.
+                Originally from Canada, I booked a four-month return flight to Sydney, Australia at age 23, just to play music with a friend. We were a guitarist/drummer duo, playing in Sydney bars and even busking on the streets in front of Sydney Central. I'd never traveled before, never stayed in a hostel, and had no idea what "life on the road" really meant.
               </p>
               <p className="text-gray-700 mb-4">
-                But by the end of Day One, I knew I wasn't taking that return flight. I was in this for the long run.
+                But the first day I arrived at the hostel in Sydney, I knew I wasn't taking that return flight home. Getting to meet & travel with people from all over the world, I knew I was in this for the long run.
               </p>
               <p className="text-gray-700 mb-4">
                 That trip kicked off a journey that's now spanned over a decade, countless countries, and a career built entirely around creating unforgettable travel experiences.
@@ -119,7 +117,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Combined Professional Experience Card */}
           <div className="bg-japan-cream p-8 rounded-lg mb-16">
             <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-6 text-center">
               Professional Experience
@@ -128,7 +125,6 @@ const About = () => {
             <Card className="bg-white/90 border-0 shadow-md overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  {/* Tour Experience Side */}
                   <div className="p-6 border-r border-japan-cream/50">
                     <h3 className="text-xl font-medium text-japan-indigo mb-4">Tour Experience</h3>
                     <div className="grid grid-cols-3 gap-3">
@@ -147,7 +143,6 @@ const About = () => {
                     </div>
                   </div>
                   
-                  {/* Tour Guide Profile Side */}
                   <div className="p-6 bg-gradient-to-r from-white to-japan-cream/20">
                     <h3 className="text-xl font-medium text-japan-indigo mb-4">Tour Guide Profile</h3>
                     <div className="flex justify-center mb-2">
@@ -231,12 +226,6 @@ const About = () => {
               Whether you're a creator looking to host your first group adventure, or someone with a vision for a truly unique travel experience—you're in the right place.
             </p>
           </div>
-
-          {/* Tour Memories */}
-          <h3 className="text-2xl font-serif font-medium text-japan-indigo mb-6 text-center">
-            Tour Memories
-          </h3>
-          <AboutPhotoGallery />
         </div>
       </section>
     </Layout>
