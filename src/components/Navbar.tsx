@@ -50,17 +50,19 @@ const Navbar = () => {
           <div className="h-10"></div> /* This div maintains spacing when the logo is hidden */
         )}
 
-        {/* Hamburger Menu Trigger (for both mobile and desktop) */}
-        <button
-          className="text-japan-indigo focus:outline-none"
-          onClick={toggleMenu}
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Hamburger Menu Trigger (hide on influencer tour page) */}
+        {!isInfluencerTourPage && (
+          <button
+            className="text-japan-indigo focus:outline-none"
+            onClick={toggleMenu}
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
       </div>
 
-      {/* Navigation Menu (for both mobile and desktop) */}
-      {menuOpen && (
+      {/* Navigation Menu (for both mobile and desktop) - not shown on influencer page */}
+      {menuOpen && !isInfluencerTourPage && (
         <div className="bg-white shadow-lg py-4 absolute top-full left-0 right-0 animate-fade-in">
           <div className="japan-container flex flex-col gap-4">
             <Link 
@@ -77,7 +79,6 @@ const Navbar = () => {
             >
               About Us
             </Link>
-            {/* Removed OurTravelTreats Japan Tour link */}
           </div>
         </div>
       )}
