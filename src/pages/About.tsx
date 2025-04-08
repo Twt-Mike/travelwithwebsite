@@ -1,3 +1,4 @@
+
 import Layout from '@/components/Layout';
 import { Check, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -64,7 +65,7 @@ const About = () => {
               
               <div className="mb-6">
                 <img 
-                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//TourGuideMike.jpeg" 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//AboutProfilePic.png" 
                   alt="Mike from TravelWith" 
                   className="rounded-lg shadow-lg w-full max-h-80 object-cover"
                 />
@@ -97,7 +98,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
             <div className="order-2 md:order-1 flex justify-center">
               <img 
-                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//ToursBackground.jpg" 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//TourGuideMike.jpeg" 
                 alt="Mike guiding a tour in Japan" 
                 className="rounded-lg shadow-lg max-h-80 object-cover"
               />
