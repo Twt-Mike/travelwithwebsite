@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage: 'url("/lovable-uploads/30d44237-df22-4b4f-8b57-c27bb57799c3.png")',
+          backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//hero-banner.jpg")',
           backgroundPosition: 'center 15%', // Crop bottom 15%
         }}
       >

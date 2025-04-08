@@ -15,7 +15,7 @@ const CtaSection = () => {
   const [email, setEmail] = useState('');
   const [socialHandle, setSocialHandle] = useState('');
   const [message, setMessage] = useState('');
-  const [backgroundImage, setBackgroundImage] = useState('/lovable-uploads/c78032d5-5066-4019-85f8-7a16228cffdf.png');
+  const [backgroundImage, setBackgroundImage] = useState('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//cta-background.jpg');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 

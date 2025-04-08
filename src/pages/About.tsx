@@ -97,7 +97,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
             <div className="order-2 md:order-1 flex justify-center">
               <img 
-                src="/public/lovable-uploads/a56892ca-72fc-4028-8263-f45fa6b7acd1.png" 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//ToursBackground.jpg" 
                 alt="Mike guiding a tour in Japan" 
                 className="rounded-lg shadow-lg max-h-80 object-cover"
               />
