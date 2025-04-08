@@ -15,7 +15,7 @@ const CtaSection = () => {
   const [email, setEmail] = useState('');
   const [socialHandle, setSocialHandle] = useState('');
   const [message, setMessage] = useState('');
-  const [backgroundImage, setBackgroundImage] = useState('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//cta-background.jpg');
+  const [backgroundImage, setBackgroundImage] = useState('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//9.jpg');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 

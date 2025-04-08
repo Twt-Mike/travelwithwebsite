@@ -64,7 +64,7 @@ const About = () => {
               
               <div className="mb-6">
                 <img 
-                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//AboutProfilePic.png" 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/aboutme//TourGuideMike.jpeg" 
                   alt="Mike from TravelWith" 
                   className="rounded-lg shadow-lg w-full max-h-80 object-cover"
                 />
