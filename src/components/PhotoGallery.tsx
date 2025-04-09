@@ -10,24 +10,12 @@ const galleryPhotos = [
     alt: "Japan Tour Memory 2"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//3.jpg",
-    alt: "Japan Tour Memory 3"
-  },
-  {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//4.jpg",
     alt: "Japan Tour Memory 4"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//5.jpg",
-    alt: "Japan Tour Memory 5"
-  },
-  {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//6.jpg",
     alt: "Japan Tour Memory 6"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//7.jpg",
-    alt: "Japan Tour Memory 7"
   },
   {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//8.jpg",
@@ -48,6 +36,22 @@ const galleryPhotos = [
   {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//12.jpg",
     alt: "Japan Tour Memory 12"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group1.jpeg",
+    alt: "Japan Tour Group Photo 1"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group2.jpg",
+    alt: "Japan Tour Group Photo 2"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group3.jpg",
+    alt: "Japan Tour Group Photo 3"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group4.jpeg",
+    alt: "Japan Tour Group Photo 4"
   }
 ];
 
