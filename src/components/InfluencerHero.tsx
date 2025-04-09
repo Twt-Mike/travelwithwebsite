@@ -19,7 +19,7 @@ const InfluencerHero = () => {
         <div className="max-w-3xl text-white space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
             <span className="text-3xl md:text-4xl lg:text-5xl opacity-90">TravelWith</span><br />
-            <span className="text-japan-pink">@Our.TravelTreats</span>
+            <span className="text-[#75bf8f]">@Our.TravelTreats</span>
           </h1>
           <div className="flex items-center gap-2 text-white/90 bg-black/30 inline-block px-4 py-2 rounded-lg">
             <CalendarDays className="h-5 w-5" />
@@ -30,7 +30,7 @@ const InfluencerHero = () => {
             Experience authentic culture, cuisine, and breathtaking landscapes alongside like-minded travelers.
           </p>
           <div className="flex flex-wrap gap-4 pt-6">
-            <Button size="lg" className="bg-japan-pink hover:bg-japan-pink/90 text-white px-8 py-6 text-lg"
+            <Button size="lg" className="bg-[#75bf8f] hover:bg-[#75bf8f]/90 text-white px-8 py-6 text-lg"
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>
               Book Your Spot Now
             </Button>

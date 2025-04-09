@@ -28,7 +28,7 @@ const StickyBookButton = ({ onBookNow }: StickyBookButtonProps) => {
       <Button 
         onClick={onBookNow}
         size="lg" 
-        className="bg-japan-pink hover:bg-japan-pink/90 text-white shadow-lg rounded-full px-6 h-14"
+        className="bg-[#75bf8f] hover:bg-[#75bf8f]/90 text-white shadow-lg rounded-full px-6 h-14"
       >
         Book Now
         <ExternalLink className="ml-2 h-4 w-4" />

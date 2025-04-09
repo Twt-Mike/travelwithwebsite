@@ -14,7 +14,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
       <div className="japan-container relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block bg-japan-pink/10 text-japan-pink px-4 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block bg-[#75bf8f]/10 text-[#75bf8f] px-4 py-1 rounded-full text-sm font-medium mb-4">
               Limited Spots Available
             </div>
             <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo mb-6">
@@ -67,7 +67,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               
               <Button 
                 size="lg" 
-                className="w-full bg-japan-pink hover:bg-japan-pink/90 text-white flex items-center justify-center gap-2"
+                className="w-full bg-[#75bf8f] hover:bg-[#75bf8f]/90 text-white flex items-center justify-center gap-2"
                 onClick={onBookNow}
               >
                 Secure Your Spot Now
