@@ -3,7 +3,8 @@ import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const faqs = [
+// Default FAQs
+const defaultFaqs = [
   {
     id: 1,
     question: "Where should I book my flights in & out of?",
@@ -46,6 +47,19 @@ const faqs = [
   }
 ];
 
+// TypeScript interface for FAQ items
+interface FAQItem {
+  id?: number;
+  question: string;
+  answer: string;
+}
+
+// Props interface for the TourFAQ component
+interface TourFAQProps {
+  faqs?: FAQItem[];
+  customFaqs?: FAQItem[];
+}
+
 const FAQItem = ({ faq, isOpen, toggleOpen }) => {
   return (
     <div className="border-b border-gray-200 last:border-0">
@@ -72,8 +86,11 @@ const FAQItem = ({ faq, isOpen, toggleOpen }) => {
   );
 };
 
-const TourFAQ = () => {
+const TourFAQ = ({ faqs, customFaqs }: TourFAQProps) => {
   const [openFaq, setOpenFaq] = useState(1);
+  
+  // Use provided FAQs or fallback to default FAQs
+  const displayFaqs = faqs || customFaqs || defaultFaqs;
 
   const toggleFaq = (faqId) => {
     if (openFaq === faqId) {
@@ -95,12 +112,12 @@ const TourFAQ = () => {
 
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
           <div className="p-6">
-            {faqs.map((faq) => (
+            {displayFaqs.map((faq, index) => (
               <FAQItem 
-                key={faq.id} 
+                key={faq.id || index} 
                 faq={faq} 
-                isOpen={openFaq === faq.id}
-                toggleOpen={() => toggleFaq(faq.id)}
+                isOpen={openFaq === (faq.id || index)}
+                toggleOpen={() => toggleFaq(faq.id || index)}
               />
             ))}
           </div>

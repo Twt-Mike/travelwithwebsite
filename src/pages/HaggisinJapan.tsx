@@ -23,45 +23,6 @@ const japanImages = [
   { url: "/placeholder.svg", alt: "Japan experience" }
 ];
 
-const HaggisinJapan = () => {
-  const handleBookNow = () => {
-    // Open the booking URL in a new tab
-    window.open(BOOKING_URL, '_blank');
-  };
-
-  return (
-    <Layout>
-      <HaggisinJapanHero />
-      <HeroNavLinks />
-      <div>
-        <HaggisinJapanHostSection />
-        <CompactCarousel images={japanImages} />
-        <div id="tour-details">
-          <HaggisinJapanTourDetails />
-        </div>
-      </div>
-      <div id="itinerary">
-        <HaggisinJapanTourItinerary />
-      </div>
-      
-      {/* Booking CTA section */}
-      <div id="booking">
-        <HaggisinJapanBookingCta onBookNow={handleBookNow} />
-      </div>
-      
-      {/* Tour Memories (Photo Gallery) */}
-      <PhotoGallery />
-      
-      {/* FAQ section */}
-      <div id="faq">
-        <TourFAQ customFaqs={haggisinJapanFaqs} />
-      </div>
-      
-      <StickyBookButton onBookNow={handleBookNow} />
-    </Layout>
-  );
-};
-
 // Custom FAQs for HaggisinJapan
 const haggisinJapanFaqs = [
   {
@@ -93,5 +54,44 @@ const haggisinJapanFaqs = [
     answer: "Yes! I give a decent amount of free time at every location for people to tick off their own bucket list things. I'll also have a lot of suggestion for each place we go to help you plan your free time in advance."
   }
 ];
+
+const HaggisinJapan = () => {
+  const handleBookNow = () => {
+    // Open the booking URL in a new tab
+    window.open(BOOKING_URL, '_blank');
+  };
+
+  return (
+    <Layout>
+      <HaggisinJapanHero />
+      <HeroNavLinks />
+      <div>
+        <HaggisinJapanHostSection />
+        <CompactCarousel images={japanImages} />
+        <div id="tour-details">
+          <HaggisinJapanTourDetails />
+        </div>
+      </div>
+      <div id="itinerary">
+        <HaggisinJapanTourItinerary />
+      </div>
+      
+      {/* Booking CTA section */}
+      <div id="booking">
+        <HaggisinJapanBookingCta onBookNow={handleBookNow} />
+      </div>
+      
+      {/* Tour Memories (Photo Gallery) */}
+      <PhotoGallery />
+      
+      {/* FAQ section */}
+      <div id="faq">
+        <TourFAQ faqs={haggisinJapanFaqs} />
+      </div>
+      
+      <StickyBookButton onBookNow={handleBookNow} />
+    </Layout>
+  );
+};
 
 export default HaggisinJapan;
