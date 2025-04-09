@@ -13,7 +13,7 @@ const itineraryData = [
     day: 1,
     date: "September 22",
     title: "Tokyo Arrival Day",
-    description: "Welcome to Tokyo — let the adventure begin! 🇯🇵✨ Your guide is available all day to assist with arrivals. Hotel check-in is at 3 PM in the scenic Asakusa district — arrive early to explore or relax at your own pace.\n\nIn the evening, we'll meet in the lobby, enjoy a welcome dinner at one of our favourite local restaurants, and then experience Asakusa's charm with a guided night tour, including the iconic Senso-ji Temple — Tokyo's oldest and most famous!",
+    description: "Welcome to Tokyo — let the adventure begin! 🇯🇵✨ Your guide is available all day to assist with arrivals. Hotel check-in is at 3 PM in the scenic Asakusa district — arrive early to explore or relax at your own pace.\n\n\nIn the evening, we'll meet in the lobby, enjoy a welcome dinner at one of our favourite local restaurants, and then experience Asakusa's charm with a guided night tour, including the iconic Senso-ji Temple — Tokyo's oldest and most famous!",
     activities: ["Senso-ji Temple Night Walk"],
     meals: ["Welcome Dinner"],
     accommodation: "Asakusa MONday Twin Ensuite (or similar)"
@@ -22,7 +22,7 @@ const itineraryData = [
     day: 2,
     date: "September 23",
     title: "Tokyo",
-    description: "Kick off the day with your Japan orientation — learning essential Japanese for your journey, including customs, cultural dos & don'ts, and useful language tips.\n\nNext, we'll explore the tranquil Meiji Shrine, a sacred site tucked away in the lush greenery of Yoyogi Park, dedicated to the emperor who modernized Japan. A short stroll brings us to the iconic Shibuya Crossing — one of the busiest intersections on the planet! Strike a pose with the loyal Hachiko statue, then take in breathtaking rooftop views of the organized chaos below.\n\nAfter some free time, we dive into Akihabara's neon-lit nightlife — think arcades, themed cafés, quirky shops, and bars with darts & beer pong. End the night on a high note with karaoke alongside locals! 🎤🔥",
+    description: "Kick off the day with your Japan orientation — learning essential Japanese for your journey, including customs, cultural dos & don'ts, and useful language tips.\n\n\nNext, we'll explore the tranquil Meiji Shrine, a sacred site tucked away in the lush greenery of Yoyogi Park, dedicated to the emperor who modernized Japan. A short stroll brings us to the iconic Shibuya Crossing — one of the busiest intersections on the planet! Strike a pose with the loyal Hachiko statue, then take in breathtaking rooftop views of the organized chaos below.\n\n\nAfter some free time, we dive into Akihabara's neon-lit nightlife — think arcades, themed cafés, quirky shops, and bars with darts & beer pong. End the night on a high note with karaoke alongside locals! 🎤🔥",
     activities: ["Tokyo Sightseeing — Harajuku, Meiji Shrine, Shibuya Crossing, Akihabara Arcades"],
     meals: ["Breakfast"],
     accommodation: "Asakusa MONday Twin Ensuite (or similar)"
