@@ -1,4 +1,3 @@
-
 import { Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -48,7 +47,7 @@ const TourDetails = () => {
                     <span className="font-medium min-w-28">Price:</span>
                     <span>£2335 (€2750)</span>
                   </li>
-                  <li className="flex items-center gap-3 text-japan-pink font-medium">
+                  <li className="flex items-center gap-3 text-[#75bf8f] font-medium">
                     <span className="min-w-28"></span>
                     <span>(Just £194 / €230 per day!)</span>
                   </li>

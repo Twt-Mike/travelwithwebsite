@@ -1,4 +1,3 @@
-
 import { Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -15,7 +14,7 @@ const HostSection = () => {
             <>
               <div className="order-1">
                 <div className="space-y-6">
-                  <div className="inline-block bg-japan-pink/10 text-japan-pink px-3 py-1 rounded-lg text-sm font-medium mb-2">
+                  <div className="inline-block bg-[#75bf8f]/10 text-[#75bf8f] px-3 py-1 rounded-lg text-sm font-medium mb-2">
                     Your Host
                   </div>
                   <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo mb-4">
@@ -78,14 +77,13 @@ const HostSection = () => {
           {isMobile && (
             <div className="col-span-1">
               <div className="space-y-6">
-                <div className="inline-block bg-japan-pink/10 text-japan-pink px-3 py-1 rounded-lg text-sm font-medium mb-2">
+                <div className="inline-block bg-[#75bf8f]/10 text-[#75bf8f] px-3 py-1 rounded-lg text-sm font-medium mb-2">
                   Your Host
                 </div>
                 <h2 className="text-3xl font-serif font-medium text-japan-indigo mb-4">
                   Meet Laura
                 </h2>
                 
-                {/* Image after heading on mobile */}
                 <div className="relative mb-6">
                   <img 
                     src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//1.jpg" 
@@ -96,7 +94,6 @@ const HostSection = () => {
                   <div className="absolute -top-4 -left-4 bg-japan-indigo/20 h-24 w-24 rounded-full -z-10"></div>
                 </div>
                 
-                {/* Description after image */}
                 <p className="text-gray-700 leading-relaxed">
                   I'm Laura, the creator and travel blogger behind @our.traveltreats On my Instagram and travel blog, I share travel guides for weekend getaways, hikes, and adventure trips that you can enjoy even with a busy schedule.
                 </p>
