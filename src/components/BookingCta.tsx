@@ -49,7 +49,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               </ul>
             </div>
             
-            <div className="bg-japan-indigo p-8 rounded-xl shadow-md text-white flex flex-col">
+            <div className="bg-[#002e3e] p-8 rounded-xl shadow-md text-white flex flex-col">
               <h3 className="text-xl font-medium mb-2">Japan with OurTravelTreats</h3>
               <div className="text-white/80 text-sm mb-2">22 Sept - 3 Oct, 2025 • 12 days</div>
               <div className="text-white/90 text-sm mb-6"><span className="font-medium">Group size:</span> Max 16 travelers</div>

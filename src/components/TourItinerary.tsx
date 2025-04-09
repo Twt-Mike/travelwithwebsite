@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { CalendarDays, ChevronDown, ChevronUp, Map, Utensils, Bed } from 'lucide-react';
 import { 
@@ -91,7 +90,7 @@ const itineraryData = [
     title: "Kyoto",
     description: [
       "The day begins with a visit to the Golden Pavilion (Kinkaku-ji), where its shimmering gold exterior reflects beautifully over the tranquil pond. Next, we'll stroll through a serene Zen garden, soaking in the peaceful atmosphere before returning for a well-earned lunch.",
-      "In the afternoon, we'll step into the world of the samurai with an immersive Kendo class, learning the fundamentals of this traditional Japanese martial art. The evening is yours to explore Kyoto — wander the charming streets, discover hidden bars, or enjoy dinner along the Kamogawa River as the city lights reflect off the water. ✨🏯🍶"
+      "In the afternoon, we'll step into the world of the samurai with an immersive Kendo class, learning the fundamentals of this traditional Japanese martial art. The evening is yours to explore Kyoto — wander the charming streets, discover hidden bars, or enjoy dinner along the Kamogawa River as the city lights reflect off the water. ✨🏯"
     ],
     activities: ["Golden Pavilion", "Zen Garden", "Kendo Class"],
     meals: ["Breakfast"],
@@ -167,7 +166,7 @@ const ItineraryDay = ({ day }) => {
     <div className="border-b border-gray-200 last:border-0">
       <div className="flex items-start py-5">
         <div className="flex-shrink-0 mr-6">
-          <div className="flex flex-col items-center justify-center bg-japan-indigo text-white rounded-lg w-14 h-14">
+          <div className="flex flex-col items-center justify-center bg-[#002e3e] text-white rounded-lg w-14 h-14">
             <span className="text-xs font-medium">DAY</span>
             <span className="text-xl font-medium">{day.day}</span>
           </div>
@@ -245,7 +244,7 @@ const TourItinerary = () => {
         </div>
 
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="bg-japan-indigo p-6 text-white">
+          <div className="bg-[#002e3e] p-6 text-white">
             <h3 className="text-xl font-medium">Complete Itinerary</h3>
             <p className="text-white/80 text-sm">Click each day to expand details</p>
           </div>
@@ -256,7 +255,7 @@ const TourItinerary = () => {
                 <AccordionItem key={day.day} value={`day-${day.day}`}>
                   <AccordionTrigger className="py-4 flex items-center gap-6">
                     <div className="flex items-center gap-6 text-left">
-                      <div className="flex flex-col items-center justify-center bg-japan-indigo text-white rounded-lg w-14 h-14 flex-shrink-0">
+                      <div className="flex flex-col items-center justify-center bg-[#002e3e] text-white rounded-lg w-14 h-14 flex-shrink-0">
                         <span className="text-xs font-medium">DAY</span>
                         <span className="text-xl font-medium">{day.day}</span>
                       </div>
@@ -331,4 +330,3 @@ const TourItinerary = () => {
 };
 
 export default TourItinerary;
-
