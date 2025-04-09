@@ -29,7 +29,7 @@ const TourDetails = () => {
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-center gap-3">
                     <span className="font-medium min-w-28">Date:</span>
-                    <span>22 September – 3 October 2025</span>
+                    <span>22 September – 3 October 2025 (12 Days / 11 Nights)</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="font-medium min-w-28">Start:</span>
