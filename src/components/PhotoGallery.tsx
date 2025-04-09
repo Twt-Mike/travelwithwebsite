@@ -6,6 +6,22 @@ import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDi
 // Gallery photos with direct URLs
 const galleryPhotos = [
   {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group1.jpeg",
+    alt: "Japan Tour Group Photo 1"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group2.jpg",
+    alt: "Japan Tour Group Photo 2"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group3.jpg",
+    alt: "Japan Tour Group Photo 3"
+  },
+  {
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group4.jpeg",
+    alt: "Japan Tour Group Photo 4"
+  },
+  {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//2.jpg",
     alt: "Japan Tour Memory 2"
   },
@@ -36,22 +52,6 @@ const galleryPhotos = [
   {
     src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//12.jpg",
     alt: "Japan Tour Memory 12"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group1.jpeg",
-    alt: "Japan Tour Group Photo 1"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group2.jpg",
-    alt: "Japan Tour Group Photo 2"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group3.jpg",
-    alt: "Japan Tour Group Photo 3"
-  },
-  {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group4.jpeg",
-    alt: "Japan Tour Group Photo 4"
   }
 ];
 
