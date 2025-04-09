@@ -65,16 +65,6 @@ const HaggisinJapanTourItinerary = () => {
                       )}
                     </div>
                   </div>
-                  
-                  {day.image && (
-                    <div className="mt-6">
-                      <img 
-                        src={day.image} 
-                        alt={`Day ${day.day} - ${day.title}`} 
-                        className="rounded-lg w-full h-auto shadow-sm"
-                      />
-                    </div>
-                  )}
                 </div>
               )}
             </div>
@@ -96,8 +86,7 @@ const itineraryData = [
       <p>In the evening, we'll meet in the lobby, say hello, and head to one of our favourite restaurants for a delicious welcome dinner. Then, we'll dive into Asakusa's magic with a guided night tour, including the stunning Senso-ji Temple, Tokyo's oldest and most iconic! 🌙🏮</p>
     `,
     overnight: "Tokyo",
-    meals: "Dinner",
-    image: "/placeholder.svg"
+    meals: "Dinner"
   },
   {
     day: 2,
@@ -110,8 +99,7 @@ const itineraryData = [
       <p>After some free time, we hit Akihabara at night—arcades, maid cafes, quirky shops, bars with darts & beer pong, and karaoke with locals! 🎤🔥</p>
     `,
     overnight: "Tokyo",
-    meals: "Breakfast",
-    image: "/placeholder.svg"
+    meals: "Breakfast"
   },
   {
     day: 3,
@@ -124,8 +112,7 @@ const itineraryData = [
       <p>But the night doesn't stop there! We'll explore the electric streets of Shinjuku, see Godzilla towering above the skyline, and experience Tokyo's wild nightlife—ending in Golden Gai, where 200+ tiny bars create the ultimate neon-lit adventure. 🚀🍻✨</p>
     `,
     overnight: "Tokyo",
-    meals: "Breakfast, Lunch",
-    image: "/placeholder.svg"
+    meals: "Breakfast, Lunch"
   },
   {
     day: 4,
@@ -139,8 +126,7 @@ const itineraryData = [
       <p>In the evening, we'll head back to Tokyo, ready to pack for tomorrow's next adventure! 🚄✨</p>
     `,
     overnight: "Tokyo",
-    meals: "Breakfast",
-    image: "/placeholder.svg"
+    meals: "Breakfast"
   },
   {
     day: 5,
@@ -152,8 +138,7 @@ const itineraryData = [
       <p>In the evening, unwind like the Japanese do—relax in a local Onsen (hot spring bathhouse), take a peaceful stroll through Takayama's beautifully preserved streets, or simply rest up for another exciting day ahead! 🌿🍶✨</p>
     `,
     overnight: "Takayama",
-    meals: "Breakfast",
-    image: "/placeholder.svg"
+    meals: "Breakfast"
   },
   {
     day: 6,
@@ -176,8 +161,7 @@ const itineraryData = [
       <p>To wrap up this incredible day, we'll meet at our favourite cocktail bar in the world. This speakeasy is run by a master Japanese bartender who crafts unique cocktails with ingredients straight from his own garden—the perfect way to toast to an amazing day in Takayama! 🍸✨</p>
     `,
     overnight: "Takayama",
-    meals: "N/A",
-    image: "/placeholder.svg"
+    meals: "N/A"
   },
   {
     day: 7,
@@ -189,8 +173,7 @@ const itineraryData = [
       <p>Best to have an early night tonight!</p>
     `,
     overnight: "Kyoto",
-    meals: "Breakfast",
-    image: "/placeholder.svg"
+    meals: "Breakfast"
   },
   {
     day: 8,
@@ -202,8 +185,7 @@ const itineraryData = [
       <p>But save your energy because tonight is Karaoke night! We're heading to my favourite karaoke bar in Japan for a wild night of singing, laughing, and making unforgettable memories with locals. Get ready for a legendary Kyoto experience! 🎤🎶</p>
     `,
     overnight: "Kyoto",
-    meals: "Breakfast",
-    image: "/placeholder.svg"
+    meals: "Breakfast"
   },
   {
     day: 9,
@@ -214,8 +196,7 @@ const itineraryData = [
       <p>We'll check in and head out for a delicious family dinner at one of my favourite local spots. Then soak in the vibrant lights of Osaka before we call it a night. 🌆</p>
     `,
     overnight: "Osaka",
-    meals: "Breakfast, Dinner",
-    image: "/placeholder.svg"
+    meals: "Breakfast, Dinner"
   },
   {
     day: 10,
@@ -227,8 +208,7 @@ const itineraryData = [
       <p>Then, we wrap up the trip in the best way possible—a legendary food and drink crawl through the neon-lit streets of Dotonbori! You'll discover why Osaka is called the "Kitchen of Japan" as we hit up the best local food spots. The activities might end here, but for those who aren't ready to say goodbye, Osaka's nightlife is just getting started—Craig's got all the top recommendations for an unforgettable final night! 🎉 🍢</p>
     `,
     overnight: "Osaka",
-    meals: "Breakfast, Dinner",
-    image: "/placeholder.svg"
+    meals: "Breakfast, Dinner"
   },
   {
     day: 11,
@@ -240,8 +220,7 @@ const itineraryData = [
       <p>I hope you leave feeling like you've truly experienced the best of Japan, and we can't wait for our next adventure together. This isn't sayonara—it's see you later! 🚀🇯🇵</p>
     `,
     overnight: null,
-    meals: "Breakfast",
-    image: "/placeholder.svg"
+    meals: "Breakfast"
   }
 ];
 

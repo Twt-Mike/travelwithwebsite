@@ -41,7 +41,7 @@ const HaggisinJapanHostSection = () => {
           <div className="relative">
             <Card className="overflow-hidden shadow-lg rounded-lg">
               <img 
-                src="/placeholder.svg" 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
                 alt="Craig, your guide for Japan"
                 className="w-full h-auto object-cover aspect-[4/5]"
               />

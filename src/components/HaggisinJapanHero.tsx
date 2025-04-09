@@ -8,7 +8,7 @@ const HaggisinJapanHero = () => {
     <div className="relative min-h-screen flex items-center justify-center bg-japan-indigo overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/placeholder.svg"
+          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan"
           className="w-full h-full object-cover opacity-40"
         />
