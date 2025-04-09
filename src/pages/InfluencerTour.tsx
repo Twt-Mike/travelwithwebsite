@@ -45,13 +45,18 @@ const InfluencerTour = () => {
         <TourItinerary />
       </div>
       
-      <PhotoGallery />
-      <ReviewsCarousel />
-      
+      {/* Booking CTA section */}
       <div id="booking">
         <BookingCta onBookNow={handleBookNow} />
       </div>
       
+      {/* Tour Memories (Photo Gallery) */}
+      <PhotoGallery />
+      
+      {/* Reviews section */}
+      <ReviewsCarousel />
+      
+      {/* FAQ section */}
       <div id="faq">
         <TourFAQ />
       </div>
