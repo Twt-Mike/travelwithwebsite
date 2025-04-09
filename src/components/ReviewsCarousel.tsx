@@ -96,10 +96,20 @@ const ReviewsCarousel = () => {
   };
 
   return (
-    <section className="py-20 bg-[#f4f0eb]" id="reviews">
-      <div className="japan-container">
+    <section 
+      className="py-20 relative bg-[#f4f0eb]" 
+      id="reviews"
+      style={{
+        backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupJumpKimonoLanscape.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-[#f4f0eb]/80"></div>
+      <div className="japan-container relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#002e3e] mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#599d9f] mb-4">
             What Travelers Say About Our.TravelTreats Japan tours!
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto">
@@ -129,7 +139,7 @@ const ReviewsCarousel = () => {
                         </div>
                         <p className="text-gray-700 mb-6 italic">"{review.text}"</p>
                         <div>
-                          <h4 className="font-serif text-[#002e3e] text-lg font-medium">
+                          <h4 className="font-serif text-[#599d9f] text-lg font-medium">
                             {review.name}
                           </h4>
                           <p className="text-gray-600 text-sm">{review.location}</p>
@@ -153,7 +163,7 @@ const ReviewsCarousel = () => {
                 }}
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === activeIndex 
-                    ? 'bg-[#002e3e] scale-125' 
+                    ? 'bg-[#75bf8f] scale-125' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to review ${index + 1}`}
@@ -163,7 +173,7 @@ const ReviewsCarousel = () => {
 
           <button
             onClick={goToPrev}
-            className="absolute top-1/2 -left-4 md:-left-8 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#002e3e] hover:bg-[#002e3e] hover:text-white transition-colors"
+            className="absolute top-1/2 -left-4 md:-left-8 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#599d9f] hover:bg-[#599d9f] hover:text-white transition-colors"
             aria-label="Previous review"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -171,7 +181,7 @@ const ReviewsCarousel = () => {
           
           <button
             onClick={goToNext}
-            className="absolute top-1/2 -right-4 md:-right-8 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#002e3e] hover:bg-[#002e3e] hover:text-white transition-colors"
+            className="absolute top-1/2 -right-4 md:-right-8 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#599d9f] hover:bg-[#599d9f] hover:text-white transition-colors"
             aria-label="Next review"
           >
             <ChevronRight className="h-6 w-6" />

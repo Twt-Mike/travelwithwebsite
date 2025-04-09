@@ -37,7 +37,7 @@ const faqs = [
   {
     id: 7,
     question: "How much spending cash should I bring for the trip?",
-    answer: "As we have an awesome itinerary packed with amazing accommodation, transport, and activities, €500 is fine to bring for the rest of your meals, drinks, coffee, and some small souvenirs. That said, Japan has incredible shopping and unique gifts everywhere — so you're absolutely welcome to bring more spending money if you'd like to explore a bit more!"
+    answer: "As we have an awesome itinerary packed with amazing accommodation, transport, and activities, €300 - €500 is fine to bring for the rest of your meals, drinks, coffee, and some small souvenirs. That said, Japan has incredible shopping and unique gifts everywhere — so you're absolutely welcome to bring more spending money if you'd like to explore a bit more!"
   },
   {
     id: 8,
@@ -53,12 +53,12 @@ const FAQItem = ({ faq, isOpen, toggleOpen }) => {
         className="flex justify-between items-center w-full py-5 text-left"
         onClick={toggleOpen}
       >
-        <h3 className="font-medium text-japan-indigo">{faq.question}</h3>
+        <h3 className="font-medium text-[#599d9f]">{faq.question}</h3>
         <div className="flex-shrink-0 ml-4">
           {isOpen ? (
-            <ChevronUp className="h-5 w-5 text-japan-indigo" />
+            <ChevronUp className="h-5 w-5 text-[#599d9f]" />
           ) : (
-            <ChevronDown className="h-5 w-5 text-japan-indigo" />
+            <ChevronDown className="h-5 w-5 text-[#599d9f]" />
           )}
         </div>
       </button>
@@ -84,10 +84,10 @@ const TourFAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-japan-cream">
+    <section className="py-20 bg-[#f4f0eb]">
       <div className="japan-container">
         <div className="text-center mb-16">
-          <h2 className="section-title">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium text-[#599d9f] mb-4">Frequently Asked Questions</h2>
           <p className="section-subtitle mx-auto">
             Everything you need to know before joining our Japan adventure
           </p>
@@ -108,7 +108,7 @@ const TourFAQ = () => {
 
         <div className="text-center mt-10">
           <p className="text-gray-700">
-            Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-japan-indigo font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-japan-indigo font-medium hover:underline">@OurTravelTreats</a> on Instagram
+            Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">@OurTravelTreats</a> on Instagram
           </p>
         </div>
 
@@ -116,7 +116,7 @@ const TourFAQ = () => {
         <div className="mt-16 max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="w-full bg-gray-50 rounded-lg p-6">
             <AccordionItem value="about-travelwith" className="border-b-0">
-              <AccordionTrigger className="text-xl font-medium text-japan-indigo hover:no-underline">
+              <AccordionTrigger className="text-xl font-medium text-[#599d9f] hover:no-underline">
                 Who is TravelWith?
               </AccordionTrigger>
               <AccordionContent className="text-gray-700">
@@ -150,7 +150,7 @@ const TourFAQ = () => {
                       href="/about" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-japan-indigo font-medium hover:text-japan-pink transition-colors"
+                      className="inline-flex items-center text-[#75bf8f] font-medium hover:text-[#599d9f] transition-colors"
                     >
                       Read more about TravelWith by clicking here
                       <ArrowRight className="ml-1 h-4 w-4" />
