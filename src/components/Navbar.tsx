@@ -13,7 +13,7 @@ const Navbar = () => {
   const currentPath = location.pathname;
 
   // Check if we're on the influencer tour page
-  const isInfluencerTourPage = currentPath === '/ourtraveltreatsjpn';
+  const isInfluencerTourPage = currentPath === '/ourtraveltreatsjpn' || currentPath === '/haggisinjapan';
 
   useEffect(() => {
     const handleScroll = () => {
