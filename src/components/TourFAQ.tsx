@@ -17,7 +17,7 @@ const faqs = [
   {
     id: 3,
     question: "Do I need a visa for Japan?",
-    answer: "Most Western countries (including the US, Canada, UK, EU, and Australia) receive visa-free entry to Japan for up to 90 days. However, visa requirements can change, so we recommend checking with your local Japanese embassy or consulate before your trip. Please note that guests are responsible for their own visa, and TravelWith or OurTravelTreats are not responsible for visa issues."
+    answer: "Most Western countries (including the US, Canada, UK, EU, and Australia) receive visa-free entry to Japan for up to 90 days. However, visa requirements can change, so we recommend checking with your local Japanese embassy or consulate before your trip. Laura is able to help you with visa questions, however please note that guests are overall responsible for their own visa, and TravelWith or OurTravelTreats are not responsible for any visa issues."
   },
   {
     id: 4,
