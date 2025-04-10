@@ -127,7 +127,7 @@ const HaggisinJapanTourDetails = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-japan-green font-bold">✓</span>
-                    <span className="text-gray-700">All hotels feature ensuite bathrooms (except possible shared bathhouse in Hakone)</span>
+                    <span className="text-gray-700">All hotels feature ensuite bathrooms</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-japan-green font-bold">✓</span>
