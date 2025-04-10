@@ -6,7 +6,17 @@ const HaggisinJapanHostSection = () => {
     <section className="py-20 bg-white">
       <div className="japan-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
+          <div className="relative order-2 md:order-1">
+            <Card className="overflow-hidden shadow-lg rounded-lg">
+              <img 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
+                alt="Craig, your guide for Japan"
+                className="w-full h-auto object-cover aspect-[4/5]"
+              />
+            </Card>
+          </div>
+          
+          <div className="order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-japan-indigo mb-6">
               Meet Your Guide – Craig
             </h2>
@@ -36,16 +46,6 @@ const HaggisinJapanHostSection = () => {
                 </a>
               </div>
             </div>
-          </div>
-          
-          <div className="relative">
-            <Card className="overflow-hidden shadow-lg rounded-lg">
-              <img 
-                src="/placeholder.svg" 
-                alt="Craig, your guide for Japan"
-                className="w-full h-auto object-cover aspect-[4/5]"
-              />
-            </Card>
           </div>
         </div>
       </div>
