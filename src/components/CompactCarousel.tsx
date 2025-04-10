@@ -15,14 +15,14 @@ const CompactCarousel: React.FC<CompactCarouselProps> = ({ images }) => {
       <div className="japan-container">
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full"
+          className="w-full max-w-4xl mx-auto"
         >
-          <CarouselContent>
+          <CarouselContent className="flex justify-center">
             {images.map((image, index) => (
-              <CarouselItem key={index} className={`${isMobile ? 'basis-3/4' : 'basis-1/3'} md:basis-1/5`}>
+              <CarouselItem key={index} className={`${isMobile ? 'basis-3/4' : 'basis-1/3'} md:basis-1/3`}>
                 <div className="relative h-52 md:h-64 overflow-hidden rounded-lg">
                   <img
                     src={image.url}

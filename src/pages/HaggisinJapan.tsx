@@ -86,7 +86,7 @@ const HaggisinJapan = () => {
             <img 
               src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
               alt="Tour group in Osaka"
-              className="w-full max-w-5xl mx-auto rounded-lg shadow-md"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
             />
           </div>
         </div>
