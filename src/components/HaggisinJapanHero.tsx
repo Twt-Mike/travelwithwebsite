@@ -30,7 +30,7 @@ const HaggisinJapanHero = () => {
             <p className="text-lg md:text-xl text-white font-medium">
               11 October - 21 October 2025 • 11 Days
             </p>
-            <p className="text-white mt-2 font-medium text-lg bg-japan-green bg-opacity-80 inline-block px-4 py-1 rounded-md">
+            <p className="text-white mt-2 font-medium text-sm italic">
               Only 19 total spots - Limited spots left!
             </p>
           </div>

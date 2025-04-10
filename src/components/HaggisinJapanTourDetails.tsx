@@ -34,7 +34,7 @@ const HaggisinJapanTourDetails = () => {
                     <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
                     <div>
                       <h3 className="font-medium text-japan-slate mb-1">Destinations</h3>
-                      <p className="text-japan-slate">Tokyo, Takayama, Kyoto, Osaka</p>
+                      <p className="text-japan-slate">Tokyo, Kamakura, Takayama, Kyoto, Osaka</p>
                     </div>
                   </div>
                 </CardContent>
@@ -59,6 +59,30 @@ const HaggisinJapanTourDetails = () => {
                     <div>
                       <h3 className="font-medium text-japan-slate mb-1">Group Size</h3>
                       <p className="text-japan-slate">Max 19 Travelers</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
+                    <div>
+                      <h3 className="font-medium text-japan-slate mb-1">Start</h3>
+                      <p className="text-japan-slate">Tokyo</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
+                    <div>
+                      <h3 className="font-medium text-japan-slate mb-1">Finish</h3>
+                      <p className="text-japan-slate">Osaka</p>
                     </div>
                   </div>
                 </CardContent>
