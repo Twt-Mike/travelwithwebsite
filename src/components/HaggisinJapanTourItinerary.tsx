@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Plus, Minus } from 'lucide-react';
@@ -15,17 +14,8 @@ const HaggisinJapanTourItinerary = () => {
   };
 
   return (
-    <section className="py-20 bg-white relative">
-      {/* Background image with overlay for legibility */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-        style={{
-          backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg')",
-          backgroundPosition: "center 30%"
-        }}
-      />
-      
-      <div className="japan-container relative z-10">
+    <section className="py-20 bg-white">
+      <div className="japan-container">
         <div className="text-center mb-20">
           <h2 className="section-title">11 Day Itinerary</h2>
           <p className="section-subtitle mx-auto">
@@ -40,7 +30,7 @@ const HaggisinJapanTourItinerary = () => {
               className={`border-l-4 ${expandedDay === index ? 'border-japan-indigo' : 'border-japan-indigo/20'} pl-5 mb-10`}
             >
               <div 
-                className={`flex justify-between items-center cursor-pointer bg-white/90 py-4 pr-4 rounded-lg ${expandedDay === index ? 'shadow-sm' : ''}`}
+                className={`flex justify-between items-center cursor-pointer bg-white py-4 pr-4 rounded-lg ${expandedDay === index ? 'shadow-sm' : ''}`}
                 onClick={() => toggleDay(index)}
               >
                 <div>
@@ -57,7 +47,7 @@ const HaggisinJapanTourItinerary = () => {
               </div>
               
               {expandedDay === index && (
-                <div className="pt-4 pb-6 pl-1 pr-4 text-japan-slate bg-white/95 rounded-b-lg">
+                <div className="pt-4 pb-6 pl-1 pr-4 text-japan-slate">
                   <div className="space-y-4" dangerouslySetInnerHTML={{ __html: day.description }} />
                   
                   <div className="mt-6 pt-4 border-t border-gray-100">
@@ -90,7 +80,7 @@ const itineraryData = [
     title: "Tokyo Arrival Day",
     date: "October 11, 2025",
     description: `
-      <p>Welcome to Tokyo—let the adventure begin! 🇯🇵✨</p>
+      <p>Welcome to Tokyo—let the adventure begin! ����🇵✨</p>
       <p>Your guide available all day to help with arrivals. Hotel check-in is at 3 PM in the scenic Asakusa district—arrive early to explore or relax.</p>
       <p>In the evening, we'll meet in the lobby, say hello, and head to one of our favourite restaurants for a delicious welcome dinner. Then, we'll dive into Asakusa's magic with a guided night tour, including the stunning Senso-ji Temple, Tokyo's oldest and most iconic! 🌙🏮</p>
     `,
