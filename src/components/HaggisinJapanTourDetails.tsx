@@ -59,9 +59,13 @@ const HaggisinJapanTourDetails = () => {
           
           <div className="bg-japan-cream">
             <img 
-              src="/placeholder.svg" 
-              alt="Japan Tour Itinerary Map" 
-              className="w-full h-full object-contain"
+              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
+              alt="Japan Tour Group in Osaka" 
+              className="w-full h-full object-contain rounded-lg"
+              onError={(e) => {
+                console.error("Error loading image");
+                e.currentTarget.src = "/placeholder.svg";
+              }}
             />
           </div>
         </div>
