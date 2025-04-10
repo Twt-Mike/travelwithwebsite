@@ -41,17 +41,10 @@ const HaggisinJapanHostSection = () => {
           <div className="relative">
             <Card className="overflow-hidden shadow-lg rounded-lg">
               <img 
-                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig5.jpeg" 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
                 alt="Craig, your guide for Japan"
                 className="w-full h-auto object-cover aspect-[4/5]"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-japan-indigo/80 p-4 text-white text-center">
-                <h3 className="text-xl font-bold mb-2">Your #1 Rated Guide Craig!</h3>
-                <p className="text-sm">
-                  ⭐️ 5-Star Rated from 100+ Reviews! ⭐️<br />
-                  Join a community of happy travelers who've shared fun experiences and stories from my tours.
-                </p>
-              </div>
             </Card>
           </div>
         </div>

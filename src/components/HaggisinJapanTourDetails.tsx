@@ -1,6 +1,6 @@
+
 import { Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 
 const HaggisinJapanTourDetails = () => {
   const exclusions = [
@@ -239,12 +239,12 @@ const HaggisinJapanTourDetails = () => {
               </div>
             </div>
             
-            <div className="flex-shrink-0 w-full md:w-1/3 flex flex-col items-center">
+            <div className="flex-shrink-0 w-full md:w-1/3 flex items-center">
               <img 
                 src="/placeholder.svg" 
                 alt="Japan travel experience" 
-                className="w-full h-auto rounded-lg shadow-md object-cover mb-6"
-                style={{ maxHeight: "300px" }}
+                className="w-full h-auto rounded-lg shadow-md object-cover"
+                style={{ maxHeight: "500px" }}
               />
             </div>
           </div>
