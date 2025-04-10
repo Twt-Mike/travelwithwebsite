@@ -26,7 +26,7 @@ const HaggisinJapanTourItinerary = () => {
               backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//FushimiOutsideLanscapeProfesh.jpg')"
             }}
           >
-            <div className="absolute inset-0 bg-japan-indigo/60 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-japan-indigo/40 mix-blend-multiply"></div>
           </div>
           
           {/* Header content */}
