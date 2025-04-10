@@ -3,46 +3,46 @@ import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDialog';
 
-// Gallery photos with placeholder URLs for the Index page
+// Gallery photos with direct URLs for the Index page
 const indexGalleryPhotos = [
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//5.jpg",
     alt: "Japan Tour Memory 1"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//6.jpg",
     alt: "Japan Tour Memory 2"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//7.jpg",
     alt: "Japan Tour Memory 3"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//9.jpg",
     alt: "Japan Tour Memory 4"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//10.jpeg",
     alt: "Japan Tour Memory 5"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//11.jpg",
     alt: "Japan Tour Memory 6"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//12.jpg",
     alt: "Japan Tour Memory 7"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//13.jpg",
     alt: "Japan Tour Memory 8"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//14.jpg",
     alt: "Japan Tour Memory 9"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//16.jpg",
     alt: "Japan Tour Memory 10"
   }
 ];
@@ -98,7 +98,7 @@ const IndexPhotoGallery = () => {
                   loading="lazy"
                   onError={(e) => {
                     console.error(`Error loading image at index ${index}:`, photo.src);
-                    e.currentTarget.src = '/placeholder.svg';
+                    e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2YxZjFmMSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==';
                   }}
                 />
               </AspectRatio>

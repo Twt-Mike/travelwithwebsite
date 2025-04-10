@@ -11,16 +11,6 @@ const HaggisinJapanHostSection = () => {
               Meet Your Guide – Craig
             </h2>
             
-            <div className="md:hidden mb-6">
-              <Card className="overflow-hidden shadow-lg rounded-lg">
-                <img 
-                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
-                  alt="Craig, your guide for Japan"
-                  className="w-full h-auto object-cover aspect-[4/5]"
-                />
-              </Card>
-            </div>
-            
             <div className="space-y-4 text-japan-slate">
               <p>
                 Hi! 👋 I'm Craig. Your friendly Scotsman in Japan! 🇯🇵
@@ -37,7 +27,7 @@ const HaggisinJapanHostSection = () => {
               
               <div className="pt-4">
                 <a 
-                  href="https://instagram.com/haggis.in.japan" 
+                  href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-japan-indigo hover:text-japan-pink font-medium transition-colors"
@@ -48,10 +38,10 @@ const HaggisinJapanHostSection = () => {
             </div>
           </div>
           
-          <div className="relative hidden md:block">
+          <div className="relative">
             <Card className="overflow-hidden shadow-lg rounded-lg">
               <img 
-                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
+                src="/placeholder.svg" 
                 alt="Craig, your guide for Japan"
                 className="w-full h-auto object-cover aspect-[4/5]"
               />

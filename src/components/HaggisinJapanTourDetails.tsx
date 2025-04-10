@@ -59,13 +59,9 @@ const HaggisinJapanTourDetails = () => {
           
           <div className="bg-japan-cream">
             <img 
-              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
-              alt="Japan Tour Group in Osaka" 
-              className="w-full h-full object-contain rounded-lg"
-              onError={(e) => {
-                console.error("Error loading image");
-                e.currentTarget.src = "/placeholder.svg";
-              }}
+              src="/placeholder.svg" 
+              alt="Japan Tour Itinerary Map" 
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
@@ -243,20 +239,13 @@ const HaggisinJapanTourDetails = () => {
               </div>
             </div>
             
-            <div className="flex-shrink-0 w-full md:w-1/3">
-              <div className="flex flex-col">
-                <img 
-                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig5.jpeg" 
-                  alt="Craig, your guide for Japan" 
-                  className="w-full h-auto rounded-lg shadow-md object-cover"
-                  style={{ maxHeight: "500px" }}
-                />
-                <div className="mt-4 bg-white p-4 rounded-lg shadow-sm text-center">
-                  <p className="font-medium text-japan-indigo text-lg">&amp; Your #1 Rated Guide Craig!</p>
-                  <p className="text-yellow-500 font-bold my-2">⭐️ 5-Star Rated from 100+ Reviews! ⭐️</p>
-                  <p className="text-gray-700">Join a community of happy travelers who've shared fun experiences and stories from my tours.</p>
-                </div>
-              </div>
+            <div className="flex-shrink-0 w-full md:w-1/3 flex items-center">
+              <img 
+                src="/placeholder.svg" 
+                alt="Japan travel experience" 
+                className="w-full h-auto rounded-lg shadow-md object-cover"
+                style={{ maxHeight: "500px" }}
+              />
             </div>
           </div>
         </div>
