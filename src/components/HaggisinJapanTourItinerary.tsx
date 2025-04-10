@@ -16,23 +16,26 @@ const HaggisinJapanTourItinerary = () => {
 
   return (
     <section className="py-20 relative">
-      {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-15" 
-        style={{ 
-          backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//FushimiOutsideLanscapeProfesh.jpg')",
-          height: "500px" 
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white"></div>
-      </div>
-      
       <div className="japan-container relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="section-title">11 Day Itinerary</h2>
-          <p className="section-subtitle mx-auto">
-            October 11 - 21, 2025
-          </p>
+        {/* Header with background image */}
+        <div className="relative mb-20 py-16 rounded-xl overflow-hidden">
+          {/* Background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center" 
+            style={{ 
+              backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//FushimiOutsideLanscapeProfesh.jpg')"
+            }}
+          >
+            <div className="absolute inset-0 bg-japan-indigo/60 mix-blend-multiply"></div>
+          </div>
+          
+          {/* Header content */}
+          <div className="relative z-10 text-center text-white">
+            <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4">11 Day Itinerary</h2>
+            <p className="text-xl max-w-2xl mx-auto">
+              October 11 - 21, 2025
+            </p>
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
