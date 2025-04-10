@@ -1,4 +1,3 @@
-
 import Layout from '@/components/Layout';
 import HaggisinJapanHero from '@/components/HaggisinJapanHero';
 import HaggisinJapanTourDetails from '@/components/HaggisinJapanTourDetails';
@@ -14,13 +13,12 @@ import CompactCarousel from '@/components/CompactCarousel';
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
 
-// Images for the compact carousel
+// Images for the compact carousel - removed the placeholder image, now only 4 images
 const japanImages = [
   { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg", alt: "Selfie in Akihabara" },
   { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Karaokegroup.jpeg", alt: "Karaoke group experience" },
   { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Group1.jpeg", alt: "Japan tour group" },
-  { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg", alt: "Osaka group tour" },
-  { url: "/placeholder.svg", alt: "Japan experience" }
+  { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg", alt: "Osaka group tour" }
 ];
 
 // Custom FAQs for HaggisinJapan

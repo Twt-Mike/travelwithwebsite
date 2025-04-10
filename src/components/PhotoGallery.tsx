@@ -3,54 +3,54 @@ import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDialog';
 
-// Gallery photos with placeholder URLs
+// Gallery photos with new URLs
 const galleryPhotos = [
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//16.jpg",
     alt: "Japan Tour Memory 1"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Omoid.jpeg",
     alt: "Japan Tour Memory 2"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//1.jpeg",
     alt: "Japan Tour Memory 3"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig4.jpeg",
     alt: "Japan Tour Memory 4"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Group2.jpeg",
     alt: "Japan Tour Memory 5"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//4.jpg",
     alt: "Japan Tour Memory 6"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//12.jpg",
     alt: "Japan Tour Memory 7"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//3.jpg",
     alt: "Japan Tour Memory 8"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig6.jpeg",
     alt: "Japan Tour Memory 9"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//5.jpg",
     alt: "Japan Tour Memory 10"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupPortraitBambooPikachu.jpg",
     alt: "Japan Tour Memory 11"
   },
   {
-    src: "/placeholder.svg",
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg",
     alt: "Japan Tour Memory 12"
   }
 ];
