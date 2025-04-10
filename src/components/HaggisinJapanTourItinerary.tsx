@@ -14,17 +14,13 @@ const HaggisinJapanTourItinerary = () => {
   };
 
   return (
-    <section className="py-20 relative">
-      <div className="japan-container relative z-10">
-        {/* Header section with no background image */}
-        <div className="relative mb-20 py-16 rounded-xl overflow-hidden bg-japan-indigo">
-          {/* Header content */}
-          <div className="relative z-10 text-center text-white">
-            <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4">11 Day Itinerary</h2>
-            <p className="text-xl max-w-2xl mx-auto">
-              October 11 - 21, 2025
-            </p>
-          </div>
+    <section className="py-20 bg-white">
+      <div className="japan-container">
+        <div className="text-center mb-20">
+          <h2 className="section-title">11 Day Itinerary</h2>
+          <p className="section-subtitle mx-auto">
+            October 11 - 21, 2025
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -51,7 +47,7 @@ const HaggisinJapanTourItinerary = () => {
               </div>
               
               {expandedDay === index && (
-                <div className="pt-4 pb-6 pl-1 pr-4 text-japan-slate bg-white/90 rounded-lg mt-1">
+                <div className="pt-4 pb-6 pl-1 pr-4 text-japan-slate">
                   <div className="space-y-4" dangerouslySetInnerHTML={{ __html: day.description }} />
                   
                   <div className="mt-6 pt-4 border-t border-gray-100">
