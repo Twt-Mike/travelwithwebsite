@@ -1,5 +1,5 @@
 
-import { CalendarDays, MapPin, Clock, Users, Activity, Coffee, Utensils, PlaneTakeoff, Hotel, Star } from 'lucide-react';
+import { CalendarDays, MapPin, Clock, Users, Activity, Coffee, Utensils, PlaneTakeoff, Hotel, Star, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const HaggisinJapanTourDetails = () => {
@@ -160,10 +160,6 @@ const HaggisinJapanTourDetails = () => {
                     <span className="text-japan-green font-bold">✓</span>
                     <span className="text-gray-700">Regional travel tickets as needed</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-japan-pink font-bold">✗</span>
-                    <span className="text-gray-700">Arrival and departure airport transfers are not included</span>
-                  </li>
                 </ul>
               </div>
               
@@ -248,6 +244,38 @@ const HaggisinJapanTourDetails = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* What's Not Included Section */}
+        <div className="bg-white p-8 rounded-xl shadow-sm mt-8">
+          <h3 className="text-xl font-serif font-medium text-japan-indigo mb-4">What's Not Included</h3>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="flex items-start gap-2">
+              <X className="h-5 w-5 text-japan-pink mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">International flights to/from Japan</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <X className="h-5 w-5 text-japan-pink mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Airport transfers on arrival/departure days</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <X className="h-5 w-5 text-japan-pink mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Travel insurance (required)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <X className="h-5 w-5 text-japan-pink mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Meals not specified in the itinerary</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <X className="h-5 w-5 text-japan-pink mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Personal expenses and souvenirs</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <X className="h-5 w-5 text-japan-pink mt-0.5 flex-shrink-0" />
+              <span className="text-gray-700">Optional activities during free time</span>
             </div>
           </div>
         </div>
