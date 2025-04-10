@@ -19,14 +19,14 @@ const InfluencerHero = () => {
         <div className="max-w-3xl text-white space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight">
             <span className="text-3xl md:text-4xl lg:text-5xl opacity-90">TravelWith</span><br />
-            <span className="inline-block bg-[#599d9f] text-white px-4 py-1 rounded-lg">@Our.TravelTreats</span>
+            <span className="inline-block bg-[#599d9f] text-white px-4 py-1 rounded-lg">@Haggis.in.Japan</span>
           </h1>
           <div className="flex items-center gap-2 text-white/90 bg-black/30 inline-block px-4 py-2 rounded-lg">
             <CalendarDays className="h-5 w-5" />
             <span className="font-medium">September 22 - October 3, 2025 • 12 Days</span>
           </div>
           <p className="text-lg md:text-xl opacity-90 max-w-2xl">
-            Join Laura on this once-in-a-lifetime adventure through Japan's most iconic destinations. 
+            Join Craig on this once-in-a-lifetime adventure through Japan's most iconic destinations. 
             Experience authentic culture, cuisine, and breathtaking landscapes alongside like-minded travelers.
           </p>
           <div className="flex flex-wrap gap-4 pt-6">

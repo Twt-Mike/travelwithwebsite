@@ -8,7 +8,7 @@ const defaultFaqs = [
   {
     id: 1,
     question: "Where should I book my flights in & out of?",
-    answer: "The tour starts in Tokyo and finishes in Hiroshima. We recommend flying into Tokyo (either Haneda or Narita Airport — both are perfectly fine) and flying out of Hiroshima Airport. If you can't find a suitable flight from Hiroshima, you're also welcome to take the bullet train back to Tokyo. However, the journey takes around 4.5 hours, so please make sure to book an evening departure flight from Tokyo to allow enough travel time. We can advise you closer to the time on how to navigate from the airport to the hotel and help with any transport questions! While we cannot be responsible for booking your flights, Laura is happy to assist you with the flight booking if needed!"
+    answer: "The tour starts in Tokyo and finishes in Hiroshima. We recommend flying into Tokyo (either Haneda or Narita Airport — both are perfectly fine) and flying out of Hiroshima Airport. If you can't find a suitable flight from Hiroshima, you're also welcome to take the bullet train back to Tokyo. However, the journey takes around 4.5 hours, so please make sure to book an evening departure flight from Tokyo to allow enough travel time. We can advise you closer to the time on how to navigate from the airport to the hotel and help with any transport questions! While we cannot be responsible for booking your flights, Craig is happy to assist you with the flight booking if needed!"
   },
   {
     id: 2,
@@ -18,12 +18,12 @@ const defaultFaqs = [
   {
     id: 3,
     question: "Do I need a visa for Japan?",
-    answer: "Most Western countries (including the US, Canada, UK, EU, and Australia) receive visa-free entry to Japan for up to 90 days. However, visa requirements can change, so we recommend checking with your local Japanese embassy or consulate before your trip. Laura is able to help you with visa questions, however please note that guests are overall responsible for their own visa, and TravelWith or OurTravelTreats are not responsible for any visa issues."
+    answer: "Most Western countries (including the US, Canada, UK, EU, and Australia) receive visa-free entry to Japan for up to 90 days. However, visa requirements can change, so we recommend checking with your local Japanese embassy or consulate before your trip. Craig is able to help you with visa questions, however please note that guests are overall responsible for their own visa, and TravelWith or Craig are not responsible for any visa issues."
   },
   {
     id: 4,
     question: "Can you help with pre-accommodation & things to do after the tour?",
-    answer: "While we cannot make the booking for you, your host & guide Laura is always available to give advice to any questions! She is happy to offer suggestions for you!"
+    answer: "While we cannot make the booking for you, your host & guide Craig is always available to give advice to any questions! He is happy to offer suggestions for you!"
   },
   {
     id: 5,
@@ -125,7 +125,7 @@ const TourFAQ = ({ faqs, customFaqs }: TourFAQProps) => {
 
         <div className="text-center mt-10">
           <p className="text-gray-700">
-            Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">@OurTravelTreats</a> on Instagram
+            Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Haggis.in.Japan" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">@Haggis.in.Japan</a> on Instagram
           </p>
         </div>
 
@@ -139,7 +139,7 @@ const TourFAQ = ({ faqs, customFaqs }: TourFAQProps) => {
               <AccordionContent className="text-gray-700">
                 <div className="space-y-4">
                   <p>
-                    This tour is a collaboration between Laura, (@Our.TravelTreats) and TravelWith—designed from the ground up to create the best possible experience for you. Laura is your passionate host who has travelled Japan and worked with us to create the best tour of this beautiful country that is suitable just for Laura's audience, you!
+                    This tour is a collaboration between Craig, (@Haggis.in.Japan) and TravelWith—designed from the ground up to create the best possible experience for you. Craig is your passionate host who has travelled Japan and worked with us to create the best tour of this beautiful country that is suitable just for Craig's audience, you!
                   </p>
                   
                   <p>
@@ -155,7 +155,7 @@ const TourFAQ = ({ faqs, customFaqs }: TourFAQProps) => {
                   </div>
                   
                   <p>
-                    While Laura & your expert guide provided on the trip shape the vision of the journey, Travel With is built on over 10 years of travel industry expertise, with experience guiding 1,000+ guests across 60+ tours and has implemented this expertise in the tour. Every detail of this trip has been carefully crafted using that knowledge to ensure a unique and seamless adventure.
+                    While Craig & your expert guide provided on the trip shape the vision of the journey, Travel With is built on over 10 years of travel industry expertise, with experience guiding 1,000+ guests across 60+ tours and has implemented this expertise in the tour. Every detail of this trip has been carefully crafted using that knowledge to ensure a unique and seamless adventure.
                   </p>
                   
                   <p>

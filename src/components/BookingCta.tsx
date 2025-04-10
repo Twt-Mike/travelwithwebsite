@@ -21,7 +21,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               Ready to Join This Once-in-a-Lifetime Adventure?
             </h2>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Book your spot now on this exclusive Japan tour with OurTravelTreats. 
+              Book your spot now on this exclusive Japan tour with Craig from @Haggis.in.Japan. 
               Only 16 spots available—secure yours before they're gone!
             </p>
           </div>
@@ -40,7 +40,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Travel with OurTravelTreats community</span>
+                  <span className="text-gray-700">Travel with Craig's community</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
@@ -50,7 +50,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
             </div>
             
             <div className="bg-[#002e3e] p-8 rounded-xl shadow-md text-white flex flex-col">
-              <h3 className="text-xl font-medium mb-2">Japan with OurTravelTreats</h3>
+              <h3 className="text-xl font-medium mb-2">Japan with Craig</h3>
               <div className="text-white/80 text-sm mb-2">22 Sept - 3 Oct, 2025 • 12 days</div>
               <div className="text-white/90 text-sm mb-6"><span className="font-medium">Group size:</span> Max 16 travelers</div>
               
