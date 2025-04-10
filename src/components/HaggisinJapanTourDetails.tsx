@@ -79,15 +79,11 @@ const HaggisinJapanTourDetails = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Hotel className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
-                  <span className="text-japan-slate">10 nights accommodation (mix of traditional & modern)</span>
+                  <span className="text-japan-slate">10 nights accommodation (Twin Share / Ensuite Bathroom)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Utensils className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
                   <span className="text-japan-slate">8 breakfasts, 1 lunch, 3 dinners</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Coffee className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
-                  <span className="text-japan-slate">Traditional tea ceremony experience in a kimono</span>
                 </li>
               </ul>
             </div>
