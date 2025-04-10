@@ -12,7 +12,7 @@ const HeroNavLinks = () => {
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-japan-indigo font-medium hover:text-japan-green cursor-pointer transition-colors"
+            className="text-japan-indigo font-medium hover:text-japan-pink cursor-pointer transition-colors"
           >
             Overview
           </ScrollLink>
@@ -22,7 +22,7 @@ const HeroNavLinks = () => {
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-japan-indigo font-medium hover:text-japan-green cursor-pointer transition-colors"
+            className="text-japan-indigo font-medium hover:text-japan-pink cursor-pointer transition-colors"
           >
             Itinerary
           </ScrollLink>
@@ -32,7 +32,7 @@ const HeroNavLinks = () => {
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-japan-indigo font-medium hover:text-japan-green cursor-pointer transition-colors"
+            className="text-japan-indigo font-medium hover:text-japan-pink cursor-pointer transition-colors"
           >
             FAQ
           </ScrollLink>

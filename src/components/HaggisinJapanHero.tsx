@@ -18,7 +18,7 @@ const HaggisinJapanHero = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
             <span className="text-3xl md:text-4xl lg:text-5xl block opacity-90 mb-2">TravelWith</span>
-            Craig from <span className="inline-block bg-japan-indigo text-white px-4 py-1 rounded-lg">@Haggis.in.Japan</span>
+            Craig from <span className="inline-block bg-japan-pink text-white px-4 py-1 rounded-lg">@Haggis.in.Japan</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8">
@@ -28,7 +28,7 @@ const HaggisinJapanHero = () => {
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg" 
-              className="bg-japan-indigo hover:bg-japan-indigo/80 text-white font-medium px-8"
+              className="bg-japan-pink hover:bg-japan-pink/80 text-white font-medium px-8"
               onClick={() => {
                 const bookingElement = document.getElementById('booking');
                 if (bookingElement) {
@@ -42,7 +42,7 @@ const HaggisinJapanHero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white bg-japan-green/80 text-white hover:bg-japan-green/90"
+              className="border-white text-white hover:bg-white/10"
               onClick={() => {
                 const itineraryElement = document.getElementById('itinerary');
                 if (itineraryElement) {
@@ -65,7 +65,7 @@ const HaggisinJapanHero = () => {
               smooth={true}
               offset={-100}
               duration={500}
-              className="text-white hover:text-japan-green cursor-pointer transition-colors"
+              className="text-white hover:text-japan-pink cursor-pointer transition-colors"
             >
               <div className="flex flex-col items-center">
                 <span className="mb-2">Scroll to discover more</span>

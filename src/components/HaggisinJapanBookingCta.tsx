@@ -48,7 +48,7 @@ const HaggisinJapanBookingCta = ({ onBookNow }: BookingCtaProps) => {
           
           <Button 
             size="lg" 
-            className="bg-japan-indigo hover:bg-japan-indigo/80 text-white font-medium px-10 py-6 text-lg"
+            className="bg-japan-pink hover:bg-japan-pink/80 text-white font-medium px-10 py-6 text-lg"
             onClick={onBookNow}
           >
             Book Your Adventure Now
