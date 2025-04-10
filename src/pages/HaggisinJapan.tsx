@@ -10,6 +10,7 @@ import PhotoGallery from '@/components/PhotoGallery';
 import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
+import { Card } from '@/components/ui/card';
 
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
@@ -71,6 +72,17 @@ const HaggisinJapan = () => {
         <div id="tour-details">
           <HaggisinJapanTourDetails />
         </div>
+        
+        {/* Image after Tour Overview section */}
+        <div className="py-10 bg-white">
+          <div className="japan-container">
+            <img 
+              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
+              alt="Tour group in Osaka"
+              className="w-full max-w-5xl mx-auto rounded-lg shadow-md"
+            />
+          </div>
+        </div>
       </div>
       <div id="itinerary">
         <HaggisinJapanTourItinerary />
@@ -82,7 +94,9 @@ const HaggisinJapan = () => {
       </div>
       
       {/* Tour Memories (Photo Gallery) */}
-      <PhotoGallery />
+      <div id="tour-memories">
+        <PhotoGallery />
+      </div>
       
       {/* FAQ section */}
       <div id="faq">

@@ -8,7 +8,7 @@ const HaggisinJapanHero = () => {
     <div className="relative min-h-screen flex items-center justify-center bg-japan-indigo overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/placeholder.svg"
+          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan"
           className="w-full h-full object-cover opacity-40"
         />
@@ -17,17 +17,17 @@ const HaggisinJapanHero = () => {
       <div className="japan-container z-10 pt-24 md:pt-32 pb-16 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
-            Japan Adventure with Craig
+            TravelWith
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            11 Days | 6 Locations | October 11 - 21, 2025
+            Craig from @Haggis.in.Japan
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-japan-pink hover:bg-japan-pink/80 text-white font-medium px-8"
+              className="bg-japan-indigo hover:bg-japan-indigo/80 text-white font-medium px-8"
               onClick={() => {
                 const bookingElement = document.getElementById('booking');
                 if (bookingElement) {
@@ -35,13 +35,13 @@ const HaggisinJapanHero = () => {
                 }
               }}
             >
-              Book Now
+              Book Your Spot Now
             </Button>
             
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white/10"
+              className="border-white text-white hover:bg-white/10 bg-japan-green bg-opacity-80 hover:bg-japan-green/90"
               onClick={() => {
                 const detailsElement = document.getElementById('tour-details');
                 if (detailsElement) {
@@ -49,7 +49,7 @@ const HaggisinJapanHero = () => {
                 }
               }}
             >
-              View Tour Details
+              View Detailed Itinerary
             </Button>
           </div>
           
@@ -60,7 +60,7 @@ const HaggisinJapanHero = () => {
               smooth={true}
               offset={-100}
               duration={500}
-              className="text-white hover:text-japan-pink cursor-pointer transition-colors"
+              className="text-white hover:text-japan-indigo cursor-pointer transition-colors"
             >
               <div className="flex flex-col items-center">
                 <span className="mb-2">Scroll to discover more</span>

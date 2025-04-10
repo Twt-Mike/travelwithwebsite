@@ -1,4 +1,3 @@
-
 import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -57,7 +56,6 @@ interface FAQItem {
 // Props interface for the TourFAQ component
 interface TourFAQProps {
   faqs?: FAQItem[];
-  customFaqs?: FAQItem[];
 }
 
 const FAQItem = ({ faq, isOpen, toggleOpen }) => {
@@ -86,11 +84,11 @@ const FAQItem = ({ faq, isOpen, toggleOpen }) => {
   );
 };
 
-const TourFAQ = ({ faqs, customFaqs }: TourFAQProps) => {
+const TourFAQ = ({ faqs }: TourFAQProps) => {
   const [openFaq, setOpenFaq] = useState(1);
   
   // Use provided FAQs or fallback to default FAQs
-  const displayFaqs = faqs || customFaqs || defaultFaqs;
+  const displayFaqs = faqs || defaultFaqs;
 
   const toggleFaq = (faqId) => {
     if (openFaq === faqId) {
