@@ -10,6 +10,7 @@ import About from "./pages/About";
 import InfluencerTour from "./pages/InfluencerTour";
 import HaggisinJapan from "./pages/HaggisinJapan";
 import NotFound from "./pages/NotFound";
+import EditorNavHelper from "./components/EditorNavHelper";
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <EditorNavHelper />
             <Routes>
               {/* Home route with explicit name */}
               <Route path="/" element={<Index />} />
