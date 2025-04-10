@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDialog';
@@ -6,52 +5,52 @@ import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDi
 // Gallery photos with direct URLs
 const galleryPhotos = [
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group1.jpeg",
-    alt: "Japan Tour Group Photo 1"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//16.jpg",
+    alt: "Japan Tour Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group2.jpg",
-    alt: "Japan Tour Group Photo 2"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Omoid.jpeg",
+    alt: "Japan Omoidasi Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group3.jpg",
-    alt: "Japan Tour Group Photo 3"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//1.jpeg",
+    alt: "Japan Tour Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group4.jpeg",
-    alt: "Japan Tour Group Photo 4"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig4.jpeg",
+    alt: "Craig in Japan"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//2.jpg",
-    alt: "Japan Tour Memory 2"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Group2.jpeg",
+    alt: "Japan Tour Group Photo"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//4.jpg",
-    alt: "Japan Tour Memory 4"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//4.jpg",
+    alt: "Japan Tour Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//6.jpg",
-    alt: "Japan Tour Memory 6"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//12.jpg",
+    alt: "Japan Tour Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//8.jpg",
-    alt: "Japan Tour Memory 8"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//3.jpg",
+    alt: "Japan Tour Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//9.jpg",
-    alt: "Japan Tour Memory 9"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig6.jpeg",
+    alt: "Craig in Japan"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//10.jpg",
-    alt: "Japan Tour Memory 10"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//5.jpg",
+    alt: "Japan Tour Memory"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//11.jpg",
-    alt: "Japan Tour Memory 11"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupPortraitBambooPikachu.jpg",
+    alt: "Group Portrait with Pikachu in Bamboo Forest"
   },
   {
-    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//12.jpg",
-    alt: "Japan Tour Memory 12"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg",
+    alt: "Selfie in Akihabara"
   }
 ];
 
