@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanHero from '@/components/HaggisinJapanHero';
 import HaggisinJapanTourDetails from '@/components/HaggisinJapanTourDetails';
@@ -10,7 +11,7 @@ import PhotoGallery from '@/components/PhotoGallery';
 import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
-import { Card } from '@/components/ui/card';
+import ImageModal from '@/components/ImageModal';
 
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
@@ -64,6 +65,8 @@ const haggisinJapanFaqs = [
 ];
 
 const HaggisinJapan = () => {
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  
   const handleBookNow = () => {
     // Open the booking URL in a new tab
     window.open(BOOKING_URL, '_blank');
@@ -80,14 +83,24 @@ const HaggisinJapan = () => {
           <HaggisinJapanTourDetails />
         </div>
         
-        {/* Image after Tour Overview section */}
+        {/* Image after Tour Overview section - smaller and clickable */}
         <div className="py-10 bg-white">
           <div className="japan-container">
-            <img 
-              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
-              alt="Tour group in Osaka"
-              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-            />
+            <div className="flex justify-center">
+              <img 
+                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
+                alt="Tour group in Osaka"
+                className="w-full max-w-md mx-auto rounded-lg shadow-md cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => setIsImageModalOpen(true)}
+              />
+              
+              <ImageModal 
+                isOpen={isImageModalOpen}
+                onClose={() => setIsImageModalOpen(false)}
+                imageUrl="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg"
+                altText="Tour group in Osaka"
+              />
+            </div>
           </div>
         </div>
       </div>

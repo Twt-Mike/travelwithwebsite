@@ -42,7 +42,7 @@ const HaggisinJapanHostSection = () => {
                   href="https://www.instagram.com/haggis.in.japan" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-japan-indigo font-medium transition-colors"
+                  className="text-japan-indigo font-medium"
                 >
                   Follow Craig on Instagram →
                 </a>
@@ -85,7 +85,7 @@ const HaggisinJapanHostSection = () => {
                   href="https://www.instagram.com/haggis.in.japan" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-japan-indigo font-medium transition-colors"
+                  className="text-japan-indigo font-medium"
                 >
                   Follow Craig on Instagram →
                 </a>
