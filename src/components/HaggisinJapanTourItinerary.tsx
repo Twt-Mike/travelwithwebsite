@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Plus, Minus } from 'lucide-react';
@@ -14,8 +15,19 @@ const HaggisinJapanTourItinerary = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="japan-container">
+    <section className="py-20 relative">
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-15" 
+        style={{ 
+          backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//FushimiOutsideLanscapeProfesh.jpg')",
+          height: "500px" 
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white"></div>
+      </div>
+      
+      <div className="japan-container relative z-10">
         <div className="text-center mb-20">
           <h2 className="section-title">11 Day Itinerary</h2>
           <p className="section-subtitle mx-auto">
@@ -47,7 +59,7 @@ const HaggisinJapanTourItinerary = () => {
               </div>
               
               {expandedDay === index && (
-                <div className="pt-4 pb-6 pl-1 pr-4 text-japan-slate">
+                <div className="pt-4 pb-6 pl-1 pr-4 text-japan-slate bg-white/90 rounded-lg mt-1">
                   <div className="space-y-4" dangerouslySetInnerHTML={{ __html: day.description }} />
                   
                   <div className="mt-6 pt-4 border-t border-gray-100">
