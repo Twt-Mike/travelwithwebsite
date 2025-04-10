@@ -64,25 +64,13 @@ const HaggisinJapanTourDetails = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white">
+              <Card className="bg-white col-span-2">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-japan-slate mb-1">Start</h3>
-                      <p className="text-japan-slate">Tokyo</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
-                    <div>
-                      <h3 className="font-medium text-japan-slate mb-1">Finish</h3>
-                      <p className="text-japan-slate">Osaka</p>
+                      <h3 className="font-medium text-japan-slate mb-1">Start & Finish</h3>
+                      <p className="text-japan-slate">Start: Tokyo • Finish: Osaka</p>
                     </div>
                   </div>
                 </CardContent>

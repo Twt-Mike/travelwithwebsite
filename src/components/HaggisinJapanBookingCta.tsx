@@ -52,7 +52,10 @@ const HaggisinJapanBookingCta = ({ onBookNow }: BookingCtaProps) => {
             <div className="bg-[#002e3e] p-8 rounded-xl shadow-md text-white flex flex-col">
               <h3 className="text-xl font-medium mb-2">Japan with @Haggis.in.Japan</h3>
               <div className="text-white/80 text-sm mb-2">11 Oct - 21 Oct, 2025 • 11 days</div>
-              <div className="text-white/90 text-sm mb-6"><span className="font-medium">Group size:</span> Max 19 travelers</div>
+              <div className="text-white/90 text-sm mb-2"><span className="font-medium">Group size:</span> Max 19 travelers</div>
+              <div className="text-white/90 text-sm mb-6">
+                <span className="font-medium">Start:</span> Tokyo • <span className="font-medium">Finish:</span> Osaka
+              </div>
               
               <div className="mb-6 flex-grow">
                 <div className="text-3xl font-medium">£2,200 <span className="text-3xl text-white">GBP</span></div>
