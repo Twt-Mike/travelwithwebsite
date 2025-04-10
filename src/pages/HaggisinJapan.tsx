@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanHero from '@/components/HaggisinJapanHero';
@@ -81,27 +80,6 @@ const HaggisinJapan = () => {
         <CompactCarousel images={japanImages} />
         <div id="tour-details">
           <HaggisinJapanTourDetails />
-        </div>
-        
-        {/* Image after Tour Overview section - smaller and clickable */}
-        <div className="py-10 bg-white">
-          <div className="japan-container">
-            <div className="flex justify-center">
-              <img 
-                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
-                alt="Tour group in Osaka"
-                className="w-full max-w-md mx-auto rounded-lg shadow-md cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => setIsImageModalOpen(true)}
-              />
-              
-              <ImageModal 
-                isOpen={isImageModalOpen}
-                onClose={() => setIsImageModalOpen(false)}
-                imageUrl="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg"
-                altText="Tour group in Osaka"
-              />
-            </div>
-          </div>
         </div>
       </div>
       <div id="itinerary">
