@@ -246,35 +246,6 @@ const HaggisinJapanTourDetails = () => {
                 className="w-full h-auto rounded-lg shadow-md object-cover mb-6"
                 style={{ maxHeight: "300px" }}
               />
-              
-              <div className="w-full space-y-4 mt-4">
-                <Button 
-                  size="lg" 
-                  className="w-full bg-[#599d9f] hover:bg-[#599d9f]/90 text-white py-5 text-lg"
-                  onClick={() => {
-                    const bookingElement = document.getElementById('booking');
-                    if (bookingElement) {
-                      bookingElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  Book Your Spot Now
-                </Button>
-                
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="w-full border-[#599d9f] text-[#599d9f] hover:bg-[#599d9f]/10 py-5 text-lg"
-                  onClick={() => {
-                    const detailsElement = document.getElementById('itinerary');
-                    if (detailsElement) {
-                      detailsElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  View Detailed Itinerary
-                </Button>
-              </div>
             </div>
           </div>
         </div>
