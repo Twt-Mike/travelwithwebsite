@@ -27,14 +27,12 @@ const HaggisinJapanHero = () => {
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-40 object-top"
         />
-        {/* Semi-transparent dark overlay for better contrast */}
-        <div className="absolute inset-0 bg-japan-indigo/50 mix-blend-multiply"></div>
       </div>
       
       <div className="japan-container z-10 py-16 text-center">
-        <div className="max-w-4xl mx-auto bg-black/30 p-6 rounded-lg backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto p-6 rounded-lg">
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2">
             TravelWith
           </h1>
