@@ -16,23 +16,25 @@ const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+    <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Routes>
-            {/* Home route with explicit name */}
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/ourtraveltreatsjpn" element={<InfluencerTour />} />
-            <Route path="/haggisinjapan" element={<HaggisinJapan />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
           <Toaster />
           <Sonner />
+          <BrowserRouter>
+            <Routes>
+              {/* Home route with explicit name */}
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/ourtraveltreatsjpn" element={<InfluencerTour />} />
+              <Route path="/haggisinjapan" element={<HaggisinJapan />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
         </TooltipProvider>
-      </BrowserRouter>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </React.StrictMode>
   );
 };
 
