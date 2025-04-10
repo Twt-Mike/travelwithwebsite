@@ -59,7 +59,7 @@ const HaggisinJapanTourDetails = () => {
                     <Users className="h-6 w-6 text-japan-indigo flex-shrink-0" />
                     <div>
                       <h3 className="font-medium text-japan-slate mb-1">Group Size</h3>
-                      <p className="text-japan-slate">Max 15 Travelers</p>
+                      <p className="text-japan-slate">Max 19 Travelers</p>
                     </div>
                   </div>
                 </CardContent>
@@ -72,7 +72,7 @@ const HaggisinJapanTourDetails = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Activity className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
-                  <span className="text-japan-slate">Local experiences including karaoke, night tours, tea ceremony, and more</span>
+                  <span className="text-japan-slate">Local experiences including sushi-making, karaoke, shrine visits, and more</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <PlaneTakeoff className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
@@ -84,11 +84,11 @@ const HaggisinJapanTourDetails = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Utensils className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
-                  <span className="text-japan-slate">Daily breakfast, 2 lunches, 3 dinners & welcome dinner</span>
+                  <span className="text-japan-slate">8 breakfasts, 1 lunch, 3 dinners</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Coffee className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
-                  <span className="text-japan-slate">Traditional tea ceremony experience</span>
+                  <span className="text-japan-slate">Traditional tea ceremony experience in a kimono</span>
                 </li>
               </ul>
             </div>
@@ -115,6 +115,140 @@ const HaggisinJapanTourDetails = () => {
                 <p>Join a community of happy travelers who've shared fun experiences and stories from my tours.</p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+        
+        <div className="bg-white p-8 rounded-xl shadow-sm">
+          <h3 className="text-xl font-serif font-medium text-japan-indigo mb-6">Detailed Tour Inclusions</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <div className="mb-6">
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Accommodation</h4>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">10 nights in hand-picked, quality hotels with Twin rooms and private bathrooms</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">All hotels feature ensuite bathrooms (except possible shared bathhouse in Hakone)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">Breakfast included at most accommodations (not included in Takayama)</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Transportation</h4>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">All transport included throughout the 11-day tour once you've arrived at the Day 1 start hotel</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">Shinkansen (bullet train) tickets</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">Local metro tap cards</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">Regional travel tickets as needed</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-pink font-bold">✗</span>
+                    <span className="text-gray-700">Arrival and departure airport transfers are not included</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Meals</h4>
+                <ul className="space-y-2 mt-4">
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">8 breakfasts</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">1 lunch</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-japan-green font-bold">✓</span>
+                    <span className="text-gray-700">3 group dinners</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div>
+              <div className="mb-6">
+                <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Included Activities</h4>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-2">Tokyo:</h5>
+                    <ul className="space-y-1 ml-5 list-disc text-gray-700">
+                      <li>Sushi-making class with a master chef</li>
+                      <li>Asakusa temples & shrine visits</li>
+                      <li>Meiji Shrine</li>
+                      <li>Akihabara arcades</li>
+                      <li>Shibuya Crossing</li>
+                      <li>Golden Gai nightlife</li>
+                      <li>Day trip to Kamakura</li>
+                      <li>Kotoku-in Temple (Giant Buddha)</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-2">Takayama:</h5>
+                    <ul className="space-y-1 ml-5 list-disc text-gray-700">
+                      <li>Traditional Japanese old town walk</li>
+                      <li>Japanese archery experience</li>
+                      <li>Visit to local sake breweries</li>
+                      <li>Relaxing at a local onsen</li>
+                      <li>Free time for more recommended optional activities</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-2">Kyoto:</h5>
+                    <ul className="space-y-1 ml-5 list-disc text-gray-700">
+                      <li>Fushimi Inari Shrine (10,000 Torii Gates)</li>
+                      <li>Kiyomizu-dera Temple</li>
+                      <li>Bamboo Forest</li>
+                      <li>Gion District & Geisha history</li>
+                      <li>Kimono rental and tea ceremony in a traditional tea house</li>
+                      <li>Otani Cemetery</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-2">Osaka:</h5>
+                    <ul className="space-y-1 ml-5 list-disc text-gray-700">
+                      <li>Osaka Castle</li>
+                      <li>Dotonbori street food tour</li>
+                      <li>Den Den Electric Town</li>
+                      <li>Day trip to Nara</li>
+                      <li>Kasuga Taisha Shrine</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="font-medium text-gray-700 mb-2">Animal Encounters:</h5>
+                    <ul className="space-y-1 ml-5 list-disc text-gray-700">
+                      <li>Japanese monkeys in the mountains</li>
+                      <li>Nara's famous bowing deer</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
