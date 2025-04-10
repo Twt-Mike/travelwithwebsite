@@ -39,10 +39,10 @@ const HaggisinJapanHostSection = () => {
               
               <div className="pt-4">
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/haggis.in.japan" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-japan-indigo hover:text-japan-pink font-medium transition-colors"
+                  className="text-japan-indigo font-medium transition-colors"
                 >
                   Follow Craig on Instagram →
                 </a>
@@ -82,10 +82,10 @@ const HaggisinJapanHostSection = () => {
               
               <div className="pt-4">
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/haggis.in.japan" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-japan-indigo hover:text-japan-pink font-medium transition-colors"
+                  className="text-japan-indigo font-medium transition-colors"
                 >
                   Follow Craig on Instagram →
                 </a>

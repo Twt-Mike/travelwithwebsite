@@ -15,13 +15,20 @@ import { Card } from '@/components/ui/card';
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
 
-// Images for the compact carousel
+// Images for the compact carousel - updated with the 3 specific images requested
 const japanImages = [
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" }
+  { 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg", 
+    alt: "Selfie in Akihabara" 
+  },
+  { 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Group2.jpeg", 
+    alt: "Group photo" 
+  },
+  { 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//PortraitGuestDanceAkiba.jpg", 
+    alt: "Guest dancing in Akihabara" 
+  }
 ];
 
 // Custom FAQs for HaggisinJapan
