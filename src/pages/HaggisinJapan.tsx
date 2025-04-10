@@ -16,10 +16,10 @@ const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-cra
 
 // Images for the compact carousel
 const japanImages = [
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" },
-  { url: "/placeholder.svg", alt: "Japan experience" },
+  { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg", alt: "Selfie in Akihabara" },
+  { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Karaokegroup.jpeg", alt: "Karaoke group experience" },
+  { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Group1.jpeg", alt: "Japan tour group" },
+  { url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg", alt: "Osaka group tour" },
   { url: "/placeholder.svg", alt: "Japan experience" }
 ];
 

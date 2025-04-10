@@ -1,3 +1,4 @@
+
 import { Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -58,9 +59,9 @@ const TourDetails = () => {
           
           <div className="bg-japan-cream">
             <img 
-              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//Tokyo.png" 
-              alt="Japan Tour Itinerary Map" 
-              className="w-full h-full object-contain"
+              src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Osakagroup.jpeg" 
+              alt="Japan Tour Group in Osaka" 
+              className="w-full h-full object-contain rounded-lg shadow-md"
               onError={(e) => {
                 console.error("Error loading map image");
                 e.currentTarget.src = "/placeholder.svg";
@@ -230,13 +231,20 @@ const TourDetails = () => {
               </div>
             </div>
             
-            <div className="flex-shrink-0 w-full md:w-1/3 flex items-center">
-              <img 
-                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//7.jpg" 
-                alt="Japan travel experience" 
-                className="w-full h-auto rounded-lg shadow-md object-cover"
-                style={{ maxHeight: "500px" }}
-              />
+            <div className="flex-shrink-0 w-full md:w-1/3">
+              <div className="space-y-3">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig5.jpeg" 
+                  alt="Craig, your guide for Japan" 
+                  className="w-full h-auto rounded-lg shadow-md object-cover"
+                  style={{ maxHeight: "500px" }}
+                />
+                <div className="text-center bg-japan-indigo/5 p-3 rounded-lg mt-2">
+                  <p className="font-medium text-japan-indigo">& Your #1 Rated Guide Craig!</p>
+                  <p className="text-amber-500 font-medium">⭐️ 5-Star Rated from 100+ Reviews! ⭐️</p>
+                  <p className="text-sm text-gray-700 mt-1">Join a community of happy travelers who've shared fun experiences and stories from my tours.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
