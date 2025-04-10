@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ExternalLink } from 'lucide-react';
 
@@ -75,7 +74,7 @@ const BookingCta = ({ onBookNow }: BookingCtaProps) => {
               </Button>
               
               <div className="mt-4 text-center text-white/70 text-sm">
-                <p>Secure checkout via WooCommerce</p>
+                <p>Secure payment via Stripe</p>
                 <p className="mt-2">
                   <a 
                     href="https://travelwith.tours/terms-conditions/" 
