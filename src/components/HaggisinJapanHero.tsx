@@ -16,13 +16,24 @@ const HaggisinJapanHero = () => {
       
       <div className="japan-container z-10 pt-24 md:pt-32 pb-16 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2">
             TravelWith
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Craig from @Haggis.in.Japan
-          </p>
+          <div className="bg-japan-indigo bg-opacity-70 py-3 px-4 mb-4 inline-block rounded-md">
+            <p className="text-2xl md:text-4xl text-white font-bold">
+              Craig from @Haggis.in.Japan
+            </p>
+          </div>
+          
+          <div className="mb-6">
+            <p className="text-lg md:text-xl text-white font-medium">
+              11 October - 21 October 2025 • 11 Days
+            </p>
+            <p className="text-white mt-2 font-medium text-lg bg-japan-green bg-opacity-80 inline-block px-4 py-1 rounded-md">
+              Only 19 total spots - Limited spots left!
+            </p>
+          </div>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
             <Button 
