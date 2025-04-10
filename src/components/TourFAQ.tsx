@@ -1,6 +1,8 @@
+
 import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useLocation } from 'react-router-dom';
 
 // Default FAQs
 const defaultFaqs = [
@@ -86,6 +88,8 @@ const FAQItem = ({ faq, isOpen, toggleOpen }) => {
 
 const TourFAQ = ({ faqs }: TourFAQProps) => {
   const [openFaq, setOpenFaq] = useState(1);
+  const location = useLocation();
+  const isHaggisPage = location.pathname.includes('/haggisinjapan');
   
   // Use provided FAQs or fallback to default FAQs
   const displayFaqs = faqs || defaultFaqs;
@@ -123,7 +127,11 @@ const TourFAQ = ({ faqs }: TourFAQProps) => {
 
         <div className="text-center mt-10">
           <p className="text-gray-700">
-            Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">@OurTravelTreats</a> on Instagram
+            {isHaggisPage ? (
+              <>Have more questions? Contact Craig via instagram at <a href="https://www.instagram.com/Haggis.in.Japan" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">@Haggis.in.Japan</a> or email us at <a href="mailto:info@travelwith.tours" className="text-[#599d9f] font-medium hover:underline">info@travelwith.tours</a></>
+            ) : (
+              <>Have more questions? <a href="mailto:info@travelwithindia.com" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">Contact us</a> or DM <a href="https://www.instagram.com/Our.TravelTreats" target="_blank" rel="noopener noreferrer" className="text-[#599d9f] font-medium hover:underline">@OurTravelTreats</a> on Instagram</>
+            )}
           </p>
         </div>
 
@@ -136,29 +144,55 @@ const TourFAQ = ({ faqs }: TourFAQProps) => {
               </AccordionTrigger>
               <AccordionContent className="text-gray-700">
                 <div className="space-y-4">
-                  <p>
-                    This tour is a collaboration between Laura, (@Our.TravelTreats) and TravelWith—designed from the ground up to create the best possible experience for you. Laura is your passionate host who has travelled Japan and worked with us to create the best tour of this beautiful country that is suitable just for Laura's audience, you!
-                  </p>
-                  
-                  <p>
-                    Travel With handles the operations, logistics, and bookings, ensuring everything runs seamlessly behind the scenes—so you can focus on enjoying the journey.
-                  </p>
-                  
-                  <div className="my-6">
-                    <img 
-                      src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupJumpKimonoLanscape.jpg" 
-                      alt="Group of travelers in kimono jumping together in Japan" 
-                      className="w-full h-auto rounded-lg max-w-lg mx-auto my-4"
-                    />
-                  </div>
-                  
-                  <p>
-                    While Laura & your expert guide provided on the trip shape the vision of the journey, Travel With is built on over 10 years of travel industry expertise, with experience guiding 1,000+ guests across 60+ tours and has implemented this expertise in the tour. Every detail of this trip has been carefully crafted using that knowledge to ensure a unique and seamless adventure.
-                  </p>
-                  
-                  <p>
-                    Unlike other tour operators who adapt existing itineraries or make minor adjustments for hosts, Travel With specializes in building completely custom tours alongside each host. That means no off-the-shelf experiences, no compromises—just a trip tailored to what makes this community special.
-                  </p>
+                  {isHaggisPage ? (
+                    <>
+                      <p>
+                        This tour is a collaboration between Craig (@Haggis.in.Japan) and Travel With—designed from the ground up to create the best possible experience for you. Craig is your passionate guide, bringing his expertise, energy, and deep connection with Japan to make this an unforgettable adventure. Travel With handles the operations, logistics, and bookings, ensuring everything runs seamlessly behind the scenes—so you can focus on enjoying the journey.
+                      </p>
+                      
+                      <div className="my-6">
+                        <img 
+                          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupJumpKimonoLanscape.jpg" 
+                          alt="Group of travelers in kimono jumping together in Japan" 
+                          className="w-full h-auto rounded-lg max-w-lg mx-auto my-4"
+                        />
+                      </div>
+                      
+                      <p>
+                        While Craig shapes the vision of the trip, Travel With is built on over 10 years of travel industry expertise, with experience guiding 1,000+ guests across 60+ tours. Every detail of this trip has been carefully crafted using that knowledge to ensure a unique and seamless adventure.
+                      </p>
+                      
+                      <p>
+                        Unlike other tour operators who adapt existing itineraries or make minor adjustments for hosts, Travel With specializes in building completely custom tours alongside each host. Every aspect of this trip was designed specifically for Craig's audience—you! That means no off-the-shelf experiences, no compromises—just a trip tailored to what makes this community special.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        This tour is a collaboration between Laura, (@Our.TravelTreats) and TravelWith—designed from the ground up to create the best possible experience for you. Laura is your passionate host who has travelled Japan and worked with us to create the best tour of this beautiful country that is suitable just for Laura's audience, you!
+                      </p>
+                      
+                      <p>
+                        Travel With handles the operations, logistics, and bookings, ensuring everything runs seamlessly behind the scenes—so you can focus on enjoying the journey.
+                      </p>
+                      
+                      <div className="my-6">
+                        <img 
+                          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//GroupJumpKimonoLanscape.jpg" 
+                          alt="Group of travelers in kimono jumping together in Japan" 
+                          className="w-full h-auto rounded-lg max-w-lg mx-auto my-4"
+                        />
+                      </div>
+                      
+                      <p>
+                        While Laura & your expert guide provided on the trip shape the vision of the journey, Travel With is built on over 10 years of travel industry expertise, with experience guiding 1,000+ guests across 60+ tours and has implemented this expertise in the tour. Every detail of this trip has been carefully crafted using that knowledge to ensure a unique and seamless adventure.
+                      </p>
+                      
+                      <p>
+                        Unlike other tour operators who adapt existing itineraries or make minor adjustments for hosts, Travel With specializes in building completely custom tours alongside each host. That means no off-the-shelf experiences, no compromises—just a trip tailored to what makes this community special.
+                      </p>
+                    </>
+                  )}
                   
                   <div className="mt-4">
                     <a 
