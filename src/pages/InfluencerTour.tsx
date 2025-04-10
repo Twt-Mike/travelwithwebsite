@@ -47,7 +47,7 @@ const InfluencerTour = () => {
       
       {/* Booking CTA section */}
       <div id="booking">
-        <BookingCta onBookNow={handleBookNow} checkoutProvider="Stripe" />
+        <BookingCta onBookNow={handleBookNow} />
       </div>
       
       {/* Tour Memories (Photo Gallery) */}
