@@ -1,4 +1,3 @@
-
 import { CalendarDays, MapPin, Clock, Users, Activity, Coffee, Utensils, PlaneTakeoff, Hotel, Star, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -163,7 +162,7 @@ const HaggisinJapanTourDetails = () => {
                 </ul>
               </div>
               
-              <div>
+              <div className="mb-6">
                 <h4 className="font-medium text-japan-indigo mb-4 inline-block bg-japan-indigo/10 px-6 py-2 rounded-lg text-lg shadow-sm">Meals</h4>
                 <ul className="space-y-2 mt-4">
                   <li className="flex items-start gap-3">
@@ -179,6 +178,15 @@ const HaggisinJapanTourDetails = () => {
                     <span className="text-gray-700">3 group dinners</span>
                   </li>
                 </ul>
+              </div>
+              
+              <div className="mt-4">
+                <img 
+                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//monkeymountain.jpg" 
+                  alt="Monkey Mountain in Japan" 
+                  className="w-full rounded-lg shadow-md"
+                />
+                <p className="text-sm text-gray-500 mt-2 italic text-center">Meet the friendly monkeys on Monkey Mountain!</p>
               </div>
             </div>
             
@@ -248,7 +256,6 @@ const HaggisinJapanTourDetails = () => {
           </div>
         </div>
         
-        {/* What's Not Included Section */}
         <div className="bg-white p-8 rounded-xl shadow-sm mt-8">
           <h3 className="text-xl font-serif font-medium text-japan-indigo mb-4">What's Not Included</h3>
           
