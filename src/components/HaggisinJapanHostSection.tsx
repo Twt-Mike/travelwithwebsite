@@ -15,7 +15,7 @@ const HaggisinJapanHostSection = () => {
               Meet Your Guide – Craig
             </h2>
             
-            <Card className="overflow-hidden shadow-lg rounded-lg max-w-[200px] mx-auto">
+            <Card className="overflow-hidden shadow-lg rounded-lg max-w-xs mx-auto">
               <img 
                 src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
                 alt="Craig, your guide for Japan"
@@ -57,7 +57,7 @@ const HaggisinJapanHostSection = () => {
                 Meet Your Guide – Craig
               </h2>
               
-              <Card className="overflow-hidden shadow-lg rounded-lg mb-6 max-w-[200px]">
+              <Card className="overflow-hidden shadow-lg rounded-lg mb-6 max-w-xs">
                 <img 
                   src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
                   alt="Craig, your guide for Japan"
