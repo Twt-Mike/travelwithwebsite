@@ -1,4 +1,3 @@
-
 import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -9,7 +8,7 @@ const defaultFaqs = [
   {
     id: 1,
     question: "Where should I book my flights in & out of?",
-    answer: "The tour starts in Tokyo and finishes in Hiroshima. We recommend flying into Tokyo (either Haneda or Narita Airport — both are perfectly fine) and flying out of Hiroshima Airport. If you can't find a suitable flight from Hiroshima, you're also welcome to take the bullet train back to Tokyo. However, the journey takes around 4.5 hours, so please make sure to book an evening departure flight from Tokyo to allow enough travel time. We can advise you closer to the time on how to navigate from the airport to the hotel and help with any transport questions! While we cannot be responsible for booking your flights, Laura is happy to assist you with the flight booking if needed!"
+    answer: "The tour starts in Tokyo and finishes in Hiroshima. We recommend flying into Tokyo (either Haneda or Narita Airport — both are perfectly fine) and flying out of Hiroshima Airport. If you can't find a suitable flight from Hiroshima, you're also welcome to take the bullet train back to Tokyo or Osaka for your departure flight out. The bullet train to Osaka takes ~2 hours, however the journey to Tokyo takes around 4.5 hours, so please make sure to book an evening departure flight from Tokyo to allow enough travel time. We can advise you closer to the time on how to navigate from the airport to the hotel and help with any transport questions! While we cannot be responsible for booking your flights, Laura is happy to assist you with the flight booking if needed!"
   },
   {
     id: 2,
