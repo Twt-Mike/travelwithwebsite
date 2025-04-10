@@ -27,7 +27,7 @@ const HaggisinJapanHero = () => {
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan"
-          className="w-full h-full object-cover opacity-40 object-top"
+          className="w-full h-full object-cover opacity-40 object-bottom"
         />
       </div>
       
