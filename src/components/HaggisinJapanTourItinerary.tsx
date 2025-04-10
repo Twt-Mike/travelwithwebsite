@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Plus, Minus } from 'lucide-react';
@@ -17,18 +16,8 @@ const HaggisinJapanTourItinerary = () => {
   return (
     <section className="py-20 relative">
       <div className="japan-container relative z-10">
-        {/* Header with background image */}
-        <div className="relative mb-20 py-16 rounded-xl overflow-hidden">
-          {/* Background image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center" 
-            style={{ 
-              backgroundImage: "url('https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//FushimiOutsideLanscapeProfesh.jpg')"
-            }}
-          >
-            <div className="absolute inset-0 bg-japan-indigo/10 mix-blend-multiply"></div>
-          </div>
-          
+        {/* Header section with no background image */}
+        <div className="relative mb-20 py-16 rounded-xl overflow-hidden bg-japan-indigo">
           {/* Header content */}
           <div className="relative z-10 text-center text-white">
             <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4">11 Day Itinerary</h2>
