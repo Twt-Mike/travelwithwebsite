@@ -17,14 +17,15 @@ const HaggisinJapanHero = () => {
       <div className="japan-container z-10 pt-24 md:pt-32 pb-16 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
-            Japan Adventure with Craig
+            <span className="text-3xl md:text-4xl lg:text-5xl block opacity-90 mb-2">TravelWith</span>
+            Craig from <span className="inline-block bg-japan-pink text-white px-4 py-1 rounded-lg">@Haggis.in.Japan</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             11 Days | 6 Locations | October 11 - 21, 2025
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg" 
               className="bg-japan-pink hover:bg-japan-pink/80 text-white font-medium px-8"
@@ -35,7 +36,7 @@ const HaggisinJapanHero = () => {
                 }
               }}
             >
-              Book Now
+              Book Your Spot Now
             </Button>
             
             <Button 
@@ -43,14 +44,18 @@ const HaggisinJapanHero = () => {
               size="lg" 
               className="border-white text-white hover:bg-white/10"
               onClick={() => {
-                const detailsElement = document.getElementById('tour-details');
-                if (detailsElement) {
-                  detailsElement.scrollIntoView({ behavior: 'smooth' });
+                const itineraryElement = document.getElementById('itinerary');
+                if (itineraryElement) {
+                  itineraryElement.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
             >
-              View Tour Details
+              View Detailed Itinerary
             </Button>
+          </div>
+          
+          <div className="text-white/80 text-lg mb-12 animate-pulse">
+            <p>Only 19 total spots! Limited left!</p>
           </div>
           
           <div className="flex justify-center">
