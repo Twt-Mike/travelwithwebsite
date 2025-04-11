@@ -23,7 +23,7 @@ const HeroSection = () => {
       {/* Split hero layout */}
       <div className="flex flex-col lg:flex-row min-h-[90vh]">
         {/* Left side - Text content with solid background */}
-        <div className="w-full lg:w-[45%] bg-japan-cream z-10 relative flex items-center justify-center">
+        <div className="w-full lg:w-[45%] bg-japan-cream z-[20] relative flex items-center justify-center">
           <div className="japan-container py-16 px-6 lg:px-10 max-w-3xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="mb-2">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide font-serif text-japan-indigo" style={{ fontFamily: "'DM Serif Display', serif" }}>
@@ -53,16 +53,23 @@ const HeroSection = () => {
         </div>
         
         {/* Right side - Image with diagonal mask */}
-        <div className="w-full lg:w-[55%] h-full relative min-h-[50vh] lg:min-h-auto">
+        <div className="w-full lg:w-[55%] h-full relative hidden lg:block z-[10]">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="w-full h-full"
             style={{
-              backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//homebanner.png")',
-              backgroundPosition: 'center 15%',
               clipPath: 'polygon(60% 0, 100% 0, 100% 100%, 40% 100%)',
+              overflow: 'hidden',
             }}
           >
-            <div className="absolute inset-0 bg-japan-indigo/30 mix-blend-multiply" />
+            <div
+              className="w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//homebanner.png")',
+                backgroundPosition: 'center 15%',
+              }}
+            >
+              <div className="w-full h-full bg-japan-indigo/30 mix-blend-multiply" />
+            </div>
           </div>
         </div>
         
