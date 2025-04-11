@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 // Updated authentic reviews data
 const reviews = [
@@ -137,8 +138,10 @@ const ReviewsCarousel = () => {
                             <Star key={i} className="h-5 w-5 fill-current" />
                           ))}
                         </div>
-                        <p className="text-gray-700 mb-6 italic">"{review.text}"</p>
-                        <div>
+                        <ScrollArea className="h-[200px] md:h-[220px]">
+                          <p className="text-gray-700 mb-6 italic">{review.text}</p>
+                        </ScrollArea>
+                        <div className="mt-4">
                           <h4 className="font-serif text-[#599d9f] text-lg font-medium">
                             {review.name}
                           </h4>
