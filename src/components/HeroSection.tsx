@@ -25,12 +25,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center sm:bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//Bannernew.png")',
-          backgroundPosition: 'center',
-          // Adjust background positioning for mobile
-          '@media (max-width: 640px)': {
-            backgroundPosition: '65% center',
-            backgroundSize: '250%'
-          }
+          backgroundPosition: 'center'
         }}
       />
 
