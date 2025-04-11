@@ -3,9 +3,26 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
+
+const hostNames = [
+  "Craig from HaggisInJapan",
+  "OurTravelTreats",
+  "ExploreWithEm",
+  "Tessa Travels",
+  "Katie in Kyoto",
+  "WanderWithWendy",
+  "Nomad with Nate",
+  "TokyoTalks",
+  "Jenna's TravelFam",
+  "Your Name Here"
+];
 
 const HeroSection = () => {
+  const [currentNameIndex, setCurrentNameIndex] = useState(0);
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  const animationRef = useRef<NodeJS.Timeout | null>(null);
+
   // Add DM Serif Display font to the document head
   useEffect(() => {
     const link = document.createElement('link');
@@ -15,6 +32,43 @@ const HeroSection = () => {
     
     return () => {
       document.head.removeChild(link);
+    };
+  }, []);
+
+  // Handle the name animation
+  useEffect(() => {
+    // Start the animation
+    let index = 0;
+    const animationSpeed = 3000 / hostNames.length; // Complete all names in 3 seconds
+    
+    // Clear any existing interval
+    if (animationRef.current) {
+      clearInterval(animationRef.current);
+    }
+    
+    // Set up new interval
+    animationRef.current = setInterval(() => {
+      index++;
+      
+      if (index >= hostNames.length) {
+        // Stop at the last name
+        setCurrentNameIndex(hostNames.length - 1);
+        setIsAnimationComplete(true);
+        if (animationRef.current) {
+          clearInterval(animationRef.current);
+          animationRef.current = null;
+        }
+      } else {
+        setCurrentNameIndex(index);
+      }
+    }, animationSpeed);
+    
+    // Clean up on unmount
+    return () => {
+      if (animationRef.current) {
+        clearInterval(animationRef.current);
+        animationRef.current = null;
+      }
     };
   }, []);
 
@@ -35,6 +89,17 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
               TravelWith
             </h1>
+            <div className="relative h-12 mt-1 overflow-hidden">
+              <div 
+                className={`text-3xl md:text-4xl lg:text-5xl font-medium leading-tight drop-shadow-md transition-transform duration-300 ease-in-out ${isAnimationComplete ? 'text-japan-pink' : 'text-white'}`} 
+                style={{ 
+                  fontFamily: "'DM Serif Display', serif", 
+                  textShadow: '0px 2px 4px rgba(0,0,0,0.3)',
+                }}
+              >
+                {hostNames[currentNameIndex]}
+              </div>
+            </div>
           </div>
           <p className="text-lg md:text-xl opacity-90 drop-shadow-sm" style={{ textShadow: '0px 1px 2px rgba(0,0,0,0.2)' }}>
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
