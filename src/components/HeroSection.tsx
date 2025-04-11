@@ -50,11 +50,6 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
-          
-          {/* Diagonal shape to create the angled edge */}
-          <div className="absolute top-0 right-0 h-full w-[15%] lg:block hidden" style={{
-            background: 'linear-gradient(135deg, transparent 50%, #F9F7F3 50%)',
-          }}></div>
         </div>
         
         {/* Right side - Image with diagonal mask */}
@@ -63,7 +58,7 @@ const HeroSection = () => {
             style={{
               backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//homebanner.png")',
               backgroundPosition: 'center 15%',
-              clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)',
+              clipPath: 'polygon(60% 0, 100% 0, 100% 100%, 40% 100%)',
             }}
           >
             <div className="absolute inset-0 bg-japan-indigo/30 mix-blend-multiply" />
@@ -78,36 +73,6 @@ const HeroSection = () => {
           }}
         >
           <div className="absolute inset-0 bg-japan-indigo/50 mix-blend-multiply" />
-        </div>
-        
-        {/* Mobile text overlay */}
-        <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20 lg:hidden">
-          <div className="max-w-2xl text-white space-y-6 animate-fade-in bg-japan-indigo/40 backdrop-blur-sm p-6 rounded-lg" style={{ animationDelay: '0.2s' }}>
-            <div className="mb-2">
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-wide" style={{ fontFamily: "'DM Serif Display', serif" }}>
-                TravelWith
-              </h1>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-medium leading-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
-              Create unforgettable journeys
-            </h2>
-            <p className="text-lg md:text-xl opacity-90">
-              Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <HashLink to="#contact-form" smooth>
-                <Button size="lg" className="btn-primary px-8 py-6 text-lg">
-                  Plan Your Trip
-                </Button>
-              </HashLink>
-              <Link to="/about">
-                <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
-                  <span>Learn More</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
 
