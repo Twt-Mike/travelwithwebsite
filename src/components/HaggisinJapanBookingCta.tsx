@@ -79,7 +79,7 @@ const HaggisinJapanBookingCta = ({ onBookNow }: BookingCtaProps) => {
               </Button>
               
               <div className="mt-4 text-center text-white/70 text-sm">
-                <p>Secure checkout via WooCommerce</p>
+                <p>Secure checkout with Stripe payment</p>
                 <p className="mt-2">
                   <a 
                     href="https://travelwith.tours/terms-conditions/" 
