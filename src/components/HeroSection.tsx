@@ -19,9 +19,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative hero-image overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Split hero layout */}
-      <div className="flex h-full min-h-[90vh]">
+      <div className="flex flex-col lg:flex-row min-h-[90vh]">
         {/* Left side - Text content with solid background */}
         <div className="w-full lg:w-[45%] bg-japan-cream z-10 relative flex items-center justify-center">
           <div className="japan-container py-16 px-6 lg:px-10 max-w-3xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -53,8 +53,9 @@ const HeroSection = () => {
         </div>
         
         {/* Right side - Image with diagonal mask */}
-        <div className="w-[55%] absolute right-0 top-0 h-full lg:block hidden overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        <div className="w-full lg:w-[55%] h-full relative min-h-[50vh] lg:min-h-auto">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//homebanner.png")',
               backgroundPosition: 'center 15%',
