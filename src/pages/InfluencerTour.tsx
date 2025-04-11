@@ -11,6 +11,7 @@ import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-12-day-tour-with-our-travel-treats/";

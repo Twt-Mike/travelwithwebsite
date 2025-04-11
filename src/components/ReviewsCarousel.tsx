@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -52,6 +51,62 @@ const reviews = [
     name: "Visesh",
     location: "India",
     text: "Travelling for the 3rd time in the last 10 months with you and already planned a 4th time should make it obvious how awesome it is to travel with you and how much I trust you to organise the trip. The destinations, the itinerary and the timings were always perfect. Japan was in my list for a long time and the last 12 days were just awesome. It was a very well perfectly worked out itenary and I liked every bit of it.",
+    rating: 5
+  },
+  {
+    id: 8,
+    name: "Janina",
+    location: "Germany",
+    text: "It was my very first group trip, and I'm so happy to have found Laura's page. She gave me the confidence to book this trip, answering so many questions beforehand. She did everything to make us feel welcome and included from the start. We had a WhatsApp group and two calls to get to know each other, already discovering many shared interests. Laura did an excellent job before and during the trip. I loved how much effort she put into helping us whenever needed. She was someone you could rely on at any moment but also a lot of fun, sharing laughter and deep conversations about life. Booking this trip was one of my best decisions. I not only got to experience this beautiful country and fully enjoy Japan, but I also shared unforgettable memories with amazing strangers who felt like long-time friends from the moment we met.",
+    rating: 5
+  },
+  {
+    id: 9,
+    name: "Raven",
+    location: "Germany",
+    text: "A trip with complete strangers? From all over the world? I would do it again! It was the trip of a lifetime! and the people who were there made it something very special. You go beyond your limits and grow together with complete strangers. Moments were created that I will never forget in my life. Everything was organized perfectly and you could sit back and relax and you always felt safe and secure. Laura answered all my questions weeks and months in advance, every time I wrote to her and had new questions. No matter whether it was about a packing list or general questions. Introducing the group via video calls and WhatsApp group weeks in advance was also great. This was definitely not my last group trip and I would recommend it to anyone. Thank you for the great time!",
+    rating: 5
+  },
+  {
+    id: 10,
+    name: "Yara",
+    location: "UAE",
+    text: "I had the incredible opportunity to join our.travelgroups's trip to Japan, and it was an amazing experience from start to finish! The 10-day itinerary Laura prepared was fantastic, covering all the major sights and giving us a well-rounded experience of Japan's rich culture. Communication before the trip was smooth—Laura created a WhatsApp group to connect everyone and hosted two Zoom calls so we could all meet beforehand. She was always ready to answer our questions and provided a detailed document with everything we needed to know, from packing tips to important trip info. During the trip, Laura made sure everyone was comfortable and went the extra mile to capture great memories, taking amazing pictures of us along the way. Her attention to detail and care made the trip unforgettable. I would highly recommend their adventure group trips around the world!",
+    rating: 5
+  },
+  {
+    id: 11,
+    name: "Emilja & Ivan",
+    location: "Netherlands",
+    text: "I've been following Laura for a while when I saw she is planning a group trip to Japan. I love how she presents all the details from their trips, sharing positive, but also negative sides of destinations. So, I felt 100% confident to join her Japan group. Laura created a WhatsApp group a week after we signed up for the trip, answering all our questions and concerns and helping us plan our flights. We even ended up on the same plane 🤩 WhatsApp group helped getting to know other people that will join. By the time we all landed in Japan, I felt like I've known them for ages. When we had a question about some additional activities, she checked with the agency and provided very detailed information. For the first time, I felt fully relaxed going on the trip. Even the part where you have to arrange things with the agency is done by Laura. All we had to do was show up and have fun!",
+    rating: 5
+  },
+  {
+    id: 12,
+    name: "Marko",
+    location: "Germany",
+    text: "I said it during the trip and I'll say it again: if you are going to book only a single group trip in your life, do it here! The whole trip was absolutely magical and exceeded all my (already high) expectations. The trip was very well planned and organized. I don't think I've ever been this well prepared for a trip and that's all thanks to Laura. All the questions that we had were answered way ahead of the trip so that we could all board our flights without any worries. Laura introduced us all in advance through group calls and a Whatsapp group, so that when we arrived in Japan, it didn't feel like meeting strangers, it felt like going on an adventure with friends. And once we left Japan, it felt like saying goodbye to family. The trip was filled with fun, laughter, and beautiful moments. I can't wait to see everyone again soon!",
+    rating: 5
+  },
+  {
+    id: 13,
+    name: "Jov",
+    location: "UK",
+    text: "I recently went on my first-ever group trip to Japan and was initially nervous about spending so much time with strangers. However, the experience completely exceeded my expectations. Laura went above and beyond—she reached out, checked in, and created a space for us to connect before the trip, which really put my concerns at ease. Japan can be tricky to navigate as a solo traveller, so joining this group made it not only easier but unforgettable. I've come away with lifelong friends and incredible memories from one of the most beautiful places on Earth. I can't recommend group travel enough, and I'm incredibly grateful to Laura for making it all happen!",
+    rating: 5
+  },
+  {
+    id: 14,
+    name: "Marian",
+    location: "Argentina",
+    text: "First of all, 5 ⭐️. Thank you for bringing your unique touch to this itinerary, I loved it ✨. Second, I really appreciate your investment with the group in general, it really shows you're dedicated to your work, but also, a very genuine and caring human being. I had a blast, and honestly, the group of people you managed to gather could not have been better. I feel like I've been laughing for 10 days straight 😂 Thank you for making sure we knew each other (at least virtually) before the trip, it really made a difference 🫶🏾✨",
+    rating: 5
+  },
+  {
+    id: 15,
+    name: "Julia",
+    location: "Germany",
+    text: "I booked this Japan tour rather spontaneously after following Laura's Instagram for a while. I was traveling solo and hoping for a group to enjoy my adventure with. Laura is the kind of person who absolutely makes sure everything goes right. She had a list for everything from travel adapters to coordinating arrival times. She set up a WhatsApp group and a short meeting so we could get to know each other, which made us feel comfortable with the group before we even arrived. The others were just as excited about our trip as I was and exploring Japan together felt effortless and fun. By the end, I came home with some new friends and unforgettable memories. If you're unsure about going on a trip alone - absolutely go for this one!",
     rating: 5
   }
 ];
