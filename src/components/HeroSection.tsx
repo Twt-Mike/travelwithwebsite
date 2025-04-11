@@ -32,24 +32,24 @@ const HeroSection = () => {
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-[40%] text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="mb-2">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide" style={{ fontFamily: "'DM Serif Display', serif" }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
               TravelWith
             </h1>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
             Create unforgettable journeys
           </h2>
-          <p className="text-lg md:text-xl opacity-90">
+          <p className="text-lg md:text-xl opacity-90 drop-shadow-sm" style={{ textShadow: '0px 1px 2px rgba(0,0,0,0.2)' }}>
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <HashLink to="#contact-form" smooth>
-              <Button size="lg" className="btn-primary px-8 py-6 text-lg">
+              <Button size="lg" className="btn-primary px-8 py-6 text-lg shadow-md hover:shadow-lg transition-shadow">
                 Plan Your Trip
               </Button>
             </HashLink>
             <Link to="/about">
-              <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg shadow-md hover:shadow-lg transition-shadow">
                 <span>Learn More</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
