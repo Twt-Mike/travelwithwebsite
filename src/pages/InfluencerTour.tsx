@@ -6,7 +6,7 @@ import HostSection from '@/components/HostSection';
 import TourItinerary from '@/components/TourItinerary';
 import TourFAQ from '@/components/TourFAQ';
 import BookingCta from '@/components/BookingCta';
-import PhotoGallery from '@/components/PhotoGallery';
+import OTTPhotoGallery from '@/components/OTTPhotoGallery';
 import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
@@ -50,8 +50,8 @@ const InfluencerTour = () => {
         <BookingCta onBookNow={handleBookNow} />
       </div>
       
-      {/* Photo Gallery */}
-      <PhotoGallery />
+      {/* Photo Gallery - using the new dedicated component */}
+      <OTTPhotoGallery />
       
       {/* Reviews section */}
       <ReviewsCarousel />
