@@ -3,55 +3,39 @@ import { useState } from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import CarouselFullScreenDialog from '@/components/carousel/CarouselFullScreenDialog';
 
-// Gallery photos with placeholder images for OurTravelTreatsJpn page
+// Updated gallery photos for OurTravelTreatsJpn page with new images
 const galleryPhotos = [
   {
-    src: "https://images.unsplash.com/photo-1492571350019-22de08371fd3",
-    alt: "Japan scenery with Mount Fuji"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group1.jpeg",
+    alt: "Group photo from Japan tour"
   },
   {
-    src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186",
-    alt: "Traditional Japanese temple"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//6.jpg",
+    alt: "Japan tour experience"
   },
   {
-    src: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9",
-    alt: "Cherry blossoms in Japan"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group3.jpg",
+    alt: "Group photo from Japan tour"
   },
   {
-    src: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
-    alt: "Japanese street at night"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//8.jpg",
+    alt: "Japan tour experience"
   },
   {
-    src: "https://images.unsplash.com/photo-1528164344705-47542687000d",
-    alt: "Japanese market"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//group4.jpeg",
+    alt: "Group photo from Japan tour"
   },
   {
-    src: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d",
-    alt: "Traditional Japanese garden"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//4.jpg",
+    alt: "Japan tour experience"
   },
   {
-    src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
-    alt: "Tokyo skyline"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//9.jpg",
+    alt: "Japan tour experience"
   },
   {
-    src: "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3",
-    alt: "Japanese street food"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1",
-    alt: "Bamboo forest in Japan"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1580694503595-a6154d40ca55",
-    alt: "Japanese shrine gates"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1528360983277-13d401cdc186",
-    alt: "Japanese pagoda"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504198453319-5ce911bafcde",
-    alt: "Busy crossing in Tokyo"
+    src: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ott//Group5.jpg",
+    alt: "Group photo from Japan tour"
   }
 ];
 
