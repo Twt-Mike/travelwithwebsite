@@ -3,32 +3,43 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { useEffect } from 'react';
 
 const HeroSection = () => {
+  // Add DM Serif Display font to the document head
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
     <section className="relative hero-image">
-      {/* Background image */}
+      {/* Background image - using new masked image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//homebanner.png")',
-          backgroundPosition: 'center 15%', // Crop bottom 15%
+          backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//Bannernew.png")',
+          backgroundPosition: 'center',
         }}
-      >
-        <div className="absolute inset-0 bg-japan-indigo/50 mix-blend-multiply" />
-      </div>
+      />
 
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
-        <div className="max-w-2xl text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <div className="max-w-xl text-japan-indigo space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="mb-2">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-tight tracking-wide">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide" style={{ fontFamily: "'DM Serif Display', serif" }}>
               TravelWith
             </h1>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight" style={{ fontFamily: "'DM Serif Display', serif" }}>
             Create unforgettable journeys
           </h2>
-          <p className="text-lg md:text-xl opacity-90">
+          <p className="text-lg md:text-xl text-japan-slate opacity-90">
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
@@ -38,7 +49,7 @@ const HeroSection = () => {
               </Button>
             </HashLink>
             <Link to="/about">
-              <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              <Button variant="outline" size="lg" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo/10 px-8 py-6 text-lg">
                 <span>Learn More</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
