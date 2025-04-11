@@ -86,12 +86,12 @@ const HeroSection = () => {
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
         <div className="max-w-full sm:max-w-[40%] text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="mb-2">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-wide drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
               TravelWith
             </h1>
             <div className="relative h-12 mt-1 overflow-hidden">
               <div 
-                className={`text-3xl md:text-4xl lg:text-5xl font-medium leading-tight drop-shadow-md transition-transform duration-300 ease-in-out ${isAnimationComplete ? 'text-japan-pink' : 'text-white'}`} 
+                className={`text-3xl md:text-4xl lg:text-5xl font-medium leading-tight drop-shadow-md transition-transform duration-300 ease-in-out italic ${isAnimationComplete ? 'text-japan-pink' : 'text-white'}`} 
                 style={{ 
                   fontFamily: "'DM Serif Display', serif", 
                   textShadow: '0px 2px 4px rgba(0,0,0,0.3)',
