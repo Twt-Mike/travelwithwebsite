@@ -50,8 +50,18 @@ const InfluencerTour = () => {
         <BookingCta onBookNow={handleBookNow} />
       </div>
       
-      {/* Tour Memories (Photo Gallery) */}
-      <PhotoGallery />
+      {/* Tour Photos (renamed from Tour Memories) */}
+      <div className="py-20 bg-white">
+        <div className="japan-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Tour Photos</h2>
+            <p className="section-subtitle mx-auto">
+              Glimpses of the amazing experiences awaiting you on this journey
+            </p>
+          </div>
+          <PhotoGallery />
+        </div>
+      </div>
       
       {/* Reviews section */}
       <ReviewsCarousel />
