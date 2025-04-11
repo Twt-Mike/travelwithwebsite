@@ -36,9 +36,6 @@ const HeroSection = () => {
               TravelWith
             </h1>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
-            Create unforgettable journeys
-          </h2>
           <p className="text-lg md:text-xl opacity-90 drop-shadow-sm" style={{ textShadow: '0px 1px 2px rgba(0,0,0,0.2)' }}>
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
