@@ -103,7 +103,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <p className="text-lg md:text-xl drop-shadow-sm" style={{ textShadow: '0px 1px 2px rgba(0,0,0,0.2)' }}>
+          <p className="text-lg md:text-xl drop-shadow-sm font-medium" style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.7)' }}>
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
