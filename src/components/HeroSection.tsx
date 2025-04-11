@@ -107,17 +107,17 @@ const HeroSection = () => {
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <HashLink to="#contact-form" smooth>
+            <HashLink to="#cta-section" smooth>
               <Button size="lg" className="btn-primary px-8 py-6 text-lg shadow-md hover:shadow-lg transition-shadow">
                 Plan Your Trip
               </Button>
             </HashLink>
-            <Link to="/about">
+            <HashLink to="#experience-section" smooth>
               <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 px-8 py-6 text-lg shadow-md hover:shadow-lg transition-shadow">
                 <span>Learn More</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </Link>
+            </HashLink>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import JapanExperienceCarousel from './JapanExperienceCarousel';
 
 const ExperienceSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="experience-section" className="py-20 bg-white">
       <div className="japan-container">
         <div className="text-center mb-12">
           <h2 className="section-title">Your Custom-Built Japan Trip Awaits</h2>

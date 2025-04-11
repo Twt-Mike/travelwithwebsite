@@ -82,7 +82,7 @@ const CtaSection = () => {
   };
 
   return (
-    <section className="py-20 relative">
+    <section id="cta-section" className="py-20 relative">
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
