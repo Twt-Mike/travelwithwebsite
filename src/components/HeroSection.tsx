@@ -103,7 +103,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <p className={`text-lg md:text-xl ${isMobile ? 'bg-black/30 p-3 rounded backdrop-blur-sm' : 'opacity-90'} drop-shadow-sm`} style={{ textShadow: isMobile ? 'none' : '0px 1px 2px rgba(0,0,0,0.2)' }}>
+          <p className="text-lg md:text-xl drop-shadow-sm" style={{ textShadow: '0px 1px 2px rgba(0,0,0,0.2)' }}>
             Custom-built group travel experiences for your audience, community, or brand. Your vision, our expertise—completely unique journeys.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
