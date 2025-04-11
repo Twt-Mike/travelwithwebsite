@@ -22,15 +22,20 @@ const HeroSection = () => {
     <section className="relative hero-image">
       {/* Background image - using new masked image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        className="absolute inset-0 bg-cover bg-center sm:bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: 'url("https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/ip//Bannernew.png")',
           backgroundPosition: 'center',
+          // Adjust background positioning for mobile
+          '@media (max-width: 640px)': {
+            backgroundPosition: '65% center',
+            backgroundSize: '250%'
+          }
         }}
       />
 
       <div className="japan-container relative z-10 flex flex-col justify-center h-full min-h-[90vh] pt-24 pb-20">
-        <div className="max-w-[40%] text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <div className="max-w-full sm:max-w-[40%] text-white space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="mb-2">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-wide drop-shadow-md" style={{ fontFamily: "'DM Serif Display', serif", textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
               TravelWith

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap');
 
 @tailwind base;
@@ -123,4 +124,12 @@
 
 .hero-image {
   min-height: 70vh;
+}
+
+/* Custom hero background positioning for mobile */
+@media (max-width: 640px) {
+  .hero-image [class*="bg-cover"] {
+    background-position: 65% center !important;
+    background-size: 250% !important;
+  }
 }
