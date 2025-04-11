@@ -15,7 +15,7 @@ const hostNames = [
   "Nomad with Nate",
   "TokyoTalks",
   "Jenna's TravelFam",
-  "Your Name Here"
+  "Your Brand Here"
 ];
 
 const HeroSection = () => {
