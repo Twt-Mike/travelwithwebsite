@@ -33,7 +33,7 @@ const HaggisinJapanHero = () => {
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan"
-          className="w-full h-full object-cover object-center opacity-60"
+          className="w-full h-full object-cover object-center opacity-80"
           style={{ 
             objectPosition: "center 40%",
             transform: `translateY(${translateY}px)`,
