@@ -1,5 +1,4 @@
 
-import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -85,14 +84,7 @@ const DestinationsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link to="/contact">
-            <Button variant="outline" className="border-japan-indigo text-japan-indigo hover:bg-japan-indigo hover:text-white px-8">
-              Plan Your Custom Trip
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </div>
+        {/* Removed the "Plan Your Custom Trip" button and its container div */}
       </div>
     </section>
   );
