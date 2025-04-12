@@ -1,8 +1,32 @@
+
 import { ArrowDown } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HaggisinJapanHero = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const isMobile = useIsMobile();
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Calculate the transform offset for parallax effect
+  // Use a smaller parallax factor on mobile for subtler effect
+  const parallaxFactor = isMobile ? 0.15 : 0.3;
+  const translateY = scrollPosition * parallaxFactor;
+  
   return (
     <div className="relative min-h-[60vh] flex items-center justify-center bg-japan-indigo overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -10,7 +34,11 @@ const HaggisinJapanHero = () => {
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan"
           className="w-full h-full object-cover object-center opacity-60"
-          style={{ objectPosition: "center 40%" }}
+          style={{ 
+            objectPosition: "center 40%",
+            transform: `translateY(${translateY}px)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
       </div>
       
