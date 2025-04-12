@@ -179,7 +179,7 @@ const About = () => {
                       <span className="text-sm">(Ranked #2 Tour Guide of the Year in 2019*)</span>
                     </p>
                     <div className="flex justify-center">
-                      <a href="https://www.tourradar.com/tour-guide-mike" target="_blank" rel="noopener noreferrer">
+                      <a href="https://www.tourradar.com/guide/1318" target="_blank" rel="noopener noreferrer">
                         <Button className="bg-japan-indigo hover:bg-japan-indigo/90" size="sm">
                           TourRadar Profile 
                           <ExternalLink className="ml-2 h-3 w-3" />
