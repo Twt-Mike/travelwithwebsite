@@ -73,13 +73,6 @@ const Navbar = () => {
               Home
             </Link>
             <Link 
-              to="/home" 
-              className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/home' ? 'font-medium' : ''}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              Home (Alternative)
-            </Link>
-            <Link 
               to="/about" 
               className={`text-japan-indigo hover:text-japan-pink transition-colors ${currentPath === '/about' ? 'font-medium' : ''}`}
               onClick={() => setMenuOpen(false)}
