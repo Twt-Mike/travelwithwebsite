@@ -44,7 +44,7 @@ const HaggisinJapanHero = () => {
       
       <div className="japan-container z-10 pt-16 md:pt-20 pb-12 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
             TravelWith
           </h1>
           
