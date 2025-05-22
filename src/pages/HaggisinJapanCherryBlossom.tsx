@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanCherryBlossomHero from '@/components/HaggisinJapanCherryBlossomHero';
 import HaggisinJapanCherryBlossomTourDetails from '@/components/HaggisinJapanCherryBlossomTourDetails';
@@ -19,11 +19,11 @@ const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-cra
 // Images for the compact carousel - updated with the cherry blossom images first
 const japanImages = [
   { 
-    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//cb1.jpg", 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom/cb1.jpg", 
     alt: "Cherry blossom viewing in Japan" 
   },
   { 
-    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//cb5.JPG", 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom/cb5.JPG", 
     alt: "Cherry blossom scene in Japan" 
   },
   { 
@@ -74,6 +74,47 @@ const haggisinJapanFaqs = [
 
 const HaggisinJapanCherryBlossom = () => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  
+  // Add image loading check
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Verify images on component mount
+  useEffect(() => {
+    const verifyImages = async () => {
+      try {
+        console.log("Verifying cherry blossom images...");
+        
+        const checkImage = (url: string): Promise<boolean> => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              console.log(`✅ Image verified: ${url}`);
+              resolve(true);
+            };
+            img.onerror = () => {
+              console.error(`❌ Image failed to load: ${url}`);
+              resolve(false);
+            };
+            img.src = url;
+          });
+        };
+
+        // Check specifically the cherry blossom images
+        const results = await Promise.all([
+          checkImage(japanImages[0].url),
+          checkImage(japanImages[1].url)
+        ]);
+        
+        const allLoaded = results.every(result => result === true);
+        console.log(`Cherry blossom images loaded: ${allLoaded}`);
+        setImagesLoaded(allLoaded);
+      } catch (error) {
+        console.error("Error verifying images:", error);
+      }
+    };
+    
+    verifyImages();
+  }, []);
   
   const handleBookNow = () => {
     // Open the booking URL in a new tab
