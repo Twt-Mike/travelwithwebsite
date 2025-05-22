@@ -14,7 +14,7 @@ const HaggisinJapanCherryBlossomBookingCta = ({ onBookNow }: BookingCtaProps) =>
       <div className="japan-container relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block bg-[#599d9f]/10 text-[#599d9f] px-4 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block bg-japan-pink/30 text-[#599d9f] px-4 py-1 rounded-full text-sm font-medium mb-4 border border-japan-pink/40">
               Cherry Blossom Edition - Limited Spots Available
             </div>
             <h2 className="text-3xl md:text-4xl font-serif font-medium text-japan-indigo mb-6">
