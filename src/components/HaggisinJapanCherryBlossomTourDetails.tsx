@@ -1,3 +1,4 @@
+
 import { CalendarDays, MapPin, Clock, Users, Activity, Coffee, Utensils, PlaneTakeoff, Hotel, Star, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -15,8 +16,10 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
           <div className="space-y-6">
+            {/* Updated grid to be 1 column on mobile and 2 on larger screens */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Card className="bg-white">
+              {/* Added explicit width and margin settings for mobile */}
+              <Card className="bg-white w-full mx-auto">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <CalendarDays className="h-6 w-6 text-japan-indigo flex-shrink-0" />
@@ -28,7 +31,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white">
+              <Card className="bg-white w-full mx-auto">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
@@ -40,7 +43,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white">
+              <Card className="bg-white w-full mx-auto">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <Clock className="h-6 w-6 text-japan-indigo flex-shrink-0" />
@@ -52,7 +55,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white">
+              <Card className="bg-white w-full mx-auto">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <Users className="h-6 w-6 text-japan-indigo flex-shrink-0" />
@@ -64,7 +67,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white col-span-2">
+              <Card className="bg-white col-span-1 sm:col-span-2 w-full mx-auto">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-japan-indigo flex-shrink-0" />
