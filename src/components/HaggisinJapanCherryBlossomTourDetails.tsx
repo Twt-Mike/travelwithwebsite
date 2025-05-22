@@ -1,4 +1,3 @@
-
 import { CalendarDays, MapPin, Clock, Users, Activity, Coffee, Utensils, PlaneTakeoff, Hotel, Star, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -47,7 +46,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                     <Clock className="h-6 w-6 text-japan-indigo flex-shrink-0" />
                     <div>
                       <h3 className="font-medium text-japan-slate mb-1">Tour Dates</h3>
-                      <p className="text-japan-slate">Oct 11 - 21, 2025</p>
+                      <p className="text-japan-slate">March 30 - April 9, 2026</p>
                     </div>
                   </div>
                 </CardContent>
@@ -85,6 +84,10 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                 <li className="flex items-start gap-3">
                   <Activity className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
                   <span className="text-japan-slate">Local experiences including sushi-making, karaoke, shrine visits, and more</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Activity className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
+                  <span className="text-japan-slate">Dedicated time to view cherry blossom trees at prime locations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <PlaneTakeoff className="h-5 w-5 text-japan-indigo flex-shrink-0 mt-0.5" />
