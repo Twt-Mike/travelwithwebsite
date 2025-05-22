@@ -16,8 +16,16 @@ import ImageModal from '@/components/ImageModal';
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
 
-// Images for the compact carousel - updated with the 3 specific images requested
+// Images for the compact carousel - updated with the cherry blossom images first
 const japanImages = [
+  { 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//cb1.jpg", 
+    alt: "Cherry blossom viewing in Japan" 
+  },
+  { 
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//cb5.JPG", 
+    alt: "Cherry blossom scene in Japan" 
+  },
   { 
     url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg", 
     alt: "Selfie in Akihabara" 
