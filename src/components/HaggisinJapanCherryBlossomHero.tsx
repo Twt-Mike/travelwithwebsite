@@ -31,8 +31,8 @@ const HaggisinJapanCherryBlossomHero = () => {
     <div className="relative min-h-[60vh] flex items-center justify-center bg-japan-indigo overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
-          alt="Japan Tour with HaggisinJapan"
+          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//banner.jpg"
+          alt="Japan Cherry Blossom Tour with HaggisinJapan"
           className="w-full h-full object-cover object-center opacity-80"
           style={{ 
             objectPosition: "center 40%",
@@ -48,15 +48,15 @@ const HaggisinJapanCherryBlossomHero = () => {
             TravelWith
           </h1>
           
-          <div className="bg-japan-indigo bg-opacity-70 py-3 px-4 mb-4 inline-block rounded-md">
-            <p className="text-2xl md:text-4xl text-white font-bold">
+          <div className="bg-japan-pink bg-opacity-70 py-3 px-4 mb-4 inline-block rounded-md">
+            <p className="text-2xl md:text-4xl text-japan-slate font-bold">
               Craig from @Haggis.in.Japan - Cherry Blossom Edition
             </p>
           </div>
           
           <div className="mb-6">
             <p className="text-lg md:text-xl text-white font-medium">
-              11 October - 21 October 2025 • 11 Days
+              March 30 - April 9 2026 • 11 Days
             </p>
             <p className="text-white mt-2 font-medium text-sm italic">
               Only 19 total spots - Limited spots left!
@@ -66,7 +66,7 @@ const HaggisinJapanCherryBlossomHero = () => {
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-japan-indigo hover:bg-japan-indigo/80 text-white font-medium px-8"
+              className="bg-japan-pink hover:bg-japan-pink/80 text-japan-slate font-medium px-8"
               onClick={() => {
                 const bookingElement = document.getElementById('booking');
                 if (bookingElement) {
@@ -80,7 +80,7 @@ const HaggisinJapanCherryBlossomHero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white/10 bg-japan-green bg-opacity-80 hover:bg-japan-green/90"
+              className="border-white text-white hover:bg-white/10 bg-japan-pink bg-opacity-60 hover:bg-japan-pink/70"
               onClick={() => {
                 const detailsElement = document.getElementById('tour-details');
                 if (detailsElement) {
@@ -99,7 +99,7 @@ const HaggisinJapanCherryBlossomHero = () => {
               smooth={true}
               offset={-100}
               duration={500}
-              className="text-white hover:text-japan-indigo cursor-pointer transition-colors"
+              className="text-white hover:text-japan-pink cursor-pointer transition-colors"
             >
               <div className="flex flex-col items-center">
                 <span className="mb-2">Scroll to discover more</span>
