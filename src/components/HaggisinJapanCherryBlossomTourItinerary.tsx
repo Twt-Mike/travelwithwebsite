@@ -20,7 +20,7 @@ const HaggisinJapanCherryBlossomTourItinerary = () => {
         <div className="text-center mb-20">
           <h2 className="section-title">11 Day Cherry Blossom Itinerary</h2>
           <p className="section-subtitle mx-auto">
-            October 11 - 21, 2025
+            March 30 - April 9, 2026
           </p>
         </div>
 
@@ -79,7 +79,7 @@ const itineraryData = [
   {
     day: 1,
     title: "Tokyo Arrival Day",
-    date: "October 11, 2025",
+    date: "March 30, 2026",
     description: `
       <p>Welcome to Tokyo—let the cherry blossom adventure begin! 🇯🇵✨</p>
       <p>Your guide available all day to help with arrivals. Hotel check-in is at 3 PM in the scenic Asakusa district—arrive early to explore or relax.</p>
@@ -91,7 +91,7 @@ const itineraryData = [
   {
     day: 2,
     title: "Tokyo",
-    date: "October 12, 2025",
+    date: "March 31, 2026",
     description: `
       <p>Start the day with a fun Japan quiz (yes, it's actually fun!)—we'll learn Japanese etiquette and key cultural do's & don'ts, plus a prize for the winner!</p>
       <p>Then, we'll visit Meiji Shrine in Yoyogi Park, honouring the emperor who shaped modern Japan. During cherry blossom season, this is one of Tokyo's most beautiful spots!</p>
@@ -104,7 +104,7 @@ const itineraryData = [
   {
     day: 3,
     title: "Tokyo",
-    date: "October 13, 2025",
+    date: "April 1, 2026",
     description: `
       <p>Start the day learning the art of sushi with a master Japanese chef, crafting fresh, delicious bites with some of the world's best seafood.</p>
       <p>The afternoon is yours—explore Tokyo at your own pace with Craig's top cherry blossom viewing recommendations.</p>
@@ -117,7 +117,7 @@ const itineraryData = [
   {
     day: 4,
     title: "Tokyo & Kamakura Day Trip",
-    date: "October 14, 2025",
+    date: "April 2, 2026",
     description: `
       <p>Today, we escape Tokyo and head to the stunning seaside town of Kamakura, the birthplace of Japan's first Shogun! The coastal cherry trees make this trip extra special.</p>
       <p>Our first stop is Hase-Dera, my favourite temple in Japan, with serene gardens, stunning views, and ancient halls. Then, we'll visit Kotoku-in Temple to stand in awe of the 13-meter Great Buddha, Japan's second-largest.</p>
@@ -131,7 +131,7 @@ const itineraryData = [
   {
     day: 5,
     title: "Takayama",
-    date: "October 15, 2025",
+    date: "April 3, 2026",
     description: `
       <p>This morning, we take it easy as we gear up for our first big travel day!—and what better way to do it than riding the legendary Shinkansen Bullet Train. Watch the Japanese countryside race by as we speed north to Takayama, a charming, traditional town nestled in the mountains of Gifu Prefecture.</p>
       <p>The mountain cherry blossoms bloom a bit later than in Tokyo, so we might catch them at their peak here!</p>
@@ -144,7 +144,7 @@ const itineraryData = [
   {
     day: 6,
     title: "Takayama",
-    date: "October 16, 2025",
+    date: "April 4, 2026",
     description: `
       <p>Get ready for a packed day in Takayama, a town bursting with history, culture, and adventure! We will explore the Miyagawa Morning Market, where you can sample fresh local treats for breakfast and pick up one-of-a-kind souvenirs—like personalised chopsticks made from the wood of the region!</p>
       <p>The rest of the day is yours to explore at your own pace. Craig will provide a list of top optional activity recommendations, including:</p>
@@ -167,7 +167,7 @@ const itineraryData = [
   {
     day: 7,
     title: "Kyoto",
-    date: "October 17, 2025",
+    date: "April 5, 2026",
     description: `
       <p>We'll leave Takayama behind and hop on the Shinkansen to Kyoto, Japan's former capital. Once we arrive, we'll take a stroll through the atmospheric streets, getting familiar with our new home for the next three nights.</p>
       <p>Kyoto is absolutely spectacular during cherry blossom season, with many famous viewing spots throughout the city.</p>
@@ -180,7 +180,7 @@ const itineraryData = [
   {
     day: 8,
     title: "Kyoto",
-    date: "October 18, 2025",
+    date: "April 6, 2026",
     description: `
       <p>Rise and shine—Today is an epic day in Kyoto! We're kicking things off with a sunrise visit to Fushimi Inari Shrine, home to the 10,000 Torii gates. With no crowds, we'll have this iconic spot almost to ourselves as we explore, snap incredible photos, and learn the legends behind the shrine.</p>
       <p>Next, we'll walk through one of Kyoto's largest cemeteries before arriving at Kiyomizu-dera, a breathtaking World Heritage Site. Then you'll get to choose your own Japanese Kimono to rent for the day and we'll head to an authentic Japanese tea house for a traditional tea ceremony, learning the beautiful customs behind this ancient art.</p>
@@ -193,7 +193,7 @@ const itineraryData = [
   {
     day: 9,
     title: "Kyoto to Osaka",
-    date: "October 19, 2025",
+    date: "April 7, 2026",
     description: `
       <p>After we get our voices back from last night we'll jump on the train to Arashiyama, where we'll wander through the Bamboo Forest then make some new friends at Monkey Mountain! There are over 100 Japanese monkeys at the top waiting to say hi! A bit of free time to grab lunch and do some last minute Kyoto shopping before we head to Osaka!—our favourite city in Japan!</p>
       <p>We'll check in and head out for a delicious family dinner at one of my favourite local spots. Then soak in the vibrant lights of Osaka before we call it a night. 🌆</p>
@@ -204,7 +204,7 @@ const itineraryData = [
   {
     day: 10,
     title: "Osaka",
-    date: "October 20, 2025",
+    date: "April 8, 2026",
     description: `
       <p>For our final full day in Japan, we're kicking things off with a trip to Nara, Japan's first capital and home to the famous bowing deer! You'll hear the story of how these sacred animals became part of the city and explore some of Japan's most stunning temples. With plenty of time to wander Nara Park, you can even grab some deer crackers and make a few furry friends.</p>
       <p>Next, we're off to Osaka Castle for some iconic photos and an optional climb to the top. The castle grounds are another great spot for cherry blossom viewing if we're lucky with the timing.</p>
@@ -217,7 +217,7 @@ const itineraryData = [
   {
     day: 11,
     title: "Osaka Departure Day!",
-    date: "October 21, 2025",
+    date: "April 9, 2026",
     description: `
       <p>And just like that, our incredible cherry blossom adventure comes to an end. 🥲</p>
       <p>We'll gather for one last breakfast to share stories from last night and relive our favorite moments from the trip. Then, it's time for goodbye. Craig will be around to help with onward travel and any advice for those staying in Japan a little longer.</p>
