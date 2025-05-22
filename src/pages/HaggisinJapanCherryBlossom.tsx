@@ -12,6 +12,7 @@ import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
 import ImageModal from '@/components/ImageModal';
+import CherryBlossomExperienceCarousel from '@/components/CherryBlossomExperienceCarousel';
 
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
@@ -85,6 +86,11 @@ const HaggisinJapanCherryBlossom = () => {
       </div>
       <div id="itinerary">
         <HaggisinJapanCherryBlossomTourItinerary />
+      </div>
+      
+      {/* Cherry Blossom Experience Carousel */}
+      <div id="cherry-blossom-experience">
+        <CherryBlossomExperienceCarousel />
       </div>
       
       {/* Booking CTA section */}
