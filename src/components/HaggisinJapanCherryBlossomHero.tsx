@@ -53,13 +53,13 @@ const HaggisinJapanCherryBlossomHero = () => {
               Craig from @Haggis.in.Japan - Cherry Blossom Edition
             </p>
             
-            <p className="text-lg md:text-xl text-white font-medium mt-1">
+            <p className="text-lg md:text-xl text-white font-medium mt-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               March 30 - April 9 2026 • 11 Days
             </p>
           </div>
           
           <div className="mb-6">
-            <p className="text-white mt-2 font-medium text-sm italic">
+            <p className="text-white mt-2 font-medium text-sm italic drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Only 19 total spots - Limited spots left!
             </p>
           </div>
