@@ -24,8 +24,8 @@ const HaggisinJapanCherryBlossomBookingCta = ({ onBookNow }: BookingCtaProps) =>
               Book your spot now on this exclusive Japan tour with Craig from @Haggis.in.Japan. 
               Only 19 spots available—secure yours before they're gone!
             </p>
-            <div className="mt-6 bg-japan-pink/10 p-4 rounded-lg border border-japan-pink/20 max-w-2xl mx-auto">
-              <p className="text-gray-700 font-medium">
+            <div className="mt-6 bg-japan-pink/30 p-3 rounded-lg border border-japan-pink/40 max-w-2xl mx-auto">
+              <p className="text-gray-700 text-sm font-medium">
                 Cherry Blossom Pricing: Due to higher accommodation costs and limited availability during this peak season, the tour price is adjusted accordingly. We recommend booking early.
               </p>
             </div>
