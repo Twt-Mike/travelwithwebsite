@@ -33,7 +33,7 @@ const HaggisinJapanCherryBlossomHero = () => {
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//banner.jpg"
           alt="Japan Cherry Blossom Tour with HaggisinJapan"
-          className="w-full h-full object-cover object-center opacity-80"
+          className="w-full h-full object-cover object-center opacity-90"
           style={{ 
             objectPosition: "center 40%",
             transform: `translateY(${translateY}px)`,
@@ -44,20 +44,21 @@ const HaggisinJapanCherryBlossomHero = () => {
       
       <div className="japan-container z-10 pt-16 md:pt-20 pb-12 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+          <h1 className="text-2xl md:text-3xl font-serif font-bold text-white mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
             TravelWith
           </h1>
           
-          <div className="mb-4">
+          <div className="bg-japan-pink bg-opacity-70 py-3 px-4 mb-4 inline-block rounded-md">
             <p className="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Craig from @Haggis.in.Japan - Cherry Blossom Edition
+            </p>
+            
+            <p className="text-lg md:text-xl text-white font-medium mt-1">
+              March 30 - April 9 2026 • 11 Days
             </p>
           </div>
           
           <div className="mb-6">
-            <p className="text-lg md:text-xl text-white font-medium">
-              March 30 - April 9 2026 • 11 Days
-            </p>
             <p className="text-white mt-2 font-medium text-sm italic">
               Only 19 total spots - Limited spots left!
             </p>
