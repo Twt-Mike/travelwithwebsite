@@ -48,7 +48,7 @@ const HaggisinJapanCherryBlossomHero = () => {
             TravelWith
           </h1>
           
-          <div className="bg-japan-pink bg-opacity-70 py-3 px-4 mb-4 inline-block rounded-md">
+          <div className="bg-japan-pink bg-opacity-85 py-3 px-4 mb-4 inline-block rounded-md">
             <p className="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Craig from @Haggis.in.Japan - Cherry Blossom Edition
             </p>
