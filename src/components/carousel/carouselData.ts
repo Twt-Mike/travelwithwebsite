@@ -1,42 +1,95 @@
-
-// Type definitions
-export type ImageReplacement = {
-  index: number;
-  newSrc: string;
-};
-
-// These images will be used as fallbacks if Supabase images aren't available
-export const defaultTourImages = [
+// Updated carousel data with Hostinger image URLs
+export const carouselImages = [
   {
-    src: '/lovable-uploads/96e71a37-e469-4c4c-903b-831baac03259.png',
-    alt: 'Group at Dotonbori in Osaka with Glico Man sign'
+    url: "https://travelwith.tours/images/carousel-images/GroupJumpKimonoLanscape.jpg",
+    alt: "Group jumping in kimono landscape"
   },
   {
-    src: '/lovable-uploads/e989f4c1-0dea-4b0c-9259-6e89830b4584.png',
-    alt: 'Group in traditional kimonos at a Japanese garden'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/BudoSpin.jpeg",
+    alt: "Budo Spin"
   },
   {
-    src: '/lovable-uploads/2925e5fb-7926-4563-963b-abeaa60bb6b6.png',
-    alt: 'Group enjoying a game arcade in Japan'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/AkibaGuest.jpeg",
+    alt: "Akiba Guest"
   },
   {
-    src: '/lovable-uploads/f7956a6d-1b22-4a59-8a86-74a3ade9dad9.png',
-    alt: 'Tour group at traditional Japanese building entrance'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/AkihabaraStreets.jpeg",
+    alt: "Akihabara Streets"
   },
   {
-    src: '/lovable-uploads/a2a2b699-505c-4482-b247-e15fba74ad82.png',
-    alt: 'Tea ceremony experience in a traditional tatami room'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/ArashiyamaBambooForest.jpeg",
+    alt: "Arashiyama Bamboo Forest"
   },
   {
-    src: '/lovable-uploads/29602055-acbd-4071-8ac5-83903ee6f38a.png',
-    alt: 'Walking through Fushimi Inari shrine torii gates'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/Budo.jpeg",
+    alt: "Budo"
   },
   {
-    src: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=800&auto=format',
-    alt: 'Cherry blossoms and deer in Nara'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/FushimiInari.jpeg",
+    alt: "Fushimi Inari"
   },
   {
-    src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=800&auto=format',
-    alt: 'Red torii gates at Fushimi Inari shrine'
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/GoldenPavilion.jpeg",
+    alt: "Golden Pavilion"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/GroupBow.jpeg",
+    alt: "Group Bow"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/GroupJumpKimonoLanscape.jpeg",
+    alt: "Group Jump Kimono Lanscape"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/GroupNightFood.jpeg",
+    alt: "Group Night Food"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/GroupSmile.jpeg",
+    alt: "Group Smile"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/ItsukushimaGate.jpeg",
+    alt: "Itsukushima Gate"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/KiyomizuTemple.jpeg",
+    alt: "Kiyomizu Temple"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/MountFuji.jpeg",
+    alt: "Mount Fuji"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/NaraDeer.jpeg",
+    alt: "Nara Deer"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/OsakaCastle.jpeg",
+    alt: "Osaka Castle"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/PortraitGuestDanceAkiba.jpg",
+    alt: "Portrait Guest Dance Akiba"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/SensojiTemple.jpeg",
+    alt: "Sensoji Temple"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/ShibuyaCrossing.jpeg",
+    alt: "Shibuya Crossing"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/ShirakawaGo.jpeg",
+    alt: "Shirakawa Go"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/TodaijiTemple.jpeg",
+    alt: "Todaiji Temple"
+  },
+  {
+    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images/TokyoTower.jpeg",
+    alt: "Tokyo Tower"
   }
 ];
