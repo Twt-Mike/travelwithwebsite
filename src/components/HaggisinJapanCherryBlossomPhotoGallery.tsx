@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -81,7 +80,7 @@ const PhotoItem = ({ image, index, onOpenModal }: {
 
   return (
     <div
-      className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group transition-all duration-700 opacity-0 transform translate-y-8 animate-fade-in"
+      className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group transition-all duration-700 opacity-0 transform translate-y-8 gallery-fade-in"
       style={{ animationDelay: `${index * 50}ms` }}
       onClick={() => onOpenModal(index)}
     >
