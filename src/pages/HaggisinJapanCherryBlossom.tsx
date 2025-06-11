@@ -14,8 +14,8 @@ import ImageModal from '@/components/ImageModal';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
 import '@/styles/scroll-animations.css';
 
-// Define the WooCommerce product URL - real WooCommerce product
-const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
+// Define the WooCommerce product URL - cherry blossom specific product
+const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-cherryblossom-tour-with-craig-haggisinjapan/";
 
 // Images for the compact carousel - updated with the 3 specific images requested
 const japanImages = [
