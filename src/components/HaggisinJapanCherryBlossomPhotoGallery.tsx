@@ -1,9 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { logImageStatus } from '@/utils/imageDebug';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 // Updated images for Haggis in Japan Cherry Blossom tour
 const initialTourImages = [
@@ -57,26 +57,55 @@ const initialTourImages = [
   }
 ];
 
+// Individual photo item component to ensure consistent hook usage
+const PhotoItem = ({ image, index, onOpenModal }: { 
+  image: { url: string; alt: string }, 
+  index: number, 
+  onOpenModal: (index: number) => void 
+}) => {
+  const [hasError, setHasError] = useState(false);
+
+  const handleImageError = () => {
+    logImageStatus(image.url, false);
+    setHasError(true);
+  };
+
+  const handleImageLoad = () => {
+    logImageStatus(image.url, true);
+  };
+
+  // Don't render if image has error
+  if (hasError) {
+    return null;
+  }
+
+  return (
+    <div
+      className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group transition-all duration-700 opacity-0 transform translate-y-8 animate-fade-in"
+      style={{ animationDelay: `${index * 50}ms` }}
+      onClick={() => onOpenModal(index)}
+    >
+      <img
+        src={image.url}
+        alt={image.alt}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+        onError={handleImageError}
+        onLoad={handleImageLoad}
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
+    </div>
+  );
+};
+
 const HaggisinJapanCherryBlossomPhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [validImages, setValidImages] = useState(initialTourImages);
-  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const isMobile = useIsMobile();
 
-  const handleImageError = (imageUrl: string) => {
-    logImageStatus(imageUrl, false);
-    setFailedImages(prev => new Set([...prev, imageUrl]));
-  };
-
-  const handleImageLoad = (imageUrl: string) => {
-    logImageStatus(imageUrl, true);
-  };
-
-  // Filter out failed images
+  // Filter out images that have errors
   useEffect(() => {
-    const filtered = initialTourImages.filter(image => !failedImages.has(image.url));
-    setValidImages(filtered);
-  }, [failedImages]);
+    // This will be handled by individual PhotoItem components
+  }, []);
 
   const openModal = (index: number) => {
     setSelectedImage(index);
@@ -111,36 +140,14 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
         </div>
 
         <div className={`grid ${isMobile ? 'grid-cols-2' : 'grid-cols-3 md:grid-cols-4'} gap-4`}>
-          {validImages.map((image, index) => {
-            const { ref, isVisible } = useScrollAnimation({ 
-              threshold: 0.1, 
-              delay: index * 100,
-              triggerOnce: true 
-            });
-            
-            return (
-              <div
-                key={index}
-                ref={ref}
-                className={`relative aspect-square overflow-hidden rounded-lg cursor-pointer group transition-all duration-700 ${
-                  isVisible 
-                    ? 'opacity-100 transform translate-y-0' 
-                    : 'opacity-0 transform translate-y-8'
-                }`}
-                style={{ transitionDelay: `${index * 50}ms` }}
-                onClick={() => openModal(index)}
-              >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  onError={() => handleImageError(image.url)}
-                  onLoad={() => handleImageLoad(image.url)}
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
-              </div>
-            );
-          })}
+          {validImages.map((image, index) => (
+            <PhotoItem
+              key={`${image.url}-${index}`}
+              image={image}
+              index={index}
+              onOpenModal={openModal}
+            />
+          ))}
         </div>
 
         {/* Modal */}
@@ -183,6 +190,23 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
           </div>
         )}
       </div>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };
