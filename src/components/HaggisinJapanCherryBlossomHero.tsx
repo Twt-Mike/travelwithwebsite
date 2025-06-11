@@ -1,4 +1,3 @@
-
 import { ArrowDown } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Button } from '@/components/ui/button';
@@ -31,7 +30,7 @@ const HaggisinJapanCherryBlossomHero = () => {
     <div className="relative min-h-[60vh] flex items-center justify-center bg-japan-indigo overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/cherryblossom//banner.jpg"
+          src="https://travelwith.tours/images/cherryblossom/banner.jpg"
           alt="Japan Cherry Blossom Tour with HaggisinJapan"
           className="w-full h-full object-cover object-center opacity-90"
           style={{ 

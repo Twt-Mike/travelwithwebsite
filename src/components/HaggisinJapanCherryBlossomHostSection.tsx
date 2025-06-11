@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -17,7 +16,7 @@ const HaggisinJapanCherryBlossomHostSection = () => {
             
             <Card className="overflow-hidden shadow-lg rounded-lg max-w-xs mx-auto">
               <img 
-                src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
+                src="https://travelwith.tours/images/haggis/Craig3.jpg" 
                 alt="Craig, your guide for Japan"
                 className="w-full h-auto object-cover aspect-[4/5]"
               />
@@ -59,7 +58,7 @@ const HaggisinJapanCherryBlossomHostSection = () => {
               
               <Card className="overflow-hidden shadow-lg rounded-lg mb-6 max-w-xs">
                 <img 
-                  src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Craig1.jpeg" 
+                  src="https://travelwith.tours/images/haggis/Craig3.jpg" 
                   alt="Craig, your guide for Japan"
                   className="w-full h-auto object-cover aspect-[4/5]"
                 />

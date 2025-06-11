@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanCherryBlossomHero from '@/components/HaggisinJapanCherryBlossomHero';
@@ -19,16 +18,16 @@ const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-cra
 // Images for the compact carousel - updated with the 3 specific images requested
 const japanImages = [
   { 
-    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//SelfieAkiba.jpeg", 
+    url: "https://travelwith.tours/images/haggis/SelfieAkiba.jpeg", 
     alt: "Selfie in Akihabara" 
   },
   { 
-    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//Group2.jpeg", 
+    url: "https://travelwith.tours/images/haggis/Group2.jpeg", 
     alt: "Group photo" 
   },
   { 
-    url: "https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/carousel-images//PortraitGuestDanceAkiba.jpg", 
-    alt: "Guest dancing in Akihabara" 
+    url: "https://travelwith.tours/images/haggis/Osakagroup.jpeg", 
+    alt: "Osaka group photo" 
   }
 ];
 
