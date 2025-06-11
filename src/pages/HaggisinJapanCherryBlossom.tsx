@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanCherryBlossomHero from '@/components/HaggisinJapanCherryBlossomHero';
@@ -6,7 +7,7 @@ import HaggisinJapanCherryBlossomHostSection from '@/components/HaggisinJapanChe
 import HaggisinJapanCherryBlossomTourItinerary from '@/components/HaggisinJapanCherryBlossomTourItinerary';
 import TourFAQ from '@/components/TourFAQ';
 import HaggisinJapanCherryBlossomBookingCta from '@/components/HaggisinJapanCherryBlossomBookingCta';
-import PhotoGallery from '@/components/PhotoGallery';
+import HaggisinJapanCherryBlossomPhotoGallery from '@/components/HaggisinJapanCherryBlossomPhotoGallery';
 import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
@@ -93,7 +94,7 @@ const HaggisinJapanCherryBlossom = () => {
       
       {/* Tour Memories (Photo Gallery) */}
       <div id="tour-memories">
-        <PhotoGallery />
+        <HaggisinJapanCherryBlossomPhotoGallery />
       </div>
       
       {/* FAQ section */}
