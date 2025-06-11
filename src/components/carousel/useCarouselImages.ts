@@ -1,78 +1,35 @@
 
 import { useState, useEffect } from 'react';
-import { defaultTourImages, ImageReplacement } from './carouselData';
+import { carouselImages } from './carouselData';
 import { logImageStatus } from '@/utils/imageDebug';
 import { getImagesFromBucket, BUCKETS, getAltTextForImage } from '@/utils/supabaseStorage';
 
 export function useCarouselImages() {
-  const [imageSources, setImageSources] = useState(defaultTourImages);
+  const [imageSources, setImageSources] = useState(carouselImages);
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
-  const [isLoadingSupabaseImages, setIsLoadingSupabaseImages] = useState(true);
-  
-  // Fetch images from Supabase
-  useEffect(() => {
-    const fetchSupabaseImages = async () => {
-      try {
-        setIsLoadingSupabaseImages(true);
-        console.log(`Fetching images from bucket: ${BUCKETS.IP}`); // Log which bucket we're using
-        const result = await getImagesFromBucket(BUCKETS.IP); // Use the IP bucket directly
-        
-        if (result.photos && result.photos.length > 0) {
-          const supabaseImages = result.photos;
-          
-          // Immediately test each image URL
-          supabaseImages.forEach(img => {
-            const testImg = new Image();
-            testImg.onload = () => console.log(`Image loaded successfully: ${img.src}`);
-            testImg.onerror = () => console.error(`Failed to load image: ${img.src}`);
-            testImg.src = img.src;
-          });
-          
-          setImageSources(prevImages => {
-            // Merge with default images if we don't have enough from Supabase
-            if (supabaseImages.length < 8) {
-              return [...supabaseImages, ...prevImages.slice(supabaseImages.length)];
-            }
-            return supabaseImages;
-          });
-          
-          console.log('Successfully loaded Supabase images:', supabaseImages.length);
-        } else {
-          console.log('No images found in bucket, using default images');
-        }
-      } catch (error) {
-        console.error('Error fetching Supabase images:', error);
-      } finally {
-        setIsLoadingSupabaseImages(false);
-      }
-    };
-    
-    fetchSupabaseImages();
-  }, []);
+  const [isLoadingSupabaseImages, setIsLoadingSupabaseImages] = useState(false);
   
   // Pre-check all images to make sure they load
   useEffect(() => {
-    if (isLoadingSupabaseImages) return;
-    
     imageSources.forEach((image, index) => {
       const img = new Image();
       img.onload = () => {
-        logImageStatus(image.src, true);
+        logImageStatus(image.url, true);
         setImagesLoaded(prev => ({...prev, [index]: true}));
       };
       img.onerror = () => {
-        logImageStatus(image.src, false);
+        logImageStatus(image.url, false);
         setImagesLoaded(prev => ({...prev, [index]: false}));
       };
-      img.src = image.src;
+      img.src = image.url;
     });
-  }, [imageSources, isLoadingSupabaseImages]);
+  }, [imageSources]);
 
   // Function to replace a single image
   const replaceImage = (index: number, newSrc: string) => {
     setImageSources(current => {
       const updated = [...current];
-      updated[index] = { ...updated[index], src: newSrc };
+      updated[index] = { ...updated[index], url: newSrc };
       return updated;
     });
     
@@ -90,12 +47,12 @@ export function useCarouselImages() {
   };
 
   // Function to replace multiple images at once
-  const replaceMultipleImages = (replacements: ImageReplacement[]) => {
+  const replaceMultipleImages = (replacements: Array<{index: number, newSrc: string}>) => {
     setImageSources(current => {
       const updated = [...current];
       replacements.forEach(({ index, newSrc }) => {
         if (index >= 0 && index < updated.length) {
-          updated[index] = { ...updated[index], src: newSrc };
+          updated[index] = { ...updated[index], url: newSrc };
           
           // Check if the new image loads
           const img = new Image();
