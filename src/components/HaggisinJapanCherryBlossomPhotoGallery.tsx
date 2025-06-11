@@ -1,11 +1,12 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { logImageStatus } from '@/utils/imageDebug';
 
 // Updated images for Haggis in Japan Cherry Blossom tour
-const tourImages = [
+const initialTourImages = [
   {
     url: "https://travelwith.tours/images/haggis/Bar.Jpeg",
     alt: "Bar experience in Japan"
@@ -58,7 +59,24 @@ const tourImages = [
 
 const HaggisinJapanCherryBlossomPhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [validImages, setValidImages] = useState(initialTourImages);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const isMobile = useIsMobile();
+
+  const handleImageError = (imageUrl: string) => {
+    logImageStatus(imageUrl, false);
+    setFailedImages(prev => new Set([...prev, imageUrl]));
+  };
+
+  const handleImageLoad = (imageUrl: string) => {
+    logImageStatus(imageUrl, true);
+  };
+
+  // Filter out failed images
+  useEffect(() => {
+    const filtered = initialTourImages.filter(image => !failedImages.has(image.url));
+    setValidImages(filtered);
+  }, [failedImages]);
 
   const openModal = (index: number) => {
     setSelectedImage(index);
@@ -70,13 +88,13 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % tourImages.length);
+      setSelectedImage((selectedImage + 1) % validImages.length);
     }
   };
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? tourImages.length - 1 : selectedImage - 1);
+      setSelectedImage(selectedImage === 0 ? validImages.length - 1 : selectedImage - 1);
     }
   };
 
@@ -93,7 +111,7 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
         </div>
 
         <div className={`grid ${isMobile ? 'grid-cols-2' : 'grid-cols-3 md:grid-cols-4'} gap-4`}>
-          {tourImages.map((image, index) => (
+          {validImages.map((image, index) => (
             <div
               key={index}
               className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
@@ -103,10 +121,8 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
                 src={image.url}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                onError={(e) => {
-                  console.error(`Error loading image: ${image.url}`);
-                  e.currentTarget.src = "/placeholder.svg";
-                }}
+                onError={() => handleImageError(image.url)}
+                onLoad={() => handleImageLoad(image.url)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
             </div>
@@ -114,7 +130,7 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
         </div>
 
         {/* Modal */}
-        {selectedImage !== null && (
+        {selectedImage !== null && validImages[selectedImage] && (
           <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
             <div className="relative max-w-4xl max-h-full">
               <Button
@@ -127,8 +143,8 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
               </Button>
               
               <img
-                src={tourImages[selectedImage].url}
-                alt={tourImages[selectedImage].alt}
+                src={validImages[selectedImage].url}
+                alt={validImages[selectedImage].alt}
                 className="max-w-full max-h-[80vh] object-contain"
               />
               
