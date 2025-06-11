@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanCherryBlossomHero from '@/components/HaggisinJapanCherryBlossomHero';
@@ -12,6 +11,8 @@ import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
 import CompactCarousel from '@/components/CompactCarousel';
 import ImageModal from '@/components/ImageModal';
+import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
+import '@/styles/scroll-animations.css';
 
 // Define the WooCommerce product URL - real WooCommerce product
 const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
@@ -76,30 +77,46 @@ const HaggisinJapanCherryBlossom = () => {
     <Layout>
       <HaggisinJapanCherryBlossomHero />
       <HeroNavLinks />
-      <div>
+      
+      <ScrollAnimationWrapper animation="slide-left" options={{ threshold: 0.2 }}>
         <HaggisinJapanCherryBlossomHostSection />
+      </ScrollAnimationWrapper>
+      
+      <ScrollAnimationWrapper animation="fade-in" options={{ delay: 200 }}>
         <CompactCarousel images={japanImages} />
-        <div id="tour-details">
+      </ScrollAnimationWrapper>
+      
+      <div id="tour-details">
+        <ScrollAnimationWrapper animation="slide-right" options={{ threshold: 0.15 }}>
           <HaggisinJapanCherryBlossomTourDetails />
-        </div>
+        </ScrollAnimationWrapper>
       </div>
+      
       <div id="itinerary">
-        <HaggisinJapanCherryBlossomTourItinerary />
+        <ScrollAnimationWrapper animation="fade-in" options={{ threshold: 0.1 }}>
+          <HaggisinJapanCherryBlossomTourItinerary />
+        </ScrollAnimationWrapper>
       </div>
       
       {/* Booking CTA section */}
       <div id="booking">
-        <HaggisinJapanCherryBlossomBookingCta onBookNow={handleBookNow} />
+        <ScrollAnimationWrapper animation="scale-in" options={{ threshold: 0.2 }}>
+          <HaggisinJapanCherryBlossomBookingCta onBookNow={handleBookNow} />
+        </ScrollAnimationWrapper>
       </div>
       
       {/* Tour Memories (Photo Gallery) */}
       <div id="tour-memories">
-        <HaggisinJapanCherryBlossomPhotoGallery />
+        <ScrollAnimationWrapper animation="fade-in" options={{ threshold: 0.1, delay: 100 }}>
+          <HaggisinJapanCherryBlossomPhotoGallery />
+        </ScrollAnimationWrapper>
       </div>
       
       {/* FAQ section */}
       <div id="faq">
-        <TourFAQ faqs={haggisinJapanFaqs} />
+        <ScrollAnimationWrapper animation="slide-left" options={{ threshold: 0.15 }}>
+          <TourFAQ faqs={haggisinJapanFaqs} />
+        </ScrollAnimationWrapper>
       </div>
       
       <StickyBookButton onBookNow={handleBookNow} />

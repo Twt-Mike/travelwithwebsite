@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { logImageStatus } from '@/utils/imageDebug';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 // Updated images for Haggis in Japan Cherry Blossom tour
 const initialTourImages = [
@@ -111,22 +111,36 @@ const HaggisinJapanCherryBlossomPhotoGallery = () => {
         </div>
 
         <div className={`grid ${isMobile ? 'grid-cols-2' : 'grid-cols-3 md:grid-cols-4'} gap-4`}>
-          {validImages.map((image, index) => (
-            <div
-              key={index}
-              className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
-              onClick={() => openModal(index)}
-            >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                onError={() => handleImageError(image.url)}
-                onLoad={() => handleImageLoad(image.url)}
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
-            </div>
-          ))}
+          {validImages.map((image, index) => {
+            const { ref, isVisible } = useScrollAnimation({ 
+              threshold: 0.1, 
+              delay: index * 100,
+              triggerOnce: true 
+            });
+            
+            return (
+              <div
+                key={index}
+                ref={ref}
+                className={`relative aspect-square overflow-hidden rounded-lg cursor-pointer group transition-all duration-700 ${
+                  isVisible 
+                    ? 'opacity-100 transform translate-y-0' 
+                    : 'opacity-0 transform translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
+                onClick={() => openModal(index)}
+              >
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  onError={() => handleImageError(image.url)}
+                  onLoad={() => handleImageLoad(image.url)}
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300" />
+              </div>
+            );
+          })}
         </div>
 
         {/* Modal */}
