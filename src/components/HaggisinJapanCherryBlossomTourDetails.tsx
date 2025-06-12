@@ -131,15 +131,6 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
           </div>
         </div>
         
-        <div className="text-center mb-16">
-          <div className="bg-japan-pink/20 p-8 rounded-xl shadow-sm border border-japan-pink/30 max-w-lg mx-auto">
-            <div className="text-4xl font-bold text-japan-indigo mb-2">£2,400 GBP</div>
-            <div className="text-lg text-japan-slate font-medium">
-              (Reserve your spot now for only £480 today!)
-            </div>
-          </div>
-        </div>
-        
         <div className="bg-white p-8 rounded-xl shadow-sm">
           <h3 className="text-xl font-serif font-medium text-japan-indigo mb-6">Cherry Blossom Tour Inclusions</h3>
           
