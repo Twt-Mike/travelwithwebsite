@@ -41,7 +41,7 @@ const HaggisinJapanCherryBlossomBookingCta = ({ onBookNow }: BookingCtaProps) =>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Flexible payment plan (only £500 deposit)</span>
+                  <span className="text-gray-700">Flexible payment plan (only £480 deposit)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
@@ -63,13 +63,13 @@ const HaggisinJapanCherryBlossomBookingCta = ({ onBookNow }: BookingCtaProps) =>
               </div>
               
               <div className="mb-6 flex-grow">
-                <div className="text-3xl font-medium">£2,500 <span className="text-3xl text-white">GBP</span></div>
+                <div className="text-3xl font-medium">£2,400 <span className="text-3xl text-white">GBP</span></div>
                 <div className="text-white/80 text-sm">per person</div>
               </div>
               
               <div className="mb-6">
                 <p className="text-lg font-medium text-white/95 border-t border-white/20 pt-4">
-                  <span className="font-bold">Deposit today:</span> £500 GBP
+                  <span className="font-bold">Deposit today:</span> £480 GBP
                   <span className="block text-sm text-white/80 mt-1">20% of trip cost, non-refundable</span>
                 </p>
               </div>
@@ -102,7 +102,7 @@ const HaggisinJapanCherryBlossomBookingCta = ({ onBookNow }: BookingCtaProps) =>
           <div className="text-center text-gray-500 text-sm max-w-2xl mx-auto">
             <p>Card payments are processed in GBP via Stripe.</p>
             <p>Bank transfers are accepted in GBP, EUR, or USD via our Wise business account.</p>
-            <p>A £500 deposit (20% non-refundable) secures your place on this unforgettable cherry blossom journey.</p>
+            <p>A £480 deposit (20% non-refundable) secures your place on this unforgettable cherry blossom journey.</p>
           </div>
         </div>
       </div>
