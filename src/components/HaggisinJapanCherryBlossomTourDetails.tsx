@@ -1,4 +1,3 @@
-
 import { CalendarDays, MapPin, Clock, Users, Activity, Coffee, Utensils, PlaneTakeoff, Hotel, Star, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -61,7 +60,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                     <Users className="h-6 w-6 text-japan-indigo flex-shrink-0" />
                     <div>
                       <h3 className="font-medium text-japan-slate mb-1">Group Size</h3>
-                      <p className="text-japan-slate">Max 19 Travelers</p>
+                      <p className="text-japan-slate">Max 20 Travelers</p>
                     </div>
                   </div>
                 </CardContent>

@@ -59,7 +59,7 @@ const HaggisinJapanCherryBlossomHero = () => {
           
           <div className="mb-6">
             <p className="text-white mt-2 font-medium text-sm italic drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
-              Only 19 total spots - Limited spots left!
+              Only 20 total spots - Limited spots left!
             </p>
           </div>
           
