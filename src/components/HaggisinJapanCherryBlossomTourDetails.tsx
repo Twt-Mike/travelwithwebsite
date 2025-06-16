@@ -123,7 +123,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                   <Star className="h-5 w-5 fill-current text-yellow-400" />
                   <Star className="h-5 w-5 fill-current text-yellow-400" />
                   <Star className="h-5 w-5 fill-current text-yellow-400" />
-                  <span className="ml-2">5-Star Rated from 100+ Reviews</span>
+                  <span className="ml-2">5-Star Rated from 200+ Reviews</span>
                 </div>
                 <p>Join a community of happy travelers who've shared fun experiences and stories from my tours.</p>
               </CardContent>
@@ -189,7 +189,7 @@ const HaggisinJapanCherryBlossomTourDetails = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-japan-green font-bold">✓</span>
-                    <span className="text-gray-700">3 group dinners</span>
+                    <span className="text-gray-700">3 group dinners at Craig's top restaurants!</span>
                   </li>
                 </ul>
               </div>

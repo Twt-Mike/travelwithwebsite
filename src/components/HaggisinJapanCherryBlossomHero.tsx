@@ -1,3 +1,4 @@
+
 import { ArrowDown } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Button } from '@/components/ui/button';
@@ -66,7 +67,7 @@ const HaggisinJapanCherryBlossomHero = () => {
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-japan-pink hover:bg-japan-pink/80 text-japan-slate font-medium px-8"
+              className="bg-japan-pink hover:bg-japan-pink/80 text-japan-slate font-bold px-10 py-3 text-lg shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-all duration-200"
               onClick={() => {
                 const bookingElement = document.getElementById('booking');
                 if (bookingElement) {
@@ -80,7 +81,7 @@ const HaggisinJapanCherryBlossomHero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white/10 bg-japan-pink bg-opacity-60 hover:bg-japan-pink/70"
+              className="border-white text-white hover:bg-white/10 bg-japan-pink bg-opacity-60 hover:bg-japan-pink/70 shadow-[0_4px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.4)] transition-all duration-200"
               onClick={() => {
                 const detailsElement = document.getElementById('tour-details');
                 if (detailsElement) {
