@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Plus, Minus } from 'lucide-react';
@@ -181,10 +180,10 @@ const itineraryData = [
     title: "Kyoto",
     date: "April 6, 2026",
     description: `
-      <p>Rise and shine—today is an epic day in Kyoto! We're kicking things off with a sunrise visit to Fushimi Inari Shrine, home to the 10,000 Torii gates. With no crowds, we'll have this iconic spot almost to ourselves as we explore, snap incredible photos, and learn the legends behind the shrine.</p>
-      <p>Next, we'll walk through one of Kyoto's largest cemeteries before arriving at Kiyomizu-dera, a breathtaking World Heritage Site. Then you'll get to choose your own Japanese Kimono to rent for the day and we'll head to an authentic Japanese tea house for a traditional tea ceremony, learning the beautiful customs behind this ancient art.</p>
-      <p>In the afternoon, we'll visit Maruyama Park, the most famous cherry blossom viewing spot in all of Kyoto, centered around a magnificent weeping cherry tree that's illuminated at night.</p>
-      <p>But save your energy because tonight is Karaoke night! We're heading to my favourite karaoke bar in Japan for a wild night of singing, laughing, and making unforgettable memories with locals. Get ready for a legendary Kyoto experience! 🎤🎶</p>
+      <p>Rise and shine—today is our first full day in Kyoto!</p>
+      <p>We'll start off with a walk through one of Kyoto's largest cemeteries before arriving at Kiyomizu-dera, a breathtaking World Heritage Site. Then we'll head down the chaotic and beautiful Sannenzaka street to our very own Japanese Kimono spot, you can choose your favourite colour to rent for the day and we'll head to an authentic Japanese tea house for a traditional tea ceremony, learning the beautiful customs behind this ancient art. Afterward, the afternoon is yours—grab a matcha ice cream, explore Kyoto's charming streets for unique souvenirs, or chill out in the kimonos.</p>
+      <p>In the evening we'll meet back up for a sunset visit to Fushimi Inari Shrine, home to the 10,000 Torii gates. With no crowds, we'll have this iconic spot almost to ourselves as we explore, snap incredible photos, and learn the legends behind the shrine. Up for a challenge? Hike to the top and pray to the deity there.</p>
+      <p>But keep some energy because tonight is Karaoke night! We're heading to my favourite karaoke bar in Japan for a wild night of singing, laughing, and making unforgettable memories with each other and the locals. Get ready for a legendary Kyoto experience! 🎤🎶</p>
     `,
     overnight: "Kyoto",
     meals: "Breakfast"
