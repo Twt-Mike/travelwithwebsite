@@ -295,6 +295,7 @@ export type Database = {
           synced_at: string | null
           tour_date: string | null
           updated_at: string
+          user_id: string | null
           woocommerce_order_id: string
         }
         Insert: {
@@ -328,6 +329,7 @@ export type Database = {
           synced_at?: string | null
           tour_date?: string | null
           updated_at?: string
+          user_id?: string | null
           woocommerce_order_id: string
         }
         Update: {
@@ -361,6 +363,7 @@ export type Database = {
           synced_at?: string | null
           tour_date?: string | null
           updated_at?: string
+          user_id?: string | null
           woocommerce_order_id?: string
         }
         Relationships: []
@@ -533,14 +536,46 @@ export type Database = {
         }
         Relationships: []
       }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _user_id: string
+          _role: Database["public"]["Enums"]["app_role"]
+        }
+        Returns: boolean
+      }
+      is_admin_or_staff: {
+        Args: { _user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
+      app_role: "admin" | "staff" | "customer"
       tour_type_enum: "WooCommerce" | "WhiteLabel"
     }
     CompositeTypes: {
@@ -669,6 +704,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      app_role: ["admin", "staff", "customer"],
       tour_type_enum: ["WooCommerce", "WhiteLabel"],
     },
   },
