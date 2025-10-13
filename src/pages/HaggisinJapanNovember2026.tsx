@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import HaggisinJapanNovember2026Hero from '@/components/HaggisinJapanNovember2026Hero';
-import HaggisinJapanTourDetails from '@/components/HaggisinJapanTourDetails';
+import HaggisinJapanNovember2026TourDetails from '@/components/HaggisinJapanNovember2026TourDetails';
 import HaggisinJapanHostSection from '@/components/HaggisinJapanHostSection';
-import HaggisinJapanTourItinerary from '@/components/HaggisinJapanTourItinerary';
+import HaggisinJapanNovember2026TourItinerary from '@/components/HaggisinJapanNovember2026TourItinerary';
 import TourFAQ from '@/components/TourFAQ';
 import HaggisinJapanBookingCta from '@/components/HaggisinJapanBookingCta';
 import PhotoGallery from '@/components/PhotoGallery';
@@ -79,11 +79,11 @@ const HaggisinJapanNovember2026 = () => {
         <HaggisinJapanHostSection />
         <CompactCarousel images={japanImages} />
         <div id="tour-details">
-          <HaggisinJapanTourDetails />
+          <HaggisinJapanNovember2026TourDetails />
         </div>
       </div>
       <div id="itinerary">
-        <HaggisinJapanTourItinerary />
+        <HaggisinJapanNovember2026TourItinerary />
       </div>
       
       {/* Booking CTA section */}

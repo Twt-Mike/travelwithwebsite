@@ -54,7 +54,7 @@ const HaggisinJapanNovember2026Hero = () => {
             </p>
             
             <p className="text-lg md:text-xl text-white font-medium mt-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
-              November 2026 • 11 Days
+              November 2 - November 12 2026 • 11 Days
             </p>
           </div>
           
