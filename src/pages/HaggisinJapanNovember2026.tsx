@@ -5,7 +5,7 @@ import HaggisinJapanNovember2026TourDetails from '@/components/HaggisinJapanNove
 import HaggisinJapanHostSection from '@/components/HaggisinJapanHostSection';
 import HaggisinJapanNovember2026TourItinerary from '@/components/HaggisinJapanNovember2026TourItinerary';
 import TourFAQ from '@/components/TourFAQ';
-import HaggisinJapanBookingCta from '@/components/HaggisinJapanBookingCta';
+import HaggisinJapanNovember2026BookingCta from '@/components/HaggisinJapanNovember2026BookingCta';
 import PhotoGallery from '@/components/PhotoGallery';
 import HeroNavLinks from '@/components/HeroNavLinks';
 import StickyBookButton from '@/components/StickyBookButton';
@@ -88,7 +88,7 @@ const HaggisinJapanNovember2026 = () => {
       
       {/* Booking CTA section */}
       <div id="booking">
-        <HaggisinJapanBookingCta onBookNow={handleBookNow} />
+        <HaggisinJapanNovember2026BookingCta onBookNow={handleBookNow} />
       </div>
       
       {/* Tour Memories (Photo Gallery) */}
