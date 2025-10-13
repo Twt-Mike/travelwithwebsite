@@ -48,7 +48,7 @@ const HaggisinJapanNovember2026Hero = () => {
             TravelWith
           </h1>
           
-          <div className="bg-japan-indigo py-3 px-4 mb-4 inline-block rounded-md">
+          <div className="py-3 px-4 mb-4 inline-block rounded-md" style={{ backgroundColor: 'rgba(59, 130, 246, 0.9)' }}>
             <p className="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Craig from @Haggis.in.Japan - November 2026
             </p>
@@ -67,8 +67,11 @@ const HaggisinJapanNovember2026Hero = () => {
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-japan-indigo hover:bg-japan-indigo/80 text-white font-bold px-10 py-3 text-lg shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-all duration-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
-              style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.7)' }}
+              className="text-white font-bold px-10 py-3 text-lg shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-all duration-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+              style={{ 
+                backgroundColor: 'rgb(59, 130, 246)',
+                textShadow: '0px 2px 4px rgba(0,0,0,0.7)'
+              }}
               onClick={() => {
                 const bookingElement = document.getElementById('booking');
                 if (bookingElement) {
@@ -82,7 +85,10 @@ const HaggisinJapanNovember2026Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white/10 bg-japan-indigo bg-opacity-60 hover:bg-japan-indigo/70 shadow-[0_4px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.4)] transition-all duration-200"
+              className="border-white text-white shadow-[0_4px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.4)] transition-all duration-200"
+              style={{ 
+                backgroundColor: 'rgba(59, 130, 246, 0.7)'
+              }}
               onClick={() => {
                 const detailsElement = document.getElementById('tour-details');
                 if (detailsElement) {
