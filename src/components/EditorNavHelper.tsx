@@ -38,6 +38,12 @@ const EditorNavHelper = () => {
         >
           Our Travel Treats Japan
         </Link>
+        <Link 
+          to="/haggisinjapannovember2026" 
+          className={`${location.pathname === '/haggisinjapannovember2026' ? 'font-bold text-green-400' : 'text-white'}`}
+        >
+          Haggis in Japan Nov 2026
+        </Link>
       </div>
     </div>
   );

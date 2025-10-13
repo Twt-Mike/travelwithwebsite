@@ -11,6 +11,7 @@ import About from "./pages/About";
 import InfluencerTour from "./pages/InfluencerTour";
 import HaggisinJapan from "./pages/HaggisinJapan";
 import HaggisinJapanCherryBlossom from "./pages/HaggisinJapanCherryBlossom";
+import HaggisinJapanNovember2026 from "./pages/HaggisinJapanNovember2026";
 import NotFound from "./pages/NotFound";
 import EditorNavHelper from "./components/EditorNavHelper";
 
@@ -34,6 +35,7 @@ const App = () => {
               <Route path="/ourtraveltreatsjpn" element={<InfluencerTour />} />
               <Route path="/haggisinjapan" element={<HaggisinJapan />} />
               <Route path="/haggisinjapancherryblossom" element={<HaggisinJapanCherryBlossom />} />
+              <Route path="/haggisinjapannovember2026" element={<HaggisinJapanNovember2026 />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
