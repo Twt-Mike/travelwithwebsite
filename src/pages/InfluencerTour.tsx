@@ -27,8 +27,7 @@ const japanImages = [
 
 const InfluencerTour = () => {
   const handleBookNow = () => {
-    // Open the booking URL in a new tab
-    window.open(BOOKING_URL, '_blank');
+    // Tour is no longer bookable - do nothing
   };
 
   return (
