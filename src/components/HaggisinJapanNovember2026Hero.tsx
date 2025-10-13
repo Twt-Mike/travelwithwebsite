@@ -37,7 +37,7 @@ const HaggisinJapanNovember2026Hero = () => {
             objectPosition: "center 40%",
             transform: `translateY(${translateY}px)`,
             transition: 'transform 0.1s ease-out',
-            filter: 'brightness(1.15)'
+            filter: 'brightness(0.95) saturate(0.85)'
           }}
         />
       </div>
@@ -59,7 +59,7 @@ const HaggisinJapanNovember2026Hero = () => {
           </div>
           
           <div className="mb-6">
-            <p className="text-white mt-2 font-medium text-sm italic drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+            <p className="text-white mt-2 font-bold text-base bg-black/30 inline-block px-4 py-2 rounded-md drop-shadow-[0_3px_6px_rgba(0,0,0,0.8)]">
               Only 20 total spots - Limited spots left!
             </p>
           </div>
