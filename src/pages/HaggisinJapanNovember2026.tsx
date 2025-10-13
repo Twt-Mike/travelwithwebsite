@@ -13,7 +13,7 @@ import CompactCarousel from '@/components/CompactCarousel';
 import ImageModal from '@/components/ImageModal';
 
 // Define the WooCommerce product URL - real WooCommerce product
-const BOOKING_URL = "https://travelwith.tours/product/japan-11-day-tour-with-craig-haggisinjapan/";
+const BOOKING_URL = "https://travelwith.tours/product/november-2026-japan-11-day-tour-with-craig-haggisinjapan/";
 
 // Images for the compact carousel - updated with the 3 specific images requested
 const japanImages = [
