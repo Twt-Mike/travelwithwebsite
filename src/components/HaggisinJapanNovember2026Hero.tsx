@@ -30,13 +30,14 @@ const HaggisinJapanNovember2026Hero = () => {
     <div className="relative min-h-[60vh] flex items-center justify-center bg-japan-indigo overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://travelwith.tours/images/cherryblossom/banner.jpg"
+          src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/haggis//HaggisBanner1.jpeg"
           alt="Japan Tour with HaggisinJapan November 2026"
-          className="w-full h-full object-cover object-center opacity-90"
+          className="w-full h-full object-cover object-center"
           style={{ 
             objectPosition: "center 40%",
             transform: `translateY(${translateY}px)`,
-            transition: 'transform 0.1s ease-out'
+            transition: 'transform 0.1s ease-out',
+            filter: 'brightness(1.15)'
           }}
         />
       </div>
@@ -47,7 +48,7 @@ const HaggisinJapanNovember2026Hero = () => {
             TravelWith
           </h1>
           
-          <div className="bg-japan-indigo bg-opacity-85 py-3 px-4 mb-4 inline-block rounded-md">
+          <div className="bg-japan-indigo py-3 px-4 mb-4 inline-block rounded-md">
             <p className="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Craig from @Haggis.in.Japan - November 2026
             </p>
