@@ -110,7 +110,7 @@ const HaggisinJapanNovember2026TourDetails = () => {
             
             <Card className="bg-japan-indigo text-white">
               <CardContent className="p-6">
-                <h3 className="font-medium text-xl mb-2">& Your #1 Rated Guide Craig!</h3>
+                <h3 className="font-medium text-xl mb-2">& Your #1 rated Tour Leader Craig!</h3>
                 <div className="flex items-center mb-2">
                   <Star className="h-5 w-5 fill-current text-yellow-400" />
                   <Star className="h-5 w-5 fill-current text-yellow-400" />

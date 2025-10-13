@@ -12,7 +12,7 @@ const HaggisinJapanHostSection = () => {
           // Mobile layout - single column with image between heading and text
           <div className="space-y-6">
             <h2 className="text-3xl font-serif font-bold text-japan-indigo">
-              Meet Your Guide – Craig
+              Meet Your Tour Leader – Craig
             </h2>
             
             <Card className="overflow-hidden shadow-lg rounded-lg max-w-xs mx-auto">
@@ -54,7 +54,7 @@ const HaggisinJapanHostSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-japan-indigo mb-6">
-                Meet Your Guide – Craig
+                Meet Your Tour Leader – Craig
               </h2>
               
               <Card className="overflow-hidden shadow-lg rounded-lg mb-6 max-w-xs">
