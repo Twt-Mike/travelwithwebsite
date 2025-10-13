@@ -48,7 +48,7 @@ const HaggisinJapanNovember2026Hero = () => {
             TravelWith
           </h1>
           
-          <div className="py-3 px-4 mb-4 inline-block rounded-md" style={{ backgroundColor: 'rgba(59, 130, 246, 0.5)' }}>
+          <div className="py-3 px-4 mb-4 inline-block rounded-md" style={{ backgroundColor: 'rgba(59, 130, 246, 0.6)' }}>
             <p className="text-2xl md:text-4xl text-white font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Craig from @Haggis.in.Japan - November 2026
             </p>
@@ -59,7 +59,7 @@ const HaggisinJapanNovember2026Hero = () => {
           </div>
           
           <div className="mb-6">
-            <p className="text-white mt-2 font-bold text-base bg-black/30 inline-block px-4 py-2 rounded-md drop-shadow-[0_3px_6px_rgba(0,0,0,0.8)]">
+            <p className="text-white mt-2 font-bold text-base bg-black/40 inline-block px-4 py-2 rounded-md drop-shadow-[0_3px_6px_rgba(0,0,0,0.8)]">
               Only 20 total spots - Limited spots left!
             </p>
           </div>
@@ -69,7 +69,7 @@ const HaggisinJapanNovember2026Hero = () => {
               size="lg" 
               className="text-white font-bold px-10 py-3 text-lg shadow-[0_4px_12px_rgba(0,0,0,0.4)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-all duration-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
               style={{ 
-                backgroundColor: 'rgba(59, 130, 246, 0.6)',
+                backgroundColor: 'rgba(59, 130, 246, 0.7)',
                 textShadow: '0px 2px 4px rgba(0,0,0,0.7)'
               }}
               onClick={() => {
@@ -87,7 +87,7 @@ const HaggisinJapanNovember2026Hero = () => {
               size="lg" 
               className="border-white text-white shadow-[0_4px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.4)] transition-all duration-200"
               style={{ 
-                backgroundColor: 'rgba(59, 130, 246, 0.4)'
+                backgroundColor: 'rgba(59, 130, 246, 0.5)'
               }}
               onClick={() => {
                 const detailsElement = document.getElementById('tour-details');
