@@ -22,7 +22,7 @@ const HaggisinJapanNovember2026BookingCta = ({ onBookNow }: BookingCtaProps) => 
             </h2>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Book your spot now on this exclusive Japan tour with Craig from @Haggis.in.Japan. 
-              Only 19 spots available—secure yours before they're gone!
+              Only 20 spots available—secure yours before they're gone!
             </p>
           </div>
 
@@ -32,7 +32,7 @@ const HaggisinJapanNovember2026BookingCta = ({ onBookNow }: BookingCtaProps) => 
               <ul className="space-y-4 flex-grow">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">Secure one of just 19 available spots</span>
+                  <span className="text-gray-700">Secure one of just 20 available spots</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-japan-green mt-0.5 flex-shrink-0" />
@@ -52,7 +52,7 @@ const HaggisinJapanNovember2026BookingCta = ({ onBookNow }: BookingCtaProps) => 
             <div className="bg-[#002e3e] p-8 rounded-xl shadow-md text-white flex flex-col">
               <h3 className="text-xl font-medium mb-2">Japan with @Haggis.in.Japan</h3>
               <div className="text-white/80 text-sm mb-2">2 Nov - 12 Nov, 2026 • 11 days</div>
-              <div className="text-white/90 text-sm mb-2"><span className="font-medium">Group size:</span> Max 19 travelers</div>
+              <div className="text-white/90 text-sm mb-2"><span className="font-medium">Group size:</span> Max 20 travelers</div>
               <div className="text-white/90 text-sm mb-6">
                 <span className="font-medium">Start:</span> Tokyo • <span className="font-medium">Finish:</span> Osaka
               </div>
