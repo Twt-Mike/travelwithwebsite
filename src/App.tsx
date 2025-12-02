@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
+import HomeBackup from "./pages/HomeBackup";
 import About from "./pages/About";
 import InfluencerTour from "./pages/InfluencerTour";
 import HaggisinJapan from "./pages/HaggisinJapan";
@@ -31,6 +32,7 @@ const App = () => {
               {/* Home routes with two paths */}
               <Route path="/" element={<Index />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/home-backup" element={<HomeBackup />} />
               <Route path="/about" element={<About />} />
               <Route path="/ourtraveltreatsjpn" element={<InfluencerTour />} />
               <Route path="/haggisinjapan" element={<HaggisinJapan />} />
