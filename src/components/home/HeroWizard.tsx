@@ -49,7 +49,7 @@ const HeroWizard = () => {
       {/* Dark Overlay - fades in */}
       <div
         className={cn(
-          'absolute inset-0 bg-black/80 transition-opacity duration-700 ease-in-out',
+          'absolute inset-0 bg-black/50 transition-opacity duration-700 ease-in-out',
           overlayVisible ? 'opacity-100' : 'opacity-0'
         )}
       />
@@ -79,17 +79,17 @@ const HeroWizard = () => {
                 key={tile.id}
                 onClick={() => handleTileClick(tile.id)}
                 className={cn(
-                  'group relative flex-1 rounded-2xl bg-white p-6 text-left shadow-lg transition-all duration-300',
-                  'hover:scale-[1.02] hover:shadow-2xl',
+                  'group relative flex-1 rounded-2xl bg-black/80 p-6 text-left shadow-lg transition-all duration-300 backdrop-blur-sm',
+                  'hover:scale-[1.02] hover:shadow-2xl hover:bg-black/90',
                   'active:scale-[0.98]',
-                  'focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black/80',
-                  selectedTile === tile.id && 'ring-2 ring-japan-pink ring-offset-2 ring-offset-black/80'
+                  'focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent',
+                  selectedTile === tile.id && 'ring-2 ring-japan-pink ring-offset-2 ring-offset-transparent'
                 )}
               >
-                <h3 className="mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+                <h3 className="mb-2 text-lg font-semibold text-white md:text-xl">
                   {tile.label}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/70">
                   {tile.description}
                 </p>
                 
