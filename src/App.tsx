@@ -14,7 +14,6 @@ import HaggisinJapan from "./pages/HaggisinJapan";
 import HaggisinJapanCherryBlossom from "./pages/HaggisinJapanCherryBlossom";
 import HaggisinJapanNovember2026 from "./pages/HaggisinJapanNovember2026";
 import NotFound from "./pages/NotFound";
-import EditorNavHelper from "./components/EditorNavHelper";
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
@@ -27,7 +26,6 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <EditorNavHelper />
             <Routes>
               {/* Home routes with two paths */}
               <Route path="/" element={<Index />} />
