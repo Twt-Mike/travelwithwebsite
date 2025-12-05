@@ -79,8 +79,9 @@ const HeroWizard = () => {
                 key={tile.id}
                 onClick={() => handleTileClick(tile.id)}
                 className={cn(
-                  'group relative flex-1 rounded-2xl bg-black/80 p-6 text-left shadow-lg transition-all duration-300 backdrop-blur-sm',
-                  'hover:scale-[1.02] hover:shadow-2xl hover:bg-black/90',
+                  'group relative flex-1 rounded-2xl p-6 text-left shadow-lg transition-all duration-300',
+                  'bg-gray-900/70 backdrop-blur-[2px]',
+                  'hover:scale-[1.02] hover:shadow-2xl hover:bg-gray-900/80',
                   'active:scale-[0.98]',
                   'focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent',
                   selectedTile === tile.id && 'ring-2 ring-japan-pink ring-offset-2 ring-offset-transparent'
