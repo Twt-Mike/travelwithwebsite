@@ -1,22 +1,11 @@
-
-import { useState } from 'react';
 import Layout from '@/components/Layout';
-import HeroSection from '@/components/HeroSection';
-import ExperienceSection from '@/components/ExperienceSection';
-import DestinationsSection from '@/components/DestinationsSection';
-import CtaSection from '@/components/CtaSection';
-import WhyTravelWith from '@/components/WhyTravelWith';
-import IndexPhotoGallery from '@/components/IndexPhotoGallery';
 
 const Index = () => {
   return (
     <Layout>
-      <HeroSection />
-      <ExperienceSection />
-      <WhyTravelWith />
-      <DestinationsSection />
-      <IndexPhotoGallery />
-      <CtaSection />
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-muted-foreground">Ready for your new design</p>
+      </div>
     </Layout>
   );
 };
