@@ -83,33 +83,43 @@ const HeroWizard = () => {
         )}
       >
         <div className="mx-auto max-w-lg">
-          {/* Three solid dark navy buttons */}
-          <div className="flex flex-col gap-[18px] md:gap-5">
+          {/* Choice-chip style cards */}
+          <div className="flex flex-col gap-5 md:gap-6">
             {tileOptions.map((tile) => (
               <button
                 key={tile.id}
                 onClick={() => handleTileClick(tile.id)}
                 className={cn(
-                  'group relative w-full rounded-[14px] px-5 py-[18px] text-left transition-all duration-200 md:px-6 md:py-5',
-                  'hover:scale-[1.015] hover:shadow-md',
-                  'focus:outline-none focus:ring-2 focus:ring-[#001F2F]/30 focus:ring-offset-2',
+                  'group relative w-full rounded-[22px] px-5 py-3 text-left transition-all duration-200 md:px-6 md:py-4',
+                  'bg-white border-[1.25px]',
+                  'hover:scale-[1.02] hover:shadow-md',
+                  'focus:outline-none focus:ring-2 focus:ring-[#0B2239]/20 focus:ring-offset-2',
                   'active:scale-[0.98]',
                   selectedTile === tile.id
-                    ? 'bg-[#001F2F] shadow-md'
-                    : 'bg-[#001F2F]'
+                    ? 'border-[#0B2239] shadow-md'
+                    : 'border-[#D6D7DA]'
                 )}
               >
-                <h3 className="font-sans text-[17px] font-semibold text-white md:text-lg">
+                <h3 
+                  className="font-sans text-[15px] font-bold md:text-base"
+                  style={{ color: '#0B2239' }}
+                >
                   {tile.label}
                 </h3>
-                <p className="mt-0.5 text-[13px] text-white/80 md:text-sm">
+                <p 
+                  className="mt-0.5 text-[12px] font-normal md:text-[13px]"
+                  style={{ color: '#6B7280' }}
+                >
                   {tile.description}
                 </p>
                 
                 {/* Selected checkmark */}
                 {selectedTile === tile.id && (
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#001F2F]">
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div 
+                    className="absolute right-4 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full"
+                    style={{ backgroundColor: '#0B2239' }}
+                  >
+                    <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
