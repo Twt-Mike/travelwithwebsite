@@ -4,18 +4,18 @@ import { cn } from '@/lib/utils';
 const tileOptions = [
   {
     id: 'host-creator',
-    label: 'Host / Creator',
-    description: 'Influencers, content creators & community leaders',
+    label: 'Host / Content Creator',
+    description: 'For your community',
   },
   {
     id: 'private-group',
     label: 'Private Group / Family',
-    description: 'Friends, families & private travel groups',
+    description: 'For friends & families',
   },
   {
     id: 'team-company',
     label: 'Team or Company',
-    description: 'Corporate retreats & team experiences',
+    description: 'For corporate groups',
   },
 ];
 
@@ -73,30 +73,32 @@ const HeroWizard = () => {
           </h1>
 
           {/* Tiles */}
-          <div className="flex flex-col gap-4 md:flex-row md:gap-6">
+          <div className="flex flex-col gap-5 md:flex-row md:gap-6">
             {tileOptions.map((tile) => (
               <button
                 key={tile.id}
                 onClick={() => handleTileClick(tile.id)}
                 className={cn(
-                  'group relative flex-1 rounded-2xl p-6 text-left shadow-lg transition-all duration-300',
-                  'bg-gray-900/70 backdrop-blur-[2px]',
-                  'hover:scale-[1.02] hover:shadow-2xl hover:bg-gray-900/80',
+                  'group relative flex-1 rounded-xl px-6 py-5 md:py-6 text-left',
+                  'bg-black/40 backdrop-blur-md border border-white/10',
+                  'shadow-lg shadow-black/20',
+                  'transition-all duration-300 ease-out',
+                  'hover:scale-[1.03] hover:bg-black/50 hover:shadow-xl hover:shadow-black/30 hover:border-white/20',
                   'active:scale-[0.98]',
-                  'focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent',
-                  selectedTile === tile.id && 'ring-2 ring-japan-pink ring-offset-2 ring-offset-transparent'
+                  'focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-transparent',
+                  selectedTile === tile.id && 'ring-2 ring-japan-pink ring-offset-2 ring-offset-transparent border-japan-pink/50'
                 )}
               >
-                <h3 className="mb-2 text-lg font-semibold text-white md:text-xl">
+                <h3 className="text-lg font-semibold text-white md:text-xl leading-tight">
                   {tile.label}
                 </h3>
-                <p className="text-sm text-white/70">
+                <p className="mt-1 text-sm text-white/60 leading-snug">
                   {tile.description}
                 </p>
                 
                 {/* Selected indicator */}
                 {selectedTile === tile.id && (
-                  <div className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-japan-pink text-white">
+                  <div className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-japan-pink text-white shadow-md">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
