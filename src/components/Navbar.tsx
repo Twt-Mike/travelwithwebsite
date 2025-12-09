@@ -41,7 +41,9 @@ const Navbar = () => {
       <div className="japan-container flex justify-between items-center">
         {!isInfluencerTourPage && (
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-serif font-bold text-japan-indigo">
+            <span className={`text-2xl font-serif font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-japan-indigo' : 'text-white drop-shadow-md'
+            }`}>
               TravelWith
             </span>
           </Link>
@@ -50,14 +52,28 @@ const Navbar = () => {
           <div className="h-10"></div> /* This div maintains spacing when the logo is hidden */
         )}
 
-        {/* Hamburger Menu Trigger (hide on influencer tour page) */}
+        {/* Why TravelWith Link */}
         {!isInfluencerTourPage && (
-          <button
-            className="text-japan-indigo focus:outline-none"
-            onClick={toggleMenu}
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/about" 
+              className={`text-sm font-medium transition-colors duration-300 ${
+                isScrolled 
+                  ? 'text-japan-indigo hover:text-japan-pink' 
+                  : 'text-white/90 hover:text-white drop-shadow-sm'
+              }`}
+            >
+              Why TravelWith
+            </Link>
+            <button
+              className={`focus:outline-none transition-colors duration-300 ${
+                isScrolled ? 'text-japan-indigo' : 'text-white'
+              }`}
+              onClick={toggleMenu}
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         )}
       </div>
 
