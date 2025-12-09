@@ -47,46 +47,45 @@ const HeroWizard = () => {
     <section className="relative w-full">
       {/* SECTION 1 — HERO IMAGE */}
       <div className="relative h-[48vh] min-h-[340px] w-full overflow-hidden md:h-[55vh] md:min-h-[400px]">
-        {/* Hero Image - easily swappable, displayed at natural color */}
+        {/* Hero Image - displayed at natural color */}
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/updatedsite/NewBanner.jpg"
           alt="Japan travel scene"
           className="h-full w-full object-cover"
         />
         
-        {/* Subtle dark gradient overlay (bottom to top) */}
+        {/* Very subtle bottom gradient for readability */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.08) 40%, transparent 100%)'
+            background: 'linear-gradient(to top, rgba(0,0,0,0.12) 0%, transparent 40%)'
           }}
         />
       </div>
 
-      {/* SECTION 2 — WHITE CONTENT CARD OVERLAY */}
-      <div className="relative z-10 mx-auto w-[90%] max-w-lg -mt-28 md:-mt-36">
-        <div
-          className={cn(
-            'bg-white px-5 py-4 transition-all duration-700 ease-out md:px-8 md:py-5',
-            cardVisible 
-              ? 'translate-y-0 opacity-100' 
-              : 'translate-y-8 opacity-0'
-          )}
-          style={{ 
-            borderRadius: '18px',
-            boxShadow: '0 -8px 22px rgba(0, 0, 0, 0.15), 0 8px 32px -8px rgba(0, 0, 0, 0.12)'
-          }}
-        >
-          {/* Small top label */}
-          <p className="mb-1.5 text-center text-[11px] font-medium tracking-wide text-gray-400 uppercase">
-            Planning a Japan trip?
-          </p>
+      {/* SECTION 2 — MINIMAL CENTERED HEADING (floating above card) */}
+      <div className="relative z-10 -mt-20 mb-4 text-center md:-mt-24 md:mb-5">
+        <p className="mb-1 text-[11px] font-medium tracking-wide uppercase md:text-xs" style={{ color: '#6D717A' }}>
+          Planning a Japan trip?
+        </p>
+        <h1 className="font-sans text-[2.25rem] font-bold md:text-5xl leading-tight" style={{ color: '#001F2F' }}>
+          I am…
+        </h1>
+      </div>
 
-          {/* Main heading */}
-          <h1 className="mb-5 text-center font-sans text-[2.5rem] font-bold text-gray-900 md:text-5xl leading-tight">
-            I am…
-          </h1>
-
+      {/* SECTION 3 — WHITE CONTENT CARD (buttons + badges) */}
+      <div 
+        className={cn(
+          'relative z-10 bg-white px-5 py-5 transition-all duration-700 ease-out md:px-8 md:py-6',
+          cardVisible 
+            ? 'translate-y-0 opacity-100' 
+            : 'translate-y-4 opacity-0'
+        )}
+        style={{ 
+          boxShadow: '0 -6px 16px rgba(0,0,0,0.12)'
+        }}
+      >
+        <div className="mx-auto max-w-lg">
           {/* Three solid dark navy buttons */}
           <div className="flex flex-col gap-[18px] md:gap-5">
             {tileOptions.map((tile) => (
@@ -122,7 +121,7 @@ const HeroWizard = () => {
             ))}
           </div>
 
-          {/* SECTION 3 — EXPERIENCE BADGES */}
+          {/* EXPERIENCE BADGES */}
           <div className="mt-5 flex flex-wrap justify-center gap-1.5 md:gap-2">
             {experienceBadges.map((badge, index) => (
               <span
@@ -139,9 +138,6 @@ const HeroWizard = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom spacing */}
-      <div className="h-10 md:h-14" />
     </section>
   );
 };
