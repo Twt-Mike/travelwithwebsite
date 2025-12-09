@@ -45,45 +45,42 @@ const HeroWizard = () => {
 
   return (
     <section className="relative w-full">
-      {/* SECTION 1 — HERO IMAGE */}
-      <div className="relative h-[48vh] min-h-[340px] w-full overflow-hidden md:h-[55vh] md:min-h-[400px]">
-        {/* Hero Image - displayed at natural color */}
+      {/* SECTION 1 — HERO IMAGE (no text overlay) */}
+      <div className="relative h-[45vh] min-h-[300px] w-full overflow-hidden md:h-[50vh] md:min-h-[360px]">
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/updatedsite/NewBanner.jpg"
           alt="Japan travel scene"
           className="h-full w-full object-cover"
         />
-        
-        {/* Very subtle bottom gradient for readability */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,0.12) 0%, transparent 40%)'
-          }}
-        />
       </div>
 
-      {/* SECTION 2 — MINIMAL CENTERED HEADING (floating above card) */}
-      <div className="relative z-10 -mt-20 mb-4 text-center md:-mt-24 md:mb-5">
-        <p className="mb-1 text-[11px] font-medium tracking-wide uppercase md:text-xs" style={{ color: '#6D717A' }}>
+      {/* SECTION 2 — HEADER BAND (neutral background) */}
+      <div 
+        className="w-full px-5 py-6 text-center md:py-8"
+        style={{ backgroundColor: '#F4F4F2' }}
+      >
+        <p 
+          className="mb-1 text-[12px] font-medium tracking-wide uppercase md:text-[13px]"
+          style={{ color: '#6D717A' }}
+        >
           Planning a Japan trip?
         </p>
-        <h1 className="font-sans text-[2.25rem] font-bold md:text-5xl leading-tight" style={{ color: '#001F2F' }}>
+        <h1 
+          className="font-sans text-[2rem] font-bold md:text-[2.5rem] leading-tight"
+          style={{ color: '#001F2F' }}
+        >
           I am…
         </h1>
       </div>
 
-      {/* SECTION 3 — WHITE CONTENT CARD (buttons + badges) */}
+      {/* SECTION 3 — WHITE CONTENT (buttons + badges) */}
       <div 
         className={cn(
-          'relative z-10 bg-white px-5 py-5 transition-all duration-700 ease-out md:px-8 md:py-6',
+          'w-full bg-white px-5 py-6 transition-all duration-700 ease-out md:px-8 md:py-8',
           cardVisible 
             ? 'translate-y-0 opacity-100' 
             : 'translate-y-4 opacity-0'
         )}
-        style={{ 
-          boxShadow: '0 -6px 16px rgba(0,0,0,0.12)'
-        }}
       >
         <div className="mx-auto max-w-lg">
           {/* Three solid dark navy buttons */}
@@ -122,14 +119,14 @@ const HeroWizard = () => {
           </div>
 
           {/* EXPERIENCE BADGES */}
-          <div className="mt-5 flex flex-wrap justify-center gap-1.5 md:gap-2">
+          <div className="mt-6 flex flex-wrap justify-center gap-2 md:gap-2.5">
             {experienceBadges.map((badge, index) => (
               <span
                 key={index}
-                className="inline-block rounded-full px-2.5 py-1 text-[10px] font-medium md:px-3 md:py-1.5 md:text-[11px]"
+                className="inline-block rounded-full px-3 py-1.5 text-[11px] font-medium md:text-[12px]"
                 style={{ 
-                  backgroundColor: '#F2F2F2',
-                  color: '#333'
+                  backgroundColor: '#EBEBEB',
+                  color: '#444'
                 }}
               >
                 {badge}
