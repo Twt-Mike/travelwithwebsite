@@ -47,74 +47,73 @@ const HeroWizard = () => {
   return (
     <section className="relative w-full">
       {/* SECTION 1 — HERO IMAGE */}
-      <div className="relative h-[55vh] min-h-[400px] w-full overflow-hidden md:h-[60vh]">
+      <div className="relative h-[48vh] min-h-[340px] w-full overflow-hidden md:h-[55vh] md:min-h-[400px]">
         {/* Hero Image - easily swappable */}
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/updatedsite/NewBanner.jpg"
           alt="Japan travel scene"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover brightness-[1.4]"
         />
         
         {/* Dark gradient overlay (bottom to top) */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)'
+            background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, transparent 100%)'
           }}
         />
       </div>
 
       {/* SECTION 2 — WHITE CONTENT CARD OVERLAY */}
-      <div className="relative z-10 mx-auto w-[92%] max-w-lg -mt-24 md:-mt-32">
+      <div className="relative z-10 mx-auto w-[92%] max-w-lg -mt-28 md:-mt-36">
         <div
           className={cn(
-            'rounded-3xl bg-white px-6 py-8 shadow-xl shadow-black/10 transition-all duration-700 ease-out md:px-10 md:py-10',
+            'rounded-3xl bg-white px-6 py-6 transition-all duration-700 ease-out md:px-10 md:py-8',
             cardVisible 
               ? 'translate-y-0 opacity-100' 
               : 'translate-y-8 opacity-0'
           )}
-          style={{ borderRadius: '24px' }}
+          style={{ 
+            borderRadius: '24px',
+            boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.12), 0 10px 40px -10px rgba(0, 0, 0, 0.15)'
+          }}
         >
           {/* Small top label */}
-          <p className="mb-3 text-center text-sm font-medium tracking-wide text-gray-500">
+          <p className="mb-2 text-center text-xs font-medium tracking-wide text-gray-400 uppercase">
             Planning a Japan trip?
           </p>
 
           {/* Main heading */}
-          <h1 className="mb-8 text-center font-sans text-3xl font-bold text-gray-900 md:text-4xl">
+          <h1 className="mb-6 text-center font-sans text-4xl font-bold text-gray-900 md:text-5xl">
             I am…
           </h1>
 
-          {/* Three solid buttons */}
-          <div className="flex flex-col gap-4">
+          {/* Three solid dark navy buttons */}
+          <div className="flex flex-col gap-4 md:gap-5">
             {tileOptions.map((tile) => (
               <button
                 key={tile.id}
                 onClick={() => handleTileClick(tile.id)}
                 className={cn(
-                  'group w-full rounded-2xl border-2 px-5 py-4 text-left transition-all duration-200',
-                  'hover:border-japan-indigo hover:bg-japan-indigo/5 hover:shadow-md',
-                  'focus:outline-none focus:ring-2 focus:ring-japan-indigo/40 focus:ring-offset-2',
+                  'group relative w-full rounded-[14px] px-6 py-5 text-left transition-all duration-200',
+                  'hover:scale-[1.02] hover:shadow-lg',
+                  'focus:outline-none focus:ring-2 focus:ring-[#001F2F]/40 focus:ring-offset-2',
                   'active:scale-[0.98]',
                   selectedTile === tile.id
-                    ? 'border-japan-indigo bg-japan-indigo/5 shadow-md'
-                    : 'border-gray-200 bg-white'
+                    ? 'bg-[#001F2F] shadow-lg ring-2 ring-[#001F2F]/20'
+                    : 'bg-[#001F2F]'
                 )}
-                style={{ borderRadius: '16px' }}
               >
-                <h3 className={cn(
-                  'font-sans text-lg font-semibold transition-colors md:text-xl',
-                  selectedTile === tile.id ? 'text-japan-indigo' : 'text-gray-900'
-                )}>
+                <h3 className="font-sans text-lg font-semibold text-white md:text-xl">
                   {tile.label}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-white/75">
                   {tile.description}
                 </p>
                 
                 {/* Selected checkmark */}
                 {selectedTile === tile.id && (
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full bg-japan-indigo text-white">
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full bg-white text-[#001F2F]">
                     <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
@@ -125,7 +124,7 @@ const HeroWizard = () => {
           </div>
 
           {/* SECTION 3 — EXPERIENCE BADGES */}
-          <div className="mt-8 flex flex-wrap justify-center gap-2">
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
             {experienceBadges.map((badge, index) => (
               <span
                 key={index}
@@ -139,7 +138,7 @@ const HeroWizard = () => {
       </div>
 
       {/* Bottom spacing */}
-      <div className="h-12 md:h-16" />
+      <div className="h-10 md:h-14" />
     </section>
   );
 };
