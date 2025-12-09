@@ -6,16 +6,19 @@ const tileOptions = [
     id: 'host-creator',
     label: 'Host / Content Creator',
     description: 'For your community',
+    icon: '📣',
   },
   {
     id: 'private-group',
     label: 'Private Group / Family',
     description: 'For friends & families',
+    icon: '👨‍👩‍👧',
   },
   {
     id: 'team-company',
     label: 'Team or Company',
     description: 'For corporate groups',
+    icon: '🏢',
   },
 ];
 
@@ -82,42 +85,48 @@ const HeroWizard = () => {
             : 'translate-y-4 opacity-0'
         )}
       >
-        <div className="mx-auto max-w-lg">
-          {/* Choice-chip style cards */}
-          <div className="flex flex-col gap-5 md:gap-6">
+        <div className="mx-auto flex flex-col items-center">
+          {/* Compact premium cards */}
+          <div className="flex w-[85%] max-w-sm flex-col gap-5 md:gap-6">
             {tileOptions.map((tile) => (
               <button
                 key={tile.id}
                 onClick={() => handleTileClick(tile.id)}
                 className={cn(
-                  'group relative w-full rounded-[22px] px-5 py-3 text-left transition-all duration-200 md:px-6 md:py-4',
-                  'bg-white border-[1.25px]',
-                  'hover:scale-[1.02] hover:shadow-md',
-                  'focus:outline-none focus:ring-2 focus:ring-[#0B2239]/20 focus:ring-offset-2',
-                  'active:scale-[0.98]',
+                  'group relative flex items-center gap-3 rounded-xl px-4 py-2.5 text-left transition-all duration-200 md:px-5 md:py-3',
+                  'border shadow-sm',
+                  'hover:-translate-y-0.5 hover:shadow-md',
+                  'focus:outline-none focus:ring-2 focus:ring-[#0C1A23]/15 focus:ring-offset-2',
+                  'active:translate-y-0 active:shadow-sm',
                   selectedTile === tile.id
-                    ? 'border-[#0B2239] shadow-md'
-                    : 'border-[#D6D7DA]'
+                    ? 'border-[#0C1A23] bg-white shadow-md'
+                    : 'border-[#E5E5E5] bg-[#F7F7F7]'
                 )}
               >
-                <h3 
-                  className="font-sans text-[15px] font-bold md:text-base"
-                  style={{ color: '#0B2239' }}
-                >
-                  {tile.label}
-                </h3>
-                <p 
-                  className="mt-0.5 text-[12px] font-normal md:text-[13px]"
-                  style={{ color: '#6B7280' }}
-                >
-                  {tile.description}
-                </p>
+                {/* Icon */}
+                <span className="text-lg md:text-xl">{tile.icon}</span>
+                
+                {/* Text content */}
+                <div className="flex-1">
+                  <h3 
+                    className="font-sans text-[14px] font-bold leading-tight md:text-[15px]"
+                    style={{ color: '#0C1A23' }}
+                  >
+                    {tile.label}
+                  </h3>
+                  <p 
+                    className="mt-0.5 text-[11px] font-normal md:text-[12px]"
+                    style={{ color: '#0C1A23', opacity: 0.65 }}
+                  >
+                    {tile.description}
+                  </p>
+                </div>
                 
                 {/* Selected checkmark */}
                 {selectedTile === tile.id && (
                   <div 
-                    className="absolute right-4 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full"
-                    style={{ backgroundColor: '#0B2239' }}
+                    className="flex h-5 w-5 items-center justify-center rounded-full"
+                    style={{ backgroundColor: '#0C1A23' }}
                   >
                     <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -129,7 +138,7 @@ const HeroWizard = () => {
           </div>
 
           {/* EXPERIENCE BADGES */}
-          <div className="mt-6 flex flex-wrap justify-center gap-2 md:gap-2.5">
+          <div className="mt-6 flex w-[85%] max-w-sm flex-wrap justify-center gap-2 md:gap-2.5">
             {experienceBadges.map((badge, index) => (
               <span
                 key={index}
