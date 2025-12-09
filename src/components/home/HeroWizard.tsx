@@ -48,38 +48,39 @@ const HeroWizard = () => {
 
   return (
     <section className="relative w-full">
-      {/* SECTION 1 — HERO IMAGE (no text overlay) */}
+      {/* SECTION 1 — HERO IMAGE (shifted down to show more pagoda) */}
       <div className="relative h-[45vh] min-h-[300px] w-full overflow-hidden md:h-[50vh] md:min-h-[360px]">
         <img
           src="https://tixgiajjzrgbajugxnlk.supabase.co/storage/v1/object/public/updatedsite/NewBanner.jpg"
           alt="Japan travel scene"
           className="h-full w-full object-cover"
+          style={{ objectPosition: 'center 35%' }}
         />
       </div>
 
-      {/* SECTION 2 — HEADER BAND (neutral background) */}
+      {/* SECTION 2 — HEADER BAND (thinner, more elegant) */}
       <div 
-        className="w-full px-5 py-6 text-center md:py-8"
+        className="w-full px-5 py-4 text-center md:py-5"
         style={{ backgroundColor: '#F4F4F2' }}
       >
         <p 
-          className="mb-1 text-[12px] font-medium tracking-wide uppercase md:text-[13px]"
-          style={{ color: '#6D717A' }}
+          className="mb-2 text-[12px] font-semibold tracking-wide uppercase md:text-[13px]"
+          style={{ color: '#6D717A', letterSpacing: '0.08em' }}
         >
           Planning a Japan trip?
         </p>
         <h1 
-          className="font-sans text-[2rem] font-bold md:text-[2.5rem] leading-tight"
-          style={{ color: '#001F2F' }}
+          className="font-sans text-[2rem] font-bold md:text-[2.5rem]"
+          style={{ color: '#001F2F', lineHeight: '1.15' }}
         >
-          I am…
+          I am:
         </h1>
       </div>
 
-      {/* SECTION 3 — WHITE CONTENT (buttons + badges) */}
+      {/* SECTION 3 — WHITE CONTENT (buttons + badges, tighter spacing) */}
       <div 
         className={cn(
-          'w-full bg-white px-5 py-6 transition-all duration-700 ease-out md:px-8 md:py-8',
+          'w-full bg-white px-5 py-4 transition-all duration-700 ease-out md:px-8 md:py-5',
           cardVisible 
             ? 'translate-y-0 opacity-100' 
             : 'translate-y-4 opacity-0'
