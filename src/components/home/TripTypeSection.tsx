@@ -23,17 +23,17 @@ const tripTypes = [
 
 const TripTypeSection = () => {
   return (
-    <section className="px-5 py-6">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">
+    <section className="px-4 py-4">
+      <h2 className="text-lg font-bold text-gray-900 mb-3">
         I am planning a trip as
       </h2>
       
-      {/* Horizontal scroll container */}
-      <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide">
+      {/* Vertical stack on mobile, horizontal on larger screens */}
+      <div className="flex flex-col gap-2 md:flex-row md:gap-3">
         {tripTypes.map((type) => (
           <button
             key={type.id}
-            className="relative shrink-0 w-44 h-32 rounded-xl overflow-hidden group"
+            className="relative w-full md:flex-1 h-20 md:h-28 rounded-xl overflow-hidden group"
           >
             <img
               src={type.image}
@@ -43,7 +43,7 @@ const TripTypeSection = () => {
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/30" />
             {/* Label */}
-            <div className="absolute top-3 left-3">
+            <div className="absolute top-1/2 left-4 -translate-y-1/2">
               <span className="inline-block rounded-lg bg-[#1a2b49] px-3 py-1.5 text-sm font-semibold text-white">
                 {type.title}
               </span>
