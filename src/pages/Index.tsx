@@ -1,14 +1,16 @@
-import HeroWizard from '@/components/home/HeroWizard';
 import MobileNav from '@/components/MobileNav';
+import HeroSection from '@/components/home/HeroSection';
+import TripTypeSection from '@/components/home/TripTypeSection';
 
 const Index = () => {
   return (
-    <>
+    <div className="min-h-screen bg-white">
       <MobileNav />
-      <main className="pt-14 md:pt-16">
-        <HeroWizard />
+      <main>
+        <HeroSection />
+        <TripTypeSection />
       </main>
-    </>
+    </div>
   );
 };
 
